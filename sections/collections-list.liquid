@@ -128,7 +128,13 @@
         
         <a href="{{ collection.url | default: '#' }}" class="horizon-circular-card" {{ block.shopify_attributes }}>
           <div class="horizon-circular-image">
-            {%- if block.settings.image != blank -%}
+            {%- if block.settings.custom_asset_image != blank -%}
+              <img src="{{ block.settings.custom_asset_image | asset_url }}" 
+                   alt="{{ block.settings.custom_title | escape }}" 
+                   loading="lazy" 
+                   width="300" 
+                   height="300">
+            {%- elsif block.settings.image != blank -%}
               <img src="{{ block.settings.image | image_url: width: 300 }}" 
                    alt="{{ block.settings.image.alt | escape }}" 
                    loading="lazy" 

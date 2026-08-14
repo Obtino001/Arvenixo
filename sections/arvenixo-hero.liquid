@@ -1,6 +1,5 @@
 {% comment %}
-  Arvenixo premium hero — full-bleed brand first viewport.
-  Uses generated asset as default; theme image picker can override.
+  Arvenixo hero — full-bleed media, Horizon page-width content column.
 {% endcomment %}
 
 {%- liquid
@@ -8,10 +7,12 @@
   assign hero_image_mobile = section.settings.image_mobile
 -%}
 
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <section
   id="ArvenixoHero-{{ section.id }}"
-  class="ax-hero color-{{ section.settings.color_scheme }}"
+  class="ax-hero section section--full-width color-{{ section.settings.color_scheme }}"
   style="--ax-hero-min: {{ section.settings.min_height }}vh;"
+  {{ section.shopify_attributes }}
 >
   <div class="ax-hero__media" aria-hidden="true">
     {%- if hero_image != blank -%}
@@ -53,27 +54,29 @@
     <div class="ax-hero__overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
   </div>
 
-  <div class="ax-hero__inner page-width">
-    {%- if section.settings.eyebrow != blank -%}
-      <p class="ax-hero__eyebrow">{{ section.settings.eyebrow }}</p>
-    {%- endif -%}
-    {%- if section.settings.heading != blank -%}
-      <h1 class="ax-hero__heading">{{ section.settings.heading }}</h1>
-    {%- endif -%}
-    {%- if section.settings.text != blank -%}
-      <p class="ax-hero__text">{{ section.settings.text }}</p>
-    {%- endif -%}
-    <div class="ax-hero__actions">
-      {%- if section.settings.button_label != blank -%}
-        <a class="ax-btn ax-btn--primary" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
-          {{ section.settings.button_label }}
-        </a>
+  <div class="ax-hero__content">
+    <div class="ax-hero__inner">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ax-hero__eyebrow">{{ section.settings.eyebrow }}</p>
       {%- endif -%}
-      {%- if section.settings.button_label_2 != blank -%}
-        <a class="ax-btn ax-btn--ghost" href="{{ section.settings.button_link_2 | default: routes.all_products_collection_url }}">
-          {{ section.settings.button_label_2 }}
-        </a>
+      {%- if section.settings.heading != blank -%}
+        <h1 class="ax-hero__heading">{{ section.settings.heading }}</h1>
       {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <p class="ax-hero__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+      <div class="ax-hero__actions">
+        {%- if section.settings.button_label != blank -%}
+          <a class="ax-btn ax-btn--primary" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a class="ax-btn ax-btn--ghost" href="{{ section.settings.button_link_2 | default: routes.all_products_collection_url }}">
+            {{ section.settings.button_label_2 }}
+          </a>
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </section>

@@ -108,6 +108,10 @@
 
     {% sections 'footer-group' %}
 
+    {% if template.name == 'product' %}
+      {% render 'arvenixo-sticky-atc', product: product %}
+    {% endif %}
+
     {% render 'search-modal' %}
 
     {% if settings.quick_add or settings.mobile_quick_add %}

@@ -1,1 +1,380 @@
-{"sections":{"hero_jVaWmY":{"type":"hero","blocks":{"trustpilot_gEJ6Xj":{"type":"_trustpilot","name":"Trustpilot","settings":{"text":"<p>Betroet af over 200+ kunder<\/p>","text_color":"#ffffff","icon_size":16,"font_size":14},"blocks":{}},"text_YLPk4p":{"type":"text","name":"t:names.heading","settings":{"text":"<p>Smart teknologi som gjør hverdagen enklere<\/p>","width":"fit-content","max_width":"narrow","alignment":"left","type_preset":"h1","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground-heading)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_nabFb7":{"type":"text","name":"t:names.text","settings":{"text":"<p>Oppdag våre mest populære robotstøvsugere og robotgressklippere – designet for å spare deg tid, gi renere hjem og gjøre vedlikeholdet enklere enn noen gang.<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"button_H9gpTf":{"type":"button","name":"t:names.button","settings":{"label":"Se våre produkter","link":"shopify:\/\/collections\/all","open_in_new_tab":true,"style_class":"button","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}}},"block_order":["trustpilot_gEJ6Xj","text_YLPk4p","text_nabFb7","button_H9gpTf"],"name":"t:names.hero","settings":{"media_type_1":"image","media_type_2":"image","stack_media_on_mobile":false,"custom_mobile_media":true,"media_type_1_mobile":"image","media_type_2_mobile":"image","link":"","open_in_new_tab":false,"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"space-between","vertical_alignment":"flex-end","align_baseline":false,"horizontal_alignment_flex_direction_column":"center","vertical_alignment_flex_direction_column":"center","gap":24,"section_width":"page-width","section_height":"full-screen","section_height_custom":50,"color_scheme":"scheme-b159fd43-71b0-4f72-941c-56e11448e339","toggle_overlay":true,"overlay_color":"#00000080","overlay_style":"solid","gradient_direction":"to bottom","blurred_reflection":false,"reflection_opacity":4,"padding-block-start":100,"padding-block-end":72}},"ups_bzDww8":{"type":"ups","blocks":{"feature_kQR6RP":{"type":"feature","settings":{"text":"Fri frakt over 799,- "}},"feature_pAWNAf":{"type":"feature","settings":{"text":"Levering 1–3 virkedager"}},"feature_U7rMp9":{"type":"feature","settings":{"text":"30 dagers fornøydgaranti"}},"feature_HYJycc":{"type":"feature","settings":{"text":"Norsk kundeservice"}}},"block_order":["feature_kQR6RP","feature_pAWNAf","feature_U7rMp9","feature_HYJycc"],"name":"Feature List","settings":{"padding_top":20,"padding_bottom":20,"bg_color":"#ffffff","box_bg_color":"#ffffff","text_color":"#000000","border_color":"#dadada","icon_bg_color":"#306fc5","icon_check_color":"#ffffff"}},"custom_header_FjPBH4":{"type":"custom-header","blocks":{"product_list_content_Fbberw":{"type":"_product-list-content","name":"t:names.group","settings":{"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"center","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"center","vertical_alignment_flex_direction_column":"space-between","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":60,"padding-block-end":20,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_qbWUae":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<h4>Populære kategorier<\/h4>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_list_text_qbWUae"]}},"block_order":["product_list_content_Fbberw"],"name":"Custom header","settings":{}},"collections_list_fEtqcf":{"type":"collections-list","blocks":{"collection_rWfJEN":{"type":"collection","settings":{"collection":"roborock","custom_title":""}},"collection_FUEtWX":{"type":"collection","disabled":true,"settings":{"collection":"xiaomi","custom_title":""}},"collection_Aiwn7p":{"type":"collection","settings":{"collection":"dreame","custom_title":""}},"collection_rBUTAN":{"type":"collection","settings":{"collection":"ecovacs","custom_title":""}},"collection_WygpKT":{"type":"collection","settings":{"collection":"irobot-roomba","custom_title":""}}},"block_order":["collection_rWfJEN","collection_FUEtWX","collection_Aiwn7p","collection_rBUTAN","collection_WygpKT"],"name":"Circular Category List","settings":{"padding_top":12,"padding_bottom":12}},"custom_header_hKt47U":{"type":"custom-header","blocks":{"product_list_content_DJRFx4":{"type":"_product-list-content","name":"t:names.group","settings":{"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"space-between","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"center","vertical_alignment_flex_direction_column":"space-between","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":40,"padding-block-end":20,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_t7immi":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<h4>NYHETER<\/h4>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_list_button_3hTHMn":{"type":"_product-list-button","name":"t:names.product_list_button","settings":{"label":"Se alle","open_in_new_tab":false,"style_class":"cc-link","url":"shopify:\/\/collections\/dreame","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}}},"block_order":["product_list_text_t7immi","product_list_button_3hTHMn"]}},"block_order":["product_list_content_DJRFx4"],"name":"Custom header","settings":{}},"featured_collection_6wbMdc":{"type":"featured-collection","blocks":{"static-product-card":{"type":"_product-card","static":true,"settings":{"product_card_gap":0,"inherit_color_scheme":false,"color_scheme":"scheme-0a818fd4-9497-4c38-aaf4-46ba2dbee123","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_card_gallery_yHM8AN":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"portrait","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_title_XQCfJq":{"type":"product-title","name":"t:names.title","settings":{"width":"fit-content","max_width":"normal","alignment":"left","type_preset":"custom","font":"var(--font-heading--family)","font_size":"1.5rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground-heading)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_badges_idXHXx":{"type":"product-badges","name":"Product Status Badges","disabled":true,"settings":{},"blocks":{}},"price_F9JFpa":{"type":"price","name":"t:names.product_price","settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons_NndJAJ":{"type":"buy-buttons","name":"t:names.product_buy_buttons","settings":{"stacking":false,"show_pickup_availability":true,"gift_card_form":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","disabled":true,"static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","static":true,"settings":{"style_class":"button-secondary"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","disabled":true,"static":true,"settings":{},"blocks":{}}},"block_order":[]}},"block_order":["product_card_gallery_yHM8AN","product_title_XQCfJq","product_badges_idXHXx","price_F9JFpa","buy_buttons_NndJAJ"]}},"name":"Slider template","settings":{"collection":"dreame","block_heading":"","enable_autoplay":false,"autoplay_interval":3,"desktop_slides":4,"desktop_spacing":14,"desktop_arrows":true,"desktop_progress_bar":true,"tablet_slides":3,"mobile_slides":1.8,"mobile_spacing":16,"mobile_arrows":true,"mobile_progress_bar":true}},"icons_with_text_QYQFRg":{"type":"icons-with-text","blocks":{"badge_yjEgUL":{"type":"badge","settings":{"custom_svg":"","title":"Gratis frakt","text":"Vi tilbyr gratis levering til pakkeboks ved bestillinger over 799 NOK."}},"badge_9LLbma":{"type":"badge","settings":{"custom_svg":"","title":"Enkel og sikker betaling","text":"Lett å betale, trygt å stole på og raskt å gjennomføre."}},"badge_JX8gtr":{"type":"badge","settings":{"custom_svg":"","title":"Fornøydgaranti","text":"Prøv helt risikofritt, helt uforpliktende i 30 dager"}}},"block_order":["badge_yjEgUL","badge_9LLbma","badge_JX8gtr"],"name":"Trust Badges","settings":{"bg_color":"#f7f7f7","margin_top":0,"margin_bottom":32,"padding_top":36,"padding_bottom":36}},"section_rigzpy":{"type":"section","blocks":{"image_9V7JD9":{"type":"image","settings":{"link":"","image_ratio":"square","width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","border":"none","border_width":1,"border_opacity":100,"border_radius":14,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"group_h36DCq":{"type":"group","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"custom","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"placeholder":"","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"text_QqmnKA":{"type":"text","name":"t:names.heading","settings":{"text":"<p>Skånsom, effektiv og laget for robotmopp<\/p>","width":"fit-content","max_width":"none","alignment":"left","type_preset":"h3","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":10,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_dNUViP":{"type":"text","settings":{"text":"<p>EcoBot Clean er en plantebasert rengjøringsløsning som er utviklet spesielt for robotstøvsugere med moppfunktion. Den fjerner smuss, bakterier og lukt uten å skade gulv eller maskin – perfekt for hjem med barn og husdyr.<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":20,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"button_ifXQQf":{"type":"button","settings":{"label":"Kjøp EcoBot Clean","link":"shopify:\/\/collections\/all","open_in_new_tab":false,"style_class":"button","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}}},"block_order":["text_QqmnKA","text_dNUViP","button_ifXQQf"]}},"block_order":["image_9V7JD9","group_h36DCq"],"name":"t:names.image_with_text","settings":{"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":32,"section_width":"page-width","section_height":"","section_height_custom":50,"color_scheme":"scheme-4","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":40,"padding-block-end":40}},"product_list_RAirNw":{"type":"product-list","blocks":{"static-header":{"type":"_product-list-content","name":"t:names.header","static":true,"settings":{"content_direction":"row","vertical_on_mobile":false,"horizontal_alignment":"space-between","vertical_alignment":"flex-end","align_baseline":true,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_MgVfwx":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<h3>{{ closest.collection.title }}<\/h3>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_list_button_BbfRy8":{"type":"_product-list-button","name":"t:names.product_list_button","settings":{"label":"Se alle","open_in_new_tab":false,"style_class":"cc-link","url":"shopify:\/\/collections\/roborock-s8-maxv-ultra","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}}},"block_order":["product_list_text_MgVfwx","product_list_button_BbfRy8"]},"static-product-card":{"type":"_product-card","name":"t:names.product_card","static":true,"settings":{"product_card_gap":4,"inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_card_gallery_xWWq6T":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"adapt","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_title_A764Kq":{"type":"product-title","name":"t:names.product_title","settings":{"width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":4,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"price_gciEHw":{"type":"price","name":"t:names.product_price","settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"h6","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons_ifbEWM":{"type":"buy-buttons","name":"t:names.product_buy_buttons","settings":{"stacking":true,"show_pickup_availability":true,"gift_card_form":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","static":true,"settings":{"style_class":"button-secondary"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","static":true,"settings":{},"blocks":{}}},"block_order":[]}},"block_order":["product_card_gallery_xWWq6T","product_title_A764Kq","price_gciEHw","buy_buttons_ifbEWM"]}},"name":"t:names.products_grid","settings":{"collection":"all","layout_type":"grid","carousel_on_mobile":true,"max_products":8,"columns":4,"mobile_columns":"2","mobile_card_size":"60cqw","columns_gap":8,"rows_gap":24,"icons_style":"arrow","icons_shape":"none","section_width":"page-width","horizontal_alignment":"flex-start","gap":28,"color_scheme":"scheme-1","padding-block-start":48,"padding-block-end":48}},"section_M8GUFp":{"type":"section","blocks":{"group_k83FLF":{"type":"group","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"custom","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","link":"","open_in_new_tab":false,"placeholder":"","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"text_P4tdh3":{"type":"text","name":"t:names.heading","settings":{"text":"<p><em><strong>Gi robotstøvsugeren din maksimal ytelse<\/strong><\/em><\/p>","width":"fit-content","max_width":"narrow","alignment":"left","type_preset":"h3","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":10,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_ytJHFT":{"type":"text","settings":{"text":"<p>Oppgrader robotstøvsugeren med vedlikeholdssett tilpasset merker som <strong>Roomba, Roborock, Dreame, Xiaomi, Ecovacs, Neatsvor<\/strong> og flere. Riktige filtre og børster gir sterkere sugekraft, renere luft og lengre levetid.<\/p><p>Regelmessig vedlikehold holder roboten i toppform – uansett modell.<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":20,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"button_eLJWJ3":{"type":"button","settings":{"label":"Se alle vedlikeholdssett","link":"shopify:\/\/collections\/vedlikeholdsett","open_in_new_tab":false,"style_class":"button","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}}},"block_order":["text_P4tdh3","text_ytJHFT","button_eLJWJ3"]},"image_KaKBKQ":{"type":"image","settings":{"link":"","image_ratio":"square","width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","border":"none","border_width":1,"border_opacity":100,"border_radius":14,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["group_k83FLF","image_KaKBKQ"],"name":"t:names.image_with_text","settings":{"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":32,"section_width":"page-width","section_height":"","section_height_custom":50,"color_scheme":"scheme-4","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":40,"padding-block-end":40}},"custom_header_MEeXkz":{"type":"custom-header","blocks":{"product_list_content_qQwL4V":{"type":"_product-list-content","name":"t:names.group","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"center","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"center","vertical_alignment_flex_direction_column":"space-between","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":80,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_pKTHaw":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<p>Se hva kundene våre sier<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h3","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_list_text_pKTHaw"]}},"block_order":["product_list_content_qQwL4V"],"name":"Custom header","settings":{}},"testimonial_eJDb7Y":{"type":"testimonial","blocks":{"testimonial_4wmy3L":{"type":"testimonial","settings":{"review_text":"Varen ankom som avtalt og ingen problemer.Skulle bare ønske at det var litt mer lukt på dette stoffet, da det var i svakeste laget.","customer_name":"PAUL NORDHEIM"}},"testimonial_NptM7a":{"type":"testimonial","settings":{"review_text":"Alt var i henhold til bestilling. Raskt og greit.","customer_name":"Marit Helness"}},"testimonial_MAfpqr":{"type":"testimonial","settings":{"review_text":"Bestilte et vedlikeholdssett til robotstøvsugeren. Nettbutikken hadde det jeg trengte, og leveringen kom raskt. Produktet var godt pakket inn, og alt virket som det skulle. En positiv handleopplevelse – handler gjerne her igjen.","customer_name":"Laura M.Markus ask"}}},"block_order":["testimonial_4wmy3L","testimonial_NptM7a","testimonial_MAfpqr"],"name":"Testimonial Carousel","settings":{"heading":"","subheading":"","bg_color":"rgba(0,0,0,0)","margin_top":0,"margin_bottom":0,"padding_top":16,"padding_bottom":60}},"section_mUBpCb":{"type":"section","blocks":{"text_JQFNar":{"type":"text","name":"t:names.heading","settings":{"text":"<p>Ofte Stilte Spørsmål<\/p>","width":"fit-content","max_width":"narrow","alignment":"left","type_preset":"h3","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"accordion_GwejL6":{"type":"accordion","name":"t:names.accordion","settings":{"icon":"caret","dividers":true,"type_preset":"h5","inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"accordion_row_zYcJDq":{"type":"_accordion-row","settings":{"heading":"Passer reservedelene til min robotstøvsuger?","open_by_default":false,"icon":"none","width":20},"blocks":{"text_PDtTJe":{"type":"text","settings":{"text":"<p>Ja, hver produktside viser tydelig hvilke modeller delene passer til. Er du i tvil, er du alltid velkommen til å kontakte oss – vi hjelper deg gjerne.<\/p>","width":"100%","max_width":"none","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_PDtTJe"]},"accordion_row_XGiMpL":{"type":"_accordion-row","settings":{"heading":"Hvor lang leveringstid har dere?","open_by_default":false,"icon":"none","width":20},"blocks":{"text_tFtPtN":{"type":"text","settings":{"text":"<p>Normal leveringstid er <strong>2–4 virkedager<\/strong>. Alle bestillinger sendes raskt fra vårt lager, slik at du får produktene dine så fort som mulig.<\/p>","width":"100%","max_width":"none","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_tFtPtN"]},"accordion_row_3aTVNH":{"type":"_accordion-row","name":"t:names.accordion_row","settings":{"heading":"Er produktene originale?","open_by_default":false,"icon":"none","width":20},"blocks":{"text_Xw867F":{"type":"text","name":"t:names.text","settings":{"text":"<p>Vi selger <strong>kompatible<\/strong> produkter. Alle kompatible deler er grundig testet for kvalitet og ytelse. <\/p>","width":"100%","max_width":"none","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_Xw867F"]},"accordion_row_RTVQTW":{"type":"_accordion-row","name":"t:names.accordion_row","settings":{"heading":"Kan jeg returnere en vare hvis jeg ombestemmer meg?","open_by_default":false,"icon":"none","width":20},"blocks":{"text_xD7yRL":{"type":"text","name":"t:names.text","settings":{"text":"<p>Ja, du har <strong>30 dagers returrett<\/strong> på ubrukt vare i original emballasje. Kontakt oss for hjelp med retur.<\/p>","width":"100%","max_width":"none","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_xD7yRL"]},"accordion_row_eV4UDF":{"type":"_accordion-row","name":"t:names.accordion_row","settings":{"heading":"Hva gjør jeg hvis robotstøvsugeren min fortsatt ikke fungerer etter bytte av deler?","open_by_default":false,"icon":"none","width":20},"blocks":{"text_JNAzT3":{"type":"text","name":"t:names.text","settings":{"text":"<p>Sjekk gjerne våre vedlikeholdstips på produktsiden. Hvis problemet vedvarer, kan du kontakte oss – vi hjelper deg med feilsøking og anbefaling av riktige deler.<\/p>","width":"100%","max_width":"none","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_JNAzT3"]}},"block_order":["accordion_row_zYcJDq","accordion_row_XGiMpL","accordion_row_3aTVNH","accordion_row_RTVQTW","accordion_row_eV4UDF"]}},"block_order":["text_JQFNar","accordion_GwejL6"],"name":"t:names.faq_section","settings":{"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":32,"section_width":"page-width","section_height":"","section_height_custom":50,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":48,"padding-block-end":48}}},"order":["hero_jVaWmY","ups_bzDww8","custom_header_FjPBH4","collections_list_fEtqcf","custom_header_hKt47U","featured_collection_6wbMdc","icons_with_text_QYQFRg","section_rigzpy","product_list_RAirNw","section_M8GUFp","custom_header_MEeXkz","testimonial_eJDb7Y","section_mUBpCb"]}
+{
+  "sections": {
+    "ax_hero": {
+      "type": "arvenixo-hero",
+      "settings": {
+        "eyebrow": "ARVENIXO",
+        "heading": "Elevate everyday",
+        "text": "Premium MagSafe cases and beauty tech designed for modern living. Free standard shipping on every order.",
+        "button_label": "Shop bestsellers",
+        "button_link": "shopify://collections/all",
+        "button_label_2": "Shop phone cases",
+        "button_link_2": "shopify://collections/all",
+        "min_height": 85,
+        "overlay_opacity": 45,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "ax_trust": {
+      "type": "arvenixo-trust-strip",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free standard shipping",
+            "text": "On every order · arrives in 7–10 business days"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "Secure checkout",
+            "text": "Encrypted payments · Shop Pay ready"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "30-day returns",
+            "text": "Clear policy · support@arvenixo.com"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "icon": "card",
+            "title": "Order tracking",
+            "text": "Tracking emailed when your order ships"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "ax_categories": {
+      "type": "arvenixo-categories",
+      "blocks": {
+        "c1": {
+          "type": "category",
+          "settings": {
+            "title": "Phone Cases",
+            "text": "MagSafe-ready protection with everyday style.",
+            "cta": "Shop cases",
+            "link": "shopify://collections/all"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "title": "Beauty Tech",
+            "text": "At-home LED and facial care devices.",
+            "cta": "Shop beauty",
+            "link": "shopify://collections/all"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "title": "Smart Tech",
+            "text": "Cameras, gimbals, and everyday gadgets.",
+            "cta": "Shop tech",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "heading": "Shop by category",
+        "subheading": "Focused essentials for everyday life — cases, beauty tech, and smart gadgets."
+      }
+    },
+    "ax_bestsellers_header": {
+      "type": "custom-header",
+      "blocks": {
+        "content": {
+          "type": "_product-list-content",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "center",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 12,
+            "width": "fill",
+            "padding-block-start": 48,
+            "padding-block-end": 12
+          },
+          "blocks": {
+            "title": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h3>Bestsellers</h3>",
+                "width": "fit-content",
+                "type_preset": "h3",
+                "color": "var(--color-foreground-heading)"
+              }
+            },
+            "link": {
+              "type": "_product-list-button",
+              "settings": {
+                "label": "View all",
+                "style_class": "cc-link",
+                "url": "shopify://collections/all"
+              }
+            }
+          },
+          "block_order": ["title", "link"]
+        }
+      },
+      "block_order": ["content"],
+      "settings": {}
+    },
+    "ax_bestsellers": {
+      "type": "featured-collection",
+      "blocks": {
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 0,
+            "inherit_color_scheme": true,
+            "border": "none",
+            "border_radius": 0
+          },
+          "blocks": {
+            "gallery": {
+              "type": "_product-card-gallery",
+              "settings": { "image_ratio": "square", "border": "none", "border_radius": 8 }
+            },
+            "title": {
+              "type": "product-title",
+              "settings": {
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1rem",
+                "color": "var(--color-foreground-heading)"
+              }
+            },
+            "price": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left"
+              }
+            },
+            "buy": {
+              "type": "buy-buttons",
+              "settings": { "stacking": false, "show_pickup_availability": false },
+              "blocks": {
+                "quantity": { "type": "quantity", "disabled": true, "static": true, "settings": {} },
+                "add-to-cart": { "type": "add-to-cart", "static": true, "settings": { "style_class": "button" } },
+                "accelerated-checkout": { "type": "accelerated-checkout", "disabled": true, "static": true, "settings": {} }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": ["gallery", "title", "price", "buy"]
+        }
+      },
+      "settings": {
+        "collection": "all",
+        "enable_autoplay": false,
+        "desktop_slides": 4,
+        "desktop_spacing": 16,
+        "desktop_arrows": true,
+        "desktop_progress_bar": false,
+        "tablet_slides": 3,
+        "mobile_slides": 1.6,
+        "mobile_spacing": 12,
+        "mobile_arrows": true,
+        "mobile_progress_bar": false
+      }
+    },
+    "ax_story": {
+      "type": "section",
+      "blocks": {
+        "copy": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "gap": 14,
+            "width": "custom",
+            "custom_width": 100,
+            "vertical_alignment": "center"
+          },
+          "blocks": {
+            "h": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Designed for modern living</p>",
+                "type_preset": "h3",
+                "width": "fit-content",
+                "max_width": "narrow"
+              }
+            },
+            "p": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Arvenixo selects practical essentials that feel premium in daily use — from MagSafe cases with real everyday function to beauty devices that fit a calm home ritual. Every product page is built for clarity: shipping, returns, and support before you buy.</p>",
+                "type_preset": "rte",
+                "width": "fit-content",
+                "max_width": "normal"
+              }
+            },
+            "btn": {
+              "type": "button",
+              "settings": {
+                "label": "About Arvenixo",
+                "link": "shopify://pages/about-us",
+                "style_class": "button"
+              }
+            }
+          },
+          "block_order": ["h", "p", "btn"]
+        },
+        "img": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "square",
+            "width": "fill",
+            "border": "none",
+            "border_radius": 12
+          }
+        }
+      },
+      "block_order": ["copy", "img"],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "gap": 32,
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    },
+    "ax_faq": {
+      "type": "section",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Frequently asked questions</p>",
+            "type_preset": "h3",
+            "width": "fit-content"
+          }
+        },
+        "accordion": {
+          "type": "accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": true,
+            "type_preset": "h5"
+          },
+          "blocks": {
+            "r1": {
+              "type": "_accordion-row",
+              "settings": { "heading": "Do you offer free shipping?", "icon": "none" },
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Yes. Arvenixo offers <strong>free standard shipping on all orders</strong>. Estimated delivery is <strong>7–10 business days</strong> after your order ships. You’ll receive tracking by email.</p>",
+                    "type_preset": "rte",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["t"]
+            },
+            "r2": {
+              "type": "_accordion-row",
+              "settings": { "heading": "What is your return policy?", "icon": "none" },
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>You have <strong>30 days</strong> after receiving your item to request a return for eligible products in original condition. Opened personal-care/beauty devices may have hygiene restrictions — defective or incorrect items are always covered. Contact <strong>support@arvenixo.com</strong>.</p>",
+                    "type_preset": "rte",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["t"]
+            },
+            "r3": {
+              "type": "_accordion-row",
+              "settings": { "heading": "How do I choose the right iPhone case model?", "icon": "none" },
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Select your exact iPhone model on the product page before adding to cart. If you’re unsure, check Settings → General → About on your phone, or message support and we’ll help.</p>",
+                    "type_preset": "rte",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["t"]
+            },
+            "r4": {
+              "type": "_accordion-row",
+              "settings": { "heading": "Are beauty devices returnable?", "icon": "none" },
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Unopened beauty devices may be returned within 30 days. For hygiene reasons, opened personal-care products generally aren’t eligible unless they arrive damaged, defective, or incorrect.</p>",
+                    "type_preset": "rte",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["t"]
+            },
+            "r5": {
+              "type": "_accordion-row",
+              "settings": { "heading": "How can I contact support?", "icon": "none" },
+              "blocks": {
+                "t": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Email <strong>support@arvenixo.com</strong> or use the Contact page. We typically reply within 1–2 business days.</p>",
+                    "type_preset": "rte",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["t"]
+            }
+          },
+          "block_order": ["r1", "r2", "r3", "r4", "r5"]
+        }
+      },
+      "block_order": ["heading", "accordion"],
+      "settings": {
+        "content_direction": "column",
+        "gap": 24,
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 48,
+        "padding-block-end": 64
+      }
+    }
+  },
+  "order": [
+    "ax_hero",
+    "ax_trust",
+    "ax_categories",
+    "ax_bestsellers_header",
+    "ax_bestsellers",
+    "ax_story",
+    "ax_faq"
+  ]
+}

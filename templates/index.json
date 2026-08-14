@@ -247,36 +247,40 @@
           "type": "collection",
           "settings": {
             "collection": "roborock",
-            "custom_title": ""
+            "custom_title": "Roborock",
+            "custom_asset_image": "category_roborock.jpg"
           }
         },
         "collection_FUEtWX": {
           "type": "collection",
-          "disabled": true,
           "settings": {
             "collection": "xiaomi",
-            "custom_title": ""
+            "custom_title": "Xiaomi",
+            "custom_asset_image": "category_xiaomi.jpg"
           }
         },
         "collection_Aiwn7p": {
           "type": "collection",
           "settings": {
             "collection": "dreame",
-            "custom_title": ""
+            "custom_title": "Dreame",
+            "custom_asset_image": "category_dreame.jpg"
           }
         },
         "collection_rBUTAN": {
           "type": "collection",
           "settings": {
             "collection": "ecovacs",
-            "custom_title": ""
+            "custom_title": "Ecovacs",
+            "custom_asset_image": "category_ecovacs.jpg"
           }
         },
         "collection_WygpKT": {
           "type": "collection",
           "settings": {
             "collection": "irobot-roomba",
-            "custom_title": ""
+            "custom_title": "iRobot",
+            "custom_asset_image": "category_irobot.jpg"
           }
         }
       },
@@ -547,7 +551,8 @@
           "settings": {
             "custom_svg": "",
             "title": "Free shipping",
-            "text": "We offer free delivery on orders over ."
+            "text": "We offer free delivery on orders over .",
+            "custom_asset_image": "trust_shipping.jpg"
           }
         },
         "badge_9LLbma": {
@@ -555,7 +560,8 @@
           "settings": {
             "custom_svg": "",
             "title": "Easy and secure payment",
-            "text": "Easy to pay, safe to trust."
+            "text": "Easy to pay, safe to trust.",
+            "custom_asset_image": "trust_secure.jpg"
           }
         },
         "badge_JX8gtr": {
@@ -563,7 +569,8 @@
           "settings": {
             "custom_svg": "",
             "title": "Satisfaction guarantee",
-            "text": "Try completely risk-free for 30 days."
+            "text": "Try completely risk-free for 30 days.",
+            "custom_asset_image": "trust_guarantee.jpg"
           }
         }
       },
@@ -601,7 +608,8 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-end": 0,
+            "custom_asset_image": "eco_cleaner.jpg"
           },
           "blocks": {}
         },

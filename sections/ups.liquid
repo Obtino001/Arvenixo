@@ -1,0 +1,241 @@
+<style>
+  #shopify-section-{{ section.id }} .showin-desktop {
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} .feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .feature-box {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid {{ section.settings.border_color }};
+    color: {{ section.settings.text_color }};
+    background: {{ section.settings.box_bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} .feature-box span {
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .check-icon rect {
+    fill: {{ section.settings.icon_bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} .check-icon path {
+    fill: {{ section.settings.icon_check_color }};
+  }
+
+  #shopify-section-{{ section.id }} .feature-box svg {
+    width: 26px;
+    height: 26px;
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .showin-mobile {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-scroll-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: max-content;
+    }
+
+    #shopify-section-{{ section.id }} .feature-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    #shopify-section-{{ section.id }} .feature-box {
+      font-size: 13px;
+      padding: 4px 8px;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      scroll-snap-align: start;
+    }
+
+    #shopify-section-{{ section.id }} .feature-box svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 4px;
+    }
+
+    /* scrollbar hide */
+    #shopify-section-{{ section.id }} .showin-mobile::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .showin-mobile {
+      scrollbar-width: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .showin-mobile {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .showin-desktop {
+      display: none !important;
+    }
+    .showin-mobile {
+      display: block !important;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.bg_color }};
+    }
+  }
+</style>
+
+<div class="showin-desktop feature-item">
+  {% comment %} Desktop view - all in one row {% endcomment %}
+  {% for block in section.blocks %}
+    <div class="feature-box">
+      <svg class="check-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="24"/>
+        <path d="M37.8222 14.9405C37.7048 14.6573 37.5327 14.4 37.3157 14.1833C37.0991 13.9664 36.8418 13.7943 36.5585 13.6769C36.2753 13.5595 35.9717 13.499 35.6651 13.499C35.3585 13.499 35.0549 13.5595 34.7717 13.6769C34.4884 13.7943 34.2311 13.9664 34.0144 14.1833L19.3336 28.8671L13.985 23.5156C13.5472 23.0778 12.9535 22.8319 12.3344 22.8319C11.7153 22.8319 11.1215 23.0778 10.6837 23.5156C10.2459 23.9534 10 24.5471 10 25.1662C10 25.7853 10.2459 26.3791 10.6837 26.8169L17.6829 33.8161C17.8996 34.033 18.1569 34.2051 18.4402 34.3225C18.7234 34.4399 19.027 34.5003 19.3336 34.5003C19.6402 34.5003 19.9438 34.4399 20.227 34.3225C20.5102 34.2051 20.7676 34.033 20.9842 33.8161L37.3157 17.4846C37.5327 17.2679 37.7048 17.0106 37.8222 16.7274C37.9396 16.4441 38 16.1405 38 15.8339C38 15.5273 37.9396 15.2237 37.8222 14.9405Z"/>
+      </svg>
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {% endfor %}
+</div>
+
+{% comment %} Mobile view - 2 rows with synchronized scroll {% endcomment %}
+<div class="showin-mobile">
+  <div class="mobile-scroll-container">
+    {% assign half = section.blocks.size | divided_by: 2.0 | ceil %}
+    
+    <div class="feature-row">
+      {% for block in section.blocks limit: half %}
+        <div class="feature-box">
+          <svg class="check-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="24"/>
+            <path d="M37.8222 14.9405C37.7048 14.6573 37.5327 14.4 37.3157 14.1833C37.0991 13.9664 36.8418 13.7943 36.5585 13.6769C36.2753 13.5595 35.9717 13.499 35.6651 13.499C35.3585 13.499 35.0549 13.5595 34.7717 13.6769C34.4884 13.7943 34.2311 13.9664 34.0144 14.1833L19.3336 28.8671L13.985 23.5156C13.5472 23.0778 12.9535 22.8319 12.3344 22.8319C11.7153 22.8319 11.1215 23.0778 10.6837 23.5156C10.2459 23.9534 10 24.5471 10 25.1662C10 25.7853 10.2459 26.3791 10.6837 26.8169L17.6829 33.8161C17.8996 34.033 18.1569 34.2051 18.4402 34.3225C18.7234 34.4399 19.027 34.5003 19.3336 34.5003C19.6402 34.5003 19.9438 34.4399 20.227 34.3225C20.5102 34.2051 20.7676 34.033 20.9842 33.8161L37.3157 17.4846C37.5327 17.2679 37.7048 17.0106 37.8222 16.7274C37.9396 16.4441 38 16.1405 38 15.8339C38 15.5273 37.9396 15.2237 37.8222 14.9405Z"/>
+          </svg>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="feature-row">
+      {% for block in section.blocks offset: half %}
+        <div class="feature-box">
+          <svg class="check-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="24"/>
+            <path d="M37.8222 14.9405C37.7048 14.6573 37.5327 14.4 37.3157 14.1833C37.0991 13.9664 36.8418 13.7943 36.5585 13.6769C36.2753 13.5595 35.9717 13.499 35.6651 13.499C35.3585 13.499 35.0549 13.5595 34.7717 13.6769C34.4884 13.7943 34.2311 13.9664 34.0144 14.1833L19.3336 28.8671L13.985 23.5156C13.5472 23.0778 12.9535 22.8319 12.3344 22.8319C11.7153 22.8319 11.1215 23.0778 10.6837 23.5156C10.2459 23.9534 10 24.5471 10 25.1662C10 25.7853 10.2459 26.3791 10.6837 26.8169L17.6829 33.8161C17.8996 34.033 18.1569 34.2051 18.4402 34.3225C18.7234 34.4399 19.027 34.5003 19.3336 34.5003C19.6402 34.5003 19.9438 34.4399 20.227 34.3225C20.5102 34.2051 20.7676 34.033 20.9842 33.8161L37.3157 17.4846C37.5327 17.2679 37.7048 17.0106 37.8222 16.7274C37.9396 16.4441 38 16.1405 38 15.8339C38 15.5273 37.9396 15.2237 37.8222 14.9405Z"/>
+          </svg>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Feature List",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "box_bg_color",
+      "label": "Feature Box Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#dadada"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
+      "default": "#464f3e"
+    },
+    {
+      "type": "color",
+      "id": "icon_check_color",
+      "label": "Icon Check Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Gratis levering"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature List",
+      "blocks": [
+        { "type": "feature", "settings": { "text": "Gratis levering" } },
+        { "type": "feature", "settings": { "text": "1-3 hverdages levering" } },
+        { "type": "feature", "settings": { "text": "Nem betaling" } },
+        { "type": "feature", "settings": { "text": "Kundeservice alle hverdage" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

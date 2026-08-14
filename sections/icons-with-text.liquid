@@ -1,0 +1,291 @@
+{%- style -%}
+  .section-{{ section.id }}-spacing {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    overflow: hidden;
+  }
+  
+  .ic-sec:has(.section-{{ section.id }}-spacing){
+    background-color: {{ section.settings.bg_color }};
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-spacing {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .ic-sec:has(.section-{{ section.id }}-spacing){
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
+
+  .horizon-trust-badges {
+    max-width: var(--page-width, 1200px);
+    margin: 0 auto;
+  }
+
+  /* 📱 MOBILE SLIDER LOGIC */
+  .horizon-trust-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .horizon-trust-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  /* 💻 DESKTOP GRID LOGIC */
+  @media screen and (min-width: 990px) {
+    .horizon-trust-grid {
+      flex-wrap: wrap;
+      justify-content: center;
+      scroll-snap-type: none;
+      overflow-x: visible;
+      gap: 16px;
+    }
+  }
+
+  /* CARD STYLING */
+  .horizon-trust-card {
+    /* Shows ~1.2 cards on mobile so the user knows they can swipe */
+    flex: 0 0 calc(85vw - 24px); 
+    scroll-snap-align: center;
+    border: 1px solid #1A394580;
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .horizon-trust-card {
+      flex: 1 1 calc(50% - 16px); /* 2 per row on tablet */
+      scroll-snap-align: start;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .horizon-trust-card {
+      flex: 1 1 calc(25% - 24px); /* 4 per row on desktop */
+    }
+  }
+
+  /* ICON CONTAINER */
+  .horizon-trust-icon {
+    flex-shrink: 0;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .horizon-trust-icon img,
+  .horizon-trust-icon svg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* TEXT CONTAINER & VERTICAL DIVIDER */
+  .horizon-trust-content {
+    border-left: 1px solid #d1d5db; /* Vertical divider line */
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .horizon-trust-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+  }
+
+  .horizon-trust-text {
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+    color: #4b5563;
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-spacing">
+  <div class="horizon-trust-badges">
+    <div class="horizon-trust-grid">
+      
+      {%- for block in section.blocks -%}
+        <div class="horizon-trust-card" {{ block.shopify_attributes }}>
+          
+          <div class="horizon-trust-icon">
+            {%- if block.settings.custom_svg != blank -%}
+              {{ block.settings.custom_svg }}
+            {%- elsif block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 100 }}" 
+                   alt="{{ block.settings.title | escape }}" 
+                   loading="lazy" 
+                   width="50" 
+                   height="50">
+            {%- else -%}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+            {%- endif -%}
+          </div>
+          
+          <div class="horizon-trust-content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="horizon-trust-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.text != blank -%}
+              <p class="horizon-trust-text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+          
+        </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust Badges",
+  "tag": "section",
+  "class": "section ic-sec",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top margin",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom margin",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon Image",
+          "info": "Upload a PNG or JPG icon"
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "Custom SVG Code",
+          "info": "Paste raw SVG code here for crispest quality. Overrides image above."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Gratis Fragt"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Vi tilbyder gratis levering til pakkeshop ved ordrer over 599 DKK."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Badges",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Gratis Fragt",
+            "text": "Vi tilbyder gratis levering til pakkeshop ved ordrer over 599 DKK."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Nem Og Sikker Betaling",
+            "text": "Enkelt at betale, trygt at stole på og hurtigt at gennemføre."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Bytteservice",
+            "text": "Vi tilbyder bytteservice 14 dage fra modtagelse."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "title": "100% Tilfredshed",
+            "text": "Din glæde er vores prioritet."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

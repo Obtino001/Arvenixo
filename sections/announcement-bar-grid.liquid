@@ -1,0 +1,401 @@
+{% if section.blocks.size > 1 %}
+  <script
+    src="{{ 'announcement-bar.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+{% endif %}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<aside
+  class="feature-announcement-bar spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;"
+>
+  {% liquid
+    assign autoplay = false
+    assign show_arrows = false
+    if section.blocks.size > 1
+      assign autoplay = true
+      assign show_arrows = true
+    endif
+  %}
+
+  <announcement-bar-component
+    class="feature-announcement-bar__slider"
+    {% if autoplay == true %}
+      autoplay="{{ section.settings.speed }}" aria-live="polite"
+    {% endif %}
+  >
+    {% if show_arrows %}
+      <div class="feature-announcement-bar__arrows-mobile">
+        {% render 'slideshow-arrows', icon_style: 'chevron' %}
+      </div>
+    {% endif %}
+
+    <div class="feature-announcement-bar__slides">
+      {% for block in section.blocks %}
+        {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
+        {%- if plain_text != '' -%}
+          <slideshow-slide
+            ref="slides[]"
+            class="feature-announcement-bar__slide custom-typography {% if block.settings.font_size != "" %}custom-font-size{% endif %} {% if block.settings.weight != "" %}custom-font-weight{% endif %}"
+            style="{% render 'typography-style', settings: block.settings, preset: 'custom' %};"
+            {{ block.shopify_attributes }}
+            aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+          >
+            <p class="feature-announcement-bar__text">
+              {% if block.settings.show_icon %}
+                <span class="feature-announcement-bar__icon">
+                  {%- render 'icons', icon: block.settings.icon -%}
+                </span>
+              {% endif %}
+              {{ block.settings.text }}
+            </p>
+
+            {% if block.settings.link != blank %}
+              <a class="feature-announcement-bar__link" href="{{ block.settings.link }}">
+                <span class="visually-hidden">{{ plain_text }}</span>
+              </a>
+            {% endif %}
+          </slideshow-slide>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+  </announcement-bar-component>
+</aside>
+
+{% stylesheet %}
+  .feature-announcement-bar {
+    border-block-end: var(--border-bottom-width) solid var(--color-border);
+  }
+
+  .feature-announcement-bar__slider {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .feature-announcement-bar__slides {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .feature-announcement-bar__slide {
+    position: relative;
+  }
+
+  .feature-announcement-bar__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .feature-announcement-bar__icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  .feature-announcement-bar__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Desktop Grid Layout */
+  @media screen and (min-width: 750px) {
+    .feature-announcement-bar__arrows-mobile {
+      display: none !important;
+    }
+    
+    .feature-announcement-bar__slides {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .feature-announcement-bar__slide {
+      opacity: 1 !important;
+      visibility: visible !important;
+      grid-area: auto !important;
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  /* Mobile Slider Layout (uses existing announcement bar component logic) */
+  @media screen and (max-width: 749px) {
+    .feature-announcement-bar__slider {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .feature-announcement-bar__slides {
+      display: grid;
+      grid: [stack] auto / [stack] auto;
+      max-width: calc(100% - var(--button-size) * 2);
+    }
+
+    .feature-announcement-bar__slide {
+      grid-area: stack;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      place-content: center;
+    }
+
+    .feature-announcement-bar__slide[aria-hidden='true'] {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .feature-announcement-bar__arrows-mobile {
+      display: contents;
+    }
+
+    .feature-announcement-bar__slider slideshow-arrows {
+      padding: 0;
+      mix-blend-mode: normal;
+    }
+
+    .feature-announcement-bar__slider slideshow-arrows .slideshow-control {
+      color: var(--color-foreground);
+    }
+
+    .feature-announcement-bar__slider .slideshow-control {
+      display: flex;
+      padding: 0;
+      width: var(--button-size);
+      height: var(--button-size);
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      animation: none;
+    }
+
+    .feature-announcement-bar__slider .slideshow-control .svg-wrapper {
+      width: var(--icon-size-xs);
+      height: var(--icon-size-xs);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Announcement Grid",
+  "blocks": [
+    {
+      "type": "feature_announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show icon",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "check_mark",
+          "options": [
+            { "value": "award", "label": "Award" },
+            { "value": "box", "label": "Box" },
+            { "value": "briefcase", "label": "Briefcase" },
+            { "value": "calendar", "label": "Calendar" },
+            { "value": "chat_bubble", "label": "Chat bubble" },
+            { "value": "check_mark", "label": "Check mark" },
+            { "value": "check_mark_in_circle", "label": "Check mark in circle" },
+            { "value": "clock", "label": "Clock" },
+            { "value": "credit_card", "label": "Credit card" },
+            { "value": "dollar_sign", "label": "Dollar sign" },
+            { "value": "dryer", "label": "Dryer" },
+            { "value": "eye", "label": "Eye" },
+            { "value": "feather", "label": "Feather" },
+            { "value": "gift", "label": "Gift" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "iron", "label": "Iron" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "leather", "label": "Leather" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "map_pin", "label": "Map pin" },
+            { "value": "pants", "label": "Pants" },
+            { "value": "percent", "label": "Percent" },
+            { "value": "plane", "label": "Plane" },
+            { "value": "price_tag", "label": "Price tag" },
+            { "value": "question_mark", "label": "Question mark" },
+            { "value": "return", "label": "Return" },
+            { "value": "ruler", "label": "Ruler" },
+            { "value": "scissors", "label": "Scissors" },
+            { "value": "shirt", "label": "Shirt" },
+            { "value": "shoe", "label": "Shoe" },
+            { "value": "silhouette", "label": "Silhouette" },
+            { "value": "star", "label": "Star" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "washing", "label": "Washing" }
+          ]
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "default": "Add your announcement here"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings.link"
+        },
+        {
+          "type": "header",
+          "content": "t:content.typography"
+        },
+        {
+          "type": "select",
+          "id": "font",
+          "label": "t:settings.font",
+          "options": [
+            { "value": "var(--font-body--family)", "label": "t:options.body" },
+            { "value": "var(--font-subheading--family)", "label": "t:options.subheading" },
+            { "value": "var(--font-heading--family)", "label": "t:options.heading" },
+            { "value": "var(--font-accent--family)", "label": "t:options.accent" }
+          ],
+          "default": "var(--font-body--family)"
+        },
+        {
+          "type": "select",
+          "id": "font_size",
+          "label": "t:settings.size",
+          "options": [
+            { "value": "", "label": "t:options.default" },
+            { "value": "0.625rem", "label": "10px" },
+            { "value": "0.75rem", "label": "12px" },
+            { "value": "0.875rem", "label": "14px" },
+            { "value": "1rem", "label": "16px" },
+            { "value": "1.125rem", "label": "18px" },
+            { "value": "1.25rem", "label": "20px" },
+            { "value": "1.5rem", "label": "24px" }
+          ],
+          "default": "0.875rem"
+        },
+        {
+          "type": "select",
+          "id": "weight",
+          "label": "t:settings.weight",
+          "options": [
+            { "value": "", "label": "t:options.default" },
+            { "value": "100", "label": "t:options.thin" },
+            { "value": "300", "label": "t:options.light" },
+            { "value": "400", "label": "t:options.regular" },
+            { "value": "500", "label": "t:options.medium" },
+            { "value": "600", "label": "t:options.semibold" },
+            { "value": "700", "label": "t:options.bold" },
+            { "value": "900", "label": "t:options.black" }
+          ],
+          "default": "500"
+        },
+        {
+          "type": "select",
+          "id": "letter_spacing",
+          "label": "t:settings.letter_spacing",
+          "options": [
+            { "value": "tight", "label": "t:options.tight" },
+            { "value": "normal", "label": "t:options.normal" },
+            { "value": "loose", "label": "t:options.loose" }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "select",
+          "id": "case",
+          "label": "t:settings.case",
+          "options": [
+            { "value": "none", "label": "t:options.default" },
+            { "value": "uppercase", "label": "t:options.uppercase" }
+          ],
+          "default": "none"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "t:settings.scroll_speed",
+      "min": 2,
+      "max": 10,
+      "default": 5,
+      "unit": "sec"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.section_width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-4",
+      "label": "t:settings.color_scheme"
+    },
+    {
+      "type": "range",
+      "id": "divider_width",
+      "label": "t:settings.divider_thickness",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Grid",
+      "blocks": [
+        { "type": "feature_announcement", "settings": { "text": "Free shipping over $50", "icon": "truck" } },
+        { "type": "feature_announcement", "settings": { "text": "30 days easy returns", "icon": "return" } },
+        { "type": "feature_announcement", "settings": { "text": "Secure payments", "icon": "lock" } },
+        { "type": "feature_announcement", "settings": { "text": "24/7 customer support", "icon": "chat_bubble" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -501,7 +501,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4><strong>Oppdag fremtidens teknologi hjemme</strong></h4>",
+                "text": "<h4><strong>Discover the future of home technology</strong></h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -526,7 +526,7 @@
             "text_mCMJ6n": {
               "type": "text",
               "settings": {
-                "text": "<p>Gjør hverdagen smartere, raskere og enklere med våre innovative roboter.<br/>Våre fordeler:</p><ul><li><strong>Banebrytende innovasjon</strong> – alltid de nyeste robotteknologiene.<br/></li><li><strong>Høy kvalitet</strong> – pålitelige produkter du kan stole på.<br/></li><li><strong>Enkel bruk</strong> – intuitivt design for alle hjem.<br/></li><li><strong>Tidssparende løsninger</strong> – la robotene gjøre jobben for deg.<br/></li></ul>",
+                "text": "<p>Make everyday life smarter, faster, and easier with our innovative robots.<br/>Our advantages:</p><ul><li><strong>Groundbreaking innovation</strong> – always the latest robotic technologies.<br/></li><li><strong>High quality</strong> – reliable products you can trust.<br/></li><li><strong>Easy to use</strong> – intuitive design for every home.<br/></li><li><strong>Time-saving solutions</strong> – let the robots do the work for you.<br/></li></ul>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -551,7 +551,7 @@
             "button_mL8TzC": {
               "type": "button",
               "settings": {
-                "label": "Kontakt oss",
+                "label": "Contact Us",
                 "link": "shopify://policies/contact-information",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -849,7 +849,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>Se hva kundene våre sier</h3>",
+            "text": "<h3>See what our customers say</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -910,21 +910,21 @@
         "testimonial_qTxjGq": {
           "type": "testimonial",
           "settings": {
-            "review_text": "Varen ankom som avtalt og ingen problemer.Skulle bare ønske at det var litt mer lukt på dette stoffet, da det var i svakeste laget.",
+            "review_text": "The item arrived as agreed and no problems. Highly recommended!",
             "customer_name": "PAUL NORDHEIM"
           }
         },
         "testimonial_fnfpFM": {
           "type": "testimonial",
           "settings": {
-            "review_text": "Alt var i henhold til bestilling. Raskt og greit.",
+            "review_text": "Everything was exactly as ordered. Fast and straightforward.",
             "customer_name": "Marit Helness"
           }
         },
         "testimonial_kET8gz": {
           "type": "testimonial",
           "settings": {
-            "review_text": "Bestilte et vedlikeholdssett til robotstøvsugeren. Nettbutikken hadde det jeg trengte, og leveringen kom raskt. Produktet var godt pakket inn, og alt virket som det skulle. En positiv handleopplevelse – handler gjerne her igjen.",
+            "review_text": "Ordered a maintenance kit for my robot vacuum. They had exactly what I needed, and delivery was fast. Great shopping experience!",
             "customer_name": "Laura M.Markus ask"
           }
         }

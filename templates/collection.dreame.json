@@ -154,10 +154,10 @@
     },
     "custom_collection_YNfNie": {
       "type": "custom-collection",
-      "name": "Samling med modellvelger",
+      "name": "Collection with model selector",
       "settings": {
-        "heading": "Velg din robotmodell",
-        "subheading": "<p>Velg robotstøvsugermodellen din for å se alle kompatible deler</p>",
+        "heading": "Choose your robot model",
+        "subheading": "<p>Select your robot vacuum model to see all compatible parts</p>",
         "collections": [
           "dreame-d10s-plus",
           "dreame-bot-d10s-pro",
@@ -184,14 +184,14 @@
           "dreame-w20-pro-ultra-rlw32le",
           "dreame-x30-pro"
         ],
-        "dropdown_placeholder": "Velg en modell",
+        "dropdown_placeholder": "Select a model",
         "heading_alignment": "center",
         "show_collection_info": false,
         "products_to_show": 12,
         "show_view_all": true,
-        "view_all_text": "Se alle produkter",
-        "no_products_text": "Ingen produkter funnet i denne samlingen.",
-        "no_collections_text": "Vennligst legg til samlinger for å vise.",
+        "view_all_text": "View all products",
+        "no_products_text": "No products found in this collection.",
+        "no_collections_text": "Please add collections to display.",
         "margin_top": 0,
         "margin_bottom": 0,
         "padding_top": 36,

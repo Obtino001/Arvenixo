@@ -648,7 +648,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Gentle, effective and made for robot mops</p>",
+                "text": "Gentle, effective, and made for robot mops",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -673,7 +673,7 @@
             "text_dNUViP": {
               "type": "text",
               "settings": {
-                "text": "<p>EcoBot Clean is a plant-based cleaning solution designed specifically for robot vacuums with mop function.</p>",
+                "text": "EcoBot Clean is a plant-based cleaning solution designed specifically for robot vacuums with a mop function.",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -747,7 +747,8 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-end": 40,
+        "heading": "Maintain Your Robot"
       }
     },
     "product_list_RAirNw": {
@@ -1245,7 +1246,7 @@
         "testimonial_MAfpqr": {
           "type": "testimonial",
           "settings": {
-            "review_text": "Bestilte et vedlikeholdssett til robotstøvsugeren. Nettbutikken hadde det jeg trengte, og leveringen kom raskt. Produktet var godt pakket inn, og alt virket som det skulle. En positiv handleopplevelse – handler gjerne her igjen.",
+            "review_text": "Ordered a maintenance kit for my robot vacuum. They had exactly what I needed, and delivery was fast. Great shopping experience!",
             "customer_name": "Laura M.Markus ask"
           }
         }
@@ -1317,7 +1318,7 @@
             "accordion_row_zYcJDq": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Passer reservedelene til min robotstøvsuger?",
+                "heading": "Do the spare parts fit my robot vacuum?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1406,7 +1407,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Vi selger <strong>kompatible</strong> produkter. Alle kompatible deler er grundig testet for kvalitet og ytelse. </p>",
+                    "text": "<p>Vi selger <strong>kompatible</strong> produkter. All compatible parts are thoroughly tested for quality and performance. </p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1478,7 +1479,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "Hva gjør jeg hvis robotstøvsugeren min fortsatt ikke fungerer etter bytte av deler?",
+                "heading": "What should I do if my robot vacuum still does not work after replacing parts?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1488,7 +1489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Sjekk gjerne våre vedlikeholdstips på produktsiden. Hvis problemet vedvarer, kan du kontakte oss – vi hjelper deg med feilsøking og anbefaling av riktige deler.</p>",
+                    "text": "<p>Feel free to check our maintenance tips on the product page. If the problem persists, contact us – we will help you troubleshoot and recommend the right parts.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",

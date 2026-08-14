@@ -64,7 +64,7 @@
             <legend>
               {{ product_option.name | escape -}}
               {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
+                <span class="variant-option__swatch-value">{{ product_option.selected_value | capitalize }}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
@@ -119,7 +119,7 @@
                   {% if product_option_value.available == true %}
                     <span class="variant-option__button-label__pill"></span>
                   {% endif %}
-                  <span class="variant-option__button-label__text">{{ product_option_value | escape }}</span>
+                  <span class="variant-option__button-label__text">{{ product_option_value | escape | capitalize }}</span>
                 {% endif %}
                 {% render 'strikethrough-variant', product_option: product_option_value %}
               </label>
@@ -176,7 +176,7 @@
                     {% if product_option_value.available == false %}
                       {{ product_option_value | escape }} - {{ 'content.unavailable' | t }}
                     {% else %}
-                      {{ product_option_value | escape }}
+                      {{ product_option_value | escape | capitalize }}
                     {% endif %}
                   </option>
                 {%- endfor -%}

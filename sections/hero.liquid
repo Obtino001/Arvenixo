@@ -183,7 +183,7 @@
   {%- endif -%}
 
   {% if media_count == 0 %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__image' }}
+    <img src="{{ 'arvenixo_hero_banner.jpg' | asset_url }}" class="hero__image" alt="Arvenixo Premium Hero Banner">
   {%- endif -%}
 
   {%- comment -%} Mobile Media {%- endcomment -%}
@@ -366,7 +366,7 @@
             }}
         {% endif %}
         {% if media_count == 0 %}
-          {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__image hero__image--mobile' }}
+          <img src="{{ 'arvenixo_hero_banner.jpg' | asset_url }}" class="hero__image hero__image--mobile" alt="Arvenixo Premium Hero Banner">
         {% endif %}
       {% endif %}
     {% endif %}

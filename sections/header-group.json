@@ -1,1 +1,152 @@
-{"type":"header","name":"Header","sections":{"announcement_bar_grid_69kC87":{"type":"announcement-bar-grid","blocks":{"feature_announcement_zmKAph":{"type":"feature_announcement","settings":{"show_icon":true,"icon":"truck","text":"Fri frakt over 799,- ","link":"","font":"var(--font-body--family)","font_size":"0.875rem","weight":"500","letter_spacing":"normal","case":"none"}},"feature_announcement_RQyamF":{"type":"feature_announcement","settings":{"show_icon":true,"icon":"box","text":"Levering 1–3 virkedager","link":"","font":"var(--font-body--family)","font_size":"0.875rem","weight":"500","letter_spacing":"normal","case":"none"}},"feature_announcement_tJHFD9":{"type":"feature_announcement","settings":{"show_icon":true,"icon":"check_mark_in_circle","text":"30 dagers fornøydgaranti","link":"","font":"var(--font-body--family)","font_size":"0.875rem","weight":"500","letter_spacing":"normal","case":"none"}},"feature_announcement_q7tHzz":{"type":"feature_announcement","settings":{"show_icon":true,"icon":"star","text":" Norsk varelager","link":"","font":"var(--font-body--family)","font_size":"0.875rem","weight":"500","letter_spacing":"normal","case":"none"}}},"block_order":["feature_announcement_zmKAph","feature_announcement_RQyamF","feature_announcement_tJHFD9","feature_announcement_q7tHzz"],"name":"Announcement Grid","settings":{"speed":5,"section_width":"page-width","color_scheme":"scheme-3","divider_width":0,"padding-block-start":10,"padding-block-end":10}},"header_section":{"type":"header","blocks":{"header-logo":{"type":"_header-logo","static":true,"settings":{"hide_logo_on_home_page":false,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"header-menu":{"type":"_header-menu","static":true,"settings":{"menu":"main-menu","color_scheme":"","type_font_primary_size":"0.875rem","menu_font_style":"inverse","type_font_primary_link":"body","type_case_primary_link":"none","menu_style":"text","featured_products_aspect_ratio":"4 \/ 5","featured_collections_aspect_ratio":"16 \/ 9","image_border_radius":0,"navigation_bar":false,"color_scheme_navigation_bar":"","drawer_accordion":true,"drawer_accordion_expand_first":false,"drawer_dividers":true},"blocks":{}}},"settings":{"show_cart_btn":true,"cart_btn_text":"Alle varer","cart_btn_url":"shopify:\/\/collections\/all","cart_btn_bg":"#0055cc","cart_btn_text_color":"#ffffff","logo_position":"center","menu_position":"left","menu_row":"top","show_search":true,"search_position":"right","search_row":"top","show_country":false,"country_selector_style":false,"show_language":false,"localization_font":"heading","localization_font_size":"0.875rem","localization_position":"right","localization_row":"top","section_width":"page-width","section_height":"standard","enable_sticky_header":"always","divider_width":0,"divider_size":"page-width","border_width":0,"color_scheme_top":"scheme-1","color_scheme_bottom":"","color_scheme_transparent":"scheme-2","enable_transparent_header_home":true,"home_color_scheme":"inverse","enable_transparent_header_product":false,"product_color_scheme":"default","enable_transparent_header_collection":false,"collection_color_scheme":"default"}}},"order":["announcement_bar_grid_69kC87","header_section"]}
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement_bar_grid_ax": {
+      "type": "announcement-bar-grid",
+      "blocks": {
+        "a1": {
+          "type": "feature_announcement",
+          "settings": {
+            "show_icon": true,
+            "icon": "truck",
+            "text": "Free standard shipping on all orders",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "weight": "500",
+            "letter_spacing": "normal",
+            "case": "none"
+          }
+        },
+        "a2": {
+          "type": "feature_announcement",
+          "settings": {
+            "show_icon": true,
+            "icon": "box",
+            "text": "Arrives in 7–10 business days",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "weight": "500",
+            "letter_spacing": "normal",
+            "case": "none"
+          }
+        },
+        "a3": {
+          "type": "feature_announcement",
+          "settings": {
+            "show_icon": true,
+            "icon": "check_mark_in_circle",
+            "text": "30-day returns on eligible items",
+            "link": "shopify://policies/refund-policy",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "weight": "500",
+            "letter_spacing": "normal",
+            "case": "none"
+          }
+        },
+        "a4": {
+          "type": "feature_announcement",
+          "settings": {
+            "show_icon": true,
+            "icon": "star",
+            "text": "Secure checkout · Shop Pay",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "weight": "500",
+            "letter_spacing": "normal",
+            "case": "none"
+          }
+        }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"],
+      "name": "Announcement Grid",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "scheme-5",
+        "divider_width": 0,
+        "padding-block-start": 10,
+        "padding-block-end": 10
+      }
+    },
+    "header_section": {
+      "type": "header",
+      "blocks": {
+        "header-logo": {
+          "type": "_header-logo",
+          "static": true,
+          "settings": {
+            "hide_logo_on_home_page": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "header-menu": {
+          "type": "_header-menu",
+          "static": true,
+          "settings": {
+            "menu": "main-menu",
+            "color_scheme": "",
+            "type_font_primary_size": "0.875rem",
+            "menu_font_style": "inverse",
+            "type_font_primary_link": "body",
+            "type_case_primary_link": "none",
+            "menu_style": "text",
+            "featured_products_aspect_ratio": "4 / 5",
+            "featured_collections_aspect_ratio": "16 / 9",
+            "image_border_radius": 0,
+            "navigation_bar": false,
+            "color_scheme_navigation_bar": "",
+            "drawer_accordion": true,
+            "drawer_accordion_expand_first": false,
+            "drawer_dividers": true
+          },
+          "blocks": {}
+        }
+      },
+      "settings": {
+        "show_cart_btn": true,
+        "cart_btn_text": "Shop all",
+        "cart_btn_url": "shopify://collections/all",
+        "cart_btn_bg": "#c4a35a",
+        "cart_btn_text_color": "#0b0c0e",
+        "logo_position": "center",
+        "menu_position": "left",
+        "menu_row": "top",
+        "show_search": true,
+        "search_position": "right",
+        "search_row": "top",
+        "show_country": false,
+        "country_selector_style": false,
+        "show_language": false,
+        "localization_font": "heading",
+        "localization_font_size": "0.875rem",
+        "localization_position": "right",
+        "localization_row": "top",
+        "section_width": "page-width",
+        "section_height": "standard",
+        "enable_sticky_header": "always",
+        "divider_width": 0,
+        "divider_size": "page-width",
+        "border_width": 0,
+        "color_scheme_top": "scheme-5",
+        "color_scheme_bottom": "",
+        "color_scheme_transparent": "scheme-5",
+        "enable_transparent_header_home": true,
+        "home_color_scheme": "inverse",
+        "enable_transparent_header_product": false,
+        "product_color_scheme": "default",
+        "enable_transparent_header_collection": false,
+        "collection_color_scheme": "default"
+      }
+    }
+  },
+  "order": ["announcement_bar_grid_ax", "header_section"]
+}

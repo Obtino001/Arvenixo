@@ -51,8 +51,15 @@
           }
         }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
-      "settings": {}
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5"
+      }
     },
     "ax_categories": {
       "type": "arvenixo-categories",
@@ -85,10 +92,17 @@
           }
         }
       },
-      "block_order": ["c1", "c2", "c3"],
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
       "settings": {
         "heading": "Shop by category",
-        "subheading": "Focused essentials for everyday life — cases, beauty tech, and smart gadgets."
+        "subheading": "Focused essentials for everyday life — cases, beauty tech, and smart gadgets.",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
     "ax_bestsellers_header": {
@@ -127,10 +141,15 @@
               }
             }
           },
-          "block_order": ["title", "link"]
+          "block_order": [
+            "title",
+            "link"
+          ]
         }
       },
-      "block_order": ["content"],
+      "block_order": [
+        "content"
+      ],
       "settings": {}
     },
     "ax_bestsellers": {
@@ -148,7 +167,11 @@
           "blocks": {
             "gallery": {
               "type": "_product-card-gallery",
-              "settings": { "image_ratio": "square", "border": "none", "border_radius": 8 }
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_radius": 8
+              }
             },
             "title": {
               "type": "product-title",
@@ -170,16 +193,40 @@
             },
             "buy": {
               "type": "buy-buttons",
-              "settings": { "stacking": false, "show_pickup_availability": false },
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": false
+              },
               "blocks": {
-                "quantity": { "type": "quantity", "disabled": true, "static": true, "settings": {} },
-                "add-to-cart": { "type": "add-to-cart", "static": true, "settings": { "style_class": "button" } },
-                "accelerated-checkout": { "type": "accelerated-checkout", "disabled": true, "static": true, "settings": {} }
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  }
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {}
+                }
               },
               "block_order": []
             }
           },
-          "block_order": ["gallery", "title", "price", "buy"]
+          "block_order": [
+            "gallery",
+            "title",
+            "price",
+            "buy"
+          ]
         }
       },
       "settings": {
@@ -236,7 +283,11 @@
               }
             }
           },
-          "block_order": ["h", "p", "btn"]
+          "block_order": [
+            "h",
+            "p",
+            "btn"
+          ]
         },
         "img": {
           "type": "image",
@@ -248,7 +299,10 @@
           }
         }
       },
-      "block_order": ["copy", "img"],
+      "block_order": [
+        "copy",
+        "img"
+      ],
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -280,7 +334,10 @@
           "blocks": {
             "r1": {
               "type": "_accordion-row",
-              "settings": { "heading": "Do you offer free shipping?", "icon": "none" },
+              "settings": {
+                "heading": "Do you offer free shipping?",
+                "icon": "none"
+              },
               "blocks": {
                 "t": {
                   "type": "text",
@@ -291,11 +348,16 @@
                   }
                 }
               },
-              "block_order": ["t"]
+              "block_order": [
+                "t"
+              ]
             },
             "r2": {
               "type": "_accordion-row",
-              "settings": { "heading": "What is your return policy?", "icon": "none" },
+              "settings": {
+                "heading": "What is your return policy?",
+                "icon": "none"
+              },
               "blocks": {
                 "t": {
                   "type": "text",
@@ -306,11 +368,16 @@
                   }
                 }
               },
-              "block_order": ["t"]
+              "block_order": [
+                "t"
+              ]
             },
             "r3": {
               "type": "_accordion-row",
-              "settings": { "heading": "How do I choose the right iPhone case model?", "icon": "none" },
+              "settings": {
+                "heading": "How do I choose the right iPhone case model?",
+                "icon": "none"
+              },
               "blocks": {
                 "t": {
                   "type": "text",
@@ -321,11 +388,16 @@
                   }
                 }
               },
-              "block_order": ["t"]
+              "block_order": [
+                "t"
+              ]
             },
             "r4": {
               "type": "_accordion-row",
-              "settings": { "heading": "Are beauty devices returnable?", "icon": "none" },
+              "settings": {
+                "heading": "Are beauty devices returnable?",
+                "icon": "none"
+              },
               "blocks": {
                 "t": {
                   "type": "text",
@@ -336,11 +408,16 @@
                   }
                 }
               },
-              "block_order": ["t"]
+              "block_order": [
+                "t"
+              ]
             },
             "r5": {
               "type": "_accordion-row",
-              "settings": { "heading": "How can I contact support?", "icon": "none" },
+              "settings": {
+                "heading": "How can I contact support?",
+                "icon": "none"
+              },
               "blocks": {
                 "t": {
                   "type": "text",
@@ -351,13 +428,24 @@
                   }
                 }
               },
-              "block_order": ["t"]
+              "block_order": [
+                "t"
+              ]
             }
           },
-          "block_order": ["r1", "r2", "r3", "r4", "r5"]
+          "block_order": [
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5"
+          ]
         }
       },
-      "block_order": ["heading", "accordion"],
+      "block_order": [
+        "heading",
+        "accordion"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 24,

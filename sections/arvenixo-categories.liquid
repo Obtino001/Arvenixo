@@ -1,7 +1,13 @@
-{% comment %} Arvenixo shop-by-category tiles with asset image fallbacks {% endcomment %}
+{% comment %} Arvenixo categories — Horizon section--page-width grid {% endcomment %}
 
-<section id="ArvenixoCategories-{{ section.id }}" class="ax-categories">
-  <div class="page-width">
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<section
+  id="ArvenixoCategories-{{ section.id }}"
+  class="ax-categories section section--page-width color-{{ section.settings.color_scheme }} spacing-style"
+  style="--padding-block-start: {{ section.settings.padding_top }}px; --padding-block-end: {{ section.settings.padding_bottom }}px;"
+  {{ section.shopify_attributes }}
+>
+  <div class="ax-categories__inner">
     <div class="ax-section-head">
       {%- if section.settings.heading != blank -%}
         <h2 class="ax-section-title">{{ section.settings.heading }}</h2>
@@ -69,7 +75,10 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "Focused essentials for everyday life — cases, beauty tech, and smart gadgets."
-    }
+    },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Top padding", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Bottom padding", "default": 56 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
   ],
   "blocks": [
     {
@@ -88,30 +97,9 @@
     {
       "name": "Arvenixo Categories",
       "blocks": [
-        {
-          "type": "category",
-          "settings": {
-            "title": "Phone Cases",
-            "text": "MagSafe-ready protection with everyday style.",
-            "cta": "Shop cases"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "title": "Beauty Tech",
-            "text": "At-home LED and facial care devices.",
-            "cta": "Shop beauty"
-          }
-        },
-        {
-          "type": "category",
-          "settings": {
-            "title": "Smart Tech",
-            "text": "Cameras, gimbals, and everyday gadgets.",
-            "cta": "Shop tech"
-          }
-        }
+        { "type": "category", "settings": { "title": "Phone Cases", "text": "MagSafe-ready protection with everyday style.", "cta": "Shop cases" } },
+        { "type": "category", "settings": { "title": "Beauty Tech", "text": "At-home LED and facial care devices.", "cta": "Shop beauty" } },
+        { "type": "category", "settings": { "title": "Smart Tech", "text": "Cameras, gimbals, and everyday gadgets.", "cta": "Shop tech" } }
       ]
     }
   ]

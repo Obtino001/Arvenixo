@@ -129,7 +129,13 @@
         <div class="horizon-trust-card" {{ block.shopify_attributes }}>
           
           <div class="horizon-trust-icon">
-            {%- if block.settings.custom_svg != blank -%}
+            {%- if block.settings.custom_asset_image != blank -%}
+              <img src="{{ block.settings.custom_asset_image | asset_url }}" 
+                   alt="{{ block.settings.title | escape }}" 
+                   loading="lazy" 
+                   width="50" 
+                   height="50">
+            {%- elsif block.settings.custom_svg != blank -%}
               {{ block.settings.custom_svg }}
             {%- elsif block.settings.image != blank -%}
               <img src="{{ block.settings.image | image_url: width: 100 }}" 

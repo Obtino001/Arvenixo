@@ -95,6 +95,7 @@
     },
     "banner_with_text": {
       "type": "banner-with-text",
+      "disabled": true,
       "settings": {
         "bg_color": "#ffffff",
         "section_heading": "Style up by collections",

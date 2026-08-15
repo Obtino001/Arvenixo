@@ -4,10 +4,12 @@
       "type": "hero-slider",
       "blocks": {
         "slide_1": {
-          "type": "slide"
+          "type": "slide",
+          "settings": {}
         },
         "slide_2": {
-          "type": "slide"
+          "type": "slide",
+          "settings": {}
         }
       },
       "block_order": [

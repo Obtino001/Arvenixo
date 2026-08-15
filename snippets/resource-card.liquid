@@ -9,6 +9,7 @@
   @param {string} [image_aspect_ratio] - The aspect ratio to display the image. Defaults to image's natural ratio
   @param {boolean} [image_hover] - Whether to show a secondary image on hover and focus
   @param {string} [image_sizes] - The sizes attribute for responsive images. Defaults to 'auto'
+  @param {string} [product_view_context] - The context for product view events (e.g., 'search'). Omit to disable view events.
 {%- enddoc -%}
 
 {% liquid
@@ -25,24 +26,34 @@
     assign single_thumbnail_collection = true
   endif
 
-  if resource_type == 'product' and settings.transition_to_main_product
-    assign featured_media_url = resource.selected_or_first_available_variant.featured_image | image_url: width: image_width
-    if featured_media_url == blank
-      assign featured_media_url = resource.featured_media.preview_image | image_url: width: image_width
+  if resource_type == 'product'
+    assign product_wrapper_tag = 'product-component'
+    if settings.transition_to_main_product
+      assign product_wrapper_tag = 'product-card-link'
+      assign featured_media_url = resource.selected_or_first_available_variant.featured_image | image_url: width: image_width
+      if featured_media_url == blank
+        assign featured_media_url = resource.featured_media.preview_image | image_url: width: image_width
+      endif
     endif
   endif
 %}
 
-{%- if resource_type == 'product' and settings.transition_to_main_product -%}
-  <product-card-link
-    data-product-id="{{ resource.id }}"
-    data-featured-media-url="{{ featured_media_url }}"
-    data-product-transition="{{ settings.transition_to_main_product }}"
+{%- if resource_type == 'product' -%}
+  <{{ product_wrapper_tag }}
+    class="resource-card__wrapper"
+    {% if settings.transition_to_main_product %}
+      data-product-id="{{ resource.id }}"
+      data-featured-media-url="{{ featured_media_url }}"
+      data-product-transition="true"
+      on:click="/handleViewTransition"
+    {% endif %}
+    {% # theme-check-disable UnknownFilter %}
+    view-event-payload="{{ resource | standard_event_data: 'view', context: product_view_context | escape }}"
+    {% # theme-check-enable UnknownFilter %}
   >
 {%- endif -%}
 <div
   class="resource-card{% if style == 'overlay' %} resource-card--overlay{% endif %}"
-  href="{{ resource.url }}"
   data-resource-type="{{ resource_type }}"
 >
   <a
@@ -57,6 +68,7 @@
     class="resource-card__media"
     style="--resource-card-aspect-ratio: {{ ratio }};"
     {% if resource_type == 'product' and settings.transition_to_main_product %}
+      ref="cardGallery"
       data-view-transition-to-main-product
     {% endif %}
   >
@@ -75,6 +87,12 @@
         endif
       %}
       {%- if featured_image != blank -%}
+        {% liquid
+          assign ref_image_to_transition = ''
+          if settings.transition_to_main_product
+            assign ref_image_to_transition = 'imagesToTransition[]'
+          endif
+        %}
         {{
           featured_image
           | image_url: width: image_width
@@ -83,7 +101,7 @@
             class: 'resource-card__image',
             widths: widths,
             sizes: image_sizes,
-            transitionToProduct: settings.transition_to_main_product,
+            ref: ref_image_to_transition,
             data-media-id: featured_image.id,
             style: primary_focal_point_style
         }}
@@ -102,7 +120,7 @@
               class: 'resource-card__image resource-card__image--secondary',
               widths: widths,
               sizes: image_sizes,
-              transitionToProduct: settings.transition_to_main_product,
+              ref: ref_image_to_transition,
               data-media-id: resource.media[1].id,
               style: secondary_focal_point_style
           }}
@@ -148,42 +166,17 @@
       </p>
     {% endif %}
   </div>
-
-  {% if resource_type == 'product' and resource.available %}
-    <div class="resource-card__buy-buttons buy-buttons-block">
-      <product-form-component
-        data-section-id="{{ section.id | default: 'predictive-search' }}"
-        data-product-id="{{ resource.id }}"
-        data-product-url="{{ resource.url }}"
-        data-quantity-default="1"
-        on:submit="/handleSubmit"
-      >
-        <div class="visually-hidden" aria-live="assertive" role="status" aria-atomic="true" ref="liveRegion"></div>
-        {%- form 'product', resource, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-          <input type="hidden" name="id" ref="variantId" value="{{ resource.selected_or_first_available_variant.id }}">
-          <div class="product-form-buttons" ref="productFormButtons">
-            <span class="product-form-text__error hidden" ref="addToCartTextError">
-              <span class="svg-wrapper product-form-icon--error">
-                {{- 'icon-error.svg' | inline_asset_content -}}
-              </span>
-            </span>
-            {% render 'add-to-cart-button',
-              product: resource,
-              can_add_to_cart: resource.available,
-              add_to_cart_text: ('actions.add_to_cart' | t),
-              class: 'button--full-width button-secondary'
-            %}
-          </div>
-        {%- endform -%}
-      </product-form-component>
-    </div>
-  {% endif %}
 </div>
-{%- if resource_type == 'product' and settings.transition_to_main_product -%}
-  </product-card-link>
+{%- if resource_type == 'product' -%}
+  </{{ product_wrapper_tag }}>
 {%- endif -%}
 
 {% stylesheet %}
+  .resource-card__wrapper {
+    display: block;
+    height: 100%;
+  }
+
   .resource-card {
     --resource-card-secondary-image-opacity: 0;
     --resource-card-primary-image-opacity: calc(1 - var(--resource-card-secondary-image-opacity));
@@ -223,7 +216,7 @@
       line-height: normal;
       letter-spacing: normal;
       text-transform: none;
-      color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+      color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
     }
   }
 
@@ -319,33 +312,20 @@
   }
 
   .resource-card__subtext {
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
     margin-block-start: 0;
   }
 
   .resource-card__subtext.paragraph {
     font-size: var(--font-size--body-sm);
     line-height: var(--line-height--body-tight);
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
   }
 
   .resource-card:has(.resource-card__image--secondary) {
     &:hover,
     &:focus {
       --resource-card-secondary-image-opacity: 1;
-    }
-  }
-
-  .resource-card__buy-buttons {
-    margin-top: auto;
-    width: 100%;
-    z-index: 2;
-    position: relative;
-    padding-block-end: var(--padding-xs);
-
-    .add-to-cart-button {
-      width: 100%;
-      border-radius: 9999px;
     }
   }
 {% endstylesheet %}

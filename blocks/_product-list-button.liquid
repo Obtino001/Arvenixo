@@ -2,11 +2,8 @@
 
 {% assign button_collection = closest.collection %}
 {% assign button_url = button_collection.url %}
-{% if button_url == blank %}
-  {% assign button_url = block.settings.url %}
-{% endif %}
 
-{% if button_collection.products_count > section.settings.max_products or block.settings.style_class == 'cc-link' %}
+{% if button_collection.products_count > section.settings.max_products %}
   {% render 'button', link: button_url %}
 {% endif %}
 
@@ -45,21 +42,52 @@
           "label": "t:options.secondary"
         },
         {
-          "value": "link",
+          "value": "button-unstyled",
           "label": "t:options.link"
         },
         {
-          "value": "cc-link",
-          "label": "Custom"
+          "value": "button-custom",
+          "label": "t:options.custom"
         }
       ],
-      "default": "button"
+      "default": "button",
+      "info": "t:info.edit_button_style_in_theme_settings"
     },
     {
-      "type": "url",
-      "id": "url",
-      "label": "Link",
-      "visible_if": "{{ block.settings.style_class == 'cc-link' }}"
+      "type": "header",
+      "content": "t:content.button_colors",
+      "visible_if": "{{ block.settings.style_class == \"button-custom\" }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_button_background",
+      "label": "t:settings.background",
+      "default": "{{ settings.color_palette.foreground }}",
+      "alpha": true,
+      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_button_text",
+      "label": "t:settings.text",
+      "default": "{{ settings.color_palette.background }}",
+      "alpha": true,
+      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_button_border",
+      "label": "t:settings.borders",
+      "default": "{{ settings.color_palette.background }}",
+      "alpha": true,
+      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
+    },
+    {
+      "type": "color",
+      "id": "link_text_color",
+      "label": "t:settings.link_text_color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ block.settings.style_class == 'button-unstyled' }}"
     },
     {
       "type": "header",

@@ -3,7 +3,9 @@
   media_presentation: block.settings.media_presentation,
   block_settings: block.settings,
   block_id: block.id,
-  block_shopify_attributes: block.shopify_attributes
+  block_shopify_attributes: block.shopify_attributes,
+  block: block,
+  section: section
 %}
 
 {% schema %}
@@ -28,22 +30,6 @@
       "default": "grid",
       "info": "t:info.carousel_layout_on_mobile"
     },
-    {
-  "type": "select",
-  "id": "zoom_mode",
-  "label": "Zoom Interaction",
-  "options": [
-    {
-      "value": "fancybox",
-      "label": "Zoom"
-    },
-    {
-      "value": "none",
-      "label": "No Zoom"
-    }
-  ],
-  "default": "fancybox"
-},
     {
       "type": "header",
       "content": "t:content.grid",

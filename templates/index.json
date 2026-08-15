@@ -310,6 +310,55 @@
         "padding-block-start": 48,
         "padding-block-end": 64
       }
+    },
+    "flex_case_promo_cGVQka": {
+      "type": "flex-case-promo",
+      "blocks": {
+        "trust_item_ngyYg6": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Designed in the USA"
+          }
+        },
+        "trust_item_DQez9A": {
+          "type": "trust_item",
+          "settings": {
+            "text": "100% Full-Grain Leather"
+          }
+        },
+        "trust_item_XgDkfj": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Lifetime Warranty"
+          }
+        },
+        "trust_item_TTpGAB": {
+          "type": "trust_item",
+          "settings": {
+            "text": "Free US Shipping Over $150"
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_ngyYg6",
+        "trust_item_DQez9A",
+        "trust_item_XgDkfj",
+        "trust_item_TTpGAB"
+      ],
+      "name": "Flex Case Promo",
+      "settings": {
+        "bg_color": "#faf6f0",
+        "trust_bg": "#f0ebe3",
+        "text_color": "#30231e",
+        "padding_top": 8,
+        "padding_bottom": 0,
+        "content_gap": 8,
+        "eyebrow": "#1 Best-Seller",
+        "heading": "Original Leather Case",
+        "description": "<p>Made to get better with age. Its rich two tone finish develops more depth and character over time, creating a look that is completely unique to you. The leather softens and wears in naturally with everyday use, giving it a lived in feel you cannot replicate. Hand finished and built with intention, it remains one of the only handmade cases on the market today.</p>",
+        "button_label": "SHOP NOW",
+        "button_link": ""
+      }
     }
   },
   "order": [
@@ -318,6 +367,7 @@
     "product_tabs_slider",
     "banner_with_text",
     "benefit_tabs",
-    "collection_list_xpBxCm"
+    "collection_list_xpBxCm",
+    "flex_case_promo_cGVQka"
   ]
 }

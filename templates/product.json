@@ -1204,10 +1204,88 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "product_features": {
+      "type": "custom-product-features",
+      "blocks": {
+        "anchor_1": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "Features",
+            "target_id": "pf-features"
+          }
+        },
+        "anchor_2": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "FAQs",
+            "target_id": "product-info-faqs"
+          }
+        },
+        "anchor_3": {
+          "type": "anchor_link",
+          "settings": {
+            "label": "Reviews",
+            "target_id": "product-info-reviews"
+          }
+        },
+        "hero": {
+          "type": "hero_banner",
+          "settings": {
+            "anchor_id": "pf-features"
+          }
+        },
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Aerospace-Grade Aramid Strength",
+            "description": "Made from aerospace-grade aramid fiber, which is 5x stronger than steel and weighs just 1/5 as much. It's ultra-thin, incredibly tough, and built for premium protection — without the bulk.",
+            "layout": "image_right"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Premium Weave",
+            "description": "Crafted from finely woven aramid fiber, our case offers a silky-smooth, luxurious texture you can feel. It's not just light and strong — it's a pleasure to hold, every single time.",
+            "layout": "image_left"
+          }
+        },
+        "specs_1": {
+          "type": "specs",
+          "settings": {
+            "heading": "Paper Thin & Feather Light",
+            "description": "Offers a sleek, barely-there profile that preserves your phone's original feel. Ideal for minimalists seeking elegant protection without added weight.",
+            "spec_1_label": "Weight",
+            "spec_1_value": "≈20",
+            "spec_1_unit": "g",
+            "spec_2_label": "Thickness",
+            "spec_2_value": "≈0.99",
+            "spec_2_unit": "mm",
+            "disclaimer": "*Tested in lab, individual units may have slight variances."
+          }
+        }
+      },
+      "block_order": [
+        "anchor_1",
+        "anchor_2",
+        "anchor_3",
+        "hero",
+        "feature_1",
+        "feature_2",
+        "specs_1"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#000000",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "main",
+    "product_features",
     "section_NaqU9X",
     "product_list_zR9Cym",
     "video_carousel"

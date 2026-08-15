@@ -1,0 +1,1196 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="product-features-container section-{{ section.id }}-padding" id="pf-{{ section.id }}" style="background: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+
+  {%- comment -%} ══════ ANCHOR NAV BAR ══════ {%- endcomment -%}
+  <div class="pf-anchor-bar" id="pf-anchor-{{ section.id }}">
+    <div class="pf-anchor-inner">
+      <div class="pf-anchor-links">
+        <span class="pf-anchor-divider"></span>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'anchor_link' -%}
+            <a class="pf-anchor-link" href="javascript:;" data-pf-target="{{ block.settings.target_id }}">{{ block.settings.label }}</a>
+            <span class="pf-anchor-divider"></span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════ HERO BANNER ══════ {%- endcomment -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'hero_banner' -%}
+      <div class="pf-hero" id="{{ block.settings.anchor_id }}" {{ block.shopify_attributes }}>
+        <div class="pf-hero-inner">
+          {%- if block.settings.image_desktop != blank -%}
+            <picture>
+              {%- if block.settings.image_desktop != blank -%}
+                <source srcset="{{ block.settings.image_desktop | image_url: width: 1500 }}" media="(min-width: 768px)">
+              {%- endif -%}
+              {{ block.settings.image_mobile | default: block.settings.image_desktop | image_url: width: 800 | image_tag:
+                class: 'pf-hero-img',
+                loading: 'lazy'
+              }}
+            </picture>
+          {%- else -%}
+            <div class="pf-hero-placeholder">
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'pf-placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} ══════ FEATURE BLOCKS ══════ {%- endcomment -%}
+  {%- assign feature_index = 0 -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'feature' -%}
+      {%- assign feature_index = feature_index | plus: 1 -%}
+      {%- assign is_reversed = false -%}
+      {%- if block.settings.layout == 'image_left' -%}
+        {%- assign is_reversed = true -%}
+      {%- endif -%}
+
+      <div class="pf-feature{% if is_reversed %} pf-feature--reversed{% endif %}" id="{{ block.settings.anchor_id }}" {{ block.shopify_attributes }}>
+        <div class="pf-feature-inner">
+          <div class="pf-feature-grid">
+            <div class="pf-feature-content">
+              <div class="pf-feature-text">
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="pf-feature-heading">{{ block.settings.heading }}</h2>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="pf-feature-desc">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="pf-feature-media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1000 | image_tag:
+                  class: 'pf-feature-img',
+                  loading: 'lazy'
+                }}
+              {%- else -%}
+                <div class="pf-feature-placeholder">
+                  {{ 'product-1' | placeholder_svg_tag: 'pf-placeholder-svg' }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} ══════ SPECS BLOCK ══════ {%- endcomment -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'specs' -%}
+      <div class="pf-specs" id="{{ block.settings.anchor_id }}" {{ block.shopify_attributes }}>
+        <div class="pf-specs-inner">
+          <div class="pf-feature-grid">
+            <div class="pf-feature-content">
+              <div class="pf-feature-text">
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="pf-feature-heading">{{ block.settings.heading }}</h2>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="pf-feature-desc">{{ block.settings.description }}</p>
+                {%- endif -%}
+                <div class="pf-specs-grid">
+                  {%- if block.settings.spec_1_label != blank -%}
+                    <div class="pf-spec-item">
+                      <span class="pf-spec-label">{{ block.settings.spec_1_label }}</span>
+                      <span class="pf-spec-value">{{ block.settings.spec_1_value }}<span class="pf-spec-unit">{{ block.settings.spec_1_unit }}</span></span>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.spec_2_label != blank -%}
+                    <div class="pf-spec-item">
+                      <span class="pf-spec-label">{{ block.settings.spec_2_label }}</span>
+                      <span class="pf-spec-value">{{ block.settings.spec_2_value }}<span class="pf-spec-unit">{{ block.settings.spec_2_unit }}</span></span>
+                    </div>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.disclaimer != blank -%}
+                  <p class="pf-specs-disclaimer">{{ block.settings.disclaimer }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="pf-feature-media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1000 | image_tag:
+                  class: 'pf-feature-img',
+                  loading: 'lazy'
+                }}
+              {%- else -%}
+                <div class="pf-feature-placeholder">
+                  {{ 'product-2' | placeholder_svg_tag: 'pf-placeholder-svg' }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} ══════ COMPARISON TABLE ══════ {%- endcomment -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'comparison' -%}
+      <div class="pf-comparison" id="{{ block.settings.anchor_id }}" {{ block.shopify_attributes }}>
+        <div class="pf-comparison-inner">
+          {%- if block.settings.heading != blank -%}
+            <h2 class="pf-comparison-heading">{{ block.settings.heading }}</h2>
+          {%- endif -%}
+
+          <div class="pf-compare-table">
+            {%- comment -%} Column Headers {%- endcomment -%}
+            <div class="pf-compare-row pf-compare-header">
+              <div class="pf-compare-cell">
+                <span class="pf-compare-name">{{ block.settings.col1_name }}</span>
+                <span class="pf-compare-subtitle">{{ block.settings.col1_subtitle }}</span>
+              </div>
+              <div class="pf-compare-cell">
+                <span class="pf-compare-name">{{ block.settings.col2_name }}</span>
+                <span class="pf-compare-subtitle">{{ block.settings.col2_subtitle }}</span>
+              </div>
+              {%- if block.settings.col3_name != blank -%}
+                <div class="pf-compare-cell">
+                  <span class="pf-compare-name">{{ block.settings.col3_name }}</span>
+                  <span class="pf-compare-subtitle">{{ block.settings.col3_subtitle }}</span>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- comment -%} Images Row {%- endcomment -%}
+            <div class="pf-compare-row">
+              <div class="pf-compare-cell">
+                {%- if block.settings.col1_image != blank -%}
+                  {{ block.settings.col1_image | image_url: width: 200 | image_tag: class: 'pf-compare-img', loading: 'lazy' }}
+                {%- endif -%}
+              </div>
+              <div class="pf-compare-cell">
+                {%- if block.settings.col2_image != blank -%}
+                  {{ block.settings.col2_image | image_url: width: 200 | image_tag: class: 'pf-compare-img', loading: 'lazy' }}
+                {%- endif -%}
+              </div>
+              {%- if block.settings.col3_name != blank -%}
+                <div class="pf-compare-cell">
+                  {%- if block.settings.col3_image != blank -%}
+                    {{ block.settings.col3_image | image_url: width: 200 | image_tag: class: 'pf-compare-img', loading: 'lazy' }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- comment -%} Tagline Row {%- endcomment -%}
+            <div class="pf-compare-row">
+              <div class="pf-compare-cell">{{ block.settings.col1_tagline }}</div>
+              <div class="pf-compare-cell">{{ block.settings.col2_tagline }}</div>
+              {%- if block.settings.col3_name != blank -%}
+                <div class="pf-compare-cell">{{ block.settings.col3_tagline }}</div>
+              {%- endif -%}
+            </div>
+
+            {%- comment -%} Weight Row {%- endcomment -%}
+            {%- if block.settings.col1_weight != blank -%}
+              <div class="pf-compare-row">
+                <div class="pf-compare-cell">Weight<br>{{ block.settings.col1_weight }}</div>
+                <div class="pf-compare-cell">Weight<br>{{ block.settings.col2_weight }}</div>
+                {%- if block.settings.col3_name != blank -%}
+                  <div class="pf-compare-cell">Weight<br>{{ block.settings.col3_weight }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            {%- comment -%} Thickness Row {%- endcomment -%}
+            {%- if block.settings.col1_thickness != blank -%}
+              <div class="pf-compare-row">
+                <div class="pf-compare-cell">Thickness<br>{{ block.settings.col1_thickness }}</div>
+                <div class="pf-compare-cell">Thickness<br>{{ block.settings.col2_thickness }}</div>
+                {%- if block.settings.col3_name != blank -%}
+                  <div class="pf-compare-cell">Thickness<br>{{ block.settings.col3_thickness }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            {%- comment -%} Protection Row {%- endcomment -%}
+            {%- if block.settings.col1_protection != blank -%}
+              <div class="pf-compare-row">
+                <div class="pf-compare-cell">{{ block.settings.col1_protection }}</div>
+                <div class="pf-compare-cell">{{ block.settings.col2_protection }}</div>
+                {%- if block.settings.col3_name != blank -%}
+                  <div class="pf-compare-cell">{{ block.settings.col3_protection }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.disclaimer != blank -%}
+            <p class="pf-compare-disclaimer">{{ block.settings.disclaimer }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} ══════ ACCESSORIES GRID ══════ {%- endcomment -%}
+  {%- assign has_accessories = false -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'accessory' -%}
+      {%- assign has_accessories = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_accessories -%}
+    <div class="pf-accessories">
+      <div class="pf-accessories-inner">
+        <h2 class="pf-comparison-heading">Best for You</h2>
+        <div class="pf-accessories-grid">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'accessory' -%}
+              <div class="pf-accessory-card" {{ block.shopify_attributes }}>
+                <a href="{{ block.settings.link }}" class="pf-accessory-link">
+                  <div class="pf-accessory-media">
+                    {%- if block.settings.image != blank -%}
+                      {{ block.settings.image | image_url: width: 600 | image_tag:
+                        class: 'pf-accessory-img',
+                        loading: 'lazy'
+                      }}
+                    {%- else -%}
+                      {{ 'product-3' | placeholder_svg_tag: 'pf-placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                  {%- if block.settings.title != blank -%}
+                    <h4 class="pf-accessory-title">{{ block.settings.title }}</h4>
+                  {%- endif -%}
+                </a>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  /* ══════ BASE ══════ */
+  .product-features-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-features-container *,
+  .product-features-container *::before,
+  .product-features-container *::after {
+    box-sizing: border-box;
+  }
+
+  /* ══════ ANCHOR BAR ══════ */
+  .pf-anchor-bar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: inherit;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .pf-anchor-bar.pf-scrolled {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .pf-anchor-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .pf-anchor-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .pf-anchor-divider {
+    display: block;
+    width: 1px;
+    height: 16px;
+    background: currentColor;
+    opacity: 0.2;
+  }
+
+  .pf-anchor-link {
+    display: block;
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.5;
+    transition: opacity 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .pf-anchor-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .pf-anchor-link:hover,
+  .pf-anchor-link.pf-active {
+    opacity: 1;
+  }
+
+  .pf-anchor-link.pf-active::after {
+    transform: scaleX(1);
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-anchor-link {
+      padding: 16px 28px;
+      font-size: 15px;
+    }
+  }
+
+  /* ══════ HERO ══════ */
+  .pf-hero {
+    padding: 20px 24px 0;
+  }
+
+  .pf-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .pf-hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .pf-hero-placeholder {
+    aspect-ratio: 16 / 6;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pf-placeholder-svg {
+    width: 40%;
+    height: auto;
+    opacity: 0.3;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-hero {
+      padding: 32px 40px 0;
+    }
+  }
+
+  /* ══════ FEATURE BLOCKS ══════ */
+  .pf-feature,
+  .pf-specs {
+    padding: 20px 24px;
+  }
+
+  .pf-feature-inner,
+  .pf-specs-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .pf-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-feature,
+    .pf-specs {
+      padding: 40px;
+    }
+
+    .pf-feature-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .pf-feature--reversed .pf-feature-content {
+      order: 2;
+    }
+
+    .pf-feature--reversed .pf-feature-media {
+      order: 1;
+    }
+
+    .pf-feature--reversed .pf-feature-text {
+      margin: 0 auto;
+    }
+  }
+
+  .pf-feature-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .pf-feature-text {
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-feature-text {
+      width: 85%;
+      padding: 32px 0;
+    }
+  }
+
+  .pf-feature-heading {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 20px;
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-feature-heading { font-size: 34px; }
+  }
+  @media screen and (min-width: 768px) {
+    .pf-feature-heading { font-size: 40px; }
+  }
+  @media screen and (min-width: 1024px) {
+    .pf-feature-heading { font-size: 44px; }
+  }
+
+  .pf-feature-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-feature-desc { font-size: 16px; }
+  }
+  @media screen and (min-width: 768px) {
+    .pf-feature-desc { font-size: 18px; opacity: 1; }
+  }
+
+  .pf-feature-media {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .pf-feature-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .pf-feature-placeholder {
+    aspect-ratio: 1;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ══════ SPECS ══════ */
+  .pf-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+
+  .pf-spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pf-spec-label {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-spec-label { font-size: 18px; }
+  }
+
+  .pf-spec-value {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-spec-value { font-size: 40px; }
+  }
+  @media screen and (min-width: 1024px) {
+    .pf-spec-value { font-size: 48px; }
+  }
+
+  .pf-spec-unit {
+    font-size: 0.6em;
+    margin-left: 2px;
+  }
+
+  .pf-specs-disclaimer {
+    font-size: 12px;
+    opacity: 0.4;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+
+  /* ══════ COMPARISON ══════ */
+  .pf-comparison {
+    padding: 40px 24px;
+  }
+
+  .pf-comparison-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-comparison {
+      padding: 60px 40px;
+    }
+  }
+
+  .pf-comparison-heading {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-comparison-heading { font-size: 36px; }
+  }
+  @media screen and (min-width: 1024px) {
+    .pf-comparison-heading { font-size: 44px; }
+  }
+
+  .pf-compare-table {
+    width: 100%;
+  }
+
+  .pf-compare-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 16px 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .pf-compare-row.pf-compare-3col,
+  .pf-compare-row:has(.pf-compare-cell:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-compare-row {
+      padding: 24px 0;
+      font-size: 16px;
+    }
+  }
+
+  .pf-compare-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+  }
+
+  .pf-compare-header .pf-compare-cell {
+    gap: 4px;
+  }
+
+  .pf-compare-name {
+    font-weight: 500;
+    font-size: 1em;
+  }
+
+  .pf-compare-subtitle {
+    opacity: 0.5;
+    font-size: 0.85em;
+  }
+
+  .pf-compare-img {
+    display: block;
+    width: 30%;
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-compare-img {
+      width: 80px;
+    }
+  }
+
+  .pf-compare-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.4;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+
+  /* ══════ ACCESSORIES ══════ */
+  .pf-accessories {
+    padding: 40px 24px;
+  }
+
+  .pf-accessories-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-accessories {
+      padding: 60px 40px;
+    }
+  }
+
+  .pf-accessories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pf-accessories-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .pf-accessory-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .pf-accessory-media {
+    aspect-ratio: 3 / 4;
+    background: rgba(0,0,0,0.03);
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .pf-accessory-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .pf-accessory-link:hover .pf-accessory-img {
+    transform: scale(1.03);
+  }
+
+  .pf-accessory-title {
+    margin: 10px 0 0;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  @media screen and (min-width: 640px) {
+    .pf-accessory-title { font-size: 16px; }
+  }
+  @media screen and (min-width: 1024px) {
+    .pf-accessory-title { font-size: 18px; }
+  }
+</style>
+
+<script>
+  (function() {
+    var container = document.getElementById('pf-{{ section.id }}');
+    if (!container) return;
+
+    /* ── Anchor smooth scroll ── */
+    container.querySelectorAll('[data-pf-target]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = this.getAttribute('data-pf-target');
+        var target = document.getElementById(targetId);
+        if (target) {
+          var offset = 60;
+          var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+
+    /* ── Anchor bar scroll shadow ── */
+    var anchorBar = document.getElementById('pf-anchor-{{ section.id }}');
+    if (anchorBar) {
+      var anchorLinks = anchorBar.querySelectorAll('.pf-anchor-link');
+      var sections = [];
+
+      anchorLinks.forEach(function(link) {
+        var targetId = link.getAttribute('data-pf-target');
+        if (targetId) {
+          var el = document.getElementById(targetId);
+          if (el) sections.push({ link: link, el: el });
+        }
+      });
+
+      function updateActiveAnchor() {
+        var scrollPos = window.scrollY + 120;
+        var active = null;
+
+        sections.forEach(function(s) {
+          if (s.el.offsetTop <= scrollPos) {
+            active = s;
+          }
+        });
+
+        anchorLinks.forEach(function(l) { l.classList.remove('pf-active'); });
+        if (active) active.link.classList.add('pf-active');
+
+        if (anchorBar.getBoundingClientRect().top <= 1) {
+          anchorBar.classList.add('pf-scrolled');
+        } else {
+          anchorBar.classList.remove('pf-scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveAnchor, { passive: true });
+      updateActiveAnchor();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product Features",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "anchor_link",
+      "name": "Anchor Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Features"
+        },
+        {
+          "type": "text",
+          "id": "target_id",
+          "label": "Target Section ID",
+          "info": "Must match the Anchor ID of another block",
+          "default": "pf-features"
+        }
+      ]
+    },
+    {
+      "type": "hero_banner",
+      "name": "Hero Banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor ID",
+          "default": "pf-features"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile Image"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor ID",
+          "info": "Optional. Use to link from anchor bar."
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            { "value": "image_right", "label": "Image Right (Text Left)" },
+            { "value": "image_left", "label": "Image Left (Text Right)" }
+          ],
+          "default": "image_right"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Aerospace-Grade Aramid Strength"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Made from aerospace-grade aramid fiber, which is 5x stronger than steel and weighs just 1/5 as much."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "name": "Specs Block",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor ID"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Paper Thin & Feather Light"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Offers a sleek, barely-there profile that preserves your phone's original feel."
+        },
+        {
+          "type": "text",
+          "id": "spec_1_label",
+          "label": "Spec 1 Label",
+          "default": "Weight"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_value",
+          "label": "Spec 1 Value",
+          "default": "≈20"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_unit",
+          "label": "Spec 1 Unit",
+          "default": "g"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_label",
+          "label": "Spec 2 Label",
+          "default": "Thickness"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_value",
+          "label": "Spec 2 Value",
+          "default": "≈0.99"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_unit",
+          "label": "Spec 2 Unit",
+          "default": "mm"
+        },
+        {
+          "type": "text",
+          "id": "disclaimer",
+          "label": "Disclaimer",
+          "default": "*Tested in lab, individual units may have slight variances."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "name": "Comparison Table",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor ID",
+          "default": "pf-comparison"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Product Comparison"
+        },
+        {
+          "type": "header",
+          "content": "Column 1"
+        },
+        {
+          "type": "text",
+          "id": "col1_name",
+          "label": "Name",
+          "default": "Edge"
+        },
+        {
+          "type": "text",
+          "id": "col1_subtitle",
+          "label": "Subtitle",
+          "default": "The Art of Minimalism."
+        },
+        {
+          "type": "image_picker",
+          "id": "col1_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "col1_tagline",
+          "label": "Tagline",
+          "default": "Incredibly Slim & Light"
+        },
+        {
+          "type": "text",
+          "id": "col1_weight",
+          "label": "Weight",
+          "default": "≈ 20 g"
+        },
+        {
+          "type": "text",
+          "id": "col1_thickness",
+          "label": "Thickness",
+          "default": "≈ 0.99 mm"
+        },
+        {
+          "type": "text",
+          "id": "col1_protection",
+          "label": "Protection",
+          "default": "Daily Protection"
+        },
+        {
+          "type": "header",
+          "content": "Column 2"
+        },
+        {
+          "type": "text",
+          "id": "col2_name",
+          "label": "Name",
+          "default": "Cairn"
+        },
+        {
+          "type": "text",
+          "id": "col2_subtitle",
+          "label": "Subtitle",
+          "default": "The Path of Protection."
+        },
+        {
+          "type": "image_picker",
+          "id": "col2_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "col2_tagline",
+          "label": "Tagline",
+          "default": "Protective and Drop-resistant"
+        },
+        {
+          "type": "text",
+          "id": "col2_weight",
+          "label": "Weight",
+          "default": "≈ 35 g"
+        },
+        {
+          "type": "text",
+          "id": "col2_thickness",
+          "label": "Thickness",
+          "default": "≈ 2 mm"
+        },
+        {
+          "type": "text",
+          "id": "col2_protection",
+          "label": "Protection",
+          "default": "MIL-STD-810H · 2.44m Drop Test"
+        },
+        {
+          "type": "header",
+          "content": "Column 3 (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "col3_name",
+          "label": "Name",
+          "info": "Leave blank for 2-column layout"
+        },
+        {
+          "type": "text",
+          "id": "col3_subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "image_picker",
+          "id": "col3_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "col3_tagline",
+          "label": "Tagline"
+        },
+        {
+          "type": "text",
+          "id": "col3_weight",
+          "label": "Weight"
+        },
+        {
+          "type": "text",
+          "id": "col3_thickness",
+          "label": "Thickness"
+        },
+        {
+          "type": "text",
+          "id": "col3_protection",
+          "label": "Protection"
+        },
+        {
+          "type": "text",
+          "id": "disclaimer",
+          "label": "Disclaimer"
+        }
+      ]
+    },
+    {
+      "type": "accessory",
+      "name": "Accessory Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Accessory Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Features",
+      "blocks": [
+        { "type": "anchor_link", "settings": { "label": "Features", "target_id": "pf-features" } },
+        { "type": "anchor_link", "settings": { "label": "FAQs", "target_id": "product-info-faqs" } },
+        { "type": "anchor_link", "settings": { "label": "Reviews", "target_id": "product-info-reviews" } },
+        { "type": "hero_banner", "settings": { "anchor_id": "pf-features" } },
+        { "type": "feature", "settings": { "heading": "Aerospace-Grade Aramid Strength", "description": "Made from aerospace-grade aramid fiber, which is 5x stronger than steel and weighs just 1/5 as much. It's ultra-thin, incredibly tough, and built for premium protection — without the bulk.", "layout": "image_right" } },
+        { "type": "feature", "settings": { "heading": "Premium Weave", "description": "Crafted from finely woven aramid fiber, our case offers a silky-smooth, luxurious texture you can feel. It's not just light and strong — it's a pleasure to hold, every single time.", "layout": "image_left" } },
+        { "type": "specs", "settings": { "heading": "Paper Thin & Feather Light", "description": "Offers a sleek, barely-there profile that preserves your phone's original feel. Ideal for minimalists seeking elegant protection without added weight." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -267,9 +267,46 @@
         "button_label": "SHOP NOW",
         "button_link": "/products/the-original-case-sienna"
       }
+    },
+    "instagram_feed": {
+      "type": "instagram-feed",
+      "blocks": {
+        "img_1": {
+          "type": "image"
+        },
+        "img_2": {
+          "type": "image"
+        },
+        "img_3": {
+          "type": "image"
+        },
+        "img_4": {
+          "type": "image"
+        },
+        "img_5": {
+          "type": "image"
+        },
+        "img_6": {
+          "type": "image"
+        }
+      },
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3",
+        "img_4",
+        "img_5",
+        "img_6"
+      ],
+      "settings": {
+        "bg_color": "#f4f4f4",
+        "heading": "Join 1.5M+ followers of @burgeofficial",
+        "link": "https://instagram.com/burgeofficial"
+      }
     }
   },
   "order": [
+    "instagram_feed",
     "flex_case_promo",
     "footer",
     "utilities"

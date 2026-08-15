@@ -28,17 +28,17 @@
                   {%- for product in collection.products limit: block.settings.limit -%}
                     <div class="swiper-slide md:pb-2 md:border-b border-transparent hover:border-black transition-colors duration-300 group">
                       <div class="grid-product-item w-full h-full flex flex-col rounded overflow-hidden relative">
-                        <div class="images-container bg-[#f5f5f7] flex-shrink-0 relative rounded-2xl overflow-hidden mb-4 group/image" style="aspect-ratio: 4/5;">
+                        <div class="images-container flex-shrink-0 relative rounded-2xl overflow-hidden mb-4 group/image" style="aspect-ratio: 1/1; background-color: #f5f5f7;">
                           <a href="{{ product.url }}" class="w-full h-full block relative">
                             {%- if product.featured_image -%}
                               {%- if product.media[1] -%}
-                                {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply transition-opacity duration-500 group-hover/image:opacity-0 absolute inset-0 m-auto', style: 'padding: 20px;' }}
-                                {{ product.media[1] | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply absolute inset-0 m-auto opacity-0 transition-opacity duration-500 group-hover/image:opacity-100 scale-105', style: 'padding: 20px;' }}
+                                {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply transition-opacity duration-500 group-hover/image:opacity-0 absolute inset-0 m-auto', style: 'padding: 16px;' }}
+                                {{ product.media[1] | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply absolute inset-0 m-auto opacity-0 transition-opacity duration-500 group-hover/image:opacity-100 scale-105', style: 'padding: 16px;' }}
                               {%- else -%}
-                                {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover/image:scale-110 absolute inset-0 m-auto', style: 'padding: 20px;' }}
+                                {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain mix-blend-multiply transition-transform duration-700 group-hover/image:scale-110 absolute inset-0 m-auto', style: 'padding: 16px;' }}
                               {%- endif -%}
                             {%- else -%}
-                              <div class="w-full h-full absolute inset-0 m-auto" style="padding: 20px;">
+                              <div class="w-full h-full absolute inset-0 m-auto" style="padding: 16px;">
                                 {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover opacity-50' }}
                               </div>
                             {%- endif -%}

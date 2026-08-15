@@ -11,6 +11,11 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
+    "newsletter_banner": {
+      "type": "newsletter-banner",
+      "settings": {
+      }
+    },
     "instagram_feed": {
       "type": "instagram-feed",
       "blocks": {
@@ -276,6 +281,7 @@
     }
   },
   "order": [
+    "newsletter_banner",
     "instagram_feed",
     "footer",
     "utilities"

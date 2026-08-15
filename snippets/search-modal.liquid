@@ -72,9 +72,6 @@
                     <button type="button" class="predictive-search__reset-button" ref="resetButton" hidden on:click="/resetSearch">Clear</button>
                   </div>
                 </div>
-                
-                <!-- PREDICTIVE SEARCH RESULTS CONTAINER -->
-                <div class="predictive-search-form__content absolute top-full left-0 w-full bg-white shadow-xl rounded-b-xl z-50 overflow-hidden" ref="predictiveSearchResults" on:click="/handleModalClick"></div>
               </form>
               
               <button type="button" aria-label="Close" class="search-modal__close-button ml-6 sm:ml-8 p-2 rounded-full hover:bg-gray-200 transition-colors" on:click="dialog-component/closeDialog">
@@ -85,8 +82,11 @@
             </div>
           </div>
           
+          <!-- PREDICTIVE SEARCH RESULTS CONTAINER -->
+          <div class="predictive-search-form__content w-full pb-10" ref="predictiveSearchResults" on:click="/handleModalClick"></div>
+
           <!-- STATIC CONTENT BODY -->
-          <div class="p-6 sm:px-10 lg:px-0 bg-[#f5f5f7]">
+          <div class="static-search-content p-6 sm:px-10 lg:px-0 bg-[#f5f5f7]">
             <div class="w-full lg:w-11/12 xl:w-5/6 max-w-screen-full mx-auto">
               
               <!-- Frequency Terms -->
@@ -233,8 +233,12 @@
     animation: search-element-slide-out-bottom 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
   
-  /* Predictive Search dropdown positioning */
+  /* Predictive Search inline positioning */
   .predictive-search-form__content:empty {
+    display: none;
+  }
+  
+  .predictive-search-form__content:not(:empty) + .static-search-content {
     display: none;
   }
 </style>

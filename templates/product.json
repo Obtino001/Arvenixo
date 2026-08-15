@@ -1162,11 +1162,54 @@
         "padding-block-start": 60,
         "padding-block-end": 72
       }
+    },
+    "video_carousel": {
+      "type": "video-carousel",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "product_title": "Original Leather Case"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "product_title": "Reserve Trackable Bifold"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "product_title": "Trackable Keychain"
+          }
+        },
+        "slide_4": {
+          "type": "slide",
+          "settings": {
+            "product_title": "Leather iPad Case"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3",
+        "slide_4"
+      ],
+      "settings": {
+        "heading": "Reviews & Unboxings",
+        "bg_color": "#fbf6f0",
+        "slide_width": 220,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
     "section_NaqU9X",
-    "product_list_zR9Cym"
+    "product_list_zR9Cym",
+    "video_carousel"
   ]
 }

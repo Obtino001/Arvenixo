@@ -272,22 +272,28 @@
       "type": "instagram-feed",
       "blocks": {
         "img_1": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         },
         "img_2": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         },
         "img_3": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         },
         "img_4": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         },
         "img_5": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         },
         "img_6": {
-          "type": "image"
+          "type": "image",
+          "settings": {}
         }
       },
       "block_order": [

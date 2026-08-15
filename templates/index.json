@@ -57,7 +57,7 @@
         "padding_top": 96,
         "padding_bottom": 96,
         "heading": "Carry Lighter, Live Now.",
-        "text": "<p>Built from high-performance materials and intentional design,<br>Arvenixo redefines the way we carry \u2014 light, precise, and present.</p>",
+        "text": "<p>Built from high-performance materials and intentional design,<br>Arvenixo redefines the way we carry — light, precise, and present.</p>",
         "button_label": "About Our Philosophy",
         "button_link": "",
         "text_color": "#000000",
@@ -71,7 +71,7 @@
           "type": "collection_tab",
           "settings": {
             "title": "New Arrivals",
-            "collection": "",
+            "collection": "all-products",
             "limit": 8
           }
         },
@@ -79,7 +79,7 @@
           "type": "collection_tab",
           "settings": {
             "title": "Best Sellers",
-            "collection": "",
+            "collection": "all-products",
             "limit": 8
           }
         }

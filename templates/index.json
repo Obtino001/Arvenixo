@@ -1,20 +1,56 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "hero_slider": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slide"
+        },
+        "slide_2": {
+          "type": "slide"
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
+      "settings": {}
+    },
+    "rich_text_premium": {
+      "type": "rich-text-premium",
+      "settings": {}
+    },
+    "product_tabs_slider": {
+      "type": "product-tabs-slider",
+      "blocks": {
+        "tab_1": {
+          "type": "collection_tab",
+          "settings": {
+            "title": "New Arrivals"
+          }
+        },
+        "tab_2": {
+          "type": "collection_tab",
+          "settings": {
+            "title": "Best Sellers"
+          }
+        }
+      },
+      "block_order": [
+        "tab_1",
+        "tab_2"
+      ],
+      "settings": {}
+    },
+    "banner_with_text": {
+      "type": "banner-with-text",
+      "settings": {}
+    },
     "collection_list_xpBxCm": {
       "type": "collection-list",
       "blocks": {
         "group_mfTd9p": {
           "type": "group",
-          "name": "t:names.header",
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -54,7 +90,6 @@
           "blocks": {
             "text_AYrwfM": {
               "type": "text",
-              "name": "t:names.text",
               "settings": {
                 "text": "<h2>Shop by Collection</h2>",
                 "width": "fit-content",
@@ -75,8 +110,7 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             }
           },
           "block_order": [
@@ -85,7 +119,6 @@
         },
         "static-collection-card": {
           "type": "_collection-card",
-          "name": "t:names.collection_card",
           "static": true,
           "settings": {
             "placement": "on_image",
@@ -102,7 +135,6 @@
           "blocks": {
             "collection_title_zyBdAJ": {
               "type": "collection-title",
-              "name": "t:names.collection_title",
               "settings": {
                 "width": "fit-content",
                 "max_width": "normal",
@@ -122,8 +154,7 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -139,8 +170,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0
-              },
-              "blocks": {}
+              }
             }
           },
           "block_order": [
@@ -151,7 +181,6 @@
       "block_order": [
         "group_mfTd9p"
       ],
-      "name": "t:names.collection_list",
       "settings": {
         "collection_list": [],
         "layout_type": "bento",
@@ -174,6 +203,10 @@
     }
   },
   "order": [
+    "hero_slider",
+    "rich_text_premium",
+    "product_tabs_slider",
+    "banner_with_text",
     "collection_list_xpBxCm"
   ]
 }

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_slider": {
@@ -5,22 +14,55 @@
       "blocks": {
         "slide_1": {
           "type": "slide",
-          "settings": {}
+          "settings": {
+            "overlay_opacity": 20,
+            "heading": "Designed to Disappear",
+            "subheading": "For Google Pixel 11 series",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
         },
         "slide_2": {
           "type": "slide",
-          "settings": {}
+          "settings": {
+            "overlay_opacity": 20,
+            "heading": "Designed to Disappear",
+            "subheading": "For Google Pixel 11 series",
+            "button_label": "Shop Now",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#000000"
+          }
         }
       },
       "block_order": [
         "slide_1",
         "slide_2"
       ],
-      "settings": {}
+      "settings": {
+        "page_width": "max-w-screen-full",
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "autoplay_duration": 5
+      }
     },
     "rich_text_premium": {
       "type": "rich-text-premium",
-      "settings": {}
+      "settings": {
+        "page_width": "max-w-screen-full",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "heading": "Carry Lighter, Live Now.",
+        "text": "<p>Built from high-performance materials and intentional design,<br>Arvenixo redefines the way we carry — light, precise, and present.</p>",
+        "button_label": "About Our Philosophy",
+        "button_link": "",
+        "text_color": "#000000",
+        "bg_color": "#ffffff"
+      }
     },
     "product_tabs_slider": {
       "type": "product-tabs-slider",
@@ -28,13 +70,17 @@
         "tab_1": {
           "type": "collection_tab",
           "settings": {
-            "title": "New Arrivals"
+            "title": "New Arrivals",
+            "collection": "",
+            "limit": 8
           }
         },
         "tab_2": {
           "type": "collection_tab",
           "settings": {
-            "title": "Best Sellers"
+            "title": "Best Sellers",
+            "collection": "",
+            "limit": 8
           }
         }
       },
@@ -42,11 +88,24 @@
         "tab_1",
         "tab_2"
       ],
-      "settings": {}
+      "settings": {
+        "bg_color": "#ffffff"
+      }
     },
     "banner_with_text": {
       "type": "banner-with-text",
-      "settings": {}
+      "settings": {
+        "bg_color": "#ffffff",
+        "section_heading": "Style up by collections",
+        "section_description": "Complete your journey with our meticulously crafted accessories designed to complement and elevate your essentials.",
+        "overlay_opacity": 30,
+        "banner_heading": "Sunset Collection,\nDecorate Your Life",
+        "button_label": "Learn More",
+        "button_link": "",
+        "text_color": "#ffffff",
+        "button_bg_color": "#000000",
+        "button_text_color": "#ffffff"
+      }
     },
     "collection_list_xpBxCm": {
       "type": "collection-list",
@@ -112,7 +171,8 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              }
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -156,7 +216,8 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              }
+              },
+              "blocks": {}
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -172,7 +233,8 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0
-              }
+              },
+              "blocks": {}
             }
           },
           "block_order": [

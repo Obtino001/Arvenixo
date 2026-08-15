@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "store_features_static": {
+      "type": "store-features-static",
+      "settings": {}
+    },
     "hero_slider": {
       "type": "hero-slider",
       "blocks": {
@@ -412,6 +416,7 @@
   },
   "order": [
     "hero_slider",
+    "store_features_static",
     "shop_by_category",
     "rich_text_premium",
     "product_tabs_slider",

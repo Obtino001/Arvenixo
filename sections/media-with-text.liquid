@@ -1,0 +1,154 @@
+<div class="shopify-section section px-6 sm:px-10 lg:px-12 xl:px-16 pt-16 xs:pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-36 pb-12" id="MediaWithText-{{ section.id }}" style="background-color: {{ section.settings.bg_color }};">
+  <div class="w-full mx-auto max-w-screen-full">
+    
+    {%- if section.settings.section_heading != blank -%}
+      <h2 class="text-[28px] sm:text-[40px] md:text-[64px] lg:text-[80px] xl:text-[96px] leading-none pb-4 sm:pb-5 xl:pb-6 border-b border-gray-300 font-medium tracking-tight" style="color: {{ section.settings.text_color }};">
+        {{ section.settings.section_heading }}
+      </h2>
+    {%- endif -%}
+
+    <div class="grid grid-cols-1 md:grid-cols-12 md:py-6 xl:py-8 gap-8 md:gap-0 mt-8 md:mt-0">
+      
+      <!-- Text Content Column -->
+      <div class="col-span-1 md:col-span-5 md:flex justify-center items-center {% if section.settings.layout == 'media_first' %}md:order-2{% endif %}">
+        <div class="w-full md:w-4/5 lg:w-4/5 xl:w-3/4 py-4 sm:py-7 lg:py-8 md:space-y-7 lg:space-y-8 xl:space-y-10 flex flex-col justify-between items-start space-y-8">
+          <div class="space-y-3 sm:space-y-4 lg:space-y-6 w-full">
+            {%- if section.settings.heading != blank -%}
+              <h3 class="text-[18px] xs:text-[20px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[48px] tracking-tight leading-tight font-medium" style="color: {{ section.settings.text_color }};">
+                {{ section.settings.heading | newline_to_br }}
+              </h3>
+            {%- endif -%}
+            
+            {%- if section.settings.text != blank -%}
+              <p class="text-[14px] xs:text-[15px] sm:text-[16px] lg:text-[20px] xl:text-[24px] font-light opacity-70" style="color: {{ section.settings.text_color }};">
+                {{ section.settings.text | newline_to_br }}
+              </p>
+            {%- endif -%}
+          </div>
+          
+          {%- if section.settings.button_label != blank -%}
+            <a href="{{ section.settings.button_link }}" class="block flex-shrink-0 w-max text-[14px] xs:text-[15px] sm:text-[16px] lg:text-[18px] xl:text-[20px] leading-none font-medium py-3 sm:py-3.5 lg:py-4 px-8 sm:px-10 lg:px-12 border rounded-full transition-all duration-300 hover:scale-105" style="color: {{ section.settings.text_color }}; border-color: {{ section.settings.text_color | color_modify: 'alpha', 0.2 }}; hover:bg-[{{ section.settings.text_color }}] hover:text-[{{ section.settings.bg_color }}];">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+      
+      <!-- Media Column -->
+      <div class="col-span-1 md:col-span-7 {% if section.settings.layout == 'media_first' %}md:order-1{% endif %}">
+        <div class="aspect-w-16 aspect-h-10 sm:aspect-h-9 rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl relative group bg-gray-100">
+          {%- if section.settings.video != blank -%}
+            <div class="w-full h-full relative">
+              <!-- Custom Play Button Overlay -->
+              <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl">
+                  <svg fill="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-105' }}
+            </div>
+          {%- elsif section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 2000 | image_tag: class: 'w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-105' }}
+          {%- else -%}
+            {{ 'collection-1' | placeholder_svg_tag: 'w-full h-full object-cover opacity-50 transition-transform duration-[10s] group-hover:scale-105' }}
+          {%- endif -%}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Media with Text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Desktop Layout",
+      "options": [
+        {
+          "value": "text_first",
+          "label": "Text First"
+        },
+        {
+          "value": "media_first",
+          "label": "Media First"
+        }
+      ],
+      "default": "text_first"
+    },
+    {
+      "type": "header",
+      "content": "Top Heading"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Summa Case"
+    },
+    {
+      "type": "header",
+      "content": "Main Content"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Seamless fusion of aramid and TPU —\nprotection refined to perfection."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A masterpiece of art and tech."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Discover More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Video plays automatically on loop. Overrides image."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media with Text"
+    }
+  ]
+}
+{% endschema %}

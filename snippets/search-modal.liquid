@@ -9,512 +9,232 @@
 {% render 'dialog-styles' %}
 {% render 'predictive-search-styles' %}
 
-<script
-  src="{{ 'dialog.js' | asset_url }}"
-  type="module"
-></script>
+<script src="{{ 'dialog.js' | asset_url }}" type="module"></script>
+<script src="{{ 'predictive-search.js' | asset_url }}" type="module" fetchpriority="low"></script>
 
-<script
-  src="{{ 'predictive-search.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"
-></script>
-
-<dialog-component
-  id="search-modal"
-  class="search-modal"
-  {{ block.shopify_attributes }}
->
+<dialog-component id="search-modal" class="search-modal" {{ block.shopify_attributes }}>
   <dialog
     ref="dialog"
     on:click="/closeDialogOnClickOutside"
     on:keydown="/closeDialogOnEscapePress"
-    class="search-modal__content dialog-modal"
+    class="search-modal__content dialog-modal bg-[#f5f5f7] w-full max-w-none h-[100dvh] !rounded-none m-0 border-none p-0 overflow-hidden"
     scroll-lock
     aria-labelledby="search-modal-heading"
+    style="--modal-width: 100vw; --modal-top-margin: 0; max-height: 100dvh;"
   >
-    <h2
-      id="search-modal-heading"
-      class="visually-hidden"
-    >
-      {{ 'content.search' | t }}
-    </h2>
+    <h2 id="search-modal-heading" class="visually-hidden">{{ 'content.search' | t }}</h2>
+    
     <predictive-search-component
-      class="predictive-search color-custom-popover{% if class != blank %} {{ class | strip }}{% endif %}"
-      style="--product-corner-radius: {{ settings.product_corner_radius | default: 8 | append: 'px' }}; --card-corner-radius: {{ settings.card_corner_radius | default: 8 | append: 'px' }};{% if settings.card_title_case == 'uppercase' %} --title-case: uppercase;{% endif %}"
+      class="predictive-search w-full h-full flex flex-col{% if class != blank %} {{ class | strip }}{% endif %}"
       data-section-id="predictive-search"
       data-testid="{{ 'search-component--modal' }}"
       role="search"
       aria-label="{{ 'content.search_input_label' | t }}"
     >
-      <form
-        action="{{ routes.search_url }}"
-        method="get"
-        role="search"
-        class="predictive-search-form"
-        ref="form"
-        on:keydown="/onSearchKeyDown"
-      >
-        <div
-          class="predictive-search-form__header"
-        >
-          <div class="predictive-search-form__header-inner">
-            <label
-              for="{{ 'cmdk-input' | default: 'Search' }}"
-              class="visually-hidden"
-            >
-              {{- 'content.search_input_label' | t -}}
-            </label>
-            <input
-              class="search-input"
-              id="{{ 'cmdk-input' | default: 'Search' }}"
-              type="search"
-              name="q"
-              role="combobox"
-              aria-expanded="false"
-              aria-owns="predictive-search-results"
-              aria-controls="predictive-search-results"
-              aria-haspopup="listbox"
-              aria-autocomplete="list"
-              autocomplete="off"
-              placeholder="{{ 'content.search_input_placeholder' | t }}"
-              ref="searchInput"
-              on:input="/search"
-              on:keydown="/onSearchKeyDown"
-            >
-            <input
-              name="options[prefix]"
-              type="hidden"
-              value="last"
-            >
-            <span class="svg-wrapper predictive-search__icon">
-              {{ 'icon-search.svg' | inline_asset_content }}
-            </span>
-            <button
-              type="button"
-              class="button-unstyled predictive-search__reset-button"
-              ref="resetButton"
-              hidden
-              on:click="/resetSearch"
-            >
-              {{ 'actions.clear' | t }}
-            </button>
+      <div class="search-modal modal__content py-7 sm:py-10 lg:py-12 bg-[#f5f5f7] w-full h-full flex flex-col">
+        <div class="h-full overflow-y-auto">
+          
+          <!-- SEARCH INPUT HEADER -->
+          <div class="search-modal__content px-6 sm:px-10 lg:px-0 border-gray-300" tabindex="-1">
+            <div class="w-full lg:w-11/12 xl:w-5/6 max-w-screen-full mx-auto pb-4 sm:pb-5 border-b border-gray-300 flex justify-between items-center relative">
+              
+              <form action="{{ routes.search_url }}" method="get" role="search" class="search w-full relative z-10" ref="form" on:keydown="/onSearchKeyDown">
+                <div class="w-full flex justify-between items-center space-x-3 sm:space-x-4 lg:space-x-5">
+                  <button type="submit" class="search__button h-6 w-6 text-black" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="block w-full h-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </button>
+                  <input
+                    class="search-input w-full text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[24px] bg-transparent outline-none border-none shadow-none text-black placeholder:text-gray-400 font-light"
+                    id="Search-In-Modal"
+                    type="search"
+                    name="q"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-owns="predictive-search-results"
+                    aria-controls="predictive-search-results"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    placeholder="Search"
+                    ref="searchInput"
+                    on:input="/search"
+                    on:keydown="/onSearchKeyDown"
+                  >
+                  <input name="options[prefix]" type="hidden" value="last">
+                  
+                  <!-- Loading State (managed by predictive search JS) -->
+                  <div class="hidden">
+                    <button type="button" class="predictive-search__reset-button" ref="resetButton" hidden on:click="/resetSearch">Clear</button>
+                  </div>
+                </div>
+                
+                <!-- PREDICTIVE SEARCH RESULTS CONTAINER -->
+                <div class="predictive-search-form__content absolute top-full left-0 w-full bg-white shadow-xl rounded-b-xl z-50 overflow-hidden" ref="predictiveSearchResults" on:click="/handleModalClick"></div>
+              </form>
+              
+              <button type="button" aria-label="Close" class="search-modal__close-button ml-6 sm:ml-8 p-2 rounded-full hover:bg-gray-200 transition-colors" on:click="dialog-component/closeDialog">
+                <svg aria-hidden="true" focusable="false" width="16" height="16" class="icon icon-close" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </div>
-          <button
-            type="button"
-            class="button predictive-search__close-modal-button"
-            aria-label="{{ 'accessibility.close_dialog' | t }}"
-            on:click="dialog-component/closeDialog"
-            ref="closeModalButton"
-          >
-            <span class="svg-wrapper">
-              {{ 'icon-close.svg' | inline_asset_content }}
-            </span>
-          </button>
-        </div>
+          
+          <!-- STATIC CONTENT BODY -->
+          <div class="p-6 sm:px-10 lg:px-0 bg-[#f5f5f7]">
+            <div class="w-full lg:w-11/12 xl:w-5/6 max-w-screen-full mx-auto">
+              
+              <!-- Frequency Terms -->
+              <div class="md:flex justify-between items-start md:space-x-6 lg:space-x-8">
+                <h4 class="md:w-32 flex-shrink-0 text-[14px] sm:text-[16px] leading-none mb-5 sm:mb-6 md:mb-0 font-medium">
+                  Frequency Terms
+                </h4>
+                <div class="md:w-full flex flex-wrap text-[13px] sm:text-[14px] lg:text-[16px]">
+                  <a href="/search?q=google-pixel-11" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Google Pixel 11</a>
+                  <a href="/search?q=galaxy-z-fold8" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Galaxy Z Fold8</a>
+                  <a href="/search?q=galaxy-z-fold8-ultra" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Galaxy Z Fold8 Ultra</a>
+                  <a href="/search?q=galaxy-s26-ultra" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Galaxy S26 Ultra</a>
+                  <a href="/search?q=iphone-air" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">iPhone Air</a>
+                  <a href="/search?q=iphone-17-pro-max" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">iPhone 17 Pro Max</a>
+                  <a href="/search?q=iphone-17-pro" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">iPhone 17 Pro</a>
+                  <a href="/search?q=wallet" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Wallet</a>
+                  <a href="/search?q=power-bank" class="block w-max px-5 py-2 mb-3 mr-3 sm:mr-4 lg:mr-5 bg-gray-200 hover:bg-gray-300 transition-colors rounded-full text-black font-light">Power Bank</a>
+                </div>
+              </div>
+              
+              <!-- Top Picks -->
+              <div class="md:flex md:space-x-6 lg:space-x-8 mt-10 lg:mt-14">
+                <h4 class="md:w-32 flex-shrink-0 pb-2 border-b border-gray-300 md:border-b-0 md:border-r text-[14px] sm:text-[16px] leading-none mb-5 sm:mb-6 md:mb-0 font-medium">
+                  Top Picks
+                </h4>
+                <div class="md:w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 sm:gap-y-6 lg:gap-y-8 sm:gap-x-6 lg:gap-x-8 xl:gap-x-10 text-[12px] sm:text-[14px] lg:text-[15px]">
+                  
+                  <a href="/products/california-dream-phone-cases?variant=46127858647110" class="col-span-1 flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/Google-Pixel-11-pro-fold-back-only-california-dream-04_5ea67e99-0862-4550-b73b-a38e69495c7b_small.webp?v=1786700650" alt="California Dream" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">NEW</span>
+                      <span class="block text-gray-500">California Dream-01<br>Google Pixel 11 Pro Fold<br>Edge Case</span>
+                    </h4>
+                  </a>
+                  
+                  <a href="/products/classic-phone-cases?variant=45917875535942" class="col-span-1 flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/Fold8-black-back-case-only-1_247996dd-3cc6-4683-a6cc-a6e64bb6d18c_small.webp?v=1784803088" alt="Fold 8" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">NEW</span>
+                      <span class="block text-gray-500">600D Black/Grey (Twill)<br>Fold8<br>Edge Case</span>
+                    </h4>
+                  </a>
 
-        <div class="predictive-search-form__content-wrapper">
-          <div
-            class="predictive-search-form__content"
-            ref="predictiveSearchResults"
-            on:click="/handleModalClick"
-          >
-            {% render 'predictive-search-empty-state',
-              load_empty_state: true,
-              shadow_opacity: 0.1,
-              products_test_id: 'products-list-default--modal'
-            %}
-          </div>
+                  <a href="/products/california-dream-phone-cases?variant=45918023188550" class="col-span-1 flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/Fold8-california-dream-01-back-case-only-1_e361a7ea-43d5-415b-ab19-abc14f0dafe8_small.webp?v=1784805092" alt="California Dream Fold 8" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">NEW</span>
+                      <span class="block text-gray-500">California Dream-01<br>Fold8<br>Edge Case</span>
+                    </h4>
+                  </a>
 
-          <div class="predictive-search-form__footer">
-            <button
-              class="button predictive-search__search-button"
-              ref="viewAllButton"
-            >
-              {{ 'content.search_results_view_all' | t }}
-            </button>
+                  <a href="/products/sunset-moonrise-phone-cases?variant=45917850566726" class="col-span-1 flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/Fold8-moonrise-back-case-only-1_036f96c1-26fe-426a-8fca-5155ef8ea098_small.webp?v=1784803717" alt="Moonrise Fold8" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">NEW</span>
+                      <span class="block text-gray-500">Moonrise<br>Fold8<br>Edge Case</span>
+                    </h4>
+                  </a>
+
+                  <a href="/products/sunset-moonrise-phone-cases?variant=45917850468422" class="col-span-1 hidden md:flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/Fold8-ultra-sunset-back-case-only-1_f55582ca-88d8-4331-b684-df6891a353bb_small.webp?v=1784803420" alt="Sunset Fold8 Ultra" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">NEW</span>
+                      <span class="block text-gray-500">Sunset<br>Fold8 Ultra<br>Edge Case</span>
+                    </h4>
+                  </a>
+
+                  <a href="/products/classic-phone-cases?variant=43774436999238" class="col-span-1 hidden md:flex space-x-4 items-center group">
+                    <img src="//www.ipitaka.com/cdn/shop/files/iPhone17air-black-slim_3e78f7f4-04ff-437b-a7af-cbbaba794f7d_small.webp?v=1785987187" alt="iPhone 17 Air" class="block w-[60px] h-[60px] bg-white rounded-lg object-contain p-1 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
+                    <h4 class="font-light leading-snug">
+                      <span class="block text-orange-500 font-medium mb-0.5">HOT</span>
+                      <span class="block text-gray-500">600D Black/Grey (Twill)<br>iPhone Air<br>Edge Case</span>
+                    </h4>
+                  </a>
+
+                </div>
+              </div>
+              
+              <!-- Case Series Accordion -->
+              <div class="md:flex md:space-x-6 lg:space-x-8 mt-12 sm:mt-16 md:mt-20 border-t border-gray-300 pt-8">
+                <div class="mega-search-accordion w-full">
+                  <div class="item text-[14px] sm:text-[16px] font-light leading-relaxed">
+                    <div class="title flex items-center justify-between cursor-pointer pb-4 group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.accordion-icon').classList.toggle('rotate-180')">
+                      <div>
+                        <h4 class="font-medium text-[16px] sm:text-[18px] text-black">We've Updated Our Case Series</h4>
+                        <span class="block font-light text-gray-500 mt-1">Don't worry — you'll still find the same designs, just under new names.</span>
+                      </div>
+                      <span class="accordion-icon ml-4 text-gray-500 transition-transform duration-300 group-hover:text-black">
+                        <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                      </span>
+                    </div>
+                    
+                    <!-- Accordion Content -->
+                    <div class="content pt-4 sm:pt-6 hidden border-t border-dashed border-gray-300 mt-2 text-gray-600 pb-8">
+                      <h5 class="font-medium text-black mb-3 text-[16px]">Why We're Renaming Our Case Series</h5>
+                      <p class="mb-4">
+                        Names like Ultra-Slim, ProGuard, and UltraGuard helped describe features, but over time, they also
+                        caused confusion.<br>
+                        At Arvenixo, we’ve always focused on advancing aramid fiber weaving to improve everyday carry. As
+                        our products evolved, we wanted our names to reflect the experience, not just the specs.<br>
+                        That’s why we renamed our three series as Edge, Cairn, and Summa — inspired by a journey of
+                        climbing:
+                      </p>
+                      <ul class="list-disc pl-5 my-5 space-y-2">
+                        <li>
+                          <strong class="font-medium text-black">Edge:</strong> slim, light, and sharp along the climb (Original name:
+                          Ultra-Slim Case)
+                        </li>
+                        <li>
+                          <strong class="font-medium text-black">Cairn:</strong> firm and dependable, like stone markers that guide the
+                          way (Original name: ProGuard Case)
+                        </li>
+                        <li>
+                          <strong class="font-medium text-black">Summa:</strong> the peak, where protection and hand-feel come together
+                          (Original name: UltraGuard Case)
+                        </li>
+                      </ul>
+                      <p class="pt-2 font-medium text-black">
+                        <span class="block">Three levels. One journey.</span>
+                        <span class="block text-orange-500 mt-1">Carry Lighter, Live Now.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
+          
         </div>
-      </form>
+      </div>
     </predictive-search-component>
   </dialog>
 </dialog-component>
 
-{% stylesheet %}
-  /* Search modal style */
-  .search-modal {
-    --search-border-radius: var(--style-border-radius-popover);
-    --search-border-width: var(--style-border-width);
-  }
-
-  .search-modal__content {
-    /* Approx set the top so when the content is at max height, the modal is centered */
-    --modal-top-margin: calc(50dvh - var(--modal-max-height) / 2 - 2rem);
-    --modal-width: 66dvw;
-
-    padding: 0;
-    border: var(--style-border-popover);
-
-    @media screen and (min-width: 750px) {
-      width: var(--modal-width);
-      margin-block-start: var(--modal-top-margin);
-      overflow: hidden;
-    }
-  }
-
-  /* Hide the default dialog backdrop on small screens */
-  @media screen and (max-width: 749px) {
-    .search-modal__content::backdrop {
-      display: none;
-    }
-  }
-
+<style>
+  /* Base Dialog resets */
   .dialog-modal[open].search-modal__content {
-    transform-origin: bottom center;
-    animation: search-element-slide-in-bottom 300ms var(--ease-out-quad) forwards;
-    border-radius: var(--search-border-radius);
-    box-shadow: var(--shadow-popover);
-
-    @media screen and (max-width: 749px) {
-      border-radius: 0;
-    }
+    animation: search-element-slide-in-bottom 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
-
   .dialog-modal.search-modal__content.dialog-closing {
-    animation: search-element-slide-out-bottom 200ms var(--ease-out-quad) forwards;
+    animation: search-element-slide-out-bottom 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
-
-  .search-modal__content[open] {
-    display: flex;
-  }
-
-  .search-modal__content :is(.predictive-search-dropdown, .predictive-search-form__content-wrapper) {
-    position: relative;
-  }
-
-  .dialog-modal
-    .predictive-search-form__header:has(
-      .predictive-search__reset-button:not(.predictive-search__reset-button[hidden])
-    )::before {
-    content: '';
-    position: absolute;
-    right: calc(var(--padding-sm) + var(--minimum-touch-target));
-    top: 0;
-    bottom: 0;
-    width: var(--border-width-sm);
-    background-color: var(--color-border);
-  }
-
-  .dialog-modal
-    .predictive-search-form__header:has(.predictive-search__reset-button:not(.predictive-search__reset-button[hidden]))
-    > .predictive-search__close-modal-button {
-    &::before {
-      content: none;
-    }
-  }
-
-  @media screen and (min-width: 750px) {
-    .dialog-modal
-      .predictive-search-form__header:has(
-        .predictive-search__reset-button:not(.predictive-search__reset-button[hidden])
-      )::before {
-      right: calc(var(--padding-2xl) * 2);
-    }
-  }
-
-  predictive-search-component {
-    --resource-card-corner-radius: var(--product-corner-radius);
-
-    display: flex;
-    width: 100%;
-    position: relative;
-    margin-inline: auto;
-    align-items: center;
-    background-color: var(--color-background);
-    z-index: var(--layer-heightened);
-  }
-
-  .predictive-search-form__footer {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    @media screen and (min-width: 750px) {
-      --to-top-gradient-background: linear-gradient(
-        to top,
-        rgb(var(--color-background-rgb) / var(--opacity-90)),
-        rgb(var(--color-background-rgb) / var(--opacity-80)),
-        rgb(var(--color-background-rgb) / var(--opacity-40)),
-        transparent
-      );
-
-      padding-block: var(--padding-xs) var(--padding-lg);
-      background-image: var(--to-top-gradient-background);
-    }
-  }
-
-  predictive-search-component:has([data-search-results]):not(:has(.predictive-search-results__no-results))
-    .predictive-search-form__footer {
-    display: block;
-  }
-
-  .predictive-search-form {
-    position: relative;
-    width: 100%;
-    align-self: flex-start;
-  }
-
-  .predictive-search-form__content {
-    max-height: 50dvh;
-    overflow-y: auto;
-    background-color: var(--color-background);
-
-    /* Firefox */
-    scrollbar-width: none;
-
-    /* Webkit browsers */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .predictive-search-form__content-wrapper {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    z-index: var(--layer-raised);
-    display: flex;
-    flex-direction: column;
-    border-radius: 0 0 var(--search-border-radius) var(--search-border-radius);
-    transition: box-shadow var(--animation-speed) var(--animation-easing);
-    transform: translateZ(0);
-    overflow: hidden;
-
-    @media screen and (max-width: 749px) {
-      border-radius: 0;
-    }
-
-    @media screen and (min-width: 750px) {
-      max-height: var(--modal-max-height);
-    }
-  }
-
-  /* Add new rule to apply bottom padding only when search button exists */
-  .predictive-search-form__content-wrapper:has([data-search-results]):not(:has(.predictive-search-results__no-results))
-    > .predictive-search-form__content {
-    padding-block-end: var(--padding-6xl);
-  }
-
-  .predictive-search-form__header-inner {
-    background: var(--color-background);
-    border: var(--search-border-width) solid var(--color-border);
-    color: var(--color-foreground);
-    border-radius: var(--style-border-radius-popover);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-
-    @media screen and (max-width: 749px) {
-      border-radius: var(--style-border-radius-inputs);
-      border: none;
-    }
-  }
-
-  .predictive-search-form__header-inner:focus-within {
-    outline-offset: var(--focus-outline-offset);
-
-    @media screen and (min-width: 750px) {
-      outline: var(--focus-outline-width) solid var(--color-foreground);
-    }
-  }
-
-  .predictive-search-form__header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    z-index: var(--layer-heightened);
-    width: 100%;
-    align-items: center;
-    background-color: var(--color-input-background);
-    border: var(--search-border-width) solid var(--color-border);
-    border-radius: var(--style-border-radius-inputs);
-
-    @media screen and (max-width: 749px) {
-      padding: var(--padding-2xs) var(--padding-sm);
-    }
-  }
-
-  .predictive-search-form__header:focus-within,
-  .predictive-search-form__header-inner:focus-within,
-  .predictive-search-form__header-inner:has(.search-input:is(:focus, :focus-visible)) {
-    outline: none;
-    box-shadow: none;
-    /* stylelint-disable-next-line declaration-no-important */
-    border-color: var(--color-border) !important;
-  }
-
-  input.search-input {
-    border-radius: var(--style-border-radius-inputs);
-    padding-block: var(--padding-sm);
-    font-size: var(--font-size--md);
-    width: 100%;
-    color: var(--color-foreground);
-    padding-inline: calc(var(--margin-lg) + var(--icon-size-lg)) 0;
-    background: transparent;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    outline: none;
-    border: 0;
-  }
-
-  input.search-input::placeholder {
-    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-muted-text));
-  }
-
-  input.search-input,
-  input.search-input:is(:focus, :focus-visible, :focus-within),
-  .predictive-search-form__header *:is(:focus, :focus-visible) {
-    outline: none;
-    box-shadow: none;
-  }
-
-  input.search-input:hover {
-    background-color: transparent;
-  }
-
-  .predictive-search__icon {
-    position: absolute;
-    left: var(--margin-xl);
-    top: auto;
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
-    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-60));
-
-    @media screen and (min-width: 750px) {
-      left: var(--margin-md);
-    }
-  }
-
-  .predictive-search__icon > svg {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
-  }
-
-  .predictive-search__reset-button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: var(--minimum-touch-target);
-    height: var(--minimum-touch-target);
-    padding: 0;
-    margin-inline-end: var(--margin-md);
-    background: transparent;
-    color: var(--color-foreground);
-    opacity: 0.68;
-    transition: opacity var(--animation-speed-medium) var(--animation-timing-fade-out),
-      visibility var(--animation-speed-medium) var(--animation-timing-fade-out);
-
-    &:hover {
-      color: var(--color-foreground);
-    }
-
-    &:active {
-      transform: scale(0.9);
-      transition: transform 100ms var(--animation-timing-active);
-    }
-
-    @media screen and (min-width: 750px) {
-      margin-inline-end: var(--margin-2xs);
-    }
-  }
-
-  .predictive-search__reset-button[hidden] {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-  }
-
-  .predictive-search__reset-button-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
-    transition: background-color var(--animation-speed-medium) ease-in-out,
-      transform var(--animation-speed-medium) var(--animation-timing-bounce);
-    border-radius: 50%;
-
-    &:hover {
-      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-8));
-    }
-  }
-
-  .predictive-search__reset-button:active .predictive-search__reset-button-icon {
-    transform: scale(0.85);
-    transition-timing-function: var(--animation-timing-active);
-    transition-duration: 100ms;
-  }
-
-  .predictive-search__reset-button svg {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
-  }
-
-  .predictive-search__reset-button-text {
+  
+  /* Predictive Search dropdown positioning */
+  .predictive-search-form__content:empty {
     display: none;
   }
-
-  .predictive-search__search-button {
-    margin: auto;
-    z-index: var(--layer-raised);
-    transition: transform var(--animation-speed-medium) var(--animation-timing-bounce),
-      box-shadow var(--animation-speed-medium) var(--animation-timing-hover);
-    transform-origin: center;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgb(0 0 0 / var(--opacity-5));
-    }
-
-    &:active {
-      transform: scale(0.97);
-      transition: transform 100ms var(--animation-timing-active);
-      box-shadow: none;
-    }
-  }
-
-  .predictive-search__close-modal-button {
-    --button-color: var(--color-foreground);
-    --button-background-color: transparent;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--minimum-touch-target);
-    height: var(--minimum-touch-target);
-    margin-inline-start: var(--margin-sm);
-    padding: 0;
-    box-shadow: none;
-
-    &:active {
-      transform: scale(0.8);
-      transition: transform 100ms var(--animation-timing-active);
-    }
-
-    .svg-wrapper,
-    svg {
-      width: var(--icon-size-xs);
-      height: var(--icon-size-xs);
-    }
-  }
-
-  .predictive-search__close-modal-button:hover {
-    --button-color: var(--color-foreground);
-    --button-background-color: transparent;
-  }
-{% endstylesheet %}
+</style>

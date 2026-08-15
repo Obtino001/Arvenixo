@@ -1,0 +1,122 @@
+<div class="shopify-section-group-header-group section-announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="px-6 sm:px-10 lg:px-12 xl:px-16 text-[13px] lg:text-[14px] xl:text-[16px] font-light">
+    <div class="w-full max-w-screen-full mx-auto h-10 flex items-center justify-center overflow-hidden relative group">
+      {%- if section.blocks.size > 0 -%}
+        <div class="flex whitespace-nowrap marquee-content" style="--duration: {{ section.settings.speed }}s;">
+          {%- capture marquee_items -%}
+            {%- for block in section.blocks -%}
+              <a href="{{ block.settings.link | default: '#' }}" class="inline-block w-max px-10 sm:px-20 lg:px-32 xl:px-40 hover:opacity-70 transition-opacity" {{ block.shopify_attributes }}>
+                <span class="block border-b border-transparent hover:border-current transition-colors">
+                  {{ block.settings.text }}
+                </span>
+              </a>
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {%- for i in (1..4) -%}
+            <div class="marquee-text flex flex-shrink-0 items-center">
+              {{ marquee_items }}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="w-full text-center">
+          Add announcements in the customizer.
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-content {
+    width: max-content;
+  }
+  .marquee-text {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+  .section-announcement-bar .group:hover .marquee-text {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Marquee Announcement",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "label": "Animation Speed",
+      "info": "Lower is faster.",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Announce something here"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Announcement",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Master Every Angle | Folio 3 For iPad Pro"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "30-Day Return Guarantee"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

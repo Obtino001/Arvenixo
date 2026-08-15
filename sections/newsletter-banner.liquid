@@ -25,7 +25,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #922768;
+    background-color: {{ section.settings.bg_color }};
     padding: 60px 20px;
     max-width: 1150px;
     display: flex;
@@ -113,7 +113,7 @@
     margin: 10px;
   }
   .sr-form-submit {
-    background-color: #922768;
+    background-color: {{ section.settings.bg_color }};
     color: #ffffff;
     border: none;
     border-radius: 50px;
@@ -125,11 +125,11 @@
     text-align: center;
     text-transform: capitalize;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: filter 0.3s ease;
     white-space: nowrap;
   }
   .sr-form-submit:hover {
-    background-color: #7a1f59;
+    filter: brightness(0.85);
   }
   .sr-form-message {
     margin-top: 15px;
@@ -150,7 +150,7 @@
 
 <div class="page-width section-{{ section.id }}-padding section-{{ section.id }}-overlay">
   <div
-    class="sr-newsletter-wrapper-{{ section.id }} color-{{ section.settings.color_scheme }} gradient"
+    class="sr-newsletter-wrapper-{{ section.id }} gradient"
     {% if section.settings.bg_image != blank %}
       style="background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');"
     {% endif %}
@@ -269,10 +269,10 @@
       "default": 15
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#922768"
     },
     {
       "type": "header",

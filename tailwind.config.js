@@ -9,7 +9,11 @@ module.exports = {
     './assets/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Haffer', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

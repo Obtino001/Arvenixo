@@ -114,23 +114,18 @@
                 <h4 class="md:w-32 flex-shrink-0 pb-2 border-b border-gray-300 md:border-b-0 md:border-r text-[14px] sm:text-[16px] leading-none mb-5 sm:mb-6 md:mb-0 font-medium">
                   Top Picks
                 </h4>
-                <div class="flex-1 flex flex-wrap gap-y-6 sm:gap-y-8 lg:gap-y-10 justify-between text-[12px] sm:text-[14px] lg:text-[15px]">
+                <div class="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-6">
                   {%- assign top_picks = section.settings.top_picks_collection.products | default: collections['all'].products -%}
                   {%- if top_picks.size > 0 -%}
                     {%- for product in top_picks limit: 6 -%}
-                    <a href="{{ product.url }}" class="w-[100%] sm:w-[48%] flex space-x-4 items-center group">
-                      {%- if product.featured_image -%}
-                        <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title | escape }}" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
-                      {%- else -%}
-                        <div class="w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl p-2 shadow-sm">{{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover opacity-30' }}</div>
-                      {%- endif -%}
-                      <h4 class="font-light leading-snug">
-                        {%- if product.tags contains 'NEW' or product.tags contains 'New' -%}
-                          <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
-                        {%- endif -%}
-                        <span class="block text-gray-500 line-clamp-3">{{ product.title }}</span>
-                      </h4>
-                    </a>
+                      <div class="predictive-search-product">
+                        {% content_for 'block',
+                          type: '_product-card',
+                          id: 'search-modal-product-card',
+                          closest.product: product,
+                          product_view_context: 'search'
+                        %}
+                      </div>
                     {%- endfor -%}
                   {%- endif -%}
                 </div>

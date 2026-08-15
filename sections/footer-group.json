@@ -14,6 +14,16 @@
     "newsletter_banner": {
       "type": "newsletter-banner",
       "settings": {
+        "heading": "Subscribe to get 10% on your first order",
+        "text": "<p>You can unsubscribe to our newsletter anytime.</p>",
+        "button_label": "Subscribe",
+        "input_placeholder": "Enter Your Email",
+        "overlay_color": "#000000",
+        "image_overlay_opacity": 15,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "margin_bottom": 0
       }
     },
     "instagram_feed": {

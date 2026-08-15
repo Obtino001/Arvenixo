@@ -88,6 +88,7 @@
         "tab_1",
         "tab_2"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "#ffffff"
       }

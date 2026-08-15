@@ -44,7 +44,7 @@
             "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "left",
             "thumbnail_width": 72,
-            "thumbnail_radius": 0,
+            "thumbnail_radius": 12,
             "aspect_ratio": "1",
             "constrain_to_viewport": true,
             "media_fit": "cover",

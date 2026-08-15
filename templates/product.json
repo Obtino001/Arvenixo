@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -34,15 +35,15 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
+            "media_presentation": "carousel",
             "media_columns": "two",
             "image_gap": 12,
             "large_first_image": true,
             "icons_style": "chevron",
-            "slideshow_controls_style": "dots",
-            "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "bottom",
-            "thumbnail_width": 44,
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "left",
+            "thumbnail_width": 72,
             "thumbnail_radius": 0,
             "aspect_ratio": "1",
             "constrain_to_viewport": true,
@@ -174,7 +175,7 @@
                 "stacking": false,
                 "text_color": "",
                 "show_pickup_availability": false,
-                "gift_card_form": true,
+                "gift_card_form": false,
                 "recipient_button_style": "default",
                 "recipient_button_background": "{{ settings.color_palette.background }}",
                 "recipient_button_text": "{{ settings.color_palette.foreground }}",
@@ -197,6 +198,7 @@
               "blocks": {
                 "quantity": {
                   "type": "quantity",
+                  "disabled": true,
                   "static": true,
                   "settings": {
                     "input_style": "default",
@@ -221,6 +223,7 @@
                 },
                 "accelerated-checkout": {
                   "type": "accelerated-checkout",
+                  "disabled": true,
                   "static": true,
                   "settings": {},
                   "blocks": {}
@@ -285,6 +288,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 8,
@@ -324,6 +328,7 @@
                     "border_opacity": 100,
                     "border_color": "",
                     "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
                     "placeholder": "",
                     "padding-block-start": 0,
@@ -363,6 +368,7 @@
                         "border_opacity": 100,
                         "border_color": "",
                         "border_radius": 10,
+                        "link": "",
                         "open_in_new_tab": false,
                         "placeholder": "",
                         "padding-block-start": 42,
@@ -377,6 +383,7 @@
                           "settings": {
                             "icon": "heart",
                             "width": 24,
+                            "link": "",
                             "open_in_new_tab": false,
                             "icon_color": ""
                           },
@@ -445,6 +452,7 @@
                         "border_opacity": 100,
                         "border_color": "",
                         "border_radius": 10,
+                        "link": "",
                         "open_in_new_tab": false,
                         "placeholder": "",
                         "padding-block-start": 42,
@@ -459,6 +467,7 @@
                           "settings": {
                             "icon": "price_tag",
                             "width": 24,
+                            "link": "",
                             "open_in_new_tab": false,
                             "icon_color": ""
                           },
@@ -533,6 +542,7 @@
                     "border_opacity": 100,
                     "border_color": "",
                     "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
                     "placeholder": "",
                     "padding-block-start": 0,
@@ -572,6 +582,7 @@
                         "border_opacity": 100,
                         "border_color": "",
                         "border_radius": 10,
+                        "link": "",
                         "open_in_new_tab": false,
                         "placeholder": "",
                         "padding-block-start": 42,
@@ -586,6 +597,7 @@
                           "settings": {
                             "icon": "plant",
                             "width": 24,
+                            "link": "",
                             "open_in_new_tab": false,
                             "icon_color": ""
                           },
@@ -654,6 +666,7 @@
                         "border_opacity": 100,
                         "border_color": "",
                         "border_radius": 10,
+                        "link": "",
                         "open_in_new_tab": false,
                         "placeholder": "",
                         "padding-block-start": 42,
@@ -668,6 +681,7 @@
                           "settings": {
                             "icon": "leather",
                             "width": 24,
+                            "link": "",
                             "open_in_new_tab": false,
                             "icon_color": ""
                           },
@@ -841,7 +855,7 @@
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": false,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
@@ -1044,6 +1058,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "padding-block-start": 24,
                 "padding-block-end": 24,

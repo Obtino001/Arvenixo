@@ -1,0 +1,85 @@
+.hero-cinematic {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.hero-cinematic--full-height {
+  height: 100svh;
+  min-height: 600px;
+}
+
+.hero-cinematic--fixed-height {
+  height: 80svh;
+  min-height: 500px;
+}
+
+.hero-cinematic__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-cinematic__video,
+.hero-cinematic__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-cinematic__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-cinematic__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-bottom: clamp(4rem, 10vh, 8rem);
+  padding-top: clamp(8rem, 15vh, 12rem);
+}
+
+.hero-cinematic__subheading {
+  color: var(--color-background);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.hero-cinematic__heading {
+  color: var(--color-background);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.hero-cinematic__text {
+  color: var(--color-background);
+  opacity: 0.9;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+}
+
+.hero-cinematic__buttons {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Alignments */
+.justify-center {
+  align-items: center;
+  text-align: center;
+}
+
+.justify-left {
+  align-items: flex-start;
+  text-align: left;
+}

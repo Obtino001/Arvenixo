@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="{{ 'hero-cinematic.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'hero-cinematic.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="hero-cinematic section-content-wrapper {% if section.settings.full_height %}hero-cinematic--full-height{% else %}hero-cinematic--fixed-height{% endif %}">
+  
+  {%- if section.settings.video != blank -%}
+    <div class="hero-cinematic__media">
+      {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'hero-cinematic__video' }}
+    </div>
+  {%- elsif section.settings.image != blank -%}
+    <div class="hero-cinematic__media">
+      {{ section.settings.image | image_url: width: 3840 | image_tag: loading: 'eager', sizes: '100vw', class: 'hero-cinematic__image' }}
+    </div>
+  {%- else -%}
+    <div class="hero-cinematic__media hero-cinematic__media--placeholder">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}
+
+  <div class="hero-cinematic__overlay" style="background: linear-gradient(to top, rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }}), transparent);"></div>
+
+  <div class="hero-cinematic__content page-width-normal flex flex-column justify-{{ section.settings.text_alignment }}">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'subheading' -%}
+          <p class="hero-cinematic__subheading h6 text-reveal is-visible" {{ block.shopify_attributes }} style="transition-delay: 0.1s;">
+            {{ block.settings.subheading | escape }}
+          </p>
+        {%- when 'heading' -%}
+          <h1 class="hero-cinematic__heading h1 text-reveal is-visible" {{ block.shopify_attributes }} style="transition-delay: 0.2s;">
+            {{ block.settings.heading | escape }}
+          </h1>
+        {%- when 'text' -%}
+          <p class="hero-cinematic__text paragraph text-reveal is-visible" {{ block.shopify_attributes }} style="transition-delay: 0.3s;">
+            {{ block.settings.text | escape }}
+          </p>
+        {%- when 'buttons' -%}
+          <div class="hero-cinematic__buttons flex text-reveal is-visible" {{ block.shopify_attributes }} style="transition-delay: 0.4s;">
+            {%- if block.settings.button_label_1 != blank -%}
+              <a href="{{ block.settings.button_link_1 }}" class="btn-premium hover-lift hover-magnetic">
+                {{ block.settings.button_label_1 | escape }}
+              </a>
+            {%- endif -%}
+            {%- if block.settings.button_label_2 != blank -%}
+              <a href="{{ block.settings.button_link_2 }}" class="btn-premium btn-premium--outline hover-lift hover-magnetic">
+                {{ block.settings.button_label_2 | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cinematic Hero",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Fallback if video is not provided."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Background Video",
+      "info": "Autoplays silently in the background."
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height",
+      "label": "Full Screen Height",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center",
+      "label": "Text Alignment"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "The Future of Charging.",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "Precision Engineered",
+          "label": "Subheading"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Discover our new lineup of MagSafe compatible accessories designed for the modern desk.",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Shop Collection",
+          "label": "Primary Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Primary Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Learn More",
+          "label": "Secondary Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Secondary Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cinematic Hero",
+      "blocks": [
+        { "type": "subheading" },
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "buttons" }
+      ]
+    }
+  ]
+}
+{% endschema %}

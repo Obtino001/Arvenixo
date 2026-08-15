@@ -129,8 +129,8 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
-                "show_installments": true,
-                "show_tax_info": true,
+                "show_installments": false,
+                "show_tax_info": false,
                 "type_preset": "h4",
                 "width": "100%",
                 "alignment": "left",
@@ -150,7 +150,7 @@
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
-                "variant_style": "buttons",
+                "variant_style": "dropdowns",
                 "show_swatches": true,
                 "option_label_text_color": "",
                 "variant_style_class": "default",

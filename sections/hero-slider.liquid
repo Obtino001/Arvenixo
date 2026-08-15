@@ -23,12 +23,12 @@
                   <div class="w-full max-w-screen-full mx-auto md:px-6 lg:px-10 xl:px-0">
                     <div class="w-max max-w-full space-y-2 mb-6 sm:mb-8 xl:mb-10 relative" style="color: {{ block.settings.text_color }};">
                       {%- if block.settings.heading != blank -%}
-                        <h2 class="swiper-no-swiping text-[28px] xs:text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[56px] leading-tight font-medium tracking-tight">
+                        <h2 class="text-[28px] xs:text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[56px] leading-tight font-medium tracking-tight">
                           {{ block.settings.heading | newline_to_br }}
                         </h2>
                       {%- endif -%}
                       {%- if block.settings.subheading != blank -%}
-                        <h3 class="swiper-no-swiping text-[16px] xs:text-[18px] sm:text-[20px] lg:text-[24px] xl:text-[28px] font-light opacity-90">
+                        <h3 class="text-[16px] xs:text-[18px] sm:text-[20px] lg:text-[24px] xl:text-[28px] font-light opacity-90">
                           {{ block.settings.subheading | newline_to_br }}
                         </h3>
                       {%- endif -%}
@@ -94,12 +94,7 @@
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      speed: 800
+      }
     });
   });
 </script>

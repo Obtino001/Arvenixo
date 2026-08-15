@@ -124,10 +124,10 @@
                 <h4 class="md:w-32 flex-shrink-0 pb-2 border-b border-gray-300 md:border-b-0 md:border-r text-[14px] sm:text-[16px] leading-none mb-5 sm:mb-6 md:mb-0 font-medium">
                   Top Picks
                 </h4>
-                <div class="flex-1 flex flex-wrap gap-y-6 sm:gap-y-8 lg:gap-y-10 justify-between text-[12px] sm:text-[14px] lg:text-[15px]">
+                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-6 sm:gap-y-8 lg:gap-y-10 sm:gap-x-6 lg:gap-x-12 text-[12px] sm:text-[14px] lg:text-[15px]">
                   {%- if section.settings.top_picks_collection != blank and section.settings.top_picks_collection.products.size > 0 -%}
                     {%- for product in section.settings.top_picks_collection.products limit: 6 -%}
-                    <a href="{{ product.url }}" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="{{ product.url }}" class="col-span-1 flex space-x-4 items-center group">
                       {%- if product.featured_image -%}
                         <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       {%- else -%}
@@ -143,42 +143,42 @@
                     {%- endfor -%}
                   {%- else -%}
                     <!-- Static Fallback (Image 1 style) -->
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/Google-Pixel-11-pro-fold-back-only-california-dream-04_5ea67e99-0862-4550-b73b-a38e69495c7b_small.webp?v=1786700650" alt="California Dream" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
                         <span class="block text-gray-500">California Dream-01 Google Pixel 11 Pro Fold<br>Edge Case</span>
                       </h4>
                     </a>
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/Fold8-black-back-case-only-1_247996dd-3cc6-4683-a6cc-a6e64bb6d18c_small.webp?v=1784803088" alt="Fold 8" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
                         <span class="block text-gray-500">600D Black/Grey (Twill) Fold8<br>Edge Case</span>
                       </h4>
                     </a>
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/Fold8-california-dream-01-back-case-only-1_e361a7ea-43d5-415b-ab19-abc14f0dafe8_small.webp?v=1784805092" alt="California Dream Fold 8" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
                         <span class="block text-gray-500">California Dream-01 Fold8<br>Edge Case</span>
                       </h4>
                     </a>
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/Fold8-moonrise-back-case-only-1_036f96c1-26fe-426a-8fca-5155ef8ea098_small.webp?v=1784803717" alt="Moonrise Fold8" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
                         <span class="block text-gray-500">Moonrise Fold8<br>Edge Case</span>
                       </h4>
                     </a>
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/Fold8-ultra-sunset-back-case-only-1_f55582ca-88d8-4331-b684-df6891a353bb_small.webp?v=1784803420" alt="Sunset Fold8 Ultra" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-orange-400 font-medium mb-1 tracking-wider text-[11px] uppercase">NEW</span>
                         <span class="block text-gray-500">Sunset Fold8 Ultra<br>Edge Case</span>
                       </h4>
                     </a>
-                    <a href="#" class="w-full sm:w-[48%] flex space-x-4 items-center group">
+                    <a href="#" class="col-span-1 flex space-x-4 items-center group">
                       <img src="//www.ipitaka.com/cdn/shop/files/iPhone17air-black-slim_3e78f7f4-04ff-437b-a7af-cbbaba794f7d_small.webp?v=1785987187" alt="iPhone 17 Air" class="block w-[70px] h-[70px] flex-shrink-0 bg-[#e5e5ea] rounded-xl object-contain p-2 shadow-sm transition-transform group-hover:scale-105" loading="lazy">
                       <h4 class="font-light leading-snug text-[13px] sm:text-[14px]">
                         <span class="block text-[#bfa780] font-medium mb-1 tracking-wider text-[11px] uppercase">HOT</span>

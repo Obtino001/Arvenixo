@@ -123,6 +123,12 @@
       margin-right: 20px !important;
     }
   }
+  .product-tabs-slider .parent-tabs-swiper > .swiper-wrapper > .swiper-slide {
+    pointer-events: none;
+  }
+  .product-tabs-slider .parent-tabs-swiper > .swiper-wrapper > .swiper-slide.swiper-slide-active {
+    pointer-events: auto;
+  }
 </style>
 
 <script>
@@ -138,9 +144,12 @@
     const childSwiperEls = document.querySelectorAll(`${parentId} .nested-products-swiper`);
     childSwiperEls.forEach((el, index) => {
       const swiper = new Swiper(el, {
+        nested: true,
         slidesPerView: 1.2,
         spaceBetween: 16,
         watchOverflow: true,
+        preventClicks: false,
+        preventClicksPropagation: false,
         breakpoints: {
           640: { slidesPerView: 2.2, spaceBetween: 20 },
           1024: { slidesPerView: 3.2, spaceBetween: 24 },

@@ -1,6 +1,19 @@
 <link rel="stylesheet" href="{{ 'hero-cinematic.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'hero-cinematic.css' | asset_url | stylesheet_tag }}</noscript>
 
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
 <div class="hero-cinematic section-content-wrapper {% if section.settings.full_height %}hero-cinematic--full-height{% else %}hero-cinematic--fixed-height{% endif %}">
   
   {%- if section.settings.video != blank -%}
@@ -19,7 +32,7 @@
 
   <div class="hero-cinematic__overlay" style="background: linear-gradient(to top, rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }}), transparent);"></div>
 
-  <div class="hero-cinematic__content page-width-normal flex flex-column justify-{{ section.settings.text_alignment }}">
+  <div class="hero-cinematic__content w-full mx-auto {{ section.settings.page_width }} section-{{ section.id }}-padding flex flex-column justify-{{ section.settings.text_alignment }} px-6 sm:px-10 lg:px-12 xl:px-16">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'subheading' -%}
@@ -58,6 +71,41 @@
   "tag": "section",
   "class": "section section--full-width",
   "settings": [
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "page_width",
+      "label": "Page Width",
+      "options": [
+        { "value": "max-w-screen-xl", "label": "Standard" },
+        { "value": "max-w-[1440px]", "label": "Wide" },
+        { "value": "max-w-screen-full", "label": "Full Width" }
+      ],
+      "default": "max-w-screen-xl"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Content Padding Top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Content Padding Bottom",
+      "default": 64
+    },
     {
       "type": "image_picker",
       "id": "image",

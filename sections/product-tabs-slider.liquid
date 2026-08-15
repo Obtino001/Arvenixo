@@ -35,18 +35,13 @@
                     </div>
                   {%- endfor -%}
                 {%- else -%}
-                  <!-- Placeholder Slides -->
                   {%- for i in (1..4) -%}
-                    <div class="swiper-slide md:pb-2 md:border-b border-transparent">
-                      <div class="grid-product-item w-full h-full flex flex-col rounded overflow-hidden relative group">
-                        <div class="images-container bg-[#f5f5f7] flex-shrink-0 aspect-[4/5] relative rounded-2xl overflow-hidden mb-4">
-                          {{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover opacity-30' }}
-                        </div>
-                        <div class="info-container w-full px-1">
-                          <h4 class="text-[16px] lg:text-[18px] xl:text-[20px] font-medium leading-tight text-black">Product Title</h4>
-                          <h3 class="text-[14px] lg:text-[16px] text-gray-500 font-light">$99.00</h3>
-                        </div>
-                      </div>
+                    <div class="swiper-slide">
+                      {% content_for 'block',
+                        type: '_product-card',
+                        id: 'product-card',
+                        closest.product: null
+                      %}
                     </div>
                   {%- endfor -%}
                 {%- endif -%}

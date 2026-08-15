@@ -11,21 +11,6 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
-    "newsletter_banner": {
-      "type": "newsletter-banner",
-      "settings": {
-        "heading": "Subscribe to get 10% on your first order",
-        "text": "<p>You can unsubscribe to our newsletter anytime.</p>",
-        "button_label": "Subscribe",
-        "input_placeholder": "Enter Your Email",
-        "overlay_color": "#000000",
-        "image_overlay_opacity": 15,
-        "bg_color": "{{ settings.color_palette.color1 }}",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "margin_bottom": 0
-      }
-    },
     "instagram_feed": {
       "type": "instagram-feed",
       "blocks": {
@@ -75,7 +60,7 @@
         "img_6"
       ],
       "settings": {
-        "bg_color": "#f4f4f4",
+        "bg_color": "{{ settings.color_palette.background }}",
         "heading": "Join 1.5M+ followers of @burgeofficial",
         "link": "https://instagram.com/burgeofficial"
       }
@@ -291,7 +276,6 @@
     }
   },
   "order": [
-    "newsletter_banner",
     "instagram_feed",
     "footer",
     "utilities"

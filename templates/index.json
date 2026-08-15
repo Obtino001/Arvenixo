@@ -92,7 +92,7 @@
         "title": "Shop by Category",
         "subtitle": "Take A Look Around",
         "header_alignment": "flex-start",
-        "bg_color": "#fffdfa",
+        "bg_color": "{{ settings.color_palette.background }}",
         "text_color": "#000000",
         "image_overlay_opacity": 10,
         "padding_top": 20,
@@ -106,45 +106,17 @@
         "padding_top": 96,
         "padding_bottom": 96,
         "heading": "Carry Lighter, Live Now.",
-        "text": "<p>Built from high-performance materials and intentional design,<br>Arvenixo redefines the way we carry — light, precise, and present.</p>",
+        "text": "<p>Built from high-performance materials and intentional design,<br/>Arvenixo redefines the way we carry — light, precise, and present.</p>",
         "button_label": "About Our Philosophy",
         "button_link": "",
         "text_color": "#000000",
-        "bg_color": "#ffffff"
-      }
-    },
-    "product_tabs_slider": {
-      "type": "product-tabs-slider",
-      "blocks": {
-        "tab_1": {
-          "type": "collection_tab",
-          "settings": {
-            "title": "New Arrivals",
-            "collection": "all-products",
-            "limit": 8
-          }
-        },
-        "tab_2": {
-          "type": "collection_tab",
-          "settings": {
-            "title": "Best Sellers",
-            "collection": "all-products",
-            "limit": 8
-          }
-        }
-      },
-      "block_order": [
-        "tab_1",
-        "tab_2"
-      ],
-      "settings": {
-        "bg_color": "#ffffff"
+        "bg_color": "{{ settings.color_palette.background }}"
       }
     },
     "banner_with_text": {
       "type": "banner-with-text",
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "{{ settings.color_palette.background }}",
         "section_heading": "Style up by collections",
         "section_description": "Complete your journey with our meticulously crafted accessories designed to complement and elevate your essentials.",
         "overlay_opacity": 30,
@@ -195,7 +167,7 @@
         "tab_4"
       ],
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "{{ settings.color_palette.background }}",
         "text_color": "#000000",
         "content_order": "-order-1",
         "padding_top": 40,
@@ -396,7 +368,7 @@
       ],
       "name": "Flex Case Promo",
       "settings": {
-        "bg_color": "#faf6f0",
+        "bg_color": "{{ settings.color_palette.background }}",
         "trust_bg": "#f0ebe3",
         "text_color": "#30231e",
         "padding_top": 8,
@@ -406,7 +378,8 @@
         "heading": "Original Leather Case",
         "description": "<p>Made to get better with age. Its rich two tone finish develops more depth and character over time, creating a look that is completely unique to you. The leather softens and wears in naturally with everyday use, giving it a lived in feel you cannot replicate. Hand finished and built with intention, it remains one of the only handmade cases on the market today.</p>",
         "button_label": "SHOP NOW",
-        "button_link": ""
+        "button_link": "",
+        "image": "shopify://shop_images/silver-lamp-on-a-white-table-next-to-books.jpg"
       }
     }
   },
@@ -414,7 +387,6 @@
     "hero_slider",
     "shop_by_category",
     "rich_text_premium",
-    "product_tabs_slider",
     "banner_with_text",
     "benefit_tabs",
     "collection_list_xpBxCm",

@@ -11,6 +11,60 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
+    "instagram_feed": {
+      "type": "instagram-feed",
+      "blocks": {
+        "img_1": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_2": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_3": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_4": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_5": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_6": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3",
+        "img_4",
+        "img_5",
+        "img_6"
+      ],
+      "settings": {
+        "bg_color": "#f4f4f4",
+        "heading": "Join 1.5M+ followers of @burgeofficial",
+        "link": "https://instagram.com/burgeofficial"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -219,95 +273,10 @@
         "padding-block-start": 20,
         "padding-block-end": 18
       }
-    },
-    "flex_case_promo": {
-      "type": "flex-case-promo",
-      "blocks": {
-        "trust_1": {
-          "type": "trust_item",
-          "settings": {
-            "text": "Designed in the USA"
-          }
-        },
-        "trust_2": {
-          "type": "trust_item",
-          "settings": {
-            "text": "100% Full-Grain Leather"
-          }
-        },
-        "trust_3": {
-          "type": "trust_item",
-          "settings": {
-            "text": "Lifetime Warranty"
-          }
-        },
-        "trust_4": {
-          "type": "trust_item",
-          "settings": {
-            "text": "Free US Shipping Over $150"
-          }
-        }
-      },
-      "block_order": [
-        "trust_1",
-        "trust_2",
-        "trust_3",
-        "trust_4"
-      ],
-      "settings": {
-        "bg_color": "#faf6f0",
-        "trust_bg": "#f0ebe3",
-        "text_color": "#30231e",
-        "padding_top": 8,
-        "padding_bottom": 0,
-        "content_gap": 8,
-        "eyebrow": "#1 Best-Seller",
-        "heading": "Original Leather Case",
-        "description": "<p>Made to get better with age. Its rich two tone finish develops more depth and character over time, creating a look that is completely unique to you. The leather softens and wears in naturally with everyday use, giving it a lived in feel you cannot replicate. Hand finished and built with intention, it remains one of the only handmade cases on the market today.</p>",
-        "button_label": "SHOP NOW",
-        "button_link": "/products/the-original-case-sienna"
-      }
-    },
-    "instagram_feed": {
-      "type": "instagram-feed",
-      "blocks": {
-        "img_1": {
-          "type": "image"
-        },
-        "img_2": {
-          "type": "image"
-        },
-        "img_3": {
-          "type": "image"
-        },
-        "img_4": {
-          "type": "image"
-        },
-        "img_5": {
-          "type": "image"
-        },
-        "img_6": {
-          "type": "image"
-        }
-      },
-      "block_order": [
-        "img_1",
-        "img_2",
-        "img_3",
-        "img_4",
-        "img_5",
-        "img_6"
-      ],
-      "settings": {
-        "bg_color": "#f4f4f4",
-        "heading": "Join 1.5M+ followers of @burgeofficial",
-        "link": "https://instagram.com/burgeofficial"
-      }
     }
   },
   "order": [
     "instagram_feed",
-    "flex_case_promo",
     "footer",
     "utilities"
   ]

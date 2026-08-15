@@ -85,6 +85,31 @@
 </div>
 
 <style>
+  /* FOUC Fix for Swipers */
+  #swiper_parent_{{ section.id }}:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide:not(:first-child) {
+    display: none;
+  }
+  #swiper_parent_{{ section.id }}:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide {
+    width: 100%;
+  }
+  .product-tabs-slider .nested-products-swiper:not(.swiper-initialized) > .swiper-wrapper {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .product-tabs-slider .nested-products-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide {
+    width: 85%; /* Mobile default */
+    flex-shrink: 0;
+  }
+  @media (min-width: 640px) {
+    .product-tabs-slider .nested-products-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide { width: 45%; }
+  }
+  @media (min-width: 1024px) {
+    .product-tabs-slider .nested-products-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide { width: 30%; }
+  }
+  @media (min-width: 1440px) {
+    .product-tabs-slider .nested-products-swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide { width: 23%; }
+  }
+
   .product-tabs-slider .custom-tabs-pagination .swiper-pagination-bullet {
     background: transparent;
     opacity: 0.4;

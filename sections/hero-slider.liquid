@@ -68,6 +68,12 @@
 </div>
 
 <style>
+  #swiper_{{ section.id }}:not(.swiper-initialized) .swiper-slide:not(:first-child) {
+    display: none;
+  }
+  #swiper_{{ section.id }}:not(.swiper-initialized) .swiper-slide {
+    width: 100%;
+  }
   #Slider-{{ section.id }} .swiper-pagination-bullet {
     background: #ffffff;
     opacity: 0.5;

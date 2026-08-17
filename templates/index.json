@@ -58,6 +58,29 @@
       "block_order": ["t1", "t2", "t3", "t4"],
       "settings": {}
     },
+    "ax_tabs": {
+      "type": "ax-collection-tabs",
+      "blocks": {
+        "tab_new": {
+          "type": "tab",
+          "settings": {
+            "title": "New arrivals",
+            "mark_new": true
+          }
+        },
+        "tab_best": {
+          "type": "tab",
+          "settings": {
+            "title": "Best sellers",
+            "mark_new": false
+          }
+        }
+      },
+      "block_order": ["tab_new", "tab_best"],
+      "settings": {
+        "products_limit": 8
+      }
+    },
     "product_list": {
       "type": "product-list",
       "blocks": {
@@ -222,6 +245,51 @@
         "padding-block-end": 56
       }
     },
+    "ax_categories": {
+      "type": "ax-categories",
+      "blocks": {
+        "c1": {
+          "type": "category",
+          "settings": {
+            "title": "All Cables",
+            "asset": "ax-cat-cables.png",
+            "link": "shopify://collections/all"
+          }
+        },
+        "c2": {
+          "type": "category",
+          "settings": {
+            "title": "iPhone Cases & Accessories",
+            "asset": "ax-cat-cases.png",
+            "link": "shopify://collections/all"
+          }
+        },
+        "c3": {
+          "type": "category",
+          "settings": {
+            "title": "Magnetic Chargers",
+            "asset": "ax-cat-charger.png",
+            "link": "shopify://collections/all"
+          }
+        },
+        "c4": {
+          "type": "category",
+          "settings": {
+            "title": "Carry",
+            "asset": "ax-cat-bags.png",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {
+        "heading": "Product Categories",
+        "subheading": "Charge / Carry / Protect",
+        "text": "<p>We believe in less, but better. Better design, better materials, a quieter everyday.</p><p>Every piece is made to last — recycled and plant-based wherever we can, without compromising the feel.</p>",
+        "button_label": "See all Products",
+        "button_link": "shopify://collections/all"
+      }
+    },
     "ax_story": {
       "type": "ax-story",
       "settings": {
@@ -256,7 +324,9 @@
     "ax_hero",
     "ax_worlds",
     "ax_trust",
+    "ax_tabs",
     "product_list",
+    "ax_categories",
     "ax_story",
     "ax_editorial",
     "ax_newsletter"

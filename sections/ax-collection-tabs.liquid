@@ -1,0 +1,225 @@
+{%- liquid
+  assign tabs_id = 'ax-tabs-' | append: section.id
+-%}
+
+<section class="ax-tabs" id="{{ tabs_id }}">
+  <div class="ax-wrap">
+    <div class="ax-tabs__nav" role="tablist">
+      {%- for block in section.blocks -%}
+        <button
+          type="button"
+          class="ax-tabs__tab{% if forloop.first %} is-active{% endif %}"
+          role="tab"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          aria-controls="{{ tabs_id }}-panel-{{ forloop.index }}"
+          id="{{ tabs_id }}-tab-{{ forloop.index }}"
+          data-ax-tab="{{ forloop.index }}"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.title }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      {%- assign collection = block.settings.collection -%}
+      {%- if collection == blank -%}
+        {%- assign collection = collections.all -%}
+      {%- endif -%}
+
+      <div
+        class="ax-tabs__panel{% if forloop.first %} is-active{% endif %}"
+        role="tabpanel"
+        id="{{ tabs_id }}-panel-{{ forloop.index }}"
+        aria-labelledby="{{ tabs_id }}-tab-{{ forloop.index }}"
+        {% unless forloop.first %}hidden{% endunless %}
+      >
+        <div class="ax-tabs__viewport">
+          <div class="ax-tabs__track" data-ax-track>
+            {%- if collection != blank and collection.products_count > 0 -%}
+              {%- for product in collection.products limit: section.settings.products_limit -%}
+                {%- assign variant = product.selected_or_first_available_variant -%}
+                {%- assign is_new = false -%}
+                {%- if product.tags contains 'new' or product.tags contains 'New' or product.tags contains 'NEW' -%}
+                  {%- assign is_new = true -%}
+                {%- endif -%}
+                {%- assign days_live = 999 -%}
+                {%- if product.published_at != blank -%}
+                  {%- assign days_live = 'now' | date: '%s' | minus: product.published_at | date: '%s' | divided_by: 86400 -%}
+                {%- endif -%}
+                {%- comment -%} published_at date math can be unreliable; also treat first 8 catalog items as new for empty stores {%- endcomment -%}
+                {%- if forloop.index <= 8 and block.settings.mark_new -%}
+                  {%- assign is_new = true -%}
+                {%- endif -%}
+
+                {%- assign rating = product.metafields.reviews.rating.value.rating | default: 0 -%}
+                {%- assign rating_count = product.metafields.reviews.rating_count | default: 0 -%}
+
+                <article class="ax-pcard">
+                  <div class="ax-pcard__media">
+                    <a href="{{ product.url }}" class="ax-pcard__link" aria-label="{{ product.title | escape }}">
+                      {%- if product.featured_media -%}
+                        {{ product.featured_media.preview_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '320, 480, 640, 800', alt: product.featured_media.alt | default: product.title }}
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag: 'ax-pcard__ph' }}
+                      {%- endif -%}
+                    </a>
+                    {%- if is_new -%}
+                      <span class="ax-pcard__badge">New</span>
+                    {%- endif -%}
+                    {%- if variant and variant.available -%}
+                      <form method="post" action="{{ routes.cart_add_url }}" class="ax-pcard__add" data-ax-quick-add>
+                        <input type="hidden" name="id" value="{{ variant.id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" aria-label="{{ 'actions.add_to_cart' | t }}">+</button>
+                      </form>
+                    {%- endif -%}
+                  </div>
+                  <h3 class="ax-pcard__title">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </h3>
+                  <p class="ax-pcard__price">
+                    {%- if variant.compare_at_price > variant.price -%}
+                      <s>{{ variant.compare_at_price | money }}</s>
+                    {%- endif -%}
+                    {{ variant.price | money }}
+                  </p>
+                  <div class="ax-pcard__reviews" aria-label="{{ rating }} out of 5">
+                    {%- for i in (1..5) -%}
+                      <span class="ax-star{% if rating >= i %} is-on{% elsif rating > i | minus: 1 %} is-on{% endif %}">★</span>
+                    {%- endfor -%}
+                    <span class="ax-pcard__count">
+                      {%- if rating_count > 0 -%}
+                        {{ rating_count }} {% if rating_count == 1 %}review{% else %}reviews{% endif %}
+                      {%- else -%}
+                        No reviews
+                      {%- endif -%}
+                    </span>
+                  </div>
+                  {%- for option in product.options_with_values -%}
+                    {%- assign oname = option.name | downcase -%}
+                    {%- if oname contains 'color' or oname contains 'colour' -%}
+                      <div class="ax-pcard__swatches">
+                        {%- for value in option.values limit: 6 -%}
+                          <span
+                            class="ax-swatch{% if value.selected %} is-selected{% endif %}"
+                            title="{{ value }}"
+                            style="{% if value.swatch.color %}background:{{ value.swatch.color }};{% elsif value.swatch.image %}background-image:url({{ value.swatch.image | image_url: width: 40 }});{% endif %}"
+                          ></span>
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </article>
+              {%- endfor -%}
+            {%- else -%}
+              {%- for i in (1..4) -%}
+                <article class="ax-pcard">
+                  <div class="ax-pcard__media">
+                    {{ 'product-' | append: i | placeholder_svg_tag: 'ax-pcard__ph' }}
+                    <span class="ax-pcard__badge">New</span>
+                    <span class="ax-pcard__add"><button type="button" tabindex="-1">+</button></span>
+                  </div>
+                  <h3 class="ax-pcard__title">Product title</h3>
+                  <p class="ax-pcard__price">$49.99</p>
+                </article>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+          <button type="button" class="ax-tabs__next" data-ax-next aria-label="Next products">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById({{ tabs_id | json }});
+    if (!root) return;
+
+    root.querySelectorAll('[data-ax-tab]').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var id = tab.getAttribute('data-ax-tab');
+        root.querySelectorAll('[data-ax-tab]').forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        root.querySelectorAll('.ax-tabs__panel').forEach(function (panel) {
+          var on = panel.id === {{ tabs_id | json }} + '-panel-' + id;
+          panel.classList.toggle('is-active', on);
+          panel.hidden = !on;
+        });
+      });
+    });
+
+    root.querySelectorAll('[data-ax-next]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var track = btn.parentElement.querySelector('[data-ax-track]');
+        if (!track) return;
+        var card = track.querySelector('.ax-pcard');
+        var w = card ? card.getBoundingClientRect().width + 24 : 280;
+        track.scrollBy({ left: w, behavior: 'smooth' });
+      });
+    });
+
+    root.querySelectorAll('[data-ax-quick-add]').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var id = form.querySelector('[name="id"]').value;
+        fetch(((window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/') + 'cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ id: Number(id), quantity: 1 })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('add failed');
+          document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true }));
+          var trigger = document.querySelector('[data-testid="cart-drawer-trigger"], [on\\:click="#cart-drawer/toggle"]');
+          if (trigger) trigger.click();
+        }).catch(function () {
+          form.submit();
+        });
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "AX Collection tabs",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_limit",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "label": "Products per tab",
+      "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Tab title", "default": "New arrivals" },
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "checkbox", "id": "mark_new", "label": "Show NEW badge", "default": true }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AX Collection tabs",
+      "blocks": [
+        { "type": "tab", "settings": { "title": "New arrivals", "mark_new": true } },
+        { "type": "tab", "settings": { "title": "Best sellers", "mark_new": false } }
+      ]
+    }
+  ]
+}
+{% endschema %}

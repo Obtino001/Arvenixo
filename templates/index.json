@@ -9,6 +9,37 @@
  */
 {
   "sections": {
+    "arvenixo_hero": {
+      "type": "arvenixo-hero",
+      "settings": {
+        "hero_asset": "arvenixo-hero-magsafe.png",
+        "min_height": 88,
+        "eyebrow": "ARVENIXO",
+        "heading": "Carry lighter. Charge smarter.",
+        "text": "Precision MagSafe cases and elevated beauty tech — crafted for everyday luxury.",
+        "button_label": "Shop collection",
+        "button_link": "/collections/all",
+        "button2_label": "Explore beauty tech",
+        "button2_link": "/collections/all"
+      }
+    },
+    "lf_usp_strip": {
+      "type": "lf-usp-strip",
+      "settings": {
+        "bg_color": "#f7f5f1",
+        "icon_color": "#c4a35a",
+        "heading_color": "#0b0c0e",
+        "sub_color": "#6b7076",
+        "usp1_label": "Free shipping",
+        "usp1_sub": "On qualifying orders",
+        "usp2_label": "Premium quality",
+        "usp2_sub": "Materials built to last",
+        "usp3_label": "Secure checkout",
+        "usp3_sub": "Encrypted payments",
+        "usp4_label": "Easy returns",
+        "usp4_sub": "30-day hassle-free returns"
+      }
+    },
     "store_features_static": {
       "type": "store-features-static",
       "settings": {},
@@ -299,47 +330,42 @@
         "cat_1": {
           "type": "category",
           "settings": {
-            "title": "Phone CASES",
-            "link": ""
+            "title": "PHONE CASES",
+            "asset_image": "arvenixo-cat-cases.png",
+            "link": "/collections/all"
           }
         },
         "cat_2": {
           "type": "category",
           "settings": {
-            "title": "WALLETS",
-            "link": ""
+            "title": "BEAUTY TECH",
+            "asset_image": "arvenixo-cat-beauty.png",
+            "link": "/collections/all"
           }
         },
         "cat_3": {
           "type": "category",
           "settings": {
-            "title": "WATCH STRAPS",
-            "link": ""
-          }
-        },
-        "cat_4": {
-          "type": "category",
-          "settings": {
-            "title": "BELTS",
-            "link": ""
+            "title": "TECH ACCESSORIES",
+            "asset_image": "arvenixo-cat-tech.png",
+            "link": "/collections/all"
           }
         }
       },
       "block_order": [
         "cat_1",
         "cat_2",
-        "cat_3",
-        "cat_4"
+        "cat_3"
       ],
       "settings": {
         "title": "Shop by Category",
-        "subtitle": "Take A Look Around",
+        "subtitle": "Curated essentials for modern carry",
         "header_alignment": "flex-start",
-        "bg_color": "{{ settings.color_palette.background }}",
-        "text_color": "#000000",
-        "image_overlay_opacity": 10,
-        "padding_top": 20,
-        "padding_bottom": 60
+        "bg_color": "#f7f5f1",
+        "text_color": "#0b0c0e",
+        "image_overlay_opacity": 35,
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
     "rich_text_premium": {
@@ -359,16 +385,17 @@
     "banner_with_text": {
       "type": "banner-with-text",
       "settings": {
-        "bg_color": "{{ settings.color_palette.background }}",
-        "section_heading": "Style up by collections",
-        "section_description": "Complete your journey with our meticulously crafted accessories designed to complement and elevate your essentials.",
-        "overlay_opacity": 30,
-        "banner_heading": "Sunset Collection,\nDecorate Your Life",
-        "button_label": "Learn More",
-        "button_link": "",
+        "bg_color": "#f7f5f1",
+        "section_heading": "Collections that elevate daily carry",
+        "section_description": "From MagSafe cases to beauty tech — curated pieces designed to feel premium from first touch.",
+        "overlay_opacity": 45,
+        "banner_heading": "New season essentials",
+        "button_label": "Shop now",
+        "button_link": "/collections/all",
         "text_color": "#ffffff",
-        "button_bg_color": "#000000",
-        "button_text_color": "#ffffff"
+        "button_bg_color": "#c4a35a",
+        "button_text_color": "#0b0c0e",
+        "asset_image": "arvenixo-promo-banner.png"
       }
     },
     "benefit_tabs": {
@@ -627,8 +654,8 @@
     }
   },
   "order": [
-    "hero_slider",
-    "store_features_static",
+    "arvenixo_hero",
+    "lf_usp_strip",
     "shop_by_category",
     "product_list_pXNMeQ",
     "rich_text_premium",

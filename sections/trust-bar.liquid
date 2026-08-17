@@ -1,0 +1,444 @@
+{%- style -%}
+  #shopify-section-{{ section.id }},
+  #header-group #shopify-section-{{ section.id }},
+  #header-group .trust-bar-section {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: {{ section.settings.bg_color }};
+  }
+
+  .iwao-trust-bar-{{ section.id }} {
+    width: 100%;
+    max-width: none;
+    min-height: 38px;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    overflow: hidden;
+    border-bottom: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.08 }};
+    font-family: var(--font-body--family), sans-serif;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+
+  .iwao-trust-bar-{{ section.id }} *,
+  .iwao-trust-bar-{{ section.id }} *::before,
+  .iwao-trust-bar-{{ section.id }} *::after {
+    box-sizing: border-box;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__inner {
+    width: 100%;
+    min-height: 38px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__desktop {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__desktop:has(.iwao-trust-bar__phone) {
+    justify-content: space-between;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__usp-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    min-width: 0;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__item,
+  .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__phone,
+  .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__phone:link,
+  .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__phone:visited {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.94 }} !important;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__phone {
+    margin-right: 34px; /* Phone on the left per desktop design */
+    font-weight: 600;
+    flex: 0 0 auto;
+  }
+
+  .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__phone:hover {
+    color: {{ section.settings.text_color }} !important;
+    text-decoration: none;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__icon,
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__icon svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+    color: {{ section.settings.icon_color }};
+    display: block;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__divider {
+    width: 1px;
+    height: 18px;
+    margin: 0 28px;
+    background: {{ section.settings.text_color | color_modify: 'alpha', 0.22 }};
+    flex: 0 0 1px;
+  }
+
+  .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile { display: none; }
+
+  @media (max-width: 1180px) {
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__inner { padding: 0 28px; }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__divider { margin: 0 18px; }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__item,
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__phone { font-size: 13.5px; }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__icon { width: 17px; height: 17px; flex-basis: 17px; }
+  }
+
+  @media (max-width: 989px) {
+    .iwao-trust-bar-{{ section.id }} { min-height: 36px; }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__inner {
+      min-height: 36px;
+      padding: 0;
+      justify-content: flex-start;
+    }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__desktop { display: none; }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile {
+      width: 100%;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: {{ section.settings.bg_color }};
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__ticker {
+      position: relative;
+      min-width: 0;
+      flex: 1 1 auto;
+      height: 36px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__ticker::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 44px; height: 100%;
+      pointer-events: none;
+      /* Dynamic Gradient based on selected background */
+      background: linear-gradient(to right, {{ section.settings.bg_color | color_modify: 'alpha', 0 }}, {{ section.settings.bg_color }});
+      z-index: 2;
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      will-change: transform;
+      animation: iwaoTrustBarTicker {{ section.settings.marquee_speed }}s linear infinite;
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__group {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__item {
+      min-height: 36px;
+      font-size: 12.5px;
+      line-height: 1;
+      font-weight: 500;
+      gap: 7px;
+      color: {{ section.settings.text_color | color_modify: 'alpha', 0.92 }};
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__icon,
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__icon svg {
+      width: 15px; height: 15px; flex-basis: 15px;
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__divider {
+      height: 14px;
+      margin: 0 16px;
+      background: {{ section.settings.text_color | color_modify: 'alpha', 0.16 }};
+    }
+
+    .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__mobile-phone,
+    .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__mobile-phone:link,
+    .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__mobile-phone:visited {
+      height: 36px;
+      flex: 0 0 auto;
+      min-width: 116px;
+      padding: 0 10px;
+      margin-left: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: {{ section.settings.text_color }} !important;
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      white-space: nowrap;
+      background: {{ section.settings.bg_color }};
+      border-left: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.16 }};
+      position: relative;
+      z-index: 3;
+    }
+
+    .iwao-trust-bar-{{ section.id }} a.iwao-trust-bar__mobile-phone:hover { 
+      color: {{ section.settings.text_color }} !important; 
+      text-decoration: none; 
+    }
+
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile-phone svg {
+      width: 15px; height: 15px; flex: 0 0 15px;
+      color: {{ section.settings.icon_color }};
+      display: block;
+    }
+
+    @keyframes iwaoTrustBarTicker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  }
+
+  @media (max-width: 374px) {
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile-phone {
+      min-width: 104px;
+      font-size: 12px;
+      padding: 0 8px;
+    }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__item { font-size: 12px; }
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__mobile .iwao-trust-bar__divider { margin: 0 13px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .iwao-trust-bar-{{ section.id }} .iwao-trust-bar__track { animation: none; }
+  }
+
+  .trust-bar-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+{%- endstyle -%}
+
+<div class="iwao-trust-bar-{{ section.id }}" data-iwao-trust-bar="">
+  <div class="iwao-trust-bar__inner">
+    
+    <!-- DESKTOP -->
+    <div class="iwao-trust-bar__desktop">
+      {%- if section.settings.phone_text != blank -%}
+        <a class="iwao-trust-bar__phone" href="{{ section.settings.phone_url }}" aria-label="{{ section.settings.phone_text }}">
+          <div class="iwao-trust-bar__icon">
+            {{ section.settings.phone_icon }}
+          </div>
+          <span>{{ section.settings.phone_text }}</span>
+        </a>
+      {%- endif -%}
+
+      <div class="iwao-trust-bar__usp-wrap">
+        {%- for block in section.blocks -%}
+          <span class="iwao-trust-bar__item" {{ block.shopify_attributes }}>
+            <div class="iwao-trust-bar__icon">
+              {{ block.settings.icon }}
+            </div>
+            <span>{{ block.settings.text }}</span>
+          </span>
+          {%- if forloop.last == false -%}
+            <span class="iwao-trust-bar__divider" aria-hidden="true"></span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="iwao-trust-bar__mobile">
+      <div class="iwao-trust-bar__ticker">
+        <div class="iwao-trust-bar__track">
+          {%- for i in (1..2) -%} <!-- Looped twice for infinite marquee effect -->
+            <div class="iwao-trust-bar__group">
+              {%- for block in section.blocks -%}
+                <span class="iwao-trust-bar__item">
+                  <div class="iwao-trust-bar__icon">
+                    {{ block.settings.icon }}
+                  </div>
+                  <span>{{ block.settings.text }}</span>
+                </span>
+                <span class="iwao-trust-bar__divider" aria-hidden="true"></span>
+              {%- endfor -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      
+      {%- if section.settings.phone_text != blank -%}
+        <a class="iwao-trust-bar__mobile-phone" href="{{ section.settings.phone_url }}" aria-label="{{ section.settings.phone_text }}">
+          <div class="iwao-trust-bar__icon">
+            {{ section.settings.phone_icon }}
+          </div>
+          <span>{{ section.settings.phone_text }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust bar",
+  "tag": "section",
+  "class": "trust-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#242833"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#d8a94f"
+    },
+    {
+      "type": "header",
+      "content": "Phone Details"
+    },
+    {
+      "type": "text",
+      "id": "phone_text",
+      "label": "Phone Number Text",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "phone_url",
+      "label": "Phone Number Link",
+      "info": "Use tel:+4570707130 format"
+    },
+    {
+      "type": "html",
+      "id": "phone_icon",
+      "label": "Phone Icon (SVG)",
+      "default": "<svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7.2 4.4l2-.8c.7-.3 1.5.1 1.8.8l.9 2.2c.2.6.1 1.3-.4 1.7l-1.1.9c.8 1.8 2.2 3.2 4 4l.9-1.1c.4-.5 1.1-.7 1.7-.4l2.2.9c.7.3 1.1 1.1.8 1.8l-.8 2c-.3.7-1 1.1-1.8 1-6.1-.7-10.9-5.5-11.6-11.6-.1-.7.3-1.4 1.4-1.8Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"></path></svg>"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "s",
+      "label": "Marquee Speed",
+      "default": 22
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Trust feature"
+        },
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon (SVG)",
+          "info": "Paste the raw SVG code here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust bar",
+      "blocks": [
+        {
+          "type": "usp",
+          "settings": {
+            "text": "Authentic products",
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M12 3.5l7 3v5.2c0 4.2-2.8 7.8-7 9.4-4.2-1.6-7-5.2-7-9.4V6.5l7-3Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"></path><path d=\"M9.2 12.2l1.8 1.8 3.8-3.8\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "text": "Free UK delivery over £400",
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3.5 7H14v9H3.5V7Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"></path><path d=\"M14 10h3.6l2.9 3v3H14v-6Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"></path><circle cx=\"7.2\" cy=\"17.2\" r=\"1.8\" stroke=\"currentColor\" stroke-width=\"1.8\"></circle><circle cx=\"17.3\" cy=\"17.2\" r=\"1.8\" stroke=\"currentColor\" stroke-width=\"1.8\"></circle></svg>"
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "text": "Expert skincare advice",
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M9 4a3 3 0 0 1 6 0v4.2a3 3 0 0 1-6 0V4Z\" stroke=\"currentColor\" stroke-width=\"1.8\"></path><path d=\"M12 12.2V15c0 2 1.6 3.6 3.6 3.6H17a2.8 2.8 0 0 0 2.8-2.8v-.8\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"></path><circle cx=\"18.5\" cy=\"17.5\" r=\"2.2\" stroke=\"currentColor\" stroke-width=\"1.8\"></circle></svg>"
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "text": "Easy returns",
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4.5 12a7.5 7.5 0 1 0 2.2-5.3\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"></path><path d=\"M4.5 5.5v4h4\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

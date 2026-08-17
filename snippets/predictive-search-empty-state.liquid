@@ -17,7 +17,100 @@
   style="--color-shadow: rgb(var(--color-foreground-rgb) / {{ shadow_opacity }});"
 >
   {% if load_empty_state %}
-    <div class="predictive-search-results__inner">
+    <div class="predictive-search-results__inner lf-empty-state-inner">
+
+      <style>
+        .lf-empty-state-inner { padding-bottom: 8px; }
+        .lf-popular-section { padding: 20px 32px 4px; }
+        .lf-popular-section-title {
+          font-family: var(--font-body--family), sans-serif;
+          font-size: 0.5rem;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(0,0,0,0.35);
+          display: block;
+          margin-bottom: 10px;
+          border-bottom: 1px solid rgba(0,0,0,0.06);
+          padding-bottom: 8px;
+        }
+        .lf-popular-pills-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        .lf-popular-pill {
+          display: inline-block;
+          padding: 5px 12px;
+          border: 1px solid rgba(0,0,0,0.12);
+          font-size: 0.5625rem;
+          font-family: var(--font-body--family), sans-serif;
+          font-weight: 600;
+          letter-spacing: 0.07em;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #000;
+          background: transparent;
+          transition: background 0.13s ease, border-color 0.13s ease;
+          cursor: pointer;
+        }
+        .lf-popular-pill:hover { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.25); }
+        .lf-brand-pills-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        .lf-brand-pill {
+          display: inline-block;
+          padding: 5px 12px;
+          border: 1px solid rgba(0,0,0,0.08);
+          font-size: 0.5625rem;
+          font-family: var(--font-body--family), sans-serif;
+          font-weight: 500;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: rgba(0,0,0,0.65);
+          background: #f9f9f9;
+          transition: background 0.13s ease, border-color 0.13s ease, color 0.13s ease;
+        }
+        .lf-brand-pill:hover { background: #000; color: #fff; border-color: #000; }
+        @media (max-width: 749px) {
+          .lf-popular-section { padding: 16px 20px 4px; }
+        }
+      </style>
+
+      <!-- Popular Searches: ingredient/concern terms only -->
+      <div class="lf-popular-section">
+        <span class="lf-popular-section-title">Popular Searches</span>
+        <ul class="lf-popular-pills-list">
+          <li><a href="/search?q=Vitamin+C" class="lf-popular-pill">Vitamin C</a></li>
+          <li><a href="/search?q=Retinol" class="lf-popular-pill">Retinol</a></li>
+          <li><a href="/search?q=Hyaluronic+Acid" class="lf-popular-pill">Hyaluronic Acid</a></li>
+          <li><a href="/search?q=SPF" class="lf-popular-pill">SPF</a></li>
+          <li><a href="/search?q=Pigmentation" class="lf-popular-pill">Pigmentation</a></li>
+          <li><a href="/search?q=Barrier+Repair" class="lf-popular-pill">Barrier Repair</a></li>
+        </ul>
+      </div>
+
+      <!-- Trending Brands: stocked priority brands -->
+      <div class="lf-popular-section">
+        <span class="lf-popular-section-title">Trending Brands</span>
+        <ul class="lf-brand-pills-list">
+          <li><a href="/collections/skinceuticals" class="lf-brand-pill">SkinCeuticals</a></li>
+          <li><a href="/collections/cliniccare" class="lf-brand-pill">ClinicCare</a></li>
+          <li><a href="/collections/medik8" class="lf-brand-pill">Medik8</a></li>
+          <li><a href="/collections/nad-at-home" class="lf-brand-pill">NAD+ at Home</a></li>
+          <li><a href="/collections/heliocare" class="lf-brand-pill">Heliocare</a></li>
+        </ul>
+      </div>
+
       {% liquid
         assign collection = settings.empty_state_collection | default: collections.all
         assign default_title = 'content.search_results_resource_products' | t

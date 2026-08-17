@@ -9,275 +9,68 @@
  */
 {
   "type": "footer",
-  "name": "t:names.footer",
+  "name": "Footer",
   "sections": {
-    "instagram_feed": {
-      "type": "instagram-feed",
+    "luxury_footer": {
+      "type": "luxury-footer",
       "blocks": {
-        "img_1": {
-          "type": "image",
+        "menu_column_shop": {
+          "type": "menu_column",
           "settings": {
-            "link": ""
+            "title": "Shop",
+            "menu": "main-menu"
           }
         },
-        "img_2": {
-          "type": "image",
+        "menu_column_help": {
+          "type": "menu_column",
           "settings": {
-            "link": ""
+            "title": "Help",
+            "menu": "footer"
           }
         },
-        "img_3": {
-          "type": "image",
+        "contact_column": {
+          "type": "contact_column",
           "settings": {
-            "link": ""
-          }
-        },
-        "img_4": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "img_5": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "img_6": {
-          "type": "image",
-          "settings": {
-            "link": ""
+            "title": "Get In Touch",
+            "pre_email": "Arvenixo Support",
+            "email": "hello@arvenixo.com",
+            "phone": "",
+            "hours": "Mon – Fri: 9am – 6pm EST"
           }
         }
       },
       "block_order": [
-        "img_1",
-        "img_2",
-        "img_3",
-        "img_4",
-        "img_5",
-        "img_6"
+        "menu_column_shop",
+        "menu_column_help",
+        "contact_column"
       ],
       "settings": {
-        "bg_color": "{{ settings.color_palette.background }}",
-        "heading": "Join 1.5M+ followers of @burgeofficial",
-        "link": "https://instagram.com/burgeofficial"
-      }
-    },
-    "footer": {
-      "type": "footer",
-      "blocks": {
-        "menu_8tJbUk": {
-          "type": "menu",
-          "settings": {
-            "menu": "footer",
-            "heading": "Shop",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "background_color": "",
-            "text_color": "",
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "menu_jRmAQi": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "heading": "Help",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "background_color": "",
-            "text_color": "",
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "menu_6jWwP4": {
-          "type": "menu",
-          "name": "t:names.menu",
-          "settings": {
-            "menu": "",
-            "heading": "About",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "background_color": "",
-            "text_color": "",
-            "heading_preset": "h3",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "group_hAzkCn": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 24,
-            "width": "fill",
-            "custom_width": 35,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 4,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_jBr8nr": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Stay Connected</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 10,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "social_links_JBkCiP": {
-              "type": "social-links",
-              "name": "t:names.social_media_links",
-              "settings": {
-                "icon_color": "",
-                "facebook_url": "https://facebook.com",
-                "instagram_url": "https://instagram.com",
-                "youtube_url": "",
-                "tiktok_url": "https://tiktok.com",
-                "twitter_url": "https://x.com",
-                "threads_url": "",
-                "linkedin_url": "",
-                "bluesky_url": "",
-                "snapchat_url": "",
-                "pinterest_url": "",
-                "tumblr_url": "",
-                "vimeo_url": "",
-                "custom_url": ""
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_jBr8nr",
-            "social_links_JBkCiP"
-          ]
-        }
-      },
-      "block_order": [
-        "menu_8tJbUk",
-        "menu_jRmAQi",
-        "menu_6jWwP4",
-        "group_hAzkCn"
-      ],
-      "name": "t:names.footer",
-      "settings": {
-        "section_width": "page-width",
-        "gap": 12,
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 36,
-        "padding-block-end": 18
-      }
-    },
-    "utilities": {
-      "type": "footer-utilities",
-      "blocks": {
-        "copyright": {
-          "type": "footer-copyright",
-          "settings": {
-            "show_powered_by": true,
-            "text_color": "",
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_policy_list_rfGrqz": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
-          "settings": {
-            "text_color": "",
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "copyright",
-        "footer_policy_list_rfGrqz"
-      ],
-      "settings": {
-        "section_width": "page-width",
-        "gap": 24,
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "divider_thickness": 1,
-        "divider_color": "",
-        "padding-block-start": 20,
-        "padding-block-end": 18
+        "show_trust_bar": true,
+        "trust_1_text": "Fast Shipping",
+        "trust_2_text": "Secure Checkout",
+        "trust_3_text": "Easy Returns",
+        "show_payment_icons": true,
+        "bg_color": "#0b0c0e",
+        "text_color": "#f7f5f1",
+        "accent_color": "#c4a35a",
+        "svg_logo_code": "",
+        "logo_width": 160,
+        "logo_url": "/",
+        "brand_bio": "<p>Precision MagSafe cases and elevated beauty tech — designed for everyday luxury without the noise.</p>",
+        "social_instagram": "https://www.instagram.com/arvenixo/",
+        "social_tiktok": "",
+        "social_facebook": "",
+        "social_youtube": "",
+        "social_twitter": "",
+        "newsletter_title": "Stay in the circle",
+        "newsletter_subtitle": "New drops, member offers, and product guides — straight to your inbox.",
+        "newsletter_placeholder": "ENTER YOUR EMAIL",
+        "copyright_text": "Arvenixo. All Rights Reserved.",
+        "bottom_note": "Prices shown in USD"
       }
     }
   },
   "order": [
-    "instagram_feed",
-    "footer",
-    "utilities"
+    "luxury_footer"
   ]
 }

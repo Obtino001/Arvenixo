@@ -187,6 +187,8 @@
         <a class="pill-link" href="{{ block.settings.link | default: '#' }}" aria-label="{{ block.settings.title | escape }}">
           {%- if block.settings.image != blank -%}
             {{ block.settings.image | image_url: width: 1080 | image_tag: alt: block.settings.image.alt, loading: 'lazy' }}
+          {%- elsif block.settings.asset_image != blank -%}
+            <img src="{{ block.settings.asset_image | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="1080" height="540">
           {%- else -%}
             {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-200' }}
           {%- endif -%}
@@ -275,6 +277,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "asset_image",
+          "label": "Asset filename fallback",
+          "info": "Theme assets/*.png filename if image picker empty"
         },
         {
           "type": "text",

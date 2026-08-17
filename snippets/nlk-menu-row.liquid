@@ -1,0 +1,84 @@
+{%- doc -%}
+  Naillak-style mobile menu row: collection image + title + optional chevron.
+  The image is the linked collection's featured image (falls back to first product image).
+
+  @param {object} link - Navigation link
+  @param {string} [chevron] - 'inside' (default) or 'none'
+  @param {string} [panel_id] - When set, renders a button that opens this panel instead of a link
+{%- enddoc -%}
+
+{%- liquid
+  assign nlk_img = nil
+  assign nlk_alt = link.title | escape
+
+  if link.type == 'collection_link' and link.object != blank
+    if link.object.image != blank
+      assign nlk_img = link.object.image
+    else
+      assign nlk_first = link.object.products.first
+      if nlk_first != blank and nlk_first.featured_image != blank
+        assign nlk_img = nlk_first.featured_image
+      endif
+    endif
+  elsif link.type == 'product_link' and link.object.featured_image != blank
+    assign nlk_img = link.object.featured_image
+  elsif link.type == 'article_link' and link.object.image != blank
+    assign nlk_img = link.object.image
+  elsif link.url contains '/collections/'
+    assign nlk_handle = link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first
+    assign nlk_col = collections[nlk_handle]
+    if nlk_col != blank
+      if nlk_col.image != blank
+        assign nlk_img = nlk_col.image
+      else
+        assign nlk_first = nlk_col.products.first
+        if nlk_first != blank and nlk_first.featured_image != blank
+          assign nlk_img = nlk_first.featured_image
+        endif
+      endif
+    endif
+  endif
+
+  if nlk_img == blank
+    assign nlk_title_handle = link.title | handleize
+    assign nlk_by_title = collections[nlk_title_handle]
+    if nlk_by_title != blank and nlk_by_title.image != blank
+      assign nlk_img = nlk_by_title.image
+    endif
+  endif
+
+  if chevron == blank
+    assign chevron = 'inside'
+  endif
+-%}
+
+{%- if panel_id != blank -%}
+<button
+  type="button"
+  class="nlk-row nlk-row--trigger{% if link.current %} nlk-row--current{% endif %}"
+  data-nlk-open="{{ panel_id }}"
+  aria-label="{{ link.title | escape }}"
+>
+{%- else -%}
+<a
+  href="{{ link.url }}"
+  class="nlk-row{% if link.current %} nlk-row--current{% endif %}"
+  {% if link.current %}aria-current="page"{% endif %}
+>
+{%- endif -%}
+  <span class="nlk-thumb">
+    {%- if nlk_img != blank -%}
+      {{ nlk_img | image_url: width: 160, height: 160, crop: 'center' | image_tag: loading: 'lazy', alt: nlk_alt }}
+    {%- endif -%}
+  </span>
+  <span class="nlk-label">{{ link.title | escape }}</span>
+  {%- if chevron == 'inside' -%}
+    <span class="nlk-chevron" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </span>
+  {%- endif -%}
+{%- if panel_id != blank -%}
+</button>
+{%- else -%}
+</a>
+{%- endif -%}

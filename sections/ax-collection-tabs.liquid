@@ -118,9 +118,16 @@
 {
   "name": "Collection tabs",
   "blocks": [
-    { "type": "ax-collection-tab" },
-    { "type": "_product-card" }
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
   ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "range",
@@ -138,11 +145,15 @@
       "blocks": {
         "tab_new": {
           "type": "ax-collection-tab",
-          "settings": { "title": "New arrivals" }
+          "settings": {
+            "title": "New arrivals"
+          }
         },
         "tab_best": {
           "type": "ax-collection-tab",
-          "settings": { "title": "Best sellers" }
+          "settings": {
+            "title": "Best sellers"
+          }
         },
         "static-product-card": {
           "type": "_product-card",

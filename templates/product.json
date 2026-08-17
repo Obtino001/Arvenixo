@@ -12,12 +12,37 @@
     "main": {
       "type": "ax-product",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "text": "Compatible with MagSafe cases and phones" } },
-        "b2": { "type": "benefit", "settings": { "text": "Slim everyday carry" } },
-        "b3": { "type": "benefit", "settings": { "text": "30-day hassle-free returns" } },
-        "b4": { "type": "benefit", "settings": { "text": "Premium materials, built to last" } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Compatible with MagSafe cases and phones"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Slim everyday carry"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "30-day hassle-free returns"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Premium materials, built to last"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
         "subtitle": "Designed for MagSafe. Made for everyday carry.",
         "ship_note": "Free shipping on qualifying orders",
@@ -66,7 +91,11 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {}
     },
     "ax_reviews": {
@@ -100,7 +129,11 @@
           }
         }
       },
-      "block_order": ["r1", "r2", "r3"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
       "settings": {
         "heading": "2500+ 5 Star Reviews",
         "subheading": "4.8 out of 5 stars on average"
@@ -157,7 +190,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,

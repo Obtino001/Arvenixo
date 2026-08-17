@@ -60,44 +60,6 @@
         "why": "<p>Designed to solve the daily friction between access and security — a lighter carry, always at hand. Thoughtful, eco-conscious craftsmanship for real-world rhythm.</p>"
       }
     },
-    "ax_product_stories": {
-      "type": "ax-product-stories",
-      "blocks": {
-        "s1": {
-          "type": "story",
-          "settings": {
-            "kicker": "Always with you",
-            "heading": "Everything in its place",
-            "text": "Your phone and essentials, all in one. A lighter load — everything you need, always at hand.",
-            "dark": false
-          }
-        },
-        "s2": {
-          "type": "story",
-          "settings": {
-            "kicker": "Thoughtful considerations",
-            "heading": "Protected core, instant access",
-            "text": "Intentional design that organizes your essentials by priority — whether it's speed or security.",
-            "dark": true
-          }
-        },
-        "s3": {
-          "type": "story",
-          "settings": {
-            "kicker": "Durable by design",
-            "heading": "Consciously crafted",
-            "text": "Built for longevity with a lighter footprint. Smarter carry, kinder materials.",
-            "dark": false
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
-      "settings": {}
-    },
     "ax_reviews": {
       "type": "ax-reviews",
       "blocks": {
@@ -284,7 +246,6 @@
   },
   "order": [
     "main",
-    "ax_product_stories",
     "ax_reviews",
     "product_recommendations_qggXJq"
   ]

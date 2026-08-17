@@ -29,6 +29,7 @@
         "slide_2": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/S32c07c23060b45baae686a91a18bc95a4.webp",
             "overlay_opacity": 20,
             "heading": "Designed to Disappear",
             "subheading": "For Google Pixel 11 series",

@@ -487,6 +487,16 @@ body {
   padding-bottom: 0.5rem;
 }
 .ax-tabs__track::-webkit-scrollbar { display: none; }
+.ax-tabs__item {
+  flex: 0 0 calc((100% - 5.25rem) / 4);
+  min-width: 220px;
+  scroll-snap-align: start;
+}
+.ax-tabs__item product-card {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .ax-tabs__next {
   position: absolute;
   right: 0.5rem;
@@ -1340,7 +1350,7 @@ body {
   .ax-cats {
     width: calc(100% - 2rem);
   }
-  .ax-pcard {
+  .ax-tabs__item {
     flex-basis: calc((100% - 1.75rem) / 2);
     min-width: 160px;
   }

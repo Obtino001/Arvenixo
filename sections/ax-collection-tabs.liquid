@@ -2,21 +2,28 @@
   assign tabs_id = 'ax-tabs-' | append: section.id
 -%}
 
+{% render 'quick-add-styles' %}
 {% render 'quick-add-modal-styles' %}
 {% render 'product-card-styles' %}
+{% render 'product-badges-styles' %}
+{% render 'swatch-styles' %}
+{% render 'variant-picker-styles' %}
 
 <section class="ax-tabs" id="{{ tabs_id }}">
   <div class="ax-wrap">
     <div class="ax-tabs__nav" role="tablist">
+      {%- assign tab_index = 0 -%}
       {%- for block in section.blocks -%}
+        {%- if block.type != 'tab' -%}{%- continue -%}{%- endif -%}
+        {%- assign tab_index = tab_index | plus: 1 -%}
         <button
           type="button"
-          class="ax-tabs__tab{% if forloop.first %} is-active{% endif %}"
+          class="ax-tabs__tab{% if tab_index == 1 %} is-active{% endif %}"
           role="tab"
-          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-          aria-controls="{{ tabs_id }}-panel-{{ forloop.index }}"
-          id="{{ tabs_id }}-tab-{{ forloop.index }}"
-          data-ax-tab="{{ forloop.index }}"
+          aria-selected="{% if tab_index == 1 %}true{% else %}false{% endif %}"
+          aria-controls="{{ tabs_id }}-panel-{{ tab_index }}"
+          id="{{ tabs_id }}-tab-{{ tab_index }}"
+          data-ax-tab="{{ tab_index }}"
           {{ block.shopify_attributes }}
         >
           {{ block.settings.title }}
@@ -24,92 +31,44 @@
       {%- endfor -%}
     </div>
 
+    {%- assign tab_index = 0 -%}
     {%- for block in section.blocks -%}
+      {%- if block.type != 'tab' -%}{%- continue -%}{%- endif -%}
+      {%- assign tab_index = tab_index | plus: 1 -%}
       {%- assign collection = block.settings.collection -%}
       {%- if collection == blank -%}
         {%- assign collection = collections.all -%}
       {%- endif -%}
 
       <div
-        class="ax-tabs__panel{% if forloop.first %} is-active{% endif %}"
+        class="ax-tabs__panel{% if tab_index == 1 %} is-active{% endif %}"
         role="tabpanel"
-        id="{{ tabs_id }}-panel-{{ forloop.index }}"
-        aria-labelledby="{{ tabs_id }}-tab-{{ forloop.index }}"
-        {% unless forloop.first %}hidden{% endunless %}
+        id="{{ tabs_id }}-panel-{{ tab_index }}"
+        aria-labelledby="{{ tabs_id }}-tab-{{ tab_index }}"
+        {% unless tab_index == 1 %}hidden{% endunless %}
       >
         <div class="ax-tabs__viewport">
           <div class="ax-tabs__track" data-ax-track>
             {%- if collection != blank and collection.products_count > 0 -%}
               {%- for product in collection.products limit: section.settings.products_limit -%}
-                {%- assign variant = product.selected_or_first_available_variant -%}
-                {%- assign is_new = false -%}
-                {%- if product.tags contains 'new' or product.tags contains 'New' or product.tags contains 'NEW' -%}
-                  {%- assign is_new = true -%}
-                {%- endif -%}
-
-                <product-card
-                  class="ax-pcard product-card"
-                  data-product-id="{{ product.id }}"
-                  id="product-card-{{ section.id }}-{{ block.id }}-{{ product.id }}"
-                  style="
-                    --quick-add-display: {% if settings.quick_add %}flex{% else %}none{% endif %};
-                    --quick-add-mobile-display: {% if settings.mobile_quick_add %}flex{% else %}none{% endif %};
-                    --quick-add-mobile-opacity: {% if settings.mobile_quick_add %}1{% else %}0{% endif %};
-                  "
-                >
-                  <a
-                    href="{{ product.url }}"
-                    class="product-card__link"
-                    ref="productCardLink"
-                    aria-label="{{ product.title | escape }}"
-                  ></a>
-                  <div class="ax-pcard__media">
-                    {%- if product.featured_media -%}
-                      {{ product.featured_media.preview_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '320, 480, 640, 800', alt: product.featured_media.alt | default: product.title }}
-                    {%- else -%}
-                      {{ 'product-1' | placeholder_svg_tag: 'ax-pcard__ph' }}
-                    {%- endif -%}
-                    {%- if is_new -%}
-                      <span class="ax-pcard__badge">New</span>
-                    {%- endif -%}
-                    {%- if product.available and settings.quick_add or settings.mobile_quick_add -%}
-                      <div class="ax-pcard__add">
-                        {% render 'quick-add', product: product, section_id: section.id %}
-                      </div>
-                    {%- endif -%}
-                  </div>
-                  <h3 class="ax-pcard__title">{{ product.title }}</h3>
-                  <p class="ax-pcard__price">
-                    {%- if variant.compare_at_price > variant.price -%}
-                      <s>{{ variant.compare_at_price | money }}</s>
-                    {%- endif -%}
-                    {{ variant.price | money }}
-                  </p>
-                  {%- for option in product.options_with_values -%}
-                    {%- assign oname = option.name | downcase -%}
-                    {%- if oname contains 'color' or oname contains 'colour' -%}
-                      <div class="ax-pcard__swatches">
-                        {%- for value in option.values limit: 6 -%}
-                          <span
-                            class="ax-swatch{% if value.selected %} is-selected{% endif %}"
-                            title="{{ value }}"
-                            style="{% if value.swatch.color %}background:{{ value.swatch.color }};{% elsif value.swatch.image %}background-image:url({{ value.swatch.image | image_url: width: 40 }});{% endif %}"
-                          ></span>
-                        {%- endfor -%}
-                      </div>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </product-card>
+                <div class="ax-tabs__item">
+                  {% content_for 'block',
+                    type: '_product-card',
+                    id: 'static-product-card',
+                    closest.product: product,
+                    product_view_context: 'collection'
+                  %}
+                </div>
               {%- endfor -%}
             {%- else -%}
               {%- for i in (1..4) -%}
-                <article class="ax-pcard">
-                  <div class="ax-pcard__media">
-                    {{ 'product-' | append: i | placeholder_svg_tag: 'ax-pcard__ph' }}
-                  </div>
-                  <h3 class="ax-pcard__title">Product title</h3>
-                  <p class="ax-pcard__price">$49</p>
-                </article>
+                <div class="ax-tabs__item">
+                  {% content_for 'block',
+                    type: '_product-card',
+                    id: 'static-product-card',
+                    closest.product: null
+                  %}
+                </div>
               {%- endfor -%}
             {%- endif -%}
           </div>
@@ -147,7 +106,7 @@
       btn.addEventListener('click', function () {
         var track = btn.parentElement.querySelector('[data-ax-track]');
         if (!track) return;
-        var card = track.querySelector('.ax-pcard');
+        var card = track.querySelector('.ax-tabs__item');
         var w = card ? card.getBoundingClientRect().width + 24 : 280;
         track.scrollBy({ left: w, behavior: 'smooth' });
       });
@@ -158,6 +117,19 @@
 {% schema %}
 {
   "name": "AX Collection tabs",
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Tab title", "default": "New arrivals" },
+        { "type": "collection", "id": "collection", "label": "Collection" }
+      ]
+    },
+    {
+      "type": "_product-card"
+    }
+  ],
   "settings": [
     {
       "type": "range",
@@ -169,24 +141,45 @@
       "default": 8
     }
   ],
-  "blocks": [
-    {
-      "type": "tab",
-      "name": "Tab",
-      "settings": [
-        { "type": "text", "id": "title", "label": "Tab title", "default": "New arrivals" },
-        { "type": "collection", "id": "collection", "label": "Collection" },
-        { "type": "checkbox", "id": "mark_new", "label": "Show NEW on tagged products", "default": false }
-      ]
-    }
-  ],
   "presets": [
     {
       "name": "AX Collection tabs",
-      "blocks": [
-        { "type": "tab", "settings": { "title": "New arrivals", "mark_new": true } },
-        { "type": "tab", "settings": { "title": "Best sellers", "mark_new": false } }
-      ]
+      "blocks": {
+        "tab_new": {
+          "type": "tab",
+          "settings": { "title": "New arrivals" }
+        },
+        "tab_best": {
+          "type": "tab",
+          "settings": { "title": "Best sellers" }
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4
+          },
+          "blocks": {
+            "product-card-gallery": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "image_ratio": "square"
+              }
+            },
+            "product_title": {
+              "type": "product-title"
+            },
+            "price": {
+              "type": "price"
+            },
+            "swatches": {
+              "type": "swatches"
+            }
+          },
+          "block_order": ["product-card-gallery", "product_title", "price", "swatches"]
+        }
+      },
+      "block_order": ["tab_new", "tab_best"]
     }
   ]
 }

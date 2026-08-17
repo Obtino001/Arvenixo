@@ -6,10 +6,31 @@
   --ax-paper: #f4f1ec;
   --ax-white: #ffffff;
   --ax-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-body--family: "Museo Sans Rounded", sans-serif;
+  --font-heading--family: "Museo Sans Rounded", sans-serif;
+  --font-subheading--family: "Museo Sans Rounded", sans-serif;
+  --font-accent--family: "Museo Sans Rounded", sans-serif;
 }
 
 html {
   letter-spacing: -0.01em;
+  font-family: "Museo Sans Rounded", sans-serif;
+}
+
+body {
+  font-family: "Museo Sans Rounded", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6,
+.ax-hero__heading,
+.ax-section-title,
+.ax-pdp__title,
+.ax-pstory h2,
+.ax-about-hero__copy h1,
+.ax-about-ch__copy h2,
+.ax-logo__word {
+  font-family: "Museo Sans Rounded", sans-serif;
 }
 
 .button,
@@ -62,7 +83,7 @@ html {
 .ax-hero__heading {
   margin: 0 0 0.85rem;
   max-width: 14ch;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(3rem, 7vw, 5.6rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -130,7 +151,7 @@ html {
   flex: none;
 }
 .ax-logo__word {
-  font-family: var(--font-heading--family), Georgia, serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: 1.55rem;
   letter-spacing: -0.035em;
   font-weight: 400;
@@ -161,7 +182,7 @@ html {
 }
 .ax-section-title {
   margin: 0 0 2rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2rem, 4vw, 3.1rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -249,7 +270,7 @@ html {
 }
 .ax-story__copy h2 {
   margin: 0 0 1rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -304,7 +325,7 @@ html {
 }
 .ax-nl-strip__form .ax-offer {
   margin: 0.35rem 0 0.4rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2.6rem, 5vw, 4.2rem);
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -391,7 +412,7 @@ html {
 }
 .ax-popup .ax-offer {
   margin: 0.45rem 0 0.5rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(3rem, 5vw, 4.4rem);
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -596,7 +617,7 @@ html {
 }
 .ax-cats__copy h2 {
   margin: 0 0 0.35rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2.1rem, 3.6vw, 3.15rem);
   font-style: italic;
   font-weight: 500;
@@ -717,7 +738,7 @@ html {
 .ax-pdp__ship { margin: 0 0 0.75rem; font-size: 0.82rem; color: #666; }
 .ax-pdp__title {
   margin: 0 0 0.4rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -850,7 +871,7 @@ html {
 .ax-pstory h2 {
   margin: 0.35rem auto 1rem;
   max-width: 18ch;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   letter-spacing: -0.03em;
   font-weight: 400;
@@ -885,7 +906,7 @@ html {
 }
 .ax-reviews__copy h2 {
   margin: 0 0 0.55rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-style: italic;
   font-weight: 500;
@@ -1144,7 +1165,7 @@ html {
 .ax-mission__quote {
   margin: 0;
   max-width: 16ch;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(1.55rem, 2.4vw, 2.15rem);
   font-style: italic;
   font-weight: 500;
@@ -1211,7 +1232,7 @@ html {
 }
 .ax-about-hero__copy h1 {
   margin: 0;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(3.2rem, 8vw, 6.2rem);
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -1237,7 +1258,7 @@ html {
 }
 .ax-about-ch__copy h2 {
   margin: 0 0 0.75rem;
-  font-family: var(--font-heading--family), serif;
+  font-family: var(--font-heading--family), sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   letter-spacing: -0.03em;
   line-height: 1.08;

@@ -10,20 +10,12 @@
       {%- if section.settings.line_3 != blank -%}<span>{{ section.settings.line_3 }}</span>{%- endif -%}
     </div>
 
-    <div class="ax-mission__mark">
-      {%- if section.settings.badge != blank -%}
+    {%- if section.settings.badge != blank -%}
+      <div class="ax-mission__mark">
         {%- assign badge_alt = section.settings.badge_alt | default: 'Certified' -%}
         {{ section.settings.badge | image_url: width: 280 | image_tag: loading: 'lazy', alt: badge_alt }}
-      {%- else -%}
-        <svg class="ax-mission__bcorp" viewBox="0 0 88 120" aria-label="{{ section.settings.badge_alt | default: 'Certified' }}">
-          <text x="44" y="14" text-anchor="middle" font-size="11" font-family="Georgia, serif" letter-spacing="1.4">Certified</text>
-          <circle cx="44" cy="52" r="28" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          <text x="44" y="64" text-anchor="middle" font-size="36" font-family="Georgia, serif" font-weight="700">B</text>
-          <line x1="12" y1="90" x2="76" y2="90" stroke="currentColor" stroke-width="1.5"/>
-          <text x="44" y="108" text-anchor="middle" font-size="12" font-family="Georgia, serif" letter-spacing="0.6">Corporation</text>
-        </svg>
-      {%- endif -%}
-    </div>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -35,10 +27,10 @@
   "settings": [
     { "type": "text", "id": "quote", "label": "Quote", "default": "A passion for Good Design & Quality Products" },
     { "type": "text", "id": "line_1", "label": "Line 1", "default": "Tech Accessories Reimagined" },
-    { "type": "text", "id": "line_2", "label": "Line 2", "default": "Designed in Paris" },
-    { "type": "text", "id": "line_3", "label": "Line 3", "default": "Delivering Worldwide" },
-    { "type": "image_picker", "id": "badge", "label": "Badge image" },
-    { "type": "text", "id": "badge_alt", "label": "Badge alt text", "default": "Certified B Corporation" }
+    { "type": "text", "id": "line_2", "label": "Line 2", "default": "Designed for daily carry" },
+    { "type": "text", "id": "line_3", "label": "Line 3", "default": "Delivered worldwide" },
+    { "type": "image_picker", "id": "badge", "label": "Badge image", "info": "Only upload an official certification mark if the brand actually holds it." },
+    { "type": "text", "id": "badge_alt", "label": "Badge alt text", "default": "Certification" }
   ],
   "presets": [{ "name": "AX Mission bar" }]
 }

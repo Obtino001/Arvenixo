@@ -46,23 +46,6 @@
                 {%- if product.tags contains 'new' or product.tags contains 'New' or product.tags contains 'NEW' -%}
                   {%- assign is_new = true -%}
                 {%- endif -%}
-                {%- assign days_live = 999 -%}
-                {%- if product.published_at != blank -%}
-                  {%- assign days_live = 'now' | date: '%s' | minus: product.published_at | date: '%s' | divided_by: 86400 -%}
-                {%- endif -%}
-                {%- comment -%} published_at date math can be unreliable; also treat first 8 catalog items as new for empty stores {%- endcomment -%}
-                {%- if forloop.index <= 8 and block.settings.mark_new -%}
-                  {%- assign is_new = true -%}
-                {%- endif -%}
-
-                {%- assign rating = product.metafields.reviews.rating.value.rating | times: 1 -%}
-                {%- assign rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | times: 1 -%}
-                {%- if rating == blank or rating == 0 -%}
-                  {%- assign rating = product.id | modulo: 6 | plus: 44 | times: 0.1 -%}
-                {%- endif -%}
-                {%- if rating_count == blank or rating_count == 0 -%}
-                  {%- assign rating_count = product.id | modulo: 87 | plus: 24 -%}
-                {%- endif -%}
 
                 <product-card
                   class="ax-pcard product-card"
@@ -102,13 +85,6 @@
                     {%- endif -%}
                     {{ variant.price | money }}
                   </p>
-                  {%- assign stars_on = rating | round -%}
-                  <div class="ax-pcard__reviews" aria-label="{{ rating }} out of 5">
-                    {%- for i in (1..5) -%}
-                      <span class="ax-star{% if i <= stars_on %} is-on{% endif %}">★</span>
-                    {%- endfor -%}
-                    <span class="ax-pcard__count">{{ rating_count }} reviews</span>
-                  </div>
                   {%- for option in product.options_with_values -%}
                     {%- assign oname = option.name | downcase -%}
                     {%- if oname contains 'color' or oname contains 'colour' -%}
@@ -130,11 +106,9 @@
                 <article class="ax-pcard">
                   <div class="ax-pcard__media">
                     {{ 'product-' | append: i | placeholder_svg_tag: 'ax-pcard__ph' }}
-                    <span class="ax-pcard__badge">New</span>
-                    <span class="ax-pcard__add"><button type="button" tabindex="-1">+</button></span>
                   </div>
                   <h3 class="ax-pcard__title">Product title</h3>
-                  <p class="ax-pcard__price">$49.99</p>
+                  <p class="ax-pcard__price">$49</p>
                 </article>
               {%- endfor -%}
             {%- endif -%}
@@ -202,7 +176,7 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "New arrivals" },
         { "type": "collection", "id": "collection", "label": "Collection" },
-        { "type": "checkbox", "id": "mark_new", "label": "Show NEW badge", "default": true }
+        { "type": "checkbox", "id": "mark_new", "label": "Show NEW on tagged products", "default": false }
       ]
     }
   ],

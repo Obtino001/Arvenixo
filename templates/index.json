@@ -13,13 +13,13 @@
       "type": "ax-hero",
       "settings": {
         "min_height": 88,
-        "eyebrow": "Arvenixo",
+        "eyebrow": "",
         "heading": "Carry lighter.",
-        "text": "Precision MagSafe cases and beauty tech — made for everyday luxury.",
-        "button_label": "Shop MagSafe",
+        "text": "MagSafe cases and everyday objects, designed to last.",
+        "button_label": "Shop",
         "button_link": "shopify://collections/all",
-        "button2_label": "Explore beauty",
-        "button2_link": "shopify://collections/all"
+        "button2_label": "",
+        "button2_link": ""
       }
     },
     "ax_tabs": {
@@ -125,7 +125,7 @@
       ],
       "settings": {
         "kicker": "Shop",
-        "heading": "Protect. Charge. Glow."
+        "heading": "Protect. Charge. Carry."
       }
     },
     "ax_categories": {
@@ -171,10 +171,10 @@
         "c4"
       ],
       "settings": {
-        "heading": "Product Categories",
-        "subheading": "Charge / Carry / Protect",
-        "text": "<p>We believe in less, but better. Better design, better materials, a quieter everyday.</p><p>Every piece is made to last — recycled and plant-based wherever we can, without compromising the feel.</p>",
-        "button_label": "See all Products",
+        "heading": "Shop",
+        "subheading": "",
+        "text": "<p>Less, but better. Materials chosen for daily use, forms that stay out of the way.</p><p>Every piece is made to last — recycled and plant-based wherever we can, without compromising the feel.</p>",
+        "button_label": "Shop all",
         "button_link": "shopify://collections/all"
       }
     },
@@ -183,7 +183,7 @@
       "settings": {
         "kicker": "Beauty tech",
         "heading": "Ritual, not clutter.",
-        "text": "Devices designed to sit on a nightstand without shouting. Clinical performance, quiet presence.",
+        "text": "Objects made to sit on a nightstand without shouting. Quiet forms, considered materials.",
         "button_label": "Shop beauty tech",
         "button_link": "shopify://collections/all"
       }
@@ -196,7 +196,7 @@
           "settings": {
             "title": "Great warranty",
             "text": "I dropped my case and Arvenixo replaced it without the runaround. Fast, honest support — the product feels as considered as the service.",
-            "author": "Customer S. Verified Buyer",
+            "author": "Sarah K."
             "asset": "ax-review-pocket.png"
           }
         },
@@ -205,7 +205,7 @@
           "settings": {
             "title": "Everyday carry, sorted",
             "text": "Slim enough to forget it's there, strong enough that MagSafe never misses. My phone, cards, and charger finally feel like one system.",
-            "author": "Customer M. Verified Buyer",
+            "author": "Marcus T."
             "asset": "ax-review-charge.png"
           }
         },
@@ -214,7 +214,7 @@
           "settings": {
             "title": "Built to last",
             "text": "Materials feel expensive, edges stay clean, and it still looks new after months of pockets and travel. This is the case I actually keep.",
-            "author": "Customer A. Verified Buyer",
+            "author": "Amira L."
             "asset": "ax-review-carry.png"
           }
         }
@@ -225,16 +225,15 @@
         "r3"
       ],
       "settings": {
-        "heading": "2500+ 5 Star Reviews",
-        "subheading": "4.8 out of 5 stars on average"
+        "heading": "From our customers",
+        "subheading": ""
       }
     }
   },
   "order": [
     "ax_hero",
-    "ax_tabs",
-    "ax_trust",
     "ax_worlds",
+    "ax_tabs",
     "ax_categories",
     "ax_editorial",
     "ax_reviews"

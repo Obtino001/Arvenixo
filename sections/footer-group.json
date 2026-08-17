@@ -14,11 +14,11 @@
     "ax_mission": {
       "type": "ax-mission",
       "settings": {
-        "quote": "A passion for Good Design & Quality Products",
-        "line_1": "Tech Accessories Reimagined",
-        "line_2": "Designed in Paris",
-        "line_3": "Delivering Worldwide",
-        "badge_alt": "Certified B Corporation"
+        "quote": "A passion for good design and objects that last",
+        "line_1": "Tech accessories, reimagined",
+        "line_2": "Designed for daily carry",
+        "line_3": "Delivered worldwide",
+        "badge_alt": ""
       }
     },
     "ax_footer": {
@@ -33,7 +33,7 @@
         "col4_title": "Explore",
         "col4_links": "Shop All Products|/collections/all\nMagSafe|/collections/all\nBeauty Tech|/collections/all",
         "community_title": "Join our community",
-        "community_text": "Subscribe to receive first-hand brand updates, access to exclusive deals, and 15% discount off your first order.",
+        "community_text": "New objects, first. Occasional notes — no noise.",
         "email_placeholder": "Your e-mail",
         "follow_title": "Follow us",
         "instagram": "https://instagram.com",

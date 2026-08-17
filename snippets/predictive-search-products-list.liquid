@@ -35,8 +35,8 @@
           {{ 'actions.clear' | t }}
         </button>
       </h4>
-      <div
-        class="predictive-search-results__list predictive-search-results__wrapper-products grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 list-unstyled"
+      <ul
+        class="predictive-search-results__list predictive-search-results__wrapper-products list-unstyled"
       >
         {% liquid
           assign limit = limit | default: 8
@@ -49,58 +49,64 @@
           {% for _id in order_ids %}
             {% assign int_id = _id | times: 1 %}
             {% assign product = products | find: 'id', int_id %}
-            <div
-              class="predictive-search-results__card predictive-search-results__card--product w-full"
+            <li
+              class="predictive-search-results__card predictive-search-results__card--product"
               ref="recentlyViewedItems[]"
             >
-              {% content_for 'block',
-                type: '_product-card',
-                id: 'predictive-recently-viewed-card',
-                closest.product: product,
+              {% render 'resource-card',
+                resource_type: 'product',
+                resource: product,
+                image_width: 500,
+                image_hover: true,
+                image_aspect_ratio: '4 / 5',
                 product_view_context: 'search'
               %}
-            </div>
+            </li>
           {% endfor %}
         {% else %}
           {% for product in products limit: limit %}
-            <div
-              class="predictive-search-results__card predictive-search-results__card--product w-full"
+            <li
+              class="predictive-search-results__card predictive-search-results__card--product"
               ref="recentlyViewedItems[]"
             >
-              {% content_for 'block',
-                type: '_product-card',
-                id: 'predictive-recently-viewed-card',
-                closest.product: product,
+              {% render 'resource-card',
+                resource_type: 'product',
+                resource: product,
+                image_width: 500,
+                image_hover: true,
+                image_aspect_ratio: '4 / 5',
                 product_view_context: 'search'
               %}
-            </div>
+            </li>
           {% endfor %}
         {% endif %}
-      </div>
+      </ul>
     </div>
   {% else %}
     <h4 class="predictive-search-results__title">
       {{ title }}
     </h4>
-    <div
-      class="predictive-search-results__list predictive-search-results__wrapper-products grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 list-unstyled"
+    <ul
+      class="predictive-search-results__list predictive-search-results__wrapper-products list-unstyled"
     >
       {% liquid
         assign limit = limit | default: 8
       %}
       {% for product in products limit: limit %}
-        <div
-          class="predictive-search-results__card predictive-search-results__card--product w-full"
+        <li
+          class="predictive-search-results__card predictive-search-results__card--product"
           ref="resultsItems[]"
         >
-          {% content_for 'block',
-            type: '_product-card',
-            id: 'predictive-search-product-card',
-            closest.product: product,
+          {% render 'resource-card',
+            resource_type: 'product',
+            resource: product,
+            image_width: 500,
+            image_hover: true,
+            image_aspect_ratio: '4 / 5',
             product_view_context: 'search'
           %}
-        </div>
+        </li>
       {% endfor %}
-    </div>
+    </ul>
   {% endif %}
 </div>

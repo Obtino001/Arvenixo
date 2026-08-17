@@ -144,7 +144,7 @@
           {%- if pay_types.size == 0 -%}
             {%- assign pay_types = 'american_express,apple_pay,google_pay,master,paypal,shopify_pay,unionpay,visa' | split: ',' -%}
           {%- endif -%}
-          {%- for type in pay_types -%}
+          {%- for type in pay_types limit: 8 -%}
             <li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>
           {%- endfor -%}
         </ul>

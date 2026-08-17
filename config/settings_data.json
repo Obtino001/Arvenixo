@@ -11,8 +11,6 @@
   "current": {
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "page_background_color": "{{ settings.color_palette.background }}",
-    "page_width": "wide",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "instrument_sans_n4",
     "type_subheading_font": "instrument_sans_n5",
@@ -44,6 +42,8 @@
     "type_font_h6": "subheading",
     "type_size_h6": "12",
     "type_line_height_h6": "display-loose",
+    "page_background_color": "{{ settings.color_palette.background }}",
+    "page_width": "wide",
     "page_transition_enabled": false,
     "transition_to_main_product": false,
     "card_hover_effect": "none",
@@ -66,6 +66,7 @@
     "button_border_radius_secondary": 100,
     "cart_type": "drawer",
     "cart_price_font": "subheading",
+    "auto_open_cart_drawer": true,
     "show_cart_note": false,
     "show_add_discount_code": true,
     "drawer_background_color": "{{ settings.color_palette.background }}",
@@ -104,6 +105,20 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "sections": {
+      "ax-newsletter-popup": {
+        "type": "ax-newsletter-popup",
+        "settings": {
+          "delay": 5,
+          "kicker": "Arvenixo",
+          "offer": "15% OFF",
+          "text": "Save on your first order.",
+          "button_label": "Get my code",
+          "decline_label": ""
+        }
+      }
+    },
+    "content_for_index": [],
     "color_palette": {
       "background": "#f4f1ec",
       "foreground": "#111111",

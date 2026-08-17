@@ -22,42 +22,32 @@
         "button2_link": "shopify://collections/all"
       }
     },
-    "ax_worlds": {
-      "type": "ax-shop-worlds",
+    "ax_tabs": {
+      "type": "ax-collection-tabs",
       "blocks": {
-        "w1": {
-          "type": "world",
+        "tab_new": {
+          "type": "tab",
           "settings": {
-            "title": "Protect",
-            "asset": "ax-world-protect.png",
-            "link": "shopify://collections/all"
+            "title": "New arrivals",
+            "collection": "",
+            "mark_new": true
           }
         },
-        "w2": {
-          "type": "world",
+        "tab_best": {
+          "type": "tab",
           "settings": {
-            "title": "Charge",
-            "asset": "ax-world-charge.png",
-            "link": "shopify://collections/all"
-          }
-        },
-        "w3": {
-          "type": "world",
-          "settings": {
-            "title": "Beauty",
-            "asset": "ax-world-beauty.png",
-            "link": "shopify://collections/all"
+            "title": "Best sellers",
+            "collection": "",
+            "mark_new": false
           }
         }
       },
       "block_order": [
-        "w1",
-        "w2",
-        "w3"
+        "tab_new",
+        "tab_best"
       ],
       "settings": {
-        "kicker": "Shop",
-        "heading": "Protect. Charge. Glow."
+        "products_limit": 8
       }
     },
     "ax_trust": {
@@ -100,32 +90,42 @@
       ],
       "settings": {}
     },
-    "ax_tabs": {
-      "type": "ax-collection-tabs",
+    "ax_worlds": {
+      "type": "ax-shop-worlds",
       "blocks": {
-        "tab_new": {
-          "type": "tab",
+        "w1": {
+          "type": "world",
           "settings": {
-            "title": "New arrivals",
-            "collection": "",
-            "mark_new": true
+            "title": "Protect",
+            "asset": "ax-world-protect.png",
+            "link": "shopify://collections/all"
           }
         },
-        "tab_best": {
-          "type": "tab",
+        "w2": {
+          "type": "world",
           "settings": {
-            "title": "Best sellers",
-            "collection": "",
-            "mark_new": false
+            "title": "Charge",
+            "asset": "ax-world-charge.png",
+            "link": "shopify://collections/all"
+          }
+        },
+        "w3": {
+          "type": "world",
+          "settings": {
+            "title": "Beauty",
+            "asset": "ax-world-beauty.png",
+            "link": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "tab_new",
-        "tab_best"
+        "w1",
+        "w2",
+        "w3"
       ],
       "settings": {
-        "products_limit": 8
+        "kicker": "Shop",
+        "heading": "Protect. Charge. Glow."
       }
     },
     "ax_categories": {
@@ -175,16 +175,6 @@
         "subheading": "Charge / Carry / Protect",
         "text": "<p>We believe in less, but better. Better design, better materials, a quieter everyday.</p><p>Every piece is made to last — recycled and plant-based wherever we can, without compromising the feel.</p>",
         "button_label": "See all Products",
-        "button_link": "shopify://collections/all"
-      }
-    },
-    "ax_story": {
-      "type": "ax-story",
-      "settings": {
-        "kicker": "MagSafe",
-        "heading": "Aligned. Protected. Invisible.",
-        "text": "Neodymium magnets sit flush inside a slim case, so charging feels native — not added on.",
-        "button_label": "Shop MagShield",
         "button_link": "shopify://collections/all"
       }
     },
@@ -246,7 +236,6 @@
     "ax_trust",
     "ax_worlds",
     "ax_categories",
-    "ax_story",
     "ax_editorial",
     "ax_reviews"
   ]

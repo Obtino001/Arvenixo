@@ -1,0 +1,28 @@
+<section class="ax-editorial">
+  <div class="ax-wrap">
+    {%- if section.settings.kicker != blank -%}
+      <p class="ax-kicker">{{ section.settings.kicker }}</p>
+    {%- endif -%}
+    <h2 class="ax-section-title">{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    {%- if section.settings.button_label != blank -%}
+      <p style="margin-top:1.75rem;">
+        <a class="ax-btn ax-btn--ghost" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AX Editorial",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Beauty tech" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ritual, not clutter." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Devices designed to sit on a nightstand without shouting. Clinical performance, quiet presence." },
+    { "type": "text", "id": "button_label", "label": "Button", "default": "Shop beauty tech" },
+    { "type": "url", "id": "button_link", "label": "Link" }
+  ],
+  "presets": [{ "name": "AX Editorial" }]
+}
+{% endschema %}

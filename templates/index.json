@@ -1,191 +1,68 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
-<<<<<<< Updated upstream
-    "hero_slider": {
-      "type": "hero-slider",
-      "blocks": {
-        "slide_1": {
-          "type": "slide",
-          "settings": {
-            "overlay_opacity": 20,
-            "heading": "Designed to Disappear",
-            "subheading": "For Google Pixel 11 series",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_bg_color": "#ffffff",
-            "button_text_color": "#000000"
-          }
-        },
-        "slide_2": {
-          "type": "slide",
-          "settings": {
-            "overlay_opacity": 20,
-            "heading": "Designed to Disappear",
-            "subheading": "For Google Pixel 11 series",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_bg_color": "#ffffff",
-            "button_text_color": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "slide_1",
-        "slide_2"
-=======
-    "hero_jVaWmY": {
-      "type": "hero",
-      "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
->>>>>>> Stashed changes
-      ],
-      "name": "t:names.hero",
+    "ax_hero": {
+      "type": "ax-hero",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "min_height": 88,
+        "eyebrow": "Arvenixo",
+        "heading": "Carry lighter.",
+        "text": "Precision MagSafe cases and beauty tech — made for everyday luxury.",
+        "button_label": "Shop MagSafe",
+        "button_link": "shopify://collections/all",
+        "button2_label": "Explore beauty",
+        "button2_link": "shopify://collections/all"
       }
     },
-<<<<<<< Updated upstream
-    "shop_by_category": {
-      "type": "shop-by-category",
+    "ax_worlds": {
+      "type": "ax-shop-worlds",
       "blocks": {
-        "cat_1": {
-          "type": "category",
+        "w1": {
+          "type": "world",
           "settings": {
-            "title": "Phone CASES",
-            "link": ""
+            "title": "Protect",
+            "asset": "ax-world-protect.png",
+            "link": "shopify://collections/all"
           }
         },
-        "cat_2": {
-          "type": "category",
+        "w2": {
+          "type": "world",
           "settings": {
-            "title": "WALLETS",
-            "link": ""
+            "title": "Charge",
+            "asset": "ax-world-charge.png",
+            "link": "shopify://collections/all"
           }
         },
-        "cat_3": {
-          "type": "category",
+        "w3": {
+          "type": "world",
           "settings": {
-            "title": "WATCH STRAPS",
-            "link": ""
-          }
-        },
-        "cat_4": {
-          "type": "category",
-          "settings": {
-            "title": "BELTS",
-            "link": ""
+            "title": "Beauty",
+            "asset": "ax-world-beauty.png",
+            "link": "shopify://collections/all"
           }
         }
       },
-      "block_order": [
-        "cat_1",
-        "cat_2",
-        "cat_3",
-        "cat_4"
-      ],
+      "block_order": ["w1", "w2", "w3"],
       "settings": {
-        "title": "Shop by Category",
-        "subtitle": "Take A Look Around",
-        "header_alignment": "flex-start",
-        "bg_color": "{{ settings.color_palette.background }}",
-        "text_color": "#000000",
-        "image_overlay_opacity": 10,
-        "padding_top": 20,
-        "padding_bottom": 60
+        "kicker": "Shop",
+        "heading": "Protect. Charge. Glow."
       }
     },
-    "product_list_pXNMeQ": {
-=======
-    "product_list_fa6P9H": {
->>>>>>> Stashed changes
+    "ax_trust": {
+      "type": "ax-trust",
+      "blocks": {
+        "t1": { "type": "item", "settings": { "title": "Free shipping", "text": "On qualifying orders." } },
+        "t2": { "type": "item", "settings": { "title": "30-day returns", "text": "No fuss, no drama." } },
+        "t3": { "type": "item", "settings": { "title": "Secure checkout", "text": "Encrypted payments." } },
+        "t4": { "type": "item", "settings": { "title": "Built to last", "text": "Materials chosen for daily use." } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": {}
+    },
+    "product_list": {
       "type": "product-list",
       "blocks": {
         "static-header": {
           "type": "_product-list-content",
-          "name": "t:names.header",
           "static": true,
           "settings": {
             "content_direction": "row",
@@ -203,8 +80,6 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -215,16 +90,15 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_YFtzcL": {
+            "product_list_text": {
               "type": "_product-list-text",
-              "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h3>Featured</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h4",
-                "font": "var(--font-body--family)",
+                "font": "var(--font-heading--family)",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -236,12 +110,10 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             },
-            "product_list_button_MWeP9V": {
+            "product_list_button": {
               "type": "_product-list-button",
-              "name": "t:names.product_list_button",
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -250,21 +122,16 @@
                 "custom_width": 100,
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
-              },
-              "blocks": {}
+              }
             }
           },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+          "block_order": ["product_list_text", "product_list_button"]
         },
         "static-product-card": {
           "type": "_product-card",
-          "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 8,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -275,11 +142,10 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_677WP3": {
+            "gallery": {
               "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "portrait",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -288,12 +154,10 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             },
-            "product_title_YXxMTj": {
+            "title": {
               "type": "product-title",
-              "name": "t:names.product_title",
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
@@ -308,16 +172,14 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 8,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             },
-            "price_JQzVV4": {
+            "price": {
               "type": "price",
-              "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
                 "show_installments": false,
@@ -334,288 +196,69 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
+              }
             }
           },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+          "block_order": ["gallery", "title", "price"]
         }
       },
-      "name": "t:names.product_list",
       "settings": {
         "collection": "all",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
-<<<<<<< Updated upstream
-        "max_products": 16,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "chevron",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
-    "rich_text_premium": {
-      "type": "rich-text-premium",
-      "settings": {
-        "page_width": "max-w-screen-full",
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "heading": "Carry Lighter, Live Now.",
-        "text": "<p>Built from high-performance materials and intentional design,<br/>Arvenixo redefines the way we carry — light, precise, and present.</p>",
-        "button_label": "About Our Philosophy",
-        "button_link": "",
-        "text_color": "#000000",
-        "bg_color": "{{ settings.color_palette.background }}"
-      }
-    },
-    "banner_with_text": {
-      "type": "banner-with-text",
-      "settings": {
-        "bg_color": "{{ settings.color_palette.background }}",
-        "section_heading": "Style up by collections",
-        "section_description": "Complete your journey with our meticulously crafted accessories designed to complement and elevate your essentials.",
-        "overlay_opacity": 30,
-        "banner_heading": "Sunset Collection,\nDecorate Your Life",
-        "button_label": "Learn More",
-        "button_link": "",
-        "text_color": "#ffffff",
-        "button_bg_color": "#000000",
-        "button_text_color": "#ffffff"
-      }
-    },
-    "benefit_tabs": {
-      "type": "benefit-tabs",
-      "blocks": {
-        "tab_1": {
-          "type": "tab",
-          "settings": {
-            "title": "MAGSAFE COMPATIBLE.",
-            "description": "Designed to work with all MagSafe accessories."
-          }
-        },
-        "tab_2": {
-          "type": "tab",
-          "settings": {
-            "title": "QUALITY FIRST.",
-            "description": "Premium, full-grain-leather, 316L stainless-steel buttons."
-          }
-        },
-        "tab_3": {
-          "type": "tab",
-          "settings": {
-            "title": "UNMATCHED PRECISION.",
-            "description": "Designed and crafted with micro-precision technology."
-          }
-        },
-        "tab_4": {
-          "type": "tab",
-          "settings": {
-            "title": "Trusted by 100,000+ Customers",
-            "description": "Described by many as the best of the best."
-          }
-        }
-      },
-      "block_order": [
-        "tab_1",
-        "tab_2",
-        "tab_3",
-        "tab_4"
-      ],
-      "settings": {
-        "bg_color": "{{ settings.color_palette.background }}",
-        "text_color": "#000000",
-        "content_order": "-order-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "collection_list_xpBxCm": {
-      "type": "collection-list",
-      "blocks": {
-        "group_mfTd9p": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 16,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_AYrwfM": {
-              "type": "text",
-              "settings": {
-                "text": "<h2>Shop by Collection</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_AYrwfM"
-          ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "static": true,
-          "settings": {
-            "placement": "on_image",
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "collection_card_gap": 8,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 10
-          },
-          "blocks": {
-            "collection_title_zyBdAJ": {
-              "type": "collection-title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "text_color": "{{ settings.color_palette.foreground }}",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "portrait",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_zyBdAJ"
-          ]
-        }
-      },
-      "block_order": [
-        "group_mfTd9p"
-      ],
-      "settings": {
-        "collection_list": [],
-        "layout_type": "bento",
         "carousel_on_mobile": true,
-=======
         "max_products": 8,
->>>>>>> Stashed changes
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
-        "columns_gap": 8,
+        "columns_gap": 12,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "background_color": "#f4f1ec",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    },
+    "ax_story": {
+      "type": "ax-story",
+      "settings": {
+        "kicker": "MagSafe",
+        "heading": "Aligned. Protected. Invisible.",
+        "text": "Neodymium magnets sit flush inside a slim case, so charging feels native — not added on.",
+        "button_label": "Shop MagShield",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "ax_editorial": {
+      "type": "ax-editorial",
+      "settings": {
+        "kicker": "Beauty tech",
+        "heading": "Ritual, not clutter.",
+        "text": "Devices designed to sit on a nightstand without shouting. Clinical performance, quiet presence.",
+        "button_label": "Shop beauty tech",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "ax_newsletter": {
+      "type": "ax-newsletter-split",
+      "settings": {
+        "kicker": "Arvenixo",
+        "offer": "15% OFF",
+        "text": "Save on your first order.",
+        "button_label": "Get my code"
       }
     }
   },
   "order": [
-<<<<<<< Updated upstream
-    "hero_slider",
-    "shop_by_category",
-    "product_list_pXNMeQ",
-    "rich_text_premium",
-    "banner_with_text",
-    "benefit_tabs",
-    "collection_list_xpBxCm",
-    "flex_case_promo_cGVQka"
-=======
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
->>>>>>> Stashed changes
+    "ax_hero",
+    "ax_worlds",
+    "ax_trust",
+    "product_list",
+    "ax_story",
+    "ax_editorial",
+    "ax_newsletter"
   ]
 }

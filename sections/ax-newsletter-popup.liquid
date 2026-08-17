@@ -27,9 +27,11 @@
           <p>You're in. Check your inbox.</p>
         {%- endif -%}
       {% endform %}
-      <button class="ax-popup__decline" type="button" data-ax-popup-close>
-        {{ section.settings.decline_label }}
-      </button>
+      {%- if section.settings.decline_label != blank -%}
+        <button class="ax-popup__decline" type="button" data-ax-popup-close>
+          {{ section.settings.decline_label }}
+        </button>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -38,7 +40,7 @@
   (function () {
     var root = document.getElementById('ax-newsletter-popup');
     if (!root) return;
-    var key = 'ax_nl_popup_dismissed';
+    var key = 'ax_nl_popup_v2';
     try {
       if (localStorage.getItem(key)) return;
     } catch (e) {}
@@ -71,7 +73,7 @@
     { "type": "text", "id": "offer", "label": "Offer", "default": "15% OFF" },
     { "type": "text", "id": "text", "label": "Text", "default": "Save on your first order." },
     { "type": "text", "id": "button_label", "label": "Button", "default": "Get my code" },
-    { "type": "text", "id": "decline_label", "label": "Decline", "default": "No thanks, I'll pay full price." }
+    { "type": "text", "id": "decline_label", "label": "Decline", "info": "Leave blank to hide" }
   ],
   "presets": [{ "name": "AX Newsletter popup" }]
 }

@@ -1,0 +1,39 @@
+<section class="ax-about-ch{% if section.settings.dark %} is-dark{% endif %}">
+  {%- if section.settings.image != blank or section.settings.asset != blank -%}
+    <div class="ax-about-ch__media">
+      {%- if section.settings.image != blank -%}
+        {%- assign ch_alt = section.settings.heading | default: section.settings.kicker -%}
+        {{ section.settings.image | image_url: width: 2200 | image_tag: loading: 'lazy', alt: ch_alt }}
+      {%- elsif section.settings.asset != blank -%}
+        <img src="{{ section.settings.asset | asset_url }}" alt="" width="1800" height="1012" loading="lazy">
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  <div class="ax-about-ch__copy ax-wrap">
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.kicker != blank -%}
+      <p class="ax-about-ch__kicker">{{ section.settings.kicker }}</p>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="ax-about-ch__text">{{ section.settings.text }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AX About chapter",
+  "enabled_on": { "templates": ["page"] },
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "asset", "label": "Fallback asset filename", "info": "e.g. ax-about-lifestyle.png" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "kicker", "label": "Kicker" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "checkbox", "id": "dark", "label": "Dark background", "default": false }
+  ],
+  "presets": [{ "name": "AX About chapter" }]
+}
+{% endschema %}

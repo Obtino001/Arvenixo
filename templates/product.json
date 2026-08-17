@@ -69,6 +69,43 @@
       "block_order": ["s1", "s2", "s3"],
       "settings": {}
     },
+    "ax_reviews": {
+      "type": "ax-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "title": "Great warranty",
+            "text": "I dropped my case and Arvenixo replaced it without the runaround. Fast, honest support — the product feels as considered as the service.",
+            "author": "Customer S. Verified Buyer",
+            "asset": "ax-review-pocket.png"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "title": "Everyday carry, sorted",
+            "text": "Slim enough to forget it's there, strong enough that MagSafe never misses. My phone, cards, and charger finally feel like one system.",
+            "author": "Customer M. Verified Buyer",
+            "asset": "ax-review-charge.png"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "title": "Built to last",
+            "text": "Materials feel expensive, edges stay clean, and it still looks new after months of pockets and travel. This is the case I actually keep.",
+            "author": "Customer A. Verified Buyer",
+            "asset": "ax-review-carry.png"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3"],
+      "settings": {
+        "heading": "2500+ 5 Star Reviews",
+        "subheading": "4.8 out of 5 stars on average"
+      }
+    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -215,6 +252,7 @@
   "order": [
     "main",
     "ax_product_stories",
+    "ax_reviews",
     "product_recommendations_qggXJq"
   ]
 }

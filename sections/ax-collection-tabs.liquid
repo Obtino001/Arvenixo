@@ -1,5 +1,14 @@
 {%- liquid
   assign tabs_id = 'ax-tabs-' | append: section.id
+  assign limit = section.settings.products_limit
+  assign collection_1 = section.settings.collection_1
+  assign collection_2 = section.settings.collection_2
+  if collection_1 == blank
+    assign collection_1 = collections.all
+  endif
+  if collection_2 == blank
+    assign collection_2 = collections.all
+  endif
 -%}
 
 {% render 'quick-add-styles' %}
@@ -7,50 +16,58 @@
 {% render 'product-card-styles' %}
 {% render 'product-badges-styles' %}
 {% render 'swatch-styles' %}
+{% render 'quantity-selector-styles' %}
 {% render 'variant-picker-styles' %}
 
 <section class="ax-tabs" id="{{ tabs_id }}">
   <div class="ax-wrap">
     <div class="ax-tabs__nav" role="tablist">
-      {%- assign tab_index = 0 -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type != 'ax-collection-tab' -%}{%- continue -%}{%- endif -%}
-        {%- assign tab_index = tab_index | plus: 1 -%}
+      {%- if section.settings.title_1 != blank -%}
         <button
           type="button"
-          class="ax-tabs__tab{% if tab_index == 1 %} is-active{% endif %}"
+          class="ax-tabs__tab is-active"
           role="tab"
-          aria-selected="{% if tab_index == 1 %}true{% else %}false{% endif %}"
-          aria-controls="{{ tabs_id }}-panel-{{ tab_index }}"
-          id="{{ tabs_id }}-tab-{{ tab_index }}"
-          data-ax-tab="{{ tab_index }}"
-          {{ block.shopify_attributes }}
+          aria-selected="true"
+          aria-controls="{{ tabs_id }}-panel-1"
+          id="{{ tabs_id }}-tab-1"
+          data-ax-tab="1"
         >
-          {{ block.settings.title }}
+          {{ section.settings.title_1 }}
         </button>
-      {%- endfor -%}
+      {%- endif -%}
+      {%- if section.settings.title_2 != blank -%}
+        <button
+          type="button"
+          class="ax-tabs__tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="{{ tabs_id }}-panel-2"
+          id="{{ tabs_id }}-tab-2"
+          data-ax-tab="2"
+        >
+          {{ section.settings.title_2 }}
+        </button>
+      {%- endif -%}
     </div>
 
-    {%- assign tab_index = 0 -%}
-    {%- for block in section.blocks -%}
-      {%- if block.type != 'ax-collection-tab' -%}{%- continue -%}{%- endif -%}
-      {%- assign tab_index = tab_index | plus: 1 -%}
-      {%- assign collection = block.settings.collection -%}
-      {%- if collection == blank -%}
-        {%- assign collection = collections.all -%}
+    {%- for tab_n in (1..2) -%}
+      {%- if tab_n == 1 -%}
+        {%- assign tab_collection = collection_1 -%}
+      {%- else -%}
+        {%- assign tab_collection = collection_2 -%}
       {%- endif -%}
 
       <div
-        class="ax-tabs__panel{% if tab_index == 1 %} is-active{% endif %}"
+        class="ax-tabs__panel{% if tab_n == 1 %} is-active{% endif %}"
         role="tabpanel"
-        id="{{ tabs_id }}-panel-{{ tab_index }}"
-        aria-labelledby="{{ tabs_id }}-tab-{{ tab_index }}"
-        {% unless tab_index == 1 %}hidden{% endunless %}
+        id="{{ tabs_id }}-panel-{{ tab_n }}"
+        aria-labelledby="{{ tabs_id }}-tab-{{ tab_n }}"
+        {% unless tab_n == 1 %}hidden{% endunless %}
       >
         <div class="ax-tabs__viewport">
           <div class="ax-tabs__track" data-ax-track>
-            {%- if collection != blank and collection.products_count > 0 -%}
-              {%- for product in collection.products limit: section.settings.products_limit -%}
+            {%- if tab_collection != blank and tab_collection.products_count > 0 -%}
+              {%- for product in tab_collection.products limit: limit -%}
                 <div class="ax-tabs__item">
                   {% content_for 'block',
                     type: '_product-card',
@@ -79,6 +96,7 @@
       </div>
     {%- endfor -%}
   </div>
+  {% content_for 'blocks' %}
 </section>
 
 <script>
@@ -117,18 +135,44 @@
 {% schema %}
 {
   "name": "Collection tabs",
+  "class": "ax-collection-tabs",
   "blocks": [
     {
       "type": "@theme"
     },
     {
       "type": "@app"
+    },
+    {
+      "type": "_divider"
     }
   ],
   "disabled_on": {
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Tab 1 title",
+      "default": "New arrivals"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Tab 1 collection"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Tab 2 title",
+      "default": "Best sellers"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Tab 2 collection"
+    },
     {
       "type": "range",
       "id": "products_limit",
@@ -143,45 +187,93 @@
     {
       "name": "Collection tabs",
       "blocks": {
-        "tab_new": {
-          "type": "ax-collection-tab",
-          "settings": {
-            "title": "New arrivals"
-          }
-        },
-        "tab_best": {
-          "type": "ax-collection-tab",
-          "settings": {
-            "title": "Best sellers"
-          }
-        },
         "static-product-card": {
           "type": "_product-card",
           "static": true,
           "settings": {
-            "product_card_gap": 4
+            "product_card_gap": 4,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "product-card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
-                "image_ratio": "square"
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               }
             },
             "product_title": {
-              "type": "product-title"
+              "type": "product-title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
             },
             "price": {
-              "type": "price"
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
             },
             "swatches": {
-              "type": "swatches"
+              "type": "swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "product_swatches_padding_top": 8,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              }
             }
           },
           "block_order": ["product-card-gallery", "product_title", "price", "swatches"]
         }
       },
-      "block_order": ["tab_new", "tab_best"]
+      "block_order": []
     }
   ]
 }

@@ -25,20 +25,6 @@
     "ax_tabs": {
       "type": "ax-collection-tabs",
       "blocks": {
-        "tab_new": {
-          "type": "ax-collection-tab",
-          "settings": {
-            "title": "New arrivals",
-            "collection": ""
-          }
-        },
-        "tab_best": {
-          "type": "ax-collection-tab",
-          "settings": {
-            "title": "Best sellers",
-            "collection": ""
-          }
-        },
         "static-product-card": {
           "type": "_product-card",
           "static": true,
@@ -130,11 +116,12 @@
           ]
         }
       },
-      "block_order": [
-        "tab_new",
-        "tab_best"
-      ],
+      "block_order": [],
       "settings": {
+        "title_1": "New arrivals",
+        "collection_1": "",
+        "title_2": "Best sellers",
+        "collection_2": "",
         "products_limit": 8
       }
     },

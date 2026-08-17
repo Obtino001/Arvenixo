@@ -497,6 +497,11 @@ body {
   width: 100%;
   height: 100%;
 }
+
+product-card [slot='more'],
+product-card .hidden-swatches__count {
+  display: none !important;
+}
 .ax-tabs__next {
   position: absolute;
   right: 0.5rem;
@@ -1353,5 +1358,102 @@ body {
   .ax-tabs__item {
     flex-basis: calc((100% - 1.75rem) / 2);
     min-width: 160px;
+  }
+}
+
+.ax-contact {
+  padding: 4.5rem 0 6rem;
+}
+.ax-contact__heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading--family), sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.ax-contact__intro {
+  margin: 0 0 3rem;
+  max-width: 36rem;
+  color: var(--ax-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.ax-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 5rem;
+  align-items: start;
+}
+.ax-contact__info h2,
+.ax-contact__form-wrap h2 {
+  margin: 0 0 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.ax-contact__info p {
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+.ax-contact__label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--ax-muted);
+  font-size: 0.8rem;
+}
+.ax-contact__info a {
+  color: inherit;
+  text-decoration: none;
+}
+.ax-contact__info a:hover {
+  text-decoration: underline;
+}
+.ax-contact__hours {
+  margin: 0 0 1.25rem;
+  color: var(--ax-muted);
+  line-height: 1.7;
+}
+.ax-contact__hours p {
+  margin: 0;
+}
+.ax-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.ax-contact__form input,
+.ax-contact__form textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--ax-line);
+  border-radius: 0;
+  background: var(--ax-white);
+  color: var(--ax-ink);
+  font: inherit;
+}
+.ax-contact__form textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+.ax-contact__form .button {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+}
+.ax-contact__note {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+.ax-contact__note--ok { color: #2f6b3a; }
+.ax-contact__note--error { color: #9b2c2c; }
+
+@media (max-width: 899px) {
+  .ax-contact {
+    padding: 3rem 0 4.5rem;
+  }
+  .ax-contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

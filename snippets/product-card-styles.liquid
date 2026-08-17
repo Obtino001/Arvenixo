@@ -55,4 +55,14 @@
       display: none;
     }
   }
+
+  /* Keep cards to title + price. Hide overflow "More" / "+N" variation labels. */
+  product-card [slot='more'],
+  product-card .hidden-swatches__count {
+    display: none !important;
+  }
+
+  product-card overflow-list::part(more) {
+    display: none !important;
+  }
 {% endstylesheet %}

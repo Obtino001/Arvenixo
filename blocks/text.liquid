@@ -1,6 +1,15 @@
 
 
-{% render 'text', block: block %}
+{%- liquid
+  assign ax_text_plain = block.settings.text | strip_html | strip | downcase
+  assign ax_hide_more_variations = false
+  if closest.product != blank and ax_text_plain == 'more variations'
+    assign ax_hide_more_variations = true
+  endif
+-%}
+{%- unless ax_hide_more_variations -%}
+  {% render 'text', block: block %}
+{%- endunless -%}
 
 {% schema %}
 {

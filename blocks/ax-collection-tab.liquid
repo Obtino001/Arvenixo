@@ -1,0 +1,23 @@
+{% comment %}
+  Settings-only theme block. The collection-tabs section renders the tab UI.
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Collection tab",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tab title",
+      "default": "New arrivals"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ]
+}
+{% endschema %}

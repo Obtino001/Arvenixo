@@ -14,7 +14,7 @@
     <div class="ax-tabs__nav" role="tablist">
       {%- assign tab_index = 0 -%}
       {%- for block in section.blocks -%}
-        {%- if block.type != 'tab' -%}{%- continue -%}{%- endif -%}
+        {%- if block.type != 'ax-collection-tab' -%}{%- continue -%}{%- endif -%}
         {%- assign tab_index = tab_index | plus: 1 -%}
         <button
           type="button"
@@ -33,7 +33,7 @@
 
     {%- assign tab_index = 0 -%}
     {%- for block in section.blocks -%}
-      {%- if block.type != 'tab' -%}{%- continue -%}{%- endif -%}
+      {%- if block.type != 'ax-collection-tab' -%}{%- continue -%}{%- endif -%}
       {%- assign tab_index = tab_index | plus: 1 -%}
       {%- assign collection = block.settings.collection -%}
       {%- if collection == blank -%}
@@ -116,19 +116,10 @@
 
 {% schema %}
 {
-  "name": "AX Collection tabs",
+  "name": "Collection tabs",
   "blocks": [
-    {
-      "type": "tab",
-      "name": "Tab",
-      "settings": [
-        { "type": "text", "id": "title", "label": "Tab title", "default": "New arrivals" },
-        { "type": "collection", "id": "collection", "label": "Collection" }
-      ]
-    },
-    {
-      "type": "_product-card"
-    }
+    { "type": "ax-collection-tab" },
+    { "type": "_product-card" }
   ],
   "settings": [
     {
@@ -143,14 +134,14 @@
   ],
   "presets": [
     {
-      "name": "AX Collection tabs",
+      "name": "Collection tabs",
       "blocks": {
         "tab_new": {
-          "type": "tab",
+          "type": "ax-collection-tab",
           "settings": { "title": "New arrivals" }
         },
         "tab_best": {
-          "type": "tab",
+          "type": "ax-collection-tab",
           "settings": { "title": "Best sellers" }
         },
         "static-product-card": {

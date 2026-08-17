@@ -26,14 +26,14 @@
       "type": "ax-collection-tabs",
       "blocks": {
         "tab_new": {
-          "type": "tab",
+          "type": "ax-collection-tab",
           "settings": {
             "title": "New arrivals",
             "collection": ""
           }
         },
         "tab_best": {
-          "type": "tab",
+          "type": "ax-collection-tab",
           "settings": {
             "title": "Best sellers",
             "collection": ""

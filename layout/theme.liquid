@@ -53,7 +53,6 @@
     <!-- Swiper CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="{{ 'custom.js' | asset_url }}" defer></script>
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
@@ -189,8 +188,10 @@
       </footer>
     </div>
 
-    {% section 'cart-drawer' %}
+    {% render 'cart-drawer', render_wrapper: true %}
     {% render 'theme-drawer' %}
+
+    {% section 'predictive-search-modal' %}
 
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}

@@ -108,12 +108,12 @@
     },
     "content_for_index": [],
     "color_palette": {
-      "background": "#f7f5f1",
-      "foreground": "#0b0c0e",
-      "color1": "#c4a35a",
-      "color2": "#0b0c0e",
-      "color3": "#9a7a3a",
-      "color4": "#e4e1db"
+      "background": "#F2F0ED",
+      "foreground": "#000000",
+      "color1": "#c3cca6",
+      "color2": "#adc4c2",
+      "color3": "#fdc656",
+      "color4": "#f1ede8"
     }
   },
   "presets": {

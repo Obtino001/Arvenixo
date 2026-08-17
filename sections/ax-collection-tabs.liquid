@@ -2,6 +2,9 @@
   assign tabs_id = 'ax-tabs-' | append: section.id
 -%}
 
+{% render 'quick-add-modal-styles' %}
+{% render 'product-card-styles' %}
+
 <section class="ax-tabs" id="{{ tabs_id }}">
   <div class="ax-wrap">
     <div class="ax-tabs__nav" role="tablist">
@@ -61,27 +64,38 @@
                   {%- assign rating_count = product.id | modulo: 87 | plus: 24 -%}
                 {%- endif -%}
 
-                <article class="ax-pcard">
+                <product-card
+                  class="ax-pcard product-card"
+                  data-product-id="{{ product.id }}"
+                  id="product-card-{{ section.id }}-{{ block.id }}-{{ product.id }}"
+                  style="
+                    --quick-add-display: {% if settings.quick_add %}flex{% else %}none{% endif %};
+                    --quick-add-mobile-display: {% if settings.mobile_quick_add %}flex{% else %}none{% endif %};
+                    --quick-add-mobile-opacity: {% if settings.mobile_quick_add %}1{% else %}0{% endif %};
+                  "
+                >
+                  <a
+                    href="{{ product.url }}"
+                    class="product-card__link"
+                    ref="productCardLink"
+                    aria-label="{{ product.title | escape }}"
+                  ></a>
                   <div class="ax-pcard__media">
-                    <a href="{{ product.url }}" class="ax-pcard__link" aria-label="{{ product.title | escape }}">
-                      {%- if product.featured_media -%}
-                        {{ product.featured_media.preview_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '320, 480, 640, 800', alt: product.featured_media.alt | default: product.title }}
-                      {%- else -%}
-                        {{ 'product-1' | placeholder_svg_tag: 'ax-pcard__ph' }}
-                      {%- endif -%}
-                    </a>
+                    {%- if product.featured_media -%}
+                      {{ product.featured_media.preview_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '320, 480, 640, 800', alt: product.featured_media.alt | default: product.title }}
+                    {%- else -%}
+                      {{ 'product-1' | placeholder_svg_tag: 'ax-pcard__ph' }}
+                    {%- endif -%}
                     {%- if is_new -%}
                       <span class="ax-pcard__badge">New</span>
                     {%- endif -%}
-                    {%- if product.available -%}
+                    {%- if product.available and settings.quick_add or settings.mobile_quick_add -%}
                       <div class="ax-pcard__add">
-                        {% render 'quick-add', product: product, section_id: section.id, block: block %}
+                        {% render 'quick-add', product: product, section_id: section.id %}
                       </div>
                     {%- endif -%}
                   </div>
-                  <h3 class="ax-pcard__title">
-                    <a href="{{ product.url }}">{{ product.title }}</a>
-                  </h3>
+                  <h3 class="ax-pcard__title">{{ product.title }}</h3>
                   <p class="ax-pcard__price">
                     {%- if variant.compare_at_price > variant.price -%}
                       <s>{{ variant.compare_at_price | money }}</s>
@@ -109,7 +123,7 @@
                       </div>
                     {%- endif -%}
                   {%- endfor -%}
-                </article>
+                </product-card>
               {%- endfor -%}
             {%- else -%}
               {%- for i in (1..4) -%}

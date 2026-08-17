@@ -511,6 +511,8 @@ h1, h2, h3, h4, h5, h6,
   min-width: 210px;
   scroll-snap-align: start;
   text-align: center;
+  display: block;
+  position: relative;
 }
 .ax-pcard__media {
   position: relative;
@@ -518,6 +520,7 @@ h1, h2, h3, h4, h5, h6,
   aspect-ratio: 1;
   overflow: hidden;
   margin-bottom: 0.9rem;
+  z-index: 1;
 }
 .ax-pcard__media img,
 .ax-pcard__ph {
@@ -537,11 +540,13 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
   padding: 0.28rem 0.5rem;
   font-weight: 650;
+  z-index: 2;
+  pointer-events: none;
 }
 .ax-pcard__add {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   margin: 0;
   pointer-events: none;
 }
@@ -550,22 +555,14 @@ h1, h2, h3, h4, h5, h6,
   --quick-add-right: 10px;
   --quick-add-bottom: 10px;
 }
-.ax-pcard .quick-add__button {
-  display: flex !important;
-  opacity: 1 !important;
-  background: #c4b49a;
-  color: #fff;
-  border-color: transparent;
+.ax-pcard:is(:hover, :focus-within) .quick-add__button {
+  opacity: 1;
 }
 .ax-pcard__title {
   margin: 0 0 0.25rem;
   font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: -0.01em;
-}
-.ax-pcard__title a {
-  color: inherit;
-  text-decoration: none;
 }
 .ax-pcard__price {
   margin: 0 0 0.35rem;

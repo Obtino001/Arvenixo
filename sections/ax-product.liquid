@@ -106,8 +106,16 @@
         </ul>
       {%- endif -%}
 
+      <product-form-component
+        data-section-id="{{ section.id }}"
+        data-product-id="{{ product.id }}"
+        data-product-url="{{ product.url }}"
+        on:submit="/handleSubmit"
+        data-quantity-default="1"
+      >
+        <div class="visually-hidden" aria-live="assertive" role="status" aria-atomic="true" ref="liveRegion"></div>
       {% form 'product', product, id: product_form_id, class: 'ax-pdp__form', data-type: 'add-to-cart-form' %}
-        <input type="hidden" name="id" value="{{ current_variant.id }}" data-ax-variant-id>
+        <input type="hidden" name="id" value="{{ current_variant.id }}" data-ax-variant-id ref="variantId">
 
         {%- unless product.has_only_default_variant -%}
           {%- for option in product.options_with_values -%}
@@ -166,6 +174,7 @@
           {%- endif -%}
         </button>
       {% endform %}
+      </product-form-component>
 
       <div class="ax-pdp__trust">
         <div>
@@ -194,7 +203,7 @@
       <button type="button" data-tab="specs">{{ section.settings.specs_label }}</button>
       <button type="button" data-tab="why">{{ section.settings.why_label }}</button>
     </div>
-    <div class="ax-pdp__tabpanel is-active" data-panel="desc">
+    <div class="ax-pdp__tabpanel is-active ax-pdp__desc" data-panel="desc">
       {{ product.description }}
     </div>
     <div class="ax-pdp__tabpanel" data-panel="specs" hidden>
@@ -301,27 +310,6 @@
         history.replaceState({}, '', url.toString());
       });
     });
-
-    var form = root.querySelector('.ax-pdp__form');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var id = variantEl && variantEl.value;
-        if (!id) return form.submit();
-        fetch(((window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/') + 'cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ id: Number(id), quantity: 1 })
-        }).then(function (res) {
-          if (!res.ok) throw new Error('add failed');
-          var cartItems = document.querySelector('cart-items-component');
-          if (cartItems && typeof cartItems.fetchCartData === 'function') cartItems.fetchCartData();
-          document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true }));
-          var trigger = document.querySelector('[data-testid="cart-drawer-trigger"], [on\\:click="#cart-drawer/toggle"]');
-          if (trigger) trigger.click();
-        }).catch(function () { form.submit(); });
-      });
-    }
   })();
 </script>
 

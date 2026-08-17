@@ -519,20 +519,22 @@ html {
 }
 .ax-pcard__add {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  inset: 0;
+  z-index: 2;
   margin: 0;
+  pointer-events: none;
 }
-.ax-pcard__add button {
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
+.ax-pcard .quick-add {
+  --quick-add-offset: 10px;
+  --quick-add-right: 10px;
+  --quick-add-bottom: 10px;
+}
+.ax-pcard .quick-add__button {
+  display: flex !important;
+  opacity: 1 !important;
   background: #c4b49a;
   color: #fff;
-  font-size: 1.25rem;
-  line-height: 1;
-  cursor: pointer;
+  border-color: transparent;
 }
 .ax-pcard__title {
   margin: 0 0 0.25rem;
@@ -830,6 +832,13 @@ html {
 .ax-pdp__tabpanel { max-width: 46rem; line-height: 1.7; color: #444; font-size: 0.98rem; }
 .ax-pdp__tabpanel[hidden] { display: none; }
 .ax-pdp__tabpanel ul { padding-left: 1.1rem; }
+.ax-pdp__desc img,
+.ax-pdp__desc picture,
+.ax-pdp__desc video,
+.ax-pdp__desc iframe,
+.ax-pdp__desc figure {
+  display: none !important;
+}
 .ax-pdp__buy { position: sticky; top: 5.5rem; }
 .ax-pstory {
   padding: 5rem 0;

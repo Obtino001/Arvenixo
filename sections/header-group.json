@@ -50,126 +50,27 @@
     "header": {
       "type": "header",
       "blocks": {
-        "image_cards_grid_Qw6Ypt": {
-          "type": "image-cards-grid",
+        "collections_KTRRw8": {
+          "type": "collections",
           "settings": {
-            "column_size": "25%",
+            "column_size": "75%",
             "title": "Products",
-            "heading": "Category",
-            "item_title_1": "Laptops",
-            "item_link_1": "",
-            "item_title_2": "Smartphones",
-            "item_link_2": "",
-            "item_title_3": "",
-            "item_link_3": "",
-            "item_title_4": "",
-            "item_link_4": "",
-            "item_title_5": "",
-            "item_link_5": "",
-            "item_title_6": "",
-            "item_link_6": ""
-          }
-        },
-        "image_cards_grid_qrL6Pj": {
-          "type": "image-cards-grid",
-          "settings": {
-            "column_size": "25%",
-            "title": "Products",
-            "heading": "Accessories",
-            "item_title_1": "Cables",
-            "item_link_1": "",
-            "item_title_2": "Chargers",
-            "item_link_2": "",
-            "item_title_3": "Cases",
-            "item_link_3": "",
-            "item_title_4": "",
-            "item_link_4": "",
-            "item_title_5": "",
-            "item_link_5": "",
-            "item_title_6": "",
-            "item_link_6": ""
-          }
-        },
-        "image_cards_grid_FiLFiN": {
-          "type": "image-cards-grid",
-          "settings": {
-            "column_size": "25%",
-            "title": "Products",
-            "heading": "Audio",
-            "item_title_1": "Headphones",
-            "item_link_1": "",
-            "item_title_2": "",
-            "item_link_2": "",
-            "item_title_3": "",
-            "item_link_3": "",
-            "item_title_4": "",
-            "item_link_4": "",
-            "item_title_5": "",
-            "item_link_5": "",
-            "item_title_6": "",
-            "item_link_6": ""
-          }
-        },
-        "image_cards_grid_3eMmyP": {
-          "type": "image-cards-grid",
-          "settings": {
-            "column_size": "25%",
-            "title": "Products",
-            "heading": "Wearables",
-            "item_title_1": "Smartwatches",
-            "item_link_1": "",
-            "item_title_2": "Fitness Trackers",
-            "item_link_2": "",
-            "item_title_3": "",
-            "item_link_3": "",
-            "item_title_4": "",
-            "item_link_4": "",
-            "item_title_5": "",
-            "item_link_5": "",
-            "item_title_6": "",
-            "item_link_6": ""
-          }
-        },
-        "image_cards_grid_W3JC7a": {
-          "type": "image-cards-grid",
-          "settings": {
-            "column_size": "25%",
-            "title": "Products",
-            "heading": "Carrying Cases",
-            "item_title_1": "Laptop Bags",
-            "item_link_1": "",
-            "item_title_2": "",
-            "item_link_2": "",
-            "item_title_3": "",
-            "item_link_3": "",
-            "item_title_4": "",
-            "item_link_4": "",
-            "item_title_5": "",
-            "item_link_5": "",
-            "item_title_6": "",
-            "item_link_6": ""
-          }
-        },
-        "bottom_WP38m7": {
-          "type": "bottom",
-          "settings": {
-            "title": "Products",
-            "link_1_text": "Shop All",
-            "link_1_url": "shopify://collections/all",
-            "link_color_1": "#000000",
-            "link_2_text": "",
-            "link_2_url": "",
-            "link_color_2": "#000000"
+            "heading": "Featured Collections",
+            "collection_1": "all-products",
+            "custom_title_1": "",
+            "collection_2": "",
+            "custom_title_2": "",
+            "collection_3": "",
+            "custom_title_3": "",
+            "collection_4": "",
+            "custom_title_4": "",
+            "collection_5": "",
+            "custom_title_5": ""
           }
         }
       },
       "block_order": [
-        "image_cards_grid_Qw6Ypt",
-        "image_cards_grid_qrL6Pj",
-        "image_cards_grid_FiLFiN",
-        "image_cards_grid_3eMmyP",
-        "image_cards_grid_W3JC7a",
-        "bottom_WP38m7"
+        "collections_KTRRw8"
       ],
       "settings": {
         "logo_position": "middle-left",

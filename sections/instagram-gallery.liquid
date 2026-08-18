@@ -7,7 +7,17 @@
     background-color: {{ section.settings.bg_color }};
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
-    overflow: hidden; /* Prevents horizontal scrollbar */
+    overflow: hidden;
+  }
+
+  .social-swiper-bleed-{{ section.id }} {
+    padding-left: max(1.5rem, calc((100% - min(100%, var(--page-width))) / 2 + 1.5rem));
+  }
+
+  @media screen and (min-width: 750px) {
+    .social-swiper-bleed-{{ section.id }} {
+      padding-left: max(5rem, calc((100% - min(100%, var(--page-width))) / 2 + 5rem));
+    }
   }
 
   /* Header Setup */
@@ -25,7 +35,7 @@
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
     font-size: clamp(28px, 4vw, 40px);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
     color: #1a1a1a;
     margin: 0;
@@ -40,7 +50,7 @@
   .social-hashtag-{{ section.id }} {
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.1em;
     color: #1a1a1a;
     text-transform: uppercase;
@@ -79,11 +89,12 @@
     fill: currentColor;
   }
 
-  /* Swiper Setup */
-  .swiper-{{ section.id }} {
+  /* Swiper Setup — slides continue past the right edge */
+  .swiper.swiper-{{ section.id }} {
     width: 100%;
     padding: 0;
     box-sizing: border-box;
+    overflow: visible !important;
   }
 
   .swiper-slide-{{ section.id }} {
@@ -154,8 +165,10 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!-- Swiper Slider -->
+  <div class="social-swiper-bleed-{{ section.id }}">
   <div class="swiper swiper-{{ section.id }}">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
@@ -191,16 +204,17 @@
     if (typeof Swiper !== 'undefined') {
       new Swiper('.swiper-{{ section.id }}', {
         slidesPerView: 'auto',
-        spaceBetween: 10,  /* Gap for mobile */
-        loop: true,        /* Infinite loop */
+        spaceBetween: 10,
+        loop: true,
         grabCursor: true,
+        watchSlidesProgress: true,
         autoplay: {
           delay: {{ section.settings.autoplay_speed | times: 1000 }},
           disableOnInteraction: false,
         },
         breakpoints: {
           768: {
-            spaceBetween: 16 /* Gap for desktop */
+            spaceBetween: 16
           }
         }
       });

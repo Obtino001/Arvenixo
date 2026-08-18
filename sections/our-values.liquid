@@ -1,171 +1,436 @@
-{%- style -%}
-.section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
-@media screen and (min-width: 750px) { .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; } }
-.our-values-header { text-align: center; margin-bottom: 3rem; }
-.our-values-heading { font-size: clamp(28px, 4vw, 42px); color: inherit; margin: 0; line-height: 1.2; }
-.our-values-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-@media screen and (min-width: 750px) { .our-values-grid { grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr); } }
-.our-values-card { border-radius: 24px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-.our-values-image-wrap { width: 100%; margin-bottom: 1.5rem; overflow: hidden; border-radius: 12px; }
-.our-values-img {
+{% style %}
+  .custom-comparison-wrap-{{ section.id }} {
+    position: relative;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  /* Full Width Background Image */
+  .custom-comparison-bg-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 4/3;
-}
-.our-values-placeholder { width: 100%; aspect-ratio: 4 / 3; background-color: rgba(var(--color-foreground), 0.05); display: flex; align-items: center; justify-content: center; }
-.our-values-placeholder svg { width: 40px; height: 40px; fill: rgba(var(--color-foreground), 0.5); }
-.our-values-title { font-size: 18px; font-weight: 600; margin: 0 0 1rem 0; color: inherit; }
-.our-values-text { font-size: 13px; line-height: 1.6; color: inherit; opacity: 0.9; margin: 0; }
-.our-values-text p { margin: 0 0 1rem 0; }
-.our-values-text p:last-child { margin: 0; }
-{%- endstyle -%}
+    z-index: 0;
+  }
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div class="page-width">
+  /* Inner Card Container */
+  .custom-comparison-card-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    background-color: {{ section.settings.card_bg_color }};
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+
+  /* The Grid Setup */
+  .comparison-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1.2fr 1.6fr 1.2fr 1.2fr; /* Ratios based on the image */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Highlight Column Background (Overlaps top/bottom) */
+  .comparison-highlight-bg-{{ section.id }} {
+    grid-column: 2;
+    grid-row: 1 / -1; /* Spans all rows in the grid */
+    background-color: #222222;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    margin-top: -30px;
+    margin-bottom: -30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+
+  .comparison-highlight-bg-{{ section.id }} img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  /* Individual Cells */
+  .comparison-cell-{{ section.id }} {
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Borders between rows (skipping the highlight column) */
+  .col-1-{{ section.id }}, 
+  .col-3-{{ section.id }}, 
+  .col-4-{{ section.id }} {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+
+  /* Header specific styling */
+  .comparison-header-{{ section.id }} {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    line-height: 1;
+  }
+  
+  .col-1-{{ section.id }}.comparison-header-{{ section.id }} {
+    justify-content: flex-start;
+  }
+
+  .col-2-{{ section.id }}.comparison-header-{{ section.id }},
+  .col-3-{{ section.id }}.comparison-header-{{ section.id }},
+  .col-4-{{ section.id }}.comparison-header-{{ section.id }} {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .col-2-{{ section.id }}.comparison-header-{{ section.id }} {
+    color: #ffffff;
+  }
+
+  /* Row Text Styling */
+  .comparison-feature-name-{{ section.id }} {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+  }
+
+  .comparison-desc-wrap-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .comparison-icon-{{ section.id }} {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .comparison-icon-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .comparison-desc-text-{{ section.id }} {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    line-height: 1.4;
+  }
+
+  .col-2-{{ section.id }} .comparison-desc-text-{{ section.id }} {
+    color: #ffffff;
+  }
+
+  /* Footer Guarantee Row */
+  .comparison-footer-row-{{ section.id }} {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .comparison-footer-text-{{ section.id }} {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+  }
+
+  /* Remove borders from the very last feature row to match design */
+  .comparison-last-row-{{ section.id }} {
+    border-bottom: none !important;
+  }
+
+  /* Mobile Handling - Horizontal Scroll */
+  @media screen and (max-width: 900px) {
+    .custom-comparison-card-{{ section.id }} {
+      padding: 40px 20px;
+      overflow-x: auto;
+      border-radius: 0;
+    }
     
-    {%- if section.settings.heading != blank -%}
-      <div class="our-values-header">
-        <h2 class="our-values-heading">{{ section.settings.heading }}</h2>
-      </div>
-    {%- endif -%}
+    .comparison-grid-{{ section.id }} {
+      min-width: 850px; /* Forces standard desktop layout and enables scrolling */
+      margin: 20px 0;
+    }
+  }
+{% endstyle %}
 
-    <div class="our-values-grid">
-      {%- for block in section.blocks -%}
-        <div class="our-values-card color-{{ section.settings.card_color_scheme }} gradient" {{ block.shopify_attributes }}>
-          
-          <div class="our-values-image-wrap">
-            {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title | escape }}" loading="lazy" class="our-values-img">
-            {%- else -%}
-              <div class="our-values-placeholder">
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-            {%- endif -%}
-          </div>
+<div class="custom-comparison-wrap-{{ section.id }}">
+  
+  <!-- Main Background Image -->
+  {% if section.settings.bg_image != blank %}
+    {{ section.settings.bg_image | image_url: width: 2000 | image_tag: class: 'custom-comparison-bg-' | append: section.id, loading: 'lazy' }}
+  {% endif %}
 
-          {%- if block.settings.title != blank -%}
-            <p class="our-values-title">{{ block.settings.title }}</p>
-          {%- endif -%}
-
-          {%- if block.settings.text != blank -%}
-            <div class="our-values-text">{{ block.settings.text }}</div>
-          {%- endif -%}
-
+  <div class="page-width">
+    <div class="custom-comparison-card-{{ section.id }}">
+      
+      <div class="comparison-grid-{{ section.id }}">
+        
+        <!-- Deep Highlight Background Box -->
+        <div class="comparison-highlight-bg-{{ section.id }}">
+          {% if section.settings.highlight_bg_image != blank %}
+            {{ section.settings.highlight_bg_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+          {% endif %}
         </div>
-      {%- endfor -%}
-    </div>
 
+        <!-- HEADERS -->
+        <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-header-{{ section.id }}">
+          {{ section.settings.header_1 }}
+        </div>
+        <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-header-{{ section.id }}">
+          {{ section.settings.header_2 }}
+        </div>
+        <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-header-{{ section.id }}">
+          {{ section.settings.header_3 }}
+        </div>
+        <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-header-{{ section.id }}">
+          {{ section.settings.header_4 }}
+        </div>
+
+        <!-- ROWS -->
+        {% for block in section.blocks %}
+          {% assign is_last = forloop.last %}
+          
+          <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}" {{ block.shopify_attributes }}>
+            <span class="comparison-feature-name-{{ section.id }}">{{ block.settings.title }}</span>
+          </div>
+          
+          <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }}">
+            <div class="comparison-desc-wrap-{{ section.id }}">
+              <div class="comparison-icon-{{ section.id }}">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#ffffff"/>
+                  <path d="M7 12.5L10.5 16L17 8" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_2_text }}</span>
+            </div>
+          </div>
+          
+          <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
+            <div class="comparison-desc-wrap-{{ section.id }}">
+              <div class="comparison-icon-{{ section.id }}">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#333333"/>
+                  <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_3_text }}</span>
+            </div>
+          </div>
+          
+          <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
+            <div class="comparison-desc-wrap-{{ section.id }}">
+              <div class="comparison-icon-{{ section.id }}">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#333333"/>
+                  <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_4_text }}</span>
+            </div>
+          </div>
+        {% endfor %}
+
+        <!-- FOOTER ROW (Inside Highlight Box Only) -->
+        <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+        <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-footer-row-{{ section.id }}">
+          {% if section.settings.guarantee_text != blank %}
+            <span class="comparison-footer-text-{{ section.id }}">{{ section.settings.guarantee_text | newline_to_br }}</span>
+          {% endif %}
+        </div>
+        <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+        <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+
+      </div>
+
+    </div>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Our Values",
-  "tag": "section",
-  "class": "section",
+  "name": "Comparison Table 1:1",
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Main Section Color Scheme",
-      "default": "scheme-1"
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Main Background Image (Landscape)"
     },
     {
-      "type": "color_scheme",
-      "id": "card_color_scheme",
-      "label": "Card Color Scheme",
-      "default": "scheme-2"
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#f8f7f4"
     },
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Our values"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "label": "Desktop Columns",
-      "default": 3
+      "type": "image_picker",
+      "id": "highlight_bg_image",
+      "label": "Highlight Column Background Image (Dark Texture)"
     },
     {
       "type": "header",
-      "content": "Section Padding"
+      "content": "Table Headers"
+    },
+    {
+      "type": "text",
+      "id": "header_1",
+      "label": "Column 1 Header",
+      "default": "US VS. THEM"
+    },
+    {
+      "type": "text",
+      "id": "header_2",
+      "label": "Column 2 Header (Highlight)",
+      "default": "ALPACA"
+    },
+    {
+      "type": "text",
+      "id": "header_3",
+      "label": "Column 3 Header",
+      "default": "WOOL"
+    },
+    {
+      "type": "text",
+      "id": "header_4",
+      "label": "Column 4 Header",
+      "default": "COTTON"
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_text",
+      "label": "Footer Text (Highlight Column)",
+      "default": "BACKED BY OUR 99 DAY\nGUARANTEE"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
     },
     {
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 150,
+      "step": 5,
       "unit": "px",
       "label": "Padding Top",
-      "default": 60
+      "default": 100
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 150,
+      "step": 5,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 60
+      "default": 100
     }
   ],
   "blocks": [
     {
-      "type": "value",
-      "name": "Value Card",
+      "type": "row",
+      "name": "Feature Row",
       "limit": 6,
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Card Image"
+          "type": "text",
+          "id": "title",
+          "label": "Feature Name",
+          "default": "Feature Name"
         },
         {
           "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Women's Health"
+          "id": "col_2_text",
+          "label": "Column 2 Text (Highlight)",
+          "default": "Naturally repels water"
         },
         {
-          "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Sereluna was created because there are better alternatives to disposable period products. We believe women deserve better.</p>"
+          "type": "text",
+          "id": "col_3_text",
+          "label": "Column 3 Text",
+          "default": "Absorbs sweat, gets heavy"
+        },
+        {
+          "type": "text",
+          "id": "col_4_text",
+          "label": "Column 4 Text",
+          "default": "Stays wet for hours"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Our Values",
+      "name": "Comparison Table 1:1",
       "blocks": [
         {
-          "type": "value",
+          "type": "row",
           "settings": {
-            "title": "Women's Health",
-            "text": "<p>Sereluna was created because there are better alternatives to disposable period products. We believe women deserve better.</p>"
+            "title": "Moisture Control",
+            "col_2_text": "Naturally repels water",
+            "col_3_text": "Absorbs sweat, gets heavy",
+            "col_4_text": "Stays wet for hours"
           }
         },
         {
-          "type": "value",
+          "type": "row",
           "settings": {
-            "title": "Quality",
-            "text": "<p>Sereluna delivers products of top quality. We carefully select all our materials ourselves so we can maintain full control over quality.</p>"
+            "title": "Heat Performance",
+            "col_2_text": "Stays cool in 100° heat",
+            "col_3_text": "Traps heat, feels itchy",
+            "col_4_text": "Turns into a sweat pool"
           }
         },
         {
-          "type": "value",
+          "type": "row",
           "settings": {
-            "title": "Sustainability",
-            "text": "<p>Sustainability is at the core of how we operate. It's not just about the products we make — it's about how we run our business.</p>"
+            "title": "Odor Control",
+            "col_2_text": "Zero Funk",
+            "col_3_text": "A little funk",
+            "col_4_text": "A lot of funk"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Durability",
+            "col_2_text": "12-18 Months",
+            "col_3_text": "8-12 Months",
+            "col_4_text": "3-6 Months"
           }
         }
       ]

@@ -2667,3 +2667,27 @@ li.footer-payment-payments_QCqHQe {
     /* Optional: keeps the image centered while scaling down */
     transform-origin: center center;
 }
+/* Global Section Headings */
+.title-wrapper-with-link .title,
+.title-wrapper .title,
+.rich-text__heading,
+.collection-list-title {
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}
+.title-wrapper-with-link,
+.title-wrapper {
+    justify-content: center !important;
+}
+
+.image-with-text__heading,
+.banner__heading,
+.hero__heading,
+.h1, .h2 {
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}

@@ -43,7 +43,7 @@
       {% endif %}
     >
       <div class="faqrs-answer-inner">
-        {% if block.settings.faq_content_type == 'manual' %}
+        {% if block.settings.faq_content_type == 'manual' or block.settings.faq_content_type == blank %}
           {{ block.settings.answer }}
         {% elsif block.settings.faq_content_type == 'product_description' %}
           {{ product.description }}

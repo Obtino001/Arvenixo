@@ -53,10 +53,9 @@
     align-items: center;
     padding: 18px 0;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 13px;
+    font-weight: 500;
+    font-size: 16px;
     color: #282828;
-    text-transform: uppercase;
     list-style: none;
     letter-spacing: 0.5px;
   }
@@ -122,6 +121,12 @@
     <div class="custom-faq-image__content">
       <h2 class="custom-faq-image__heading title">{{ section.settings.heading | replace: '\n', '<br>' }}</h2>
       
+      {%- if section.settings.note_text != blank -%}
+        <div class="custom-faq-note" style="margin-bottom: 20px; font-size: 15px; color: #444;">
+          {{ section.settings.note_text }}
+        </div>
+      {%- endif -%}
+      
       <div class="custom-faq-accordion">
         {%- for block in section.blocks -%}
           <details class="custom-faq-item" {{ block.shopify_attributes }}>
@@ -175,6 +180,12 @@
       "default": "YOUR QUESTIONS\nANSWERED"
     },
     {
+      "type": "richtext",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "<p><strong><em>Note:</em></strong> <em>The 60-day guarantee applies to new customers and covers one pair only.</em></p>"
+    },
+    {
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
@@ -216,11 +227,30 @@
     {
       "name": "Image + FAQ",
       "blocks": [
-        { "type": "faq" },
-        { "type": "faq" },
-        { "type": "faq" },
-        { "type": "faq" },
-        { "type": "faq" }
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Product Description"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Materials & Care"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Size Guide"
+          }
+        }
       ]
     }
   ]

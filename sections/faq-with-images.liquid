@@ -1,157 +1,182 @@
-{%- style -%}
-  .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px; }
-  @media screen and (min-width: 750px) { .section-{{ section.id }}-padding { padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; } }
-{%- endstyle -%}
+{% style %}
+  .custom-info-banner-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
 
-<div class="sr-faq-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  .info-banner-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 769px) {
+    .info-banner-grid-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+  }
+
+  /* Left Column: Quote */
+  .info-banner-quote-{{ section.id }} {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 700;
+    font-style: italic;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 769px) {
+    .info-banner-quote-{{ section.id }} {
+      text-align: right;
+      padding-right: 50px;
+    }
+  }
+
+  /* Right Column: Container for Text + Logo */
+  .info-banner-right-col-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .info-banner-right-col-{{ section.id }} {
+      flex-direction: row;
+      justify-content: space-between;
+      border-left: 1px solid #1a1a1a;
+      padding-left: 50px;
+    }
+  }
+
+  /* Right Column: Text List */
+  .info-banner-text-{{ section.id }} {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 769px) {
+    .info-banner-text-{{ section.id }} {
+      text-align: left;
+    }
+  }
+
+  .info-banner-text-{{ section.id }} p {
+    margin: 0;
+  }
+
+  /* Right Column: Logo */
+  .info-banner-logo-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-banner-logo-{{ section.id }} img {
+    max-width: {{ section.settings.logo_width }}px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .info-banner-logo-svg {
+    width: {{ section.settings.logo_width }}px;
+    height: auto;
+  }
+{% endstyle %}
+
+<div class="custom-info-banner-{{ section.id }}">
   <div class="page-width">
-    
-    <div class="sr-faq-header">
-      <h2 class="sr-faq-title h1">{{ section.settings.heading }}</h2>
-    </div>
-
-    <div class="sr-faq-layout">
+    <div class="info-banner-grid-{{ section.id }}">
       
-      <div class="sr-faq-images sr-faq-images-left">
-        {%- if section.settings.image_l1 != blank -%}
-          <img src="{{ section.settings.image_l1 | image_url: width: 400 }}" class="sr-img-item sr-img-l1" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-l1 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
-
-        {%- if section.settings.image_l2 != blank -%}
-          <img src="{{ section.settings.image_l2 | image_url: width: 400 }}" class="sr-img-item sr-img-l2" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-l2 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
-
-        {%- if section.settings.image_l3 != blank -%}
-          <img src="{{ section.settings.image_l3 | image_url: width: 400 }}" class="sr-img-item sr-img-l3" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-l3 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
+      <!-- LEFT HALF: Quote -->
+      <div class="info-banner-left-col">
+        {% if section.settings.quote != blank %}
+          <h2 class="info-banner-quote-{{ section.id }}">
+            "{{ section.settings.quote | remove: '"' }}"
+          </h2>
+        {% endif %}
       </div>
 
-      <div class="sr-faq-accordion-wrapper">
-        {%- for block in section.blocks -%}
-          <details class="sr-faq-item" {{ block.shopify_attributes }}>
-            <summary class="sr-faq-summary" style="background-color: {{ section.settings.accordion_bg }}; color: {{ section.settings.accordion_text }};">
-              <span class="sr-faq-question">{{ block.settings.question }}</span>
-              <span class="sr-faq-icon">
-                <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </span>
-            </summary>
-            <div class="sr-faq-answer" style="background-color: {{ section.settings.accordion_bg }}; color: {{ section.settings.accordion_text }};">
-              <div class="sr-faq-answer-content">
-                {{ block.settings.answer }}
-              </div>
-            </div>
-          </details>
-        {%- endfor -%}
-      </div>
+      <!-- RIGHT HALF: Divider, Text List, and Logo -->
+      <div class="info-banner-right-col-{{ section.id }}">
+        
+        <div class="info-banner-text-{{ section.id }}">
+          {{ section.settings.text }}
+        </div>
 
-      <div class="sr-faq-images sr-faq-images-right">
-        {%- if section.settings.image_r1 != blank -%}
-          <img src="{{ section.settings.image_r1 | image_url: width: 400 }}" class="sr-img-item sr-img-r1" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-r1 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
+        <div class="info-banner-logo-{{ section.id }}">
+          {% if section.settings.logo != blank %}
+            {{ section.settings.logo | image_url: width: 200 | image_tag: loading: 'lazy' }}
+          {% else %}
+            <!-- Fallback SVG to match your 1:1 B-Corp shape if no image is uploaded -->
+            <svg class="info-banner-logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="50" y="20" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#000">Certified</text>
+              <circle cx="50" cy="65" r="30" stroke="#000" stroke-width="3"/>
+              <text x="50" y="78" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#000">B</text>
+              <text x="50" y="115" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">Corporation</text>
+            </svg>
+          {% endif %}
+        </div>
 
-        {%- if section.settings.image_r2 != blank -%}
-          <img src="{{ section.settings.image_r2 | image_url: width: 400 }}" class="sr-img-item sr-img-r2" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-r2 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
-
-        {%- if section.settings.image_r3 != blank -%}
-          <img src="{{ section.settings.image_r3 | image_url: width: 400 }}" class="sr-img-item sr-img-r3" loading="lazy" alt="FAQ Image">
-        {%- else -%}
-          <div class="sr-img-item sr-img-r3 placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-        {%- endif -%}
       </div>
 
     </div>
   </div>
 </div>
 
-{% comment %} Styles moved to sereluna.css {% endcomment %}
-
 {% schema %}
 {
-  "name": "FAQ with Images",
-  "tag": "section",
-  "class": "section",
+  "name": "Custom Info Banner",
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Section Color Scheme",
-      "default": "scheme-1"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Frequently asked questions"
-    },
-    {
-      "type": "header",
-      "content": "Accordion Styling"
-    },
-    {
       "type": "color",
-      "id": "accordion_bg",
-      "label": "Pill Background Color",
-      "default": "#282828"
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f6f5f3"
     },
     {
-      "type": "color",
-      "id": "accordion_text",
-      "label": "Pill Text Color",
-      "default": "#FFFFFF"
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "A passion for Good Design & Quality Products"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "List Text",
+      "default": "<p>Tech Accessories Reimagined<br>Designed in Paris<br>Delivering Worldwide</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Certification Logo",
+      "info": "Leave blank to use the default B-Corp placeholder"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo Max Width",
+      "default": 65
     },
     {
       "type": "header",
-      "content": "Left Side Images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_l1",
-      "label": "Left Image 1 (Top)"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_l2",
-      "label": "Left Image 2 (Middle)"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_l3",
-      "label": "Left Image 3 (Bottom)"
-    },
-    {
-      "type": "header",
-      "content": "Right Side Images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_r1",
-      "label": "Right Image 1 (Top)"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_r2",
-      "label": "Right Image 2 (Middle)"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_r3",
-      "label": "Right Image 3 (Bottom)"
-    },
-    {
-      "type": "header",
-      "content": "Section Padding"
+      "content": "Section Spacing"
     },
     {
       "type": "range",
@@ -161,7 +186,7 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Top",
-      "default": 60
+      "default": 40
     },
     {
       "type": "range",
@@ -171,38 +196,12 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 60
-    }
-  ],
-  "blocks": [
-    {
-      "type": "faq_item",
-      "name": "FAQ Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question",
-          "default": "What are period panties?"
-        },
-        {
-          "type": "richtext",
-          "id": "answer",
-          "label": "Answer",
-          "default": "<p>Period panties look like regular underwear but have built-in absorbent protection that safely absorbs menstrual flow. They can replace pads and tampons.</p>"
-        }
-      ]
+      "default": 40
     }
   ],
   "presets": [
     {
-      "name": "FAQ with Images",
-      "blocks": [
-        { "type": "faq_item" },
-        { "type": "faq_item" },
-        { "type": "faq_item" },
-        { "type": "faq_item" }
-      ]
+      "name": "Custom Info Banner"
     }
   ]
 }

@@ -67,7 +67,7 @@
         "text_alignment": "left"
       }
     },
-        "pill_marquee_KrybN8": {
+    "pill_marquee_KrybN8": {
       "type": "pill-marquee",
       "blocks": {
         "badge_npDpFf": {
@@ -140,7 +140,7 @@
       ],
       "name": "Collection Tabs",
       "settings": {
-        "title": "Our Collections",
+        "title": "Our products",
         "heading_size": "h1",
         "description": "",
         "description_style": "body",
@@ -393,7 +393,7 @@
   },
   "order": [
     "custom_banner_XE8idV",
-     "pill_marquee_KrybN8",
+    "pill_marquee_KrybN8",
     "collections_tabs_X6mbxf",
     "testimonials_qqDXbK",
     "who_is_fRJAyc"

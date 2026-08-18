@@ -42,7 +42,12 @@
         "link_list_3"
       ],
       "settings": {
-        "newsletter_heading": "JOIN THE ARVENIXO CREW"
+        "newsletter_image": "shopify://shop_images/ax-newsletter-lifestyle.png",
+        "newsletter_heading": "JOIN THE ARVENIXO CREW",
+        "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
+        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"#\">View Terms & Privacy</a>.</p>",
+        "brand_text": "ARVENIXO",
+        "bottom_menu": "main-menu"
       }
     }
   },

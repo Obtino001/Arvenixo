@@ -118,10 +118,10 @@
                         "color_scheme": "scheme-5",
                         "heading": "Discreet. Waterproof. Always with you.",
                         "text": "The Sereluna waterproof bag keeps used period underwear safely stored when you're on the go \u2014 no leaks, no worries.",
-                        "feature_1": "100% waterproof & leak-proof",
-                        "feature_2": "Hygienic & easy to clean",
+                        "feature_1": "Shockproof & Water-resistant",
+                        "feature_2": "Durable & easy to maintain",
                         "feature_3": "Perfect for work, school & travel",
-                        "button_label": "Shop Waterproof Bag",
+                        "button_label": "Shop Carrying Cases",
                         "button_link": "",
                         "image": "shopify://shop_images/ec86227ff1fa193c02f5e8812342a8bc32d60c0d_2.jpg",
                         "image_mobile": "shopify://shop_images/c693c608f0f3798e0edd591f0f83b417766de242_cbabc291-d6cf-46ed-93bc-e3b7d6583556.jpg"
@@ -199,25 +199,25 @@
                 "list_item_XEVAAz": {
                     "type": "list_item",
                     "settings": {
-                        "text": "Soft, stretchy fabric for everyday comfort"
+                        "text": "Seamless connectivity"
                     }
                 },
                 "list_item_nbecV7": {
                     "type": "list_item",
                     "settings": {
-                        "text": "Perfect for daily wear and lounging"
+                        "text": "Enhances daily productivity"
                     }
                 },
                 "list_item_b9epzf": {
                     "type": "list_item",
                     "settings": {
-                        "text": "Breathable and gentle on the skin"
+                        "text": "Plug-and-play simplicity"
                     }
                 },
                 "list_item_DzKmgB": {
                     "type": "list_item",
                     "settings": {
-                        "text": "Feels good all day, with no wires or digging"
+                        "text": "Wireless freedom all day"
                     }
                 }
             },
@@ -234,7 +234,7 @@
                     "arya-teen-brief",
                     "elsa-shorty-black"
                 ],
-                "heading": "Matching comfort, head to toe",
+                "heading": "The Ultimate Ecosystem",
                 "description": "Our matching Livia bralettes are designed to pair perfectly with your Sereluna period panties \u2014 combining comfort, support, and the same premium feel you already love.",
                 "padding_top": 40,
                 "padding_bottom": 52,
@@ -316,7 +316,7 @@
                 "heading_3zUj3k": {
                     "type": "heading",
                     "settings": {
-                        "title": "Try Sereluna risk-free"
+                        "title": "Shop Arvenixo risk-free"
                     }
                 },
                 "description_iMjCqF": {
@@ -356,14 +356,14 @@
                 "text_block_ap7M6G": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Stay Fresh & Dry",
+                        "text": "Fast Shipping",
                         "icon": "teardrop"
                     }
                 },
                 "text_block_pA9HK9": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Planet Friendly",
+                        "text": "Eco-Friendly Tech",
                         "icon": "panties"
                     }
                 },
@@ -377,21 +377,21 @@
                 "text_block_CDwfT9": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Upto 12 Hours Protection",
+                        "text": "24/7 Tech Support",
                         "icon": "panties"
                     }
                 },
                 "text_block_cRBQEC": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Soft & Stretchy",
+                        "text": "Premium Quality",
                         "icon": "teardrop"
                     }
                 },
                 "text_block_qwb4cz": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Designed For Comfort",
+                        "text": "Satisfaction Guaranteed",
                         "icon": "panties"
                     }
                 }
@@ -421,29 +421,29 @@
                 "faq_item_N4cpaP": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "What are period panties?",
-                        "answer": "<p>Period panties look like regular underwear but have built-in absorbent protection that safely absorbs menstrual flow. They can replace pads and tampons.</p>"
+                        "question": "Do you offer international shipping?",
+                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
                     }
                 },
                 "faq_item_GLXP7r": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "What are period panties?",
-                        "answer": "<p>Period panties look like regular underwear but have built-in absorbent protection that safely absorbs menstrual flow. They can replace pads and tampons.</p>"
+                        "question": "Do you offer international shipping?",
+                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
                     }
                 },
                 "faq_item_YW4GFc": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "What are period panties?",
-                        "answer": "<p>Period panties look like regular underwear but have built-in absorbent protection that safely absorbs menstrual flow. They can replace pads and tampons.</p>"
+                        "question": "Do you offer international shipping?",
+                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
                     }
                 },
                 "faq_item_Dckzqr": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "What are period panties?",
-                        "answer": "<p>Period panties look like regular underwear but have built-in absorbent protection that safely absorbs menstrual flow. They can replace pads and tampons.</p>"
+                        "question": "Do you offer international shipping?",
+                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
                     }
                 }
             },

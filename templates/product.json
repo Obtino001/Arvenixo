@@ -233,6 +233,7 @@
         "badge_3QYtBW": {
           "type": "badge",
           "settings": {
+            "image": "shopify://shop_images/worldwide_shipping.avif",
             "fallback_image_url": "",
             "text": "30 Days Return"
           }
@@ -240,6 +241,7 @@
         "badge_VXCyAr": {
           "type": "badge",
           "settings": {
+            "image": "shopify://shop_images/worldwide_shipping.avif",
             "fallback_image_url": "",
             "text": "100% Secure Payments"
           }
@@ -247,6 +249,7 @@
         "badge_aDT3tR": {
           "type": "badge",
           "settings": {
+            "image": "shopify://shop_images/worldwide_shipping.avif",
             "fallback_image_url": "",
             "text": "International Warranty"
           }

@@ -2688,6 +2688,201 @@ li.footer-payment-payments_QCqHQe {
     letter-spacing: 1px !important;
     text-align: center !important;
 }
+
+.sr-img-r2 {
+    transform: rotate(-10deg);
+    margin-top: -30px;
+    z-index: 2;
+}
+
+.sr-img-r3 {
+    transform: rotate(8deg);
+}
+
+.sr-faq-accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sr-faq-item {
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.sr-faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: opacity var(--sl-transition-fast);
+}
+
+.sr-faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+.sr-faq-summary:hover {
+    opacity: 1;
+}
+
+.sr-faq-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sr-faq-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sr-faq-section .icon-close {
+    display: none;
+}
+
+.sr-faq-item[open] .icon-plus {
+    display: none;
+}
+
+.sr-faq-item[open] .icon-close {
+    display: block;
+}
+
+.sr-faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 32px;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+.sr-faq-item[open] .sr-faq-answer {
+    max-height: 800px;
+    opacity: 1;
+    padding: 0 32px 24px 32px;
+}
+
+.sr-faq-answer-content {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.sr-faq-answer-content p {
+    margin: 0;
+}
+
+@media screen and (max-width: 990px) {
+    .sr-faq-images.sr-faq-images-right {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sr-faq-header {
+        margin-bottom: 30px;
+    }
+
+    .sr-img-item {
+        width: 100%;
+        max-width: 115px;
+    }
+
+    .sr-insta-header {
+        margin-bottom: 15px;
+    }
+
+    .sr-faq-accordion-wrapper {
+        gap: 10px;
+    }
+
+    .sr-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sr-faq-images {
+        display: none;
+    }
+
+
+    .sr-faq-summary {
+        padding: 20px 24px;
+        font-size: 15px;
+    }
+
+    .sr-faq-answer {
+        padding: 0 24px;
+    }
+
+    .sr-faq-item[open] .sr-faq-answer {
+        padding: 0 24px 20px 24px;
+    }
+}
+
+.size_options input[type="radio"]+label {
+    min-width: 40px;
+    height: 40px;
+    padding: 0px !important;
+    padding-inline: 4px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.kaching-bundles .kaching-bundles__bar-title,
+.kaching-bundles .kaching-bundles__bar-price {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.kaching-bundles .kaching-bundles__bar-full-price {
+    font-size: 12px !important;
+    color: #282828 !important;
+}
+
+.kaching-bundles .kaching-bundles__bar-most-popular__content {
+    font-family: inherit !important;
+    font-weight: 400 !important;
+}
+
+.who-is-features .who-is-feature:nth-child(2) img {
+    transform: scale(0.8);
+    /* Optional: keeps the image centered while scaling down */
+    transform-origin: center center;
+}
+/* Global Section Headings */
+.title-wrapper-with-link .title,
+.title-wrapper .title,
+.rich-text__heading,
+.collection-list-title {
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}
+.title-wrapper-with-link,
+.title-wrapper {
+    justify-content: center !important;
+}
+
+.image-with-text__heading,
+.banner__heading,
+.hero__heading,
+.h1, .h2 {
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}
 .product__description img,
 .rte img,
 .product-description img {
@@ -2695,11 +2890,11 @@ li.footer-payment-payments_QCqHQe {
     height: auto !important;
 }
 
-.header-wrapper--transparent localization-form .localization-form__select,
-.header-wrapper--transparent localization-form button {
+.header-transparent localization-form .localization-form__select,
+.header-transparent localization-form button {
     color: #ffffff !important;
 }
-.header-wrapper--transparent localization-form svg {
+.header-transparent localization-form svg {
     fill: #ffffff !important;
     stroke: #ffffff !important;
 }

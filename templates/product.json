@@ -318,37 +318,6 @@
         "padding_bottom": 100
       }
     },
-    "rich_text_a4qhbw": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_Qw9AHy": {
-          "type": "heading",
-          "settings": {
-            "heading": "How our tech works for you",
-            "heading_size": "h1"
-          }
-        },
-        "text_9NQ8LJ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We source only the best electronics to ensure you stay connected and productive.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_Qw9AHy",
-        "text_9NQ8LJ"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
     "washing_guide_JwqBHy": {
       "type": "washing-guide",
       "blocks": {
@@ -623,7 +592,6 @@
     "main",
     "pill_marquee_KrybN8",
     "our_values_7aAqFj",
-    "rich_text_a4qhbw",
     "washing_guide_JwqBHy",
     "unique_features_YCBxQX",
     "testimonials_qqDXbK",

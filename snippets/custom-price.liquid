@@ -57,7 +57,7 @@
 
     <!-- Compare-at Price & Discount -->
     {%- if compare_at_price > price -%}
-      <div class="custom-price-compare">
+      <div class="custom-price-compare price-item--regular" style="text-decoration: line-through; color: #888888; margin-right: 12px; font-weight: 500;">
         {% if settings.currency_code_enabled %}
           {{ compare_at_price | money_with_currency }}
         {% else %}
@@ -65,7 +65,7 @@
         {% endif %}
       </div>
       {%- if discount_percentage > 0 -%}
-        <div class="custom-oval-badge">{{ discount_percentage }}% Off</div>
+        <div class="woc-premium-sale-badge">Save {{ discount_percentage }}%</div>
       {%- endif -%}
     {%- endif -%}
 

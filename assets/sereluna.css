@@ -2962,14 +2962,16 @@ li.footer-payment-payments_QCqHQe {
 .woc-premium-sale-badge {
     background-color: #e63946 !important;
     color: #ffffff !important;
-    padding: 3px 8px !important;
-    font-size: 0.75rem !important;
+    padding: 4px 10px !important;
+    font-size: 0.85rem !important;
     font-weight: 900 !important;
     border-radius: 20px !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 10px rgba(230, 57, 70, 0.25) !important;
     line-height: 1.2;
+    transform: translateY(-2px);
+    display: inline-block;
 }
 .price-item--regular {
     color: #888888 !important;

@@ -268,7 +268,7 @@
         "feature_rXBHeP": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/Free_Return.avif",
             "title": "Easy payment",
             "text": "<p>Shop safely with Vipps or Klarna — receive your products first and pay later.</p>"
           }
@@ -276,7 +276,7 @@
         "feature_nQkBFe": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/secure_payments.avif",
             "title": "Personal customer service",
             "text": "<p>We offer top-quality customer support and are happy to help if you need to change size.</p>"
           }
@@ -284,7 +284,7 @@
         "feature_XTHeHP": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/warranty.avif",
             "title": "Trust & quality",
             "text": "<p>We are a Norwegian company and naturally follow Norwegian consumer protection laws.</p>"
           }

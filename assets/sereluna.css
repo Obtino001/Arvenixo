@@ -2901,6 +2901,10 @@ li.footer-payment-payments_QCqHQe {
 /* Premium Global Button Hover Effects */
 .button, .btn, .shopify-payment-button__button--unbranded {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease !important;
+    border-radius: 50px !important;
+}
+.button:after, .button:before, .btn:after, .btn:before, .shopify-payment-button__button--unbranded:after, .shopify-payment-button__button--unbranded:before {
+    border-radius: inherit !important;
 }
 .button:not([disabled]):hover, .btn:not([disabled]):hover, .shopify-payment-button__button--unbranded:not([disabled]):hover {
     transform: translateY(-3px) !important;
@@ -2912,27 +2916,36 @@ li.footer-payment-payments_QCqHQe {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* WOC Scroll Animations */
+/* WOC Scroll Animations - Keyframes */
 .woc-anim {
   --woc-y: 30px;
   --woc-duration: 0.8s;
   --woc-delay: 0s;
   opacity: 0;
   will-change: opacity, transform;
-  transition: opacity var(--woc-duration) ease var(--woc-delay), transform var(--woc-duration) cubic-bezier(0.215, 0.61, 0.355, 1) var(--woc-delay);
 }
-.woc-anim--up {
-  transform: translateY(var(--woc-y));
+
+.woc-anim--in.woc-anim--up {
+  animation: wocFadeUp var(--woc-duration) cubic-bezier(0.215, 0.61, 0.355, 1) var(--woc-delay) forwards !important;
 }
-.woc-anim--fade {
-  transform: none;
+
+.woc-anim--in.woc-anim--fade {
+  animation: wocFade var(--woc-duration) ease var(--woc-delay) forwards !important;
 }
-.woc-anim--in {
-  opacity: 1 !important;
-  transform: none !important;
+
+@keyframes wocFadeUp {
+  0% { opacity: 0; transform: translateY(var(--woc-y)); }
+  100% { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes wocFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .woc-anim {
+  .woc-anim, .woc-anim--in.woc-anim--up, .woc-anim--in.woc-anim--fade {
+    animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;

@@ -106,6 +106,13 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
         <span class="price-item price-item--sale price-item--last">
           {{ money_price }}
+          {%- if compare_at_price > price -%}
+            {%- assign save_amount = compare_at_price | minus: price -%}
+            {%- assign save_percent = save_amount | times: 100.0 | divided_by: compare_at_price | round -%}
+            <span class="price-save-percent" style="margin-left: 6px; font-size: 11px; font-weight: bold; color: #c48b47; padding: 2px 6px; background: rgba(196, 139, 71, 0.1); border-radius: 4px; display: inline-block; vertical-align: middle;">
+              Save {{ save_percent }}%
+            </span>
+          {%- endif -%}
         </span>
       </div>
       {%- if product.selected_or_first_available_variant.unit_price_measurement -%}

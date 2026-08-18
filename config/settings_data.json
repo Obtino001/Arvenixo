@@ -146,7 +146,7 @@
     "icon_2": "shopify://shop_images/ss.svg",
     "icon_3": "shopify://shop_images/ssss.svg",
     "free_shipping": true,
-    "free_shipping_minimum": "1000",
+    "free_shipping_minimum": "100",
     "free_shipping_text": "",
     "free_gift": true,
     "free_gift_minimum": "150",

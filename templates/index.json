@@ -114,7 +114,7 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "",

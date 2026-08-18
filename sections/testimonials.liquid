@@ -3,37 +3,48 @@
     background-color: {{ section.settings.bg_color }};
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
+    -webkit-font-smoothing: antialiased;
   }
 
   /* Header Styles */
   .masonry-header-{{ section.id }} {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .masonry-header-stars {
-    color: #1a1a1a;
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    line-height: 1;
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .masonry-header-stars svg {
+    width: 18px;
+    height: 18px;
+    fill: #1a1a1a;
   }
 
   .masonry-header-title {
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-size: calc(var(--typeHeaderSize) * 1.2);
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback), sans-serif;
+    font-size: clamp(24px, 3vw, 34px);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 800;
     color: #1a1a1a;
     margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em; /* Gives that condensed, bold look */
   }
 
   /* Masonry Grid Setup */
   .masonry-grid-{{ section.id }} {
     column-count: 1;
-    column-gap: 20px;
-    max-width: 1400px;
+    column-gap: 16px; /* Tighter gap matching the image */
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
   @media screen and (min-width: 768px) {
@@ -50,58 +61,74 @@
 
   .masonry-item-{{ section.id }} {
     break-inside: avoid;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin-bottom: 16px; /* Matches the column-gap */
+    border-radius: 6px;
     overflow: hidden;
+    background-color: #ffffff;
+    display: inline-block;
+    width: 100%;
   }
 
   /* Text Review Card */
   .review-card-{{ section.id }} {
-    background-color: #ffffff;
-    padding: 30px 25px;
+    padding: 28px 24px;
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
   .review-card-stars {
-    color: #1a1a1a;
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .review-card-stars svg {
+    width: 12px;
+    height: 12px;
+    fill: #1a1a1a;
   }
 
   .review-card-text {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #333333;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     flex-grow: 1;
   }
 
+  .review-card-text p {
+    margin: 0;
+  }
+
   .review-card-author {
-    font-size: 12px;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #1a1a1a;
-    margin: 0 0 5px 0;
+    margin: 0 0 6px 0;
   }
 
   .review-card-verified {
     display: flex;
     align-items: center;
-    font-size: 10px;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     color: #666666;
   }
 
   .review-card-verified svg {
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
+    width: 11px;
+    height: 11px;
+    margin-right: 6px;
     fill: currentColor;
   }
 
@@ -109,6 +136,7 @@
   .image-card-{{ section.id }} {
     width: 100%;
     display: block;
+    line-height: 0; /* Removes weird bottom spacing under images */
   }
   
   .image-card-{{ section.id }} img {
@@ -121,25 +149,27 @@
   /* Footer Button */
   .masonry-footer-{{ section.id }} {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
   .masonry-btn-{{ section.id }} {
     display: inline-block;
-    background-color: #2b2b2b;
+    background-color: #262626;
     color: #ffffff;
-    font-size: 12px;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 16px 30px;
+    letter-spacing: 0.15em;
+    padding: 18px 36px;
     text-decoration: none;
-    border-radius: 2px;
-    transition: background-color 0.2s ease;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
 
   .masonry-btn-{{ section.id }}:hover {
     background-color: #000000;
+    transform: translateY(-2px);
   }
 {% endstyle %}
 
@@ -148,7 +178,13 @@
     
     <div class="masonry-header-{{ section.id }}">
       {% if section.settings.show_header_stars %}
-        <div class="masonry-header-stars">★★★★★</div>
+        <div class="masonry-header-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+        </div>
       {% endif %}
       {% if section.settings.heading != blank %}
         <h2 class="masonry-header-title">{{ section.settings.heading }}</h2>
@@ -162,7 +198,13 @@
           {% case block.type %}
             {% when 'review' %}
               <div class="review-card-{{ section.id }}">
-                <div class="review-card-stars">★★★★★</div>
+                <div class="review-card-stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                </div>
                 <div class="review-card-text">{{ block.settings.review_text }}</div>
                 <p class="review-card-author">{{ block.settings.author_name }}</p>
                 {% if block.settings.show_verified %}
@@ -289,7 +331,7 @@
   ],
   "presets": [
     {
-      "name": "Masonry Reviews",
+      "name": "Masonry Reviews 1:1",
       "blocks": [
         { "type": "review" },
         { "type": "image" },

@@ -1,164 +1,112 @@
-{%- style -%}
-  #sr-pill-marquee-{{ section.id }} {
+{% style %}
+  .custom-trust-badges-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  @media screen and (max-width: 768px) {
-    #sr-pill-marquee-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_mobile }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  .trust-badges-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .trust-badges-grid-{{ section.id }} {
+      grid-template-columns: repeat({{ section.blocks.size | at_most: 4 }}, 1fr);
+      gap: 20px;
+      justify-content: center;
     }
   }
 
-  .sr-pill-marquee-section {
-    width: 100vw;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .sr-pill-marquee-container {
+  .trust-badge-item-{{ section.id }} {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    overflow: hidden;
-    user-select: none;
-    width: 100%;
-    border-radius: 25px;
-    padding: 35px 0;
+    justify-content: flex-start;
+    gap: 12px;
   }
 
-  .sr-pill-marquee-track {
-    display: flex;
-    width: fit-content;
-    animation: sr-pill-scroll var(--marquee-speed) linear infinite;
+  @media screen and (min-width: 768px) {
+    .trust-badge-item-{{ section.id }} {
+      justify-content: center;
+      gap: 16px;
+    }
   }
 
-  .sr-pill-marquee-container:hover .sr-pill-marquee-track {
-    animation-play-state: paused;
-  }
-
-  .sr-pill-marquee-content {
-    display: flex;
-    align-items: center;
+  .trust-badge-icon-{{ section.id }} {
     flex-shrink: 0;
-  }
-
-  .sr-pill-marquee-item {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-  }
-
-  .sr-pill-marquee-text {
-    font-family: inherit;
-    font-size: {{ section.settings.font_size }}px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #ffffff;
-  }
-
-  .sr-pill-marquee-icon {
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 40px;
-    color: inherit;
   }
 
-  .sr-pill-marquee-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-  @media screen and (max-width: 768px) {
-    .sr-pill-marquee-text {
-      font-size: {{ section.settings.font_size | minus: 2 }}px;
-    }
-    .sr-pill-marquee-icon {
-      margin: 0 25px;
+  @media screen and (min-width: 768px) {
+    .trust-badge-icon-{{ section.id }} {
+      width: 44px;
+      height: 44px;
     }
   }
 
-  @keyframes sr-pill-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-25%); }
+  .trust-badge-icon-{{ section.id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
-{%- endstyle -%}
 
-<div id="sr-pill-marquee-{{ section.id }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" class="sr-pill-marquee-section">
-  <div class="sr-pill-marquee-wrapper page-width">
-    
-    <div class="sr-pill-marquee-container color-{{ section.settings.color_scheme }} gradient" style="--marquee-speed: {{ section.settings.scroll_speed }}s;">
+  .trust-badge-text-{{ section.id }} {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: left;
+  }
+{% endstyle %}
+
+<div class="custom-trust-badges-{{ section.id }}">
+  <div class="page-width">
+    <div class="trust-badges-grid-{{ section.id }}">
       
-      {%- capture marquee_content -%}
-        {%- for block in section.blocks -%}
-          <div class="sr-pill-marquee-item" {{ block.shopify_attributes }}>
-            
-            <span class="sr-pill-marquee-text">{{ block.settings.text }}</span>
-            
-            <span class="sr-pill-marquee-icon">
-              {%- if block.settings.icon == 'teardrop' -%}
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-<path d="M15.46 11.499L15.4609 11.5C15.8207 12.207 16 12.956 16 13.75C16 14.3009 15.9285 14.8316 15.7852 15.3428C15.6408 15.8573 15.4397 16.3358 15.1836 16.7793C14.9282 17.2216 14.617 17.6236 14.249 17.9854C13.8793 18.3488 13.4721 18.6627 13.0273 18.9258C12.5844 19.1878 12.1064 19.3911 11.5928 19.5352C11.0816 19.6785 10.5509 19.75 10 19.75C9.44914 19.75 8.91838 19.6785 8.40723 19.5352C7.89269 19.3908 7.41417 19.1897 6.9707 18.9336C6.52841 18.6782 6.12643 18.367 5.76465 17.999C5.40122 17.6293 5.0873 17.2221 4.82422 16.7773C4.56221 16.3344 4.3589 15.8564 4.21484 15.3428C4.07147 14.8316 4 14.3009 4 13.75C4 12.9614 4.17277 12.2137 4.52051 11.5059L9.95215 0.558594L15.46 11.499Z" fill="white" stroke="black" stroke-width="0.5"/>
-</svg>
-              {%- elsif block.settings.icon == 'panties' -%}
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-<path d="M18.3332 6.25C17.0832 5 16.2498 2.5 16.2498 2.5C16.2498 2.5 14.1665 3.95833 9.99984 3.95833C5.83317 3.95833 3.74984 2.5 3.74984 2.5C3.74984 2.5 3.33317 4.58333 1.6665 6.25C1.6665 11.25 8.74984 17.5 8.74984 17.5H11.2498C11.2498 17.5 18.3332 11.25 18.3332 6.25Z" fill="white" stroke="black" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.3332 6.25C18.3332 6.25 14.5832 6.66667 12.9165 9.58333C11.2498 12.5 11.2498 17.5 11.2498 17.5M1.6665 6.25C1.6665 6.25 5.4165 6.66667 7.08317 9.58333C8.74984 12.5 8.74984 17.5 8.74984 17.5" fill="white"/>
-<path d="M18.3332 6.25C18.3332 6.25 14.5832 6.66667 12.9165 9.58333C11.2498 12.5 11.2498 17.5 11.2498 17.5M1.6665 6.25C1.6665 6.25 5.4165 6.66667 7.08317 9.58333C8.74984 12.5 8.74984 17.5 8.74984 17.5" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-</svg>
-              {%- endif -%}
-            </span>
-
+      {% for block in section.blocks %}
+        <div class="trust-badge-item-{{ section.id }}" {{ block.shopify_attributes }}>
+          
+          <div class="trust-badge-icon-{{ section.id }}">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 100 | image_tag: loading: 'lazy' }}
+            {% elsif block.settings.fallback_image_url != blank %}
+              <img src="{{ block.settings.fallback_image_url }}" alt="{{ block.settings.text | escape }}" loading="lazy" width="44" height="44">
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
           </div>
-        {%- endfor -%}
-      {%- endcapture -%}
-
-      <div class="sr-pill-marquee-track">
-        <div class="sr-pill-marquee-content">{{ marquee_content }}</div>
-        <div class="sr-pill-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
-        <div class="sr-pill-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
-        <div class="sr-pill-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
-      </div>
-
+          
+          {% if block.settings.text != blank %}
+            <p class="trust-badge-text-{{ section.id }}">{{ block.settings.text | newline_to_br }}</p>
+          {% endif %}
+          
+        </div>
+      {% endfor %}
+      
     </div>
-
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Pill Marquee",
+  "name": "Custom Trust Badges",
+  "max_blocks": 4,
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Pill Color Scheme",
-      "default": "scheme-4"
-    },
-    {
-      "type": "range",
-      "id": "scroll_speed",
-      "min": 10,
-      "max": 60,
-      "step": 2,
-      "unit": "s",
-      "label": "Scroll Speed",
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "font_size",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "label": "Desktop Text Size",
-      "default": 16
-    },
-    {
-      "type": "header",
-      "content": "Desktop Spacing"
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fdfcf9"
     },
     {
       "type": "range",
@@ -168,7 +116,7 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Top",
-      "default": 40
+      "default": 36
     },
     {
       "type": "range",
@@ -178,77 +126,67 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 40
-    },
-    {
-      "type": "header",
-      "content": "Mobile Spacing"
-    },
-    {
-      "type": "range",
-      "id": "padding_top_mobile",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top (Mobile)",
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_mobile",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Bottom (Mobile)",
-      "default": 20
+      "default": 36
     }
   ],
   "blocks": [
     {
-      "type": "text_block",
-      "name": "Marquee Item",
+      "type": "badge",
+      "name": "Trust Badge",
       "settings": [
         {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Stay Fresh & Dry"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon Image",
+          "info": "Upload your own icon here."
         },
         {
-          "type": "select",
-          "id": "icon",
-          "label": "Icon After Text",
-          "options": [
-            {
-              "value": "teardrop",
-              "label": "Teardrop"
-            },
-            {
-              "value": "panties",
-              "label": "Panties"
-            },
-            {
-              "value": "none",
-              "label": "None"
-            }
-          ],
-          "default": "teardrop"
+          "type": "text",
+          "id": "fallback_image_url",
+          "label": "Fallback External Image URL",
+          "info": "Used if the image picker above is empty."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "info": "Use 'Enter' to create a line break."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Pill Marquee",
+      "name": "Custom Trust Badges",
       "blocks": [
-        { "type": "text_block", "settings": { "text": "Stay Fresh & Dry", "icon": "teardrop" } },
-        { "type": "text_block", "settings": { "text": "Planet Friendly", "icon": "panties" } },
-        { "type": "text_block", "settings": { "text": "360° Protection", "icon": "teardrop" } },
-        { "type": "text_block", "settings": { "text": "Upto 12 Hours Protection", "icon": "panties" } },
-        { "type": "text_block", "settings": { "text": "Soft & Stretchy", "icon": "teardrop" } },
-        { "type": "text_block", "settings": { "text": "Designed For Comfort", "icon": "panties" } }
+        {
+          "type": "badge",
+          "settings": {
+            "fallback_image_url": "//www.nativeunion.com/cdn/shop/files/worldwide_shipping.png?v=1723207851",
+            "text": "Worldwide Shipping"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "fallback_image_url": "//www.nativeunion.com/cdn/shop/files/Free_Return.png?v=1723207851",
+            "text": "30 Days Return"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "fallback_image_url": "//www.nativeunion.com/cdn/shop/files/secure_payments.png?v=1723207851",
+            "text": "100% Secure\nPayments"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "fallback_image_url": "//www.nativeunion.com/cdn/shop/files/warranty.png?v=1723207851",
+            "text": "International\nWarranty"
+          }
+        }
       ]
     }
   ]

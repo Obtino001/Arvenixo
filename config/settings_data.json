@@ -209,20 +209,31 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#F6F5F0",
           "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "text": "#282828",
+          "button": "#282828",
+          "button_label": "#F6F5F0",
+          "secondary_button_label": "#282828",
+          "shadow": "#282828"
         }
       },
       "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a": {
         "settings": {
-          "background": "#121212",
+          "background": "#282828",
           "background_gradient": "",
-          "text": "#ffffff",
+          "text": "#F6F5F0",
+          "button": "#282828",
+          "button_label": "#F6F5F0",
+          "secondary_button_label": "#282828",
+          "shadow": "#282828"
+        }
+      },
+      "scheme-e63188f9-7eae-464b-8de2-8c43647f4f65": {
+        "settings": {
+          "background": "#F6F5F0",
+          "background_gradient": "",
+          "text": "#121212",
           "button": "#121212",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",

@@ -79,7 +79,7 @@
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -3638,5 +3638,45 @@ details-disclosure>details {
 
   100% {
     transform: translateX(100%) scaleX(0);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .page-width {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .shopify-section {
+    text-align: center;
+  }
+
+  .shopify-section .title,
+  .shopify-section .collection__title,
+  .shopify-section .title-wrapper,
+  .shopify-section h1,
+  .shopify-section h2,
+  .shopify-section h3,
+  .shopify-section p,
+  .shopify-section .rte,
+  .shopify-section .card__information,
+  .shopify-section .card__heading,
+  .shopify-section .price {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shopify-section .button,
+  .shopify-section .btn-style-pill,
+  .collection-tabs-nav {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .shopify-section .card__content,
+  .shopify-section .card-information {
+    align-items: center;
   }
 }

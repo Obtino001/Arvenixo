@@ -20,8 +20,17 @@
   }
 
   /* Left Column: Text Content */
-  .showcase-text-col-{{ section.id }} {
-    max-width: 500px;
+  @media screen and (max-width: 768px) {
+    .showcase-text-col-{{ section.id }} {
+      max-width: none;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .showcase-btn-{{ section.id }} {
+      display: inline-block;
+    }
   }
 
   .showcase-heading-{{ section.id }} {

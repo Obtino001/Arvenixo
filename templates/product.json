@@ -58,7 +58,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
+            "picker_type": "button",
             "swatch_shape": "circle",
             "show_variant_images_in_swatches": false,
             "size_guide_page": false,

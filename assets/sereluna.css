@@ -2703,3 +2703,16 @@ li.footer-payment-payments_QCqHQe {
     fill: #ffffff !important;
     stroke: #ffffff !important;
 }
+/* Premium Global Button Hover Effects */
+.button, .btn, .shopify-payment-button__button--unbranded {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease !important;
+}
+.button:not([disabled]):hover, .btn:not([disabled]):hover, .shopify-payment-button__button--unbranded:not([disabled]):hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0.95 !important;
+}
+.button:not([disabled]):active, .btn:not([disabled]):active, .shopify-payment-button__button--unbranded:not([disabled]):active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}

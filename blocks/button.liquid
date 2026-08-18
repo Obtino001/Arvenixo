@@ -1,156 +1,83 @@
-
-{% render 'button', link: block.settings.link %}
+{%- if block.settings.button_label != blank -%}
+    {%- if block.settings.center_on_mobile -%}
+      <style>
+        @media screen and (max-width: 749px) {
+          #btn-wrapper-{{ block.id }} {
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+          }
+          #block-{{ block.id }} {
+            margin: 0 auto !important;
+          }
+        }
+      </style>
+    {%- endif -%}
+    <div id="btn-wrapper-{{ block.id }}" class="btn-wrapper{% if block.settings.center_on_mobile %} center-on-mobile{% endif %}">
+      <a
+          id="block-{{ block.id }}"
+          {% if block.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+          {% else %}
+              href="{{ block.settings.button_link }}"
+          {% endif %}
+          class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+          {{ block.shopify_attributes }}
+      >
+          {{ block.settings.button_label | escape }}
+      </a>
+    </div>
+    {%- if block.settings.center_on_mobile -%}
+      <script>
+        (function() {
+          if (window.innerWidth <= 749) {
+            var wrapper = document.getElementById('btn-wrapper-{{ block.id }}');
+            if (wrapper && wrapper.parentElement && wrapper.parentElement.classList.contains('shopify-block')) {
+              wrapper.parentElement.style.setProperty('align-self', 'stretch', 'important');
+              wrapper.parentElement.style.setProperty('width', '100%', 'important');
+              wrapper.parentElement.style.setProperty('display', 'flex', 'important');
+              wrapper.parentElement.style.setProperty('justify-content', 'center', 'important');
+            }
+          }
+        })();
+      </script>
+    {%- endif -%}
+{%- endif -%}
 
 {% schema %}
 {
-  "name": "t:names.button",
-  "tag": null,
-  "settings": [
-    {
-      "type": "text",
-      "id": "label",
-      "label": "t:settings.label",
-      "default": "t:text_defaults.button_label"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "t:settings.link"
-    },
-    {
-      "type": "checkbox",
-      "id": "open_in_new_tab",
-      "label": "t:settings.open_new_tab",
-      "default": false
-    },
-    {
-      "type": "select",
-      "id": "style_class",
-      "label": "t:settings.style",
-      "options": [
+"name": "t:sections.image-with-text.blocks.button.name",
+"settings": [
         {
-          "value": "button",
-          "label": "t:options.primary"
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.image-with-text.blocks.button.settings.button_label.default",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
         },
         {
-          "value": "button-secondary",
-          "label": "t:options.secondary"
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
         },
         {
-          "value": "button-unstyled",
-          "label": "t:options.link"
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button.settings.outline_button.label"
         },
         {
-          "value": "button-custom",
-          "label": "t:options.custom"
+          "type": "checkbox",
+          "id": "center_on_mobile",
+          "label": "Center on mobile",
+          "default": false
         }
       ],
-      "default": "button",
-      "info": "t:info.edit_button_style_in_theme_settings"
-    },
-    {
-      "type": "header",
-      "content": "t:content.button_colors",
-      "visible_if": "{{ block.settings.style_class == \"button-custom\" }}"
-    },
-    {
-      "type": "color",
-      "id": "custom_button_background",
-      "label": "t:settings.background",
-      "default": "{{ settings.color_palette.foreground }}",
-      "alpha": true,
-      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
-    },
-    {
-      "type": "color",
-      "id": "custom_button_text",
-      "label": "t:settings.text",
-      "default": "{{ settings.color_palette.background }}",
-      "alpha": true,
-      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
-    },
-    {
-      "type": "color",
-      "id": "custom_button_border",
-      "label": "t:settings.borders",
-      "default": "{{ settings.color_palette.background }}",
-      "alpha": true,
-      "visible_if": "{{ block.settings.style_class == 'button-custom' }}"
-    },
-    {
-      "type": "color",
-      "id": "link_text_color",
-      "label": "t:settings.link_text_color",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ block.settings.style_class == 'button-unstyled' }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.size"
-    },
-    {
-      "type": "select",
-      "id": "width",
-      "label": "t:settings.width_desktop",
-      "options": [
+    "presets": [
         {
-          "value": "fit-content",
-          "label": "t:options.fit_content"
-        },
-        {
-          "value": "custom",
-          "label": "t:options.custom"
+            "name": "t:sections.image-with-text.blocks.button.name",
+            "category": "Global"
         }
-      ],
-      "default": "fit-content"
-    },
-    {
-      "type": "range",
-      "id": "custom_width",
-      "label": "t:settings.custom_width",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "default": 100,
-      "visible_if": "{{ block.settings.width == \"custom\" }}"
-    },
-    {
-      "type": "select",
-      "id": "width_mobile",
-      "label": "t:settings.width_mobile",
-      "options": [
-        {
-          "value": "fit-content",
-          "label": "t:options.fit_content"
-        },
-        {
-          "value": "custom",
-          "label": "t:options.custom"
-        }
-      ],
-      "default": "fit-content"
-    },
-    {
-      "type": "range",
-      "id": "custom_width_mobile",
-      "label": "t:settings.custom_width",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "default": 100,
-      "visible_if": "{{ block.settings.width_mobile == \"custom\" }}"
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:names.button",
-      "category": "t:categories.basic",
-      "settings": {
-        "link": "shopify://collections/all"
-      }
-    }
-  ]
+    ]
 }
 {% endschema %}

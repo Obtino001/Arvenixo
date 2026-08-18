@@ -1,193 +1,201 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "name": "t:sections.header.name",
-    "type": "header",
-    "sections": {
-        "marquee_8K6ULj": {
-            "type": "marquee",
-            "blocks": {
-                "text_block_qHp4DL": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Secure online store"
-                    }
-                },
-                "text_block_j4Rnqf": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "30-day money-back guarantee"
-                    }
-                },
-                "text_block_iQ6NwT": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Delivery in 2-3 days"
-                    }
-                }
-            },
-            "block_order": [
-                "text_block_qHp4DL",
-                "text_block_j4Rnqf",
-                "text_block_iQ6NwT"
-            ],
-            "name": "Scrolling banner",
-            "settings": {
-                "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-                "scroll_speed": 30,
-                "font_size": 14,
-                "padding_top": 12,
-                "padding_bottom": 12
-            }
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "marquee_8K6ULj": {
+      "type": "marquee",
+      "blocks": {
+        "text_block_qHp4DL": {
+          "type": "text_block",
+          "settings": {
+            "text": "Secure online store"
+          }
         },
-        "header": {
-            "type": "header",
-            "blocks": {
-                "image_cards_grid_Qw6Ypt": {
-                    "type": "image-cards-grid",
-                    "settings": {
-                        "column_size": "25%",
-                        "title": "Shop",
-                        "heading": "Category",
-                        "item_title_1": "Laptops",
-                        "item_link_1": "",
-                        "item_title_2": "Smartphones",
-                        "item_link_2": "",
-                        "item_title_3": "",
-                        "item_link_3": "",
-                        "item_title_4": "",
-                        "item_link_4": "",
-                        "item_title_5": "",
-                        "item_link_5": "",
-                        "item_title_6": "",
-                        "item_link_6": ""
-                    }
-                },
-                "image_cards_grid_qrL6Pj": {
-                    "type": "image-cards-grid",
-                    "settings": {
-                        "column_size": "25%",
-                        "title": "Shop",
-                        "heading": "Accessories",
-                        "item_title_1": "Cables",
-                        "item_link_1": "",
-                        "item_title_2": "Chargers",
-                        "item_link_2": "",
-                        "item_title_3": "Cases",
-                        "item_link_3": "",
-                        "item_title_4": "",
-                        "item_link_4": "",
-                        "item_title_5": "",
-                        "item_link_5": "",
-                        "item_title_6": "",
-                        "item_link_6": ""
-                    }
-                },
-                "image_cards_grid_FiLFiN": {
-                    "type": "image-cards-grid",
-                    "settings": {
-                        "column_size": "25%",
-                        "title": "Shop",
-                        "heading": "Audio",
-                        "item_title_1": "Headphones",
-                        "item_link_1": "",
-                        "item_title_2": "",
-                        "item_link_2": "",
-                        "item_title_3": "",
-                        "item_link_3": "",
-                        "item_title_4": "",
-                        "item_link_4": "",
-                        "item_title_5": "",
-                        "item_link_5": "",
-                        "item_title_6": "",
-                        "item_link_6": ""
-                    }
-                },
-                "image_cards_grid_3eMmyP": {
-                    "type": "image-cards-grid",
-                    "settings": {
-                        "column_size": "25%",
-                        "title": "Shop",
-                        "heading": "Wearables",
-                        "item_title_1": "Smartwatches",
-                        "item_link_1": "",
-                        "item_title_2": "Fitness Trackers",
-                        "item_link_2": "",
-                        "item_title_3": "",
-                        "item_link_3": "",
-                        "item_title_4": "",
-                        "item_link_4": "",
-                        "item_title_5": "",
-                        "item_link_5": "",
-                        "item_title_6": "",
-                        "item_link_6": ""
-                    }
-                },
-                "image_cards_grid_W3JC7a": {
-                    "type": "image-cards-grid",
-                    "settings": {
-                        "column_size": "25%",
-                        "title": "Shop",
-                        "heading": "Carrying Cases",
-                        "item_title_1": "Laptop Bags",
-                        "item_link_1": "",
-                        "item_title_2": "",
-                        "item_link_2": "",
-                        "item_title_3": "",
-                        "item_link_3": "",
-                        "item_title_4": "",
-                        "item_link_4": "",
-                        "item_title_5": "",
-                        "item_link_5": "",
-                        "item_title_6": "",
-                        "item_link_6": ""
-                    }
-                },
-                "bottom_WP38m7": {
-                    "type": "bottom",
-                    "settings": {
-                        "title": "shop",
-                        "link_1_text": "Shop All",
-                        "link_1_url": "shopify://collections/all",
-                        "link_2_text": "",
-                        "link_2_url": "",
-                        "color_scheme": "scheme-1"
-                    }
-                }
-            },
-            "block_order": [
-                "image_cards_grid_Qw6Ypt",
-                "image_cards_grid_qrL6Pj",
-                "image_cards_grid_FiLFiN",
-                "image_cards_grid_3eMmyP",
-                "image_cards_grid_W3JC7a",
-                "bottom_WP38m7"
-            ],
-            "settings": {
-                "logo_position": "middle-left",
-                "mobile_logo_position": "center",
-                "menu": "main-menu",
-                "menu_type_desktop": "mega",
-                "enable_center_menu": true,
-                "sticky_header_type": "on-scroll-up",
-                "show_line_separator": true,
-                "enable_transparent_header": true,
-                "enable_full_width": true,
-                "color_scheme": "scheme-3",
-                "menu_color_scheme": "scheme-3",
-                "enable_country_selector": true,
-                "enable_language_selector": true,
-                "enable_customer_avatar": true,
-                "heading": "Shop Arvenixo risk-free",
-                "text_1": "<p>Your comfort matters.<br/>If your device isn\u2019t the right fit for you, our 30-day guarantee means you\u2019re not taking any risk.</p>",
-                "text_2": "<p>We\u2019re here to help \u2014 whether that\u2019s a size change, advice, or a refund.</p>",
-                "drawer_show_footer": true,
-                "margin_bottom": 0,
-                "padding_top": 0,
-                "padding_bottom": 0
-            }
+        "text_block_j4Rnqf": {
+          "type": "text_block",
+          "settings": {
+            "text": "30-day money-back guarantee"
+          }
+        },
+        "text_block_iQ6NwT": {
+          "type": "text_block",
+          "settings": {
+            "text": "Delivery in 2-3 days"
+          }
         }
+      },
+      "block_order": [
+        "text_block_qHp4DL",
+        "text_block_j4Rnqf",
+        "text_block_iQ6NwT"
+      ],
+      "name": "Scrolling banner",
+      "settings": {
+        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
+        "scroll_speed": 30,
+        "font_size": 14,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
     },
-    "order": [
-        "marquee_8K6ULj",
-        "header"
-    ]
+    "header": {
+      "type": "header",
+      "blocks": {
+        "image_cards_grid_Qw6Ypt": {
+          "type": "image-cards-grid",
+          "settings": {
+            "column_size": "25%",
+            "title": "Shop",
+            "heading": "Category",
+            "item_title_1": "Laptops",
+            "item_link_1": "",
+            "item_title_2": "Smartphones",
+            "item_link_2": "",
+            "item_title_3": "",
+            "item_link_3": "",
+            "item_title_4": "",
+            "item_link_4": "",
+            "item_title_5": "",
+            "item_link_5": "",
+            "item_title_6": "",
+            "item_link_6": ""
+          }
+        },
+        "image_cards_grid_qrL6Pj": {
+          "type": "image-cards-grid",
+          "settings": {
+            "column_size": "25%",
+            "title": "Shop",
+            "heading": "Accessories",
+            "item_title_1": "Cables",
+            "item_link_1": "",
+            "item_title_2": "Chargers",
+            "item_link_2": "",
+            "item_title_3": "Cases",
+            "item_link_3": "",
+            "item_title_4": "",
+            "item_link_4": "",
+            "item_title_5": "",
+            "item_link_5": "",
+            "item_title_6": "",
+            "item_link_6": ""
+          }
+        },
+        "image_cards_grid_FiLFiN": {
+          "type": "image-cards-grid",
+          "settings": {
+            "column_size": "25%",
+            "title": "Shop",
+            "heading": "Audio",
+            "item_title_1": "Headphones",
+            "item_link_1": "",
+            "item_title_2": "",
+            "item_link_2": "",
+            "item_title_3": "",
+            "item_link_3": "",
+            "item_title_4": "",
+            "item_link_4": "",
+            "item_title_5": "",
+            "item_link_5": "",
+            "item_title_6": "",
+            "item_link_6": ""
+          }
+        },
+        "image_cards_grid_3eMmyP": {
+          "type": "image-cards-grid",
+          "settings": {
+            "column_size": "25%",
+            "title": "Shop",
+            "heading": "Wearables",
+            "item_title_1": "Smartwatches",
+            "item_link_1": "",
+            "item_title_2": "Fitness Trackers",
+            "item_link_2": "",
+            "item_title_3": "",
+            "item_link_3": "",
+            "item_title_4": "",
+            "item_link_4": "",
+            "item_title_5": "",
+            "item_link_5": "",
+            "item_title_6": "",
+            "item_link_6": ""
+          }
+        },
+        "image_cards_grid_W3JC7a": {
+          "type": "image-cards-grid",
+          "settings": {
+            "column_size": "25%",
+            "title": "Shop",
+            "heading": "Carrying Cases",
+            "item_title_1": "Laptop Bags",
+            "item_link_1": "",
+            "item_title_2": "",
+            "item_link_2": "",
+            "item_title_3": "",
+            "item_link_3": "",
+            "item_title_4": "",
+            "item_link_4": "",
+            "item_title_5": "",
+            "item_link_5": "",
+            "item_title_6": "",
+            "item_link_6": ""
+          }
+        },
+        "bottom_WP38m7": {
+          "type": "bottom",
+          "settings": {
+            "title": "shop",
+            "link_1_text": "Shop All",
+            "link_1_url": "shopify://collections/all",
+            "link_2_text": "",
+            "link_2_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_cards_grid_Qw6Ypt",
+        "image_cards_grid_qrL6Pj",
+        "image_cards_grid_FiLFiN",
+        "image_cards_grid_3eMmyP",
+        "image_cards_grid_W3JC7a",
+        "bottom_WP38m7"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "enable_center_menu": true,
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "enable_transparent_header": true,
+        "enable_full_width": true,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-3",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "heading": "Shop Arvenixo risk-free",
+        "text_1": "<p>Your comfort matters.<br/>If your device isn’t the right fit for you, our 30-day guarantee means you’re not taking any risk.</p>",
+        "text_2": "<p>We’re here to help — whether that’s a size change, advice, or a refund.</p>",
+        "drawer_show_footer": true,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "marquee_8K6ULj",
+    "header"
+  ]
 }

@@ -7,10 +7,10 @@
     <span class="dp-text">{{ block.settings.text | default: 'Buy now & get it delivered in 2-3 days' }}</span>
   </div>
   <div class="dp-right">
-    {% assign active_payments = 'visa,master,klarna,vipps' | split: ',' %}
-    {% for type in active_payments %}
-      {{ type | payment_type_svg_tag: class: 'dp-payment-icon' }}
-    {% endfor %}
+  {% assign active_payments = 'american_express,apple_pay,google_pay,master,paypal,shop_pay,unionpay,visa' | split: ',' %}
+      {% for type in active_payments %}
+        {{ type | payment_type_svg_tag: class: 'dp-payment-icon' }}
+      {% endfor %}
   </div>
 </div>
 

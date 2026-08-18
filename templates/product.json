@@ -263,7 +263,7 @@
       ],
       "name": "Pill Marquee",
       "settings": {
-        "bg_color": "#d4cfb3",
+        "bg_color": "#F6F5F0",
         "padding_top": 40,
         "padding_bottom": 40
       }

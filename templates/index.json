@@ -106,14 +106,14 @@
         "show_controls_desktop": false,
         "show_controls_mobile": false,
         "controls_position": "bottom",
-        "enable_autoplay": false,
-        "autoplay_interval": 3,
+        "enable_autoplay": true,
+        "autoplay_interval": 7,
         "enable_loop": false,
         "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
         "quick_add": "standard",
         "show_view_all": true,
         "view_all_style": "solid",
@@ -135,11 +135,9 @@
         },
         "image_fwHkwT": {
           "type": "image",
-          "settings": {}
-        },
-        "image_BNGL7G": {
-          "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/ax-about-earth.png"
+          }
         },
         "review_riFiDT": {
           "type": "review",
@@ -149,9 +147,25 @@
             "show_verified": true
           }
         },
+        "image_BNGL7G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ax-cat-charger.png"
+          }
+        },
+        "review_ntN3QL": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
         "image_PiFyAz": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/ax-about-beginnings.png"
+          }
         },
         "review_ACeL33": {
           "type": "review",
@@ -163,17 +177,11 @@
         },
         "image_AjbtaL": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/ax-review-carry.png"
+          }
         },
-        "image_AQn3KJ": {
-          "type": "image",
-          "settings": {}
-        },
-        "image_BUjmnf": {
-          "type": "image",
-          "settings": {}
-        },
-        "review_ntN3QL": {
+        "review_iMUAV3": {
           "type": "review",
           "settings": {
             "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
@@ -181,7 +189,21 @@
             "show_verified": true
           }
         },
-        "review_iMUAV3": {
+        "review_WejKQV": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
+        "image_BUjmnf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ax-cat-bags.png"
+          }
+        },
+        "review_r4YBxd": {
           "type": "review",
           "settings": {
             "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
@@ -193,15 +215,16 @@
       "block_order": [
         "review_kVJhXx",
         "image_fwHkwT",
-        "image_BNGL7G",
         "review_riFiDT",
+        "image_BNGL7G",
+        "review_ntN3QL",
         "image_PiFyAz",
         "review_ACeL33",
         "image_AjbtaL",
-        "image_AQn3KJ",
+        "review_iMUAV3",
+        "review_WejKQV",
         "image_BUjmnf",
-        "review_ntN3QL",
-        "review_iMUAV3"
+        "review_r4YBxd"
       ],
       "name": "Masonry Reviews",
       "settings": {
@@ -268,7 +291,7 @@
         "feature_rXBHeP": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/Free_Return.avif",
             "title": "Easy payment",
             "text": "<p>Shop safely with Vipps or Klarna — receive your products first and pay later.</p>"
           }
@@ -276,7 +299,7 @@
         "feature_nQkBFe": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/secure_payments.avif",
             "title": "Personal customer service",
             "text": "<p>We offer top-quality customer support and are happy to help if you need to change size.</p>"
           }
@@ -284,7 +307,7 @@
         "feature_XTHeHP": {
           "type": "feature",
           "settings": {
-            "icon_image": "shopify://shop_images/worldwide_shipping.avif",
+            "icon_image": "shopify://shop_images/warranty.avif",
             "title": "Trust & quality",
             "text": "<p>We are a Norwegian company and naturally follow Norwegian consumer protection laws.</p>"
           }

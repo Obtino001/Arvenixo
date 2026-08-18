@@ -24,22 +24,22 @@
                 "heading_PrkTwg": {
                     "type": "heading",
                     "settings": {
-                        "title": "Period panties"
+                        "title": "Premium Electronics"
                     }
                 },
                 "text_DjqEEg": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Feel safe, comfortable, and confident during your period. Our period panties offer reliable protection without bulk, so you can move freely all day.</p>"
+                        "text": "<p>Upgrade your lifestyle with our curated selection of top-tier gadgets. We offer cutting-edge technology to keep you connected, productive, and entertained all day.</p>"
                     }
                 },
                 "features_FAEbMN": {
                     "type": "features",
                     "settings": {
                         "icon_image": "shopify://shop_images/Vector_70.svg",
-                        "feature_1": "Everyday underwear comfort",
-                        "feature_2": "Leak-proof protection",
-                        "feature_3": "PFAS-free & European quality"
+                        "feature_1": "Cutting-edge technology",
+                        "feature_2": "Durable build quality",
+                        "feature_3": "Premium & Reliable"
                     }
                 },
                 "rating_dxMhn4": {
@@ -66,7 +66,7 @@
             ],
             "name": "Custom Rich Text",
             "settings": {
-                "color_scheme": "scheme-4",
+                "color_scheme": "scheme-1",
                 "padding_top": 52,
                 "padding_bottom": 32
             }
@@ -78,9 +78,9 @@
                     "type": "collection_item",
                     "settings": {
                         "collection_ref": "all",
-                        "title": "Moderate Flow",
-                        "custom_image": "shopify://shop_images/037fa2474d62eb3ea507f5292c208c9a6e627c86.png",
-                        "droplet_image": "shopify://shop_images/Frame_7.svg",
+                        "title": "Laptops",
+                        "custom_image": "",
+                        "droplet_image": "",
                         "custom_url": ""
                     }
                 },
@@ -88,9 +88,9 @@
                     "type": "collection_item",
                     "settings": {
                         "collection_ref": "all",
-                        "title": "Heavy Flow",
-                        "custom_image": "shopify://shop_images/79de4683e45c97392db5fe899d3f3fe0539356a4.png",
-                        "droplet_image": "shopify://shop_images/Frame_8.svg",
+                        "title": "Smartphones",
+                        "custom_image": "",
+                        "droplet_image": "",
                         "custom_url": ""
                     }
                 },
@@ -98,9 +98,9 @@
                     "type": "collection_item",
                     "settings": {
                         "collection_ref": "all",
-                        "title": "Teenage",
-                        "custom_image": "shopify://shop_images/e28b09597287fb05024df0a9b22c918e61b6bfe8.png",
-                        "droplet_image": "shopify://shop_images/Frame_6.svg",
+                        "title": "Accessories",
+                        "custom_image": "",
+                        "droplet_image": "",
                         "custom_url": ""
                     }
                 }
@@ -112,7 +112,7 @@
             ],
             "name": "Collection Navigation",
             "settings": {
-                "color_scheme": "scheme-4",
+                "color_scheme": "scheme-1",
                 "padding_top": 36,
                 "padding_bottom": 36
             }

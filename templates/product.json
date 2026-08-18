@@ -259,7 +259,7 @@
       ],
       "name": "Comparison Table 1:1",
       "settings": {
-        "card_bg_color": "transparent",
+        "card_bg_color": "rgba(0,0,0,0)",
         "header_1": "US VS. THEM",
         "header_2": "LUMITHERM PRO",
         "header_3": "CHEAP ROLLERS",
@@ -283,7 +283,7 @@
         "badge_3QYtBW": {
           "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/worldwide_shipping.avif",
+            "image": "shopify://shop_images/Free_Return.avif",
             "fallback_image_url": "",
             "text": "30 Days Return"
           }
@@ -291,7 +291,7 @@
         "badge_VXCyAr": {
           "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/worldwide_shipping.avif",
+            "image": "shopify://shop_images/secure_payments.avif",
             "fallback_image_url": "",
             "text": "100% Secure Payments"
           }
@@ -299,7 +299,7 @@
         "badge_aDT3tR": {
           "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/worldwide_shipping.avif",
+            "image": "shopify://shop_images/warranty.avif",
             "fallback_image_url": "",
             "text": "International Warranty"
           }

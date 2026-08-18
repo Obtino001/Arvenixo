@@ -630,10 +630,11 @@ span.active-facets__button-inner:after {
     margin: 10px 0;
   }
 
-.active-facets__button, .active-facets__button-remove {
+  .active-facets__button,
+  .active-facets__button-remove {
     margin: 0;
     padding: 6px;
-}
+  }
 
   span.active-facets__button-inner {
     padding-bottom: 0.1rem;
@@ -848,7 +849,7 @@ a.active-facets__button.focused .active-facets__button-inner {
 
 .mobile-facets__open-label {
   transition: text-decoration var(--duration-short) ease;
-  font-family: Inter;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
@@ -1034,12 +1035,12 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__label .icon-checkmark {
-    position: absolute;
-    top: 14px;
-    left: 3px;
-    visibility: hidden;
-    width: 11px;
-    height: 9px;
+  position: absolute;
+  top: 14px;
+  left: 3px;
+  visibility: hidden;
+  width: 11px;
+  height: 9px;
 }
 
 .mobile-facets__label>input[type='checkbox']:checked~.icon-checkmark {
@@ -1266,7 +1267,7 @@ input.mobile-facets__checkbox {
    Our document click handler already closes open dropdowns when clicking outside.
    Without this, the overlay intercepts clicks on sibling filter summaries,
    requiring a double-click to switch between open filters. */
-details.js-filter > summary::before {
+details.js-filter>summary::before {
   display: none !important;
 }
 
@@ -1300,7 +1301,8 @@ details.js-filter > summary::before {
 }
 
 .mobile-facets__count {
-  display: none; /* hide product count from header */
+  display: none;
+  /* hide product count from header */
 }
 
 /* ── Filter group rows (accordion items) ───────────── */
@@ -1323,14 +1325,14 @@ details.js-filter > summary::before {
   display: none;
 }
 
-.mobile-facets__summary > div {
+.mobile-facets__summary>div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.mobile-facets__summary > div > span:first-child {
+.mobile-facets__summary>div>span:first-child {
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -1364,16 +1366,18 @@ details.js-filter > summary::before {
 
 .mobile-facets__arrow::before {
   width: 1.4rem;
-  height: 0.15rem; /* horizontal bar */
+  height: 0.15rem;
+  /* horizontal bar */
 }
 
 .mobile-facets__arrow::after {
   width: 0.15rem;
-  height: 1.4rem; /* vertical bar — disappears when open → becomes − */
+  height: 1.4rem;
+  /* vertical bar — disappears when open → becomes − */
 }
 
 /* When open: hide vertical bar to show − */
-.mobile-facets__details[open] > .mobile-facets__summary .mobile-facets__arrow::after {
+.mobile-facets__details[open]>.mobile-facets__summary .mobile-facets__arrow::after {
   transform: scaleY(0);
   opacity: 0;
 }
@@ -1396,11 +1400,11 @@ details.js-filter > summary::before {
   bottom: auto;
 }
 
-.js details[open] > .mobile-facets__submenu {
+.js details[open]>.mobile-facets__submenu {
   transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
 }
 
-.js details[open].mobile-facets__details > .mobile-facets__submenu {
+.js details[open].mobile-facets__details>.mobile-facets__submenu {
   max-height: 800px;
   opacity: 1;
   padding: 0 2rem 1.6rem;
@@ -1408,7 +1412,7 @@ details.js-filter > summary::before {
 }
 
 /* Closing state — animate back to collapsed */
-.js details[open].is-closing.mobile-facets__details > .mobile-facets__submenu {
+.js details[open].is-closing.mobile-facets__details>.mobile-facets__submenu {
   max-height: 0 !important;
   opacity: 0 !important;
   padding-top: 0 !important;
@@ -1451,8 +1455,9 @@ details.js-filter > summary::before {
 }
 
 /* ── Per-filter footer (Clear + Apply inside submenu) ─ */
-.mobile-facets__submenu > .mobile-facets__footer {
-  display: none; /* Hide the per-filter footer; use the global one only */
+.mobile-facets__submenu>.mobile-facets__footer {
+  display: none;
+  /* Hide the per-filter footer; use the global one only */
 }
 
 /* ── Close button (X) ──────────────────────────────── */
@@ -1461,7 +1466,7 @@ details.js-filter > summary::before {
 }
 
 /* ── Global footer: Clear All + Apply ──────────────── */
-.mobile-facets__main > .mobile-facets__footer {
+.mobile-facets__main>.mobile-facets__footer {
   border-top: 1px solid #ebebeb;
   padding: 2rem;
   display: flex;
@@ -1472,7 +1477,7 @@ details.js-filter > summary::before {
   margin-top: auto;
 }
 
-.mobile-facets__footer > * {
+.mobile-facets__footer>* {
   flex: 1;
 }
 
@@ -1486,7 +1491,7 @@ details.js-filter > summary::before {
 }
 
 /* Overlay behind the drawer */
-.mobile-facets__wrapper .disclosure-has-popup[open] > summary::before {
+.mobile-facets__wrapper .disclosure-has-popup[open]>summary::before {
   height: 100vh;
   z-index: 3;
 }
@@ -1497,6 +1502,6 @@ details.js-filter > summary::before {
 }
 
 form#FacetSortDrawerForm {
-    display: flex;
-    white-space: nowrap;
+  display: flex;
+  white-space: nowrap;
 }

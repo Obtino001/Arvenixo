@@ -11,31 +11,33 @@
 
 /* Fallback for Customizer / Broken JS */
 .swiper:not(.swiper-initialized) .swiper-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .swiper:not(.swiper-initialized) .swiper-slide {
-  width: 100%; /* Mobile fallback */
-  flex: 0 0 auto;
+    width: 100%;
+    /* Mobile fallback */
+    flex: 0 0 auto;
 }
 
 @media screen and (min-width: 750px) {
-  .swiper:not(.swiper-initialized) .swiper-slide {
-    width: calc(33.33% - 16px); /* Desktop 3-column fallback */
-  }
+    .swiper:not(.swiper-initialized) .swiper-slide {
+        width: calc(33.33% - 16px);
+        /* Desktop 3-column fallback */
+    }
 }
 
 /* Ensure the wrapper doesn't hide content if JS fails to calculate height */
 .swiper:not(.swiper-initialized) {
-  overflow: visible;
+    overflow: visible;
 }
 
 :root {
     --sl-brand-primary: #962071;
     --sl-brand-primary-light: #FFF2F2;
-    --sl-brand-accent:#962071;
+    --sl-brand-accent: #962071;
     --sl-brand-blush: #faeeef;
     --sl-brand-lavender: #d8bfd8;
     --sl-brand-deep-purple: #962071;
@@ -47,12 +49,15 @@
     --sl-transition-base: 0.3s ease;
     --sl-transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .desktopMenu-Nav.page-width {
-max-width: 1200px;
+    max-width: 1200px;
 }
+
 .kaching-bundles .kaching-bundles__bar-radio {
     display: none !important;
 }
+
 /* --------------------------------------------------------------------------
    2. LOADER / SPINNER
    -------------------------------------------------------------------------- */
@@ -206,8 +211,14 @@ max-width: 1200px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.faqrs-icon-wrap path { fill: #921e72; }
-.faqrs-icon-minus path { fill: none; stroke: #921e72; }
+.faqrs-icon-wrap path {
+    fill: #921e72;
+}
+
+.faqrs-icon-minus path {
+    fill: none;
+    stroke: #921e72;
+}
 
 /* Toggle Icon Visibility */
 faq-item:not(.faqrs-active) .faqrs-icon-minus,
@@ -229,7 +240,8 @@ faq-item.faqrs-active .faqrs-icon-plus,
 
 faq-item.faqrs-active .faqrs-answer,
 .faqrs-item.faqrs-active .faqrs-answer {
-    max-height: 1000px; /* High enough value to clear content */
+    max-height: 1000px;
+    /* High enough value to clear content */
 }
 
 .faqrs-answer-inner {
@@ -241,7 +253,10 @@ faq-item.faqrs-active .faqrs-answer,
 }
 
 /* Ensure child elements inside answer inherit style */
-.faqrs-answer-inner p { margin: 10px 0; }
+.faqrs-answer-inner p {
+    margin: 10px 0;
+}
+
 /* --------------------------------------------------------------------------
    4. HEADER ICON COLORS
    -------------------------------------------------------------------------- */
@@ -704,8 +719,10 @@ slider-container:hover .slider-template-controls--middle .slider-template-arrow.
 
 .quick-add-modal--drawer .quick-add-modal__content-info {
     padding-top: 2rem;
-    display: block !important; /* Break flex context from quick-add.css */
-    height: auto !important; /* override base height:100% from quick-add.css */
+    display: block !important;
+    /* Break flex context from quick-add.css */
+    height: auto !important;
+    /* override base height:100% from quick-add.css */
     flex: 1 1 0% !important;
     min-height: 0 !important;
     overflow-y: auto !important;
@@ -746,7 +763,7 @@ nav-container:hover .header__menu-item .icon-caret {
 /* --------------------------------------------------------------------------
    8. CARD OVERLAYS (Product Card — Droplet, Badge, Review)
    -------------------------------------------------------------------------- */
-.card-overlay-badges{
+.card-overlay-badges {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -755,6 +772,7 @@ nav-container:hover .header__menu-item .icon-caret {
     flex-direction: column;
     gap: 5px;
 }
+
 .card-overlay-droplet {
     pointer-events: none;
     background-color: #fff2f2;
@@ -763,6 +781,7 @@ nav-container:hover .header__menu-item .icon-caret {
     line-height: 0;
     max-width: fit-content;
 }
+
 .card-overlay-droplet img {
     width: 67px;
     height: auto;
@@ -778,7 +797,7 @@ nav-container:hover .header__menu-item .icon-caret {
     font-weight: 500;
     font-size: 12px;
     line-height: 120%;
-    
+
 }
 
 .card-overlay-review {
@@ -802,14 +821,15 @@ nav-container:hover .header__menu-item .icon-caret {
     color: var(--sl-brand-primary);
 }
 
-@media screen and (max-width: 768px){
-    .card-overlay-review{
+@media screen and (max-width: 768px) {
+    .card-overlay-review {
         bottom: 5rem;
-    left: 0.9rem;
-    font-size: 10px;
-    padding-block: 2px;
+        left: 0.9rem;
+        font-size: 10px;
+        padding-block: 2px;
     }
-    .card-overlay-review svg{
+
+    .card-overlay-review svg {
         width: 10px;
         height: 10px;
     }
@@ -849,18 +869,21 @@ nav-container:hover .header__menu-item .icon-caret {
 }
 
 @media screen and (max-width: 749px) {
-.card-overlay-droplet {
-    display: flex;
-    gap: 2px;
-    padding: 2px 4px;
-}
-.card-overlay-droplet svg {
-    width: 6px;
-}
-.card-overlay-badge {
-    padding: 5px 8px;
-    font-size: 10px;
-}
+    .card-overlay-droplet {
+        display: flex;
+        gap: 2px;
+        padding: 2px 4px;
+    }
+
+    .card-overlay-droplet svg {
+        width: 6px;
+    }
+
+    .card-overlay-badge {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
     .footer-block {
         border-bottom: 1px solid #ebd0df;
         margin: 0;
@@ -900,12 +923,14 @@ nav-container:hover .header__menu-item .icon-caret {
         text-align: center;
         flex-direction: column;
     }
+
     .footer-block__details-content.is-open {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .footer-block:last-child{
+
+    .footer-block:last-child {
         border: none;
     }
 }
@@ -935,12 +960,12 @@ nav-container:hover .header__menu-item .icon-caret {
 
 .custom-price-current {
     color: var(---sl-brand-primary);
-font-family: Inter;
-font-weight: 500;
-font-style: Medium;
-font-size: 18px;
-line-height: 100%;
-letter-spacing: 0%;
+
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
 }
 
 .custom-price-compare {
@@ -1721,9 +1746,10 @@ li.footer-payment-payments_QCqHQe {
     .sr-wash-grid-wrapper::-webkit-scrollbar {
         display: none;
     }
+
     .sr-wash-note-container {
-    padding: 0 5vw;
-}
+        padding: 0 5vw;
+    }
 
     .sr-wash-grid {
         display: flex;
@@ -2401,9 +2427,10 @@ li.footer-payment-payments_QCqHQe {
     .sr-insta-item {
         border-radius: 12px;
     }
-  .sr-insta-grid .sr-insta-item:nth-child(n+9) {
-    display: none !important;
-}
+
+    .sr-insta-grid .sr-insta-item:nth-child(n+9) {
+        display: none !important;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -2566,19 +2593,24 @@ li.footer-payment-payments_QCqHQe {
         display: flex;
         flex-direction: row;
     }
-.sr-faq-header {
-    margin-bottom: 30px;
-}
-.sr-img-item {
-    width: 100%;
-    max-width: 115px;
-}
-.sr-insta-header {
-    margin-bottom: 15px;
-}
-.sr-faq-accordion-wrapper {
-    gap: 10px;
-}
+
+    .sr-faq-header {
+        margin-bottom: 30px;
+    }
+
+    .sr-img-item {
+        width: 100%;
+        max-width: 115px;
+    }
+
+    .sr-insta-header {
+        margin-bottom: 15px;
+    }
+
+    .sr-faq-accordion-wrapper {
+        gap: 10px;
+    }
+
     .sr-faq-layout {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -2603,7 +2635,7 @@ li.footer-payment-payments_QCqHQe {
     }
 }
 
-.size_options input[type="radio"] + label{
+.size_options input[type="radio"]+label {
     min-width: 40px;
     height: 40px;
     padding: 0px !important;
@@ -2615,20 +2647,23 @@ li.footer-payment-payments_QCqHQe {
 }
 
 .kaching-bundles .kaching-bundles__bar-title,
-.kaching-bundles .kaching-bundles__bar-price{
+.kaching-bundles .kaching-bundles__bar-price {
     font-size: 18px !important;
     font-weight: 500 !important;
 }
-.kaching-bundles .kaching-bundles__bar-full-price{
+
+.kaching-bundles .kaching-bundles__bar-full-price {
     font-size: 12px !important;
-    color:  #E5A5CC !important;
+    color: #E5A5CC !important;
 }
-.kaching-bundles .kaching-bundles__bar-most-popular__content{
+
+.kaching-bundles .kaching-bundles__bar-most-popular__content {
     font-family: inherit !important;
     font-weight: 400 !important;
 }
+
 .who-is-features .who-is-feature:nth-child(2) img {
-  transform: scale(0.8);
-  /* Optional: keeps the image centered while scaling down */
-  transform-origin: center center; 
+    transform: scale(0.8);
+    /* Optional: keeps the image centered while scaling down */
+    transform-origin: center center;
 }

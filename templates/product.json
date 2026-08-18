@@ -324,20 +324,23 @@
         "category_QWpdXJ": {
           "type": "category",
           "settings": {
-            "title": "Category Name",
+            "image": "shopify://shop_images/Active_MG_4608_e39cf02c-e83c-4cb9-945c-fd41bfdd100c.webp",
+            "title": "Covers",
             "link": ""
           }
         },
         "category_743MJV": {
           "type": "category",
           "settings": {
-            "title": "Category Name",
+            "image": "shopify://shop_images/bags.webp",
+            "title": "Bags",
             "link": ""
           }
         },
         "category_dRwE3A": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Rise_5271.jpg",
             "title": "Category Name",
             "link": ""
           }
@@ -345,6 +348,7 @@
         "category_R3zfiF": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/tech_review_3.jpg",
             "title": "Category Name",
             "link": ""
           }

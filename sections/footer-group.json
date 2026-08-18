@@ -59,8 +59,10 @@
       ],
       "name": "Image + FAQ",
       "settings": {
+        "image": "shopify://shop_images/genrate-iamge-thwt-we-can-ue-for-faq-with-image-sections.png",
         "heading": "YOUR QUESTIONS\nANSWERED",
-        "bg_color": "#F6F5F0",
+        "note_text": "<p><em><strong>Note:</strong></em> <em>The 60-day guarantee applies to new customers and covers one pair only.</em></p>",
+        "bg_color": "#f6f5f0",
         "button_label": "READ ALL FAQS",
         "button_link": ""
       }
@@ -71,48 +73,56 @@
         "image_ptiR6n": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/tech_review_2.jpg",
             "link": ""
           }
         },
         "image_WFDVxM": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/tech_review_3.jpg",
             "link": ""
           }
         },
         "image_BU6qpL": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-review-pocket.png",
             "link": ""
           }
         },
         "image_gnwqTC": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-cat-cables.png",
             "link": ""
           }
         },
         "image_6Q9dGy": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-about-lifestyle.png",
             "link": ""
           }
         },
         "image_Uc8f86": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-about-future.png",
             "link": ""
           }
         },
         "image_PmP4aQ": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-world-protect.png",
             "link": ""
           }
         },
         "image_Wxw8jh": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ax-review-charge.png",
             "link": ""
           }
         }
@@ -131,7 +141,7 @@
       "settings": {
         "bg_color": "#ffffff",
         "heading": "GEAR UP FOR GREAT DAYS",
-        "hashtag": "#HOLLOWSOCKS",
+        "hashtag": "#Arvenixo",
         "show_facebook": true,
         "facebook_link": "",
         "show_instagram": true,

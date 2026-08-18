@@ -118,7 +118,7 @@
     display: block;
     padding: 0;
     margin: 0 !important;
-    background-color: #fceced;
+    background-color: #F6F5F0;
     border-top: 1px solid #ecc9cd;
 }
 
@@ -178,7 +178,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
-    color: #921e72;
+    color: #282828;
     margin: 0;
     text-align: left;
 }
@@ -212,12 +212,12 @@
 }
 
 .faqrs-icon-wrap path {
-    fill: #921e72;
+    fill: #282828;
 }
 
 .faqrs-icon-minus path {
     fill: none;
-    stroke: #921e72;
+    stroke: #282828;
 }
 
 /* Toggle Icon Visibility */
@@ -246,7 +246,7 @@ faq-item.faqrs-active .faqrs-answer,
 
 .faqrs-answer-inner {
     padding: 0 20px 20px 20px;
-    color: #921e72;
+    color: #282828;
     font-size: 15px;
     line-height: 1.5;
     opacity: 0.85;
@@ -2654,7 +2654,7 @@ li.footer-payment-payments_QCqHQe {
 
 .kaching-bundles .kaching-bundles__bar-full-price {
     font-size: 12px !important;
-    color: #E5A5CC !important;
+    color: #282828 !important;
 }
 
 .kaching-bundles .kaching-bundles__bar-most-popular__content {

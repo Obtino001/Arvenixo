@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
     "sections": {
         "main": {
@@ -17,14 +8,13 @@
                     "settings": {
                         "flow_image": "shopify://shop_images/Frame_6_1.svg",
                         "flow_text": "Premium Electronics",
-                        "flow_bg_color": "#f0f0f0",
                         "star_image": "shopify://shop_images/Group_15_1.svg",
                         "star_width": 70,
                         "review_text": "4.7 (92 Reviews)",
                         "link_url": "",
-                        "text_color": "#000000",
                         "margin_top": 0,
-                        "margin_bottom": 10
+                        "margin_bottom": 10,
+                        "color_scheme": "scheme-1"
                     }
                 },
                 "title": {
@@ -69,9 +59,6 @@
                         "size_guide_page": true,
                         "trigger_tag": "st\u00f8rrelse",
                         "trigger_label": "Size Guide",
-                        "color_primary": "#8a2468",
-                        "color_secondary": "#fb499b",
-                        "color_tertiary": "#fceced",
                         "title": "Size Guide",
                         "avatar_image": "shopify://shop_images/hugeicons_tape-measure_1e87abb3-f8e9-47c7-9231-bdd211d9ea0c.svg",
                         "show_xs": true,
@@ -97,7 +84,8 @@
                         "bullet_2": "Ensure compatibility before purchase.",
                         "bullet_3": "Contact support if you need help.",
                         "note_text": "If you need help choosing, please reach out to us.",
-                        "illustration_image": "shopify://shop_images/273a1e4e69c294daf57dd3c454855697f92de761.png"
+                        "illustration_image": "shopify://shop_images/273a1e4e69c294daf57dd3c454855697f92de761.png",
+                        "color_scheme": "scheme-1"
                     }
                 },
                 "buy_buttons": {
@@ -117,14 +105,14 @@
                 "pills_xFGRwJ": {
                     "type": "pills",
                     "settings": {
-                        "text_color": "#000000",
                         "custom_svg": "",
                         "benefit_1": "Free Shipping",
                         "benefit_2": "2 Year Warranty",
                         "benefit_3": "Tech Support",
                         "benefit_4": "Secure Checkout",
                         "benefit_5": "",
-                        "benefit_6": ""
+                        "benefit_6": "",
+                        "color_scheme": "scheme-1"
                     }
                 },
                 "text_e49ryr": {
@@ -511,8 +499,6 @@
             "settings": {
                 "color_scheme": "",
                 "heading": "Frequently Asked Questions",
-                "accordion_bg": "#000000",
-                "accordion_text": "#ffffff",
                 "image_l1": "shopify://shop_images/14baa852027472691b3fce8f880e4cfbb3c6c4f0.jpg",
                 "image_l2": "shopify://shop_images/1880a1dfd3669a052c150a7a0add01ab1ad26659.jpg",
                 "image_l3": "shopify://shop_images/304d5baf558bd9c1e00b918bb6cb973c705d946e.jpg",

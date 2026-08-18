@@ -339,7 +339,7 @@
       ],
       "name": "How to care for your electronics",
       "settings": {
-        "bg_color": "#F6F5F0",
+        "bg_color": "#f6f5f0",
         "heading": "How to care for your electronics",
         "subheading": "Charge / Carry / Protect",
         "text": "<p>We believe in 'Less but Better'. Better design, better quality. Meticulously considering every detail, even those you might never see, for an Elevated Experience.</p><p>Our commitment to using the best materials, plant-based and recycled whenever possible, ensures that our products not only meet the highest quality standards but also have a Reduced Environmental Impact.</p>",
@@ -424,6 +424,7 @@
         "heading": "Why shop with Arvenixo",
         "wave_top_pos": 75,
         "wave_opacity": 100,
+        "center_image": "shopify://shop_images/ax-newsletter-lifestyle.png",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -581,48 +582,12 @@
     },
     "faq_with_images_9bEYkm": {
       "type": "faq-with-images",
-      "blocks": {
-        "faq_item_N4cpaP": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer international shipping?",
-            "answer": "<p>Yes, we ship globally using secure carriers.</p>"
-          }
-        },
-        "faq_item_GLXP7r": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer international shipping?",
-            "answer": "<p>Yes, we ship globally using secure carriers.</p>"
-          }
-        },
-        "faq_item_YW4GFc": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer international shipping?",
-            "answer": "<p>Yes, we ship globally using secure carriers.</p>"
-          }
-        },
-        "faq_item_Dckzqr": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you offer international shipping?",
-            "answer": "<p>Yes, we ship globally using secure carriers.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_N4cpaP",
-        "faq_item_GLXP7r",
-        "faq_item_YW4GFc",
-        "faq_item_Dckzqr"
-      ],
       "name": "FAQ with Images",
       "settings": {
-        "color_scheme": "",
-        "heading": "Frequently asked questions",
-        "accordion_bg": "#282828",
-        "accordion_text": "#ffffff",
+        "bg_color": "#f6f5f3",
+        "quote": "A passion for Good Design & Quality Products",
+        "text": "<p>Tech Accessories Reimagined<br>Designed in Paris<br>Delivering Worldwide</p>",
+        "logo_width": 65,
         "padding_top": 60,
         "padding_bottom": 60
       }

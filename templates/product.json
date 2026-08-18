@@ -263,7 +263,7 @@
       ],
       "name": "Pill Marquee",
       "settings": {
-        "bg_color": "#D4CFB3",
+        "bg_color": "#d4cfb3",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -579,18 +579,6 @@
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
       }
-    },
-    "faq_with_images_9bEYkm": {
-      "type": "faq-with-images",
-      "name": "FAQ with Images",
-      "settings": {
-        "bg_color": "#f6f5f3",
-        "quote": "A passion for Good Design & Quality Products",
-        "text": "<p>Tech Accessories Reimagined<br>Designed in Paris<br>Delivering Worldwide</p>",
-        "logo_width": 65,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
@@ -602,7 +590,6 @@
     "testimonials_RUYBWp",
     "177282877365881db0",
     "related-products",
-    "sereluna_guarantee_section_AK3U7q",
-    "faq_with_images_9bEYkm"
+    "sereluna_guarantee_section_AK3U7q"
   ]
 }

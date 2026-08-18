@@ -11,6 +11,96 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "faq_with_images_dWncpn": {
+      "type": "faq-with-images",
+      "name": "Custom Info Banner",
+      "settings": {
+        "bg_color": "#f6f5f3",
+        "quote": "A passion for Good Design & Quality Products",
+        "text": "<p>Tech Accessories Reimagined<br>Designed in Paris<br>Delivering Worldwide</p>",
+        "logo_width": 65,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "instagram_gallery_jrn7kP": {
+      "type": "instagram-gallery",
+      "blocks": {
+        "image_ptiR6n": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_WFDVxM": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_BU6qpL": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_gnwqTC": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_6Q9dGy": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_Uc8f86": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_PmP4aQ": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "image_Wxw8jh": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ptiR6n",
+        "image_WFDVxM",
+        "image_BU6qpL",
+        "image_gnwqTC",
+        "image_6Q9dGy",
+        "image_Uc8f86",
+        "image_PmP4aQ",
+        "image_Wxw8jh"
+      ],
+      "name": "Social Auto-Slider",
+      "settings": {
+        "bg_color": "#ffffff",
+        "heading": "GEAR UP FOR GREAT DAYS",
+        "hashtag": "#HOLLOWSOCKS",
+        "show_facebook": true,
+        "facebook_link": "",
+        "show_instagram": true,
+        "instagram_link": "",
+        "show_tiktok": true,
+        "tiktok_link": "",
+        "autoplay_speed": 3,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -52,6 +142,8 @@
     }
   },
   "order": [
+    "faq_with_images_dWncpn",
+    "instagram_gallery_jrn7kP",
     "footer"
   ]
 }

@@ -1102,9 +1102,6 @@ nav-container:hover .header__menu-item .icon-caret {
     width: 24px !important;
     max-width: none !important;
     max-height: none !important;
-    object-fit: contain;
-    background-color: #FFFFFF;
-    border-radius: 4px;
     display: inline-block;
 }
 

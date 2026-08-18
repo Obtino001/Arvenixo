@@ -318,60 +318,6 @@
         "padding_bottom": 100
       }
     },
-    "washing_guide_JwqBHy": {
-      "type": "washing-guide",
-      "blocks": {
-        "category_QWpdXJ": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Active_MG_4608_e39cf02c-e83c-4cb9-945c-fd41bfdd100c.webp",
-            "title": "Covers",
-            "link": ""
-          }
-        },
-        "category_743MJV": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/bags.webp",
-            "title": "Bags",
-            "link": ""
-          }
-        },
-        "category_dRwE3A": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Rise_5271.jpg",
-            "title": "Category Name",
-            "link": ""
-          }
-        },
-        "category_R3zfiF": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/tech_review_3.jpg",
-            "title": "Category Name",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "category_QWpdXJ",
-        "category_743MJV",
-        "category_dRwE3A",
-        "category_R3zfiF"
-      ],
-      "name": "How to care for your electronics",
-      "settings": {
-        "bg_color": "#f6f5f0",
-        "heading": "How to care for your electronics",
-        "subheading": "Charge / Carry / Protect",
-        "text": "<p>We believe in 'Less but Better'. Better design, better quality. Meticulously considering every detail, even those you might never see, for an Elevated Experience.</p><p>Our commitment to using the best materials, plant-based and recycled whenever possible, ensures that our products not only meet the highest quality standards but also have a Reduced Environmental Impact.</p>",
-        "button_text": "See all Products",
-        "button_link": "",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "unique_features_YCBxQX": {
       "type": "unique-features",
       "blocks": {
@@ -596,7 +542,6 @@
     "main",
     "pill_marquee_KrybN8",
     "our_values_7aAqFj",
-    "washing_guide_JwqBHy",
     "unique_features_YCBxQX",
     "testimonials_qqDXbK",
     "177282877365881db0",

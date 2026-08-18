@@ -48,18 +48,7 @@
     text-align: center;
     margin-top: 40px;
   }
-  .custom-faq-image__button {
-    background-color: #0b2e21;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
-    border-radius: 2px;
-    font-size: 12px;
-  }
+
   
   @media screen and (max-width: 768px) {
     .custom-faq-image__left,
@@ -104,7 +93,7 @@
       
       {%- if section.settings.button_label != blank -%}
         <div class="custom-faq-image__footer">
-          <a href="{{ section.settings.button_link }}" class="custom-faq-image__button">
+          <a href="{{ section.settings.button_link }}" class="button button-primary">
             {{ section.settings.button_label }}
           </a>
         </div>

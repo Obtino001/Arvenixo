@@ -574,62 +574,6 @@
               {%- endfor -%}
             </ul>
           </nav>
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'drawer_promotion' -%}
-              <div class="header__drawer-promotion">
-                {% render 'card-countdown-promo', block: block %}
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
-
-          <style>
-           header-drawer .sereluna-guarantee-section { width: 100vw; max-width: 100%; display: flex; justify-content: center; padding-left: 15px; padding-right: 15px; box-sizing: border-box; overflow: hidden; }
-            .sereluna-banner-wrapper { position: relative; width: 100%; max-width: 1150px; border-radius: 24px; padding: 60px 20px; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250px; }
-            .sereluna-shape { position: absolute; z-index: 1; object-fit: contain; }
-            .shape-mobile { display: none; }
-            @media (max-width: 768px) { .shape-desktop { display: none; } .shape-mobile { display: block; } }
-            .sereluna-content-wrapper { position: relative; z-index: 2; max-width: 600px; width: 100%; display: flex; flex-direction: column; gap: 20px; }
-            .sereluna-block-heading { font-size: 32px; font-weight: 400; margin: 0; }
-            .sereluna-block-richtext { font-size: 14px; line-height: 1.6; margin: 0; }
-            .sereluna-block-richtext p { margin: 0 0 10px 0; }
-            .sereluna-block-richtext p:last-child { margin-bottom: 0; }
-            @media (max-width: 768px) { .sereluna-banner-wrapper { padding: 40px 15px; } .sereluna-block-heading { font-size: 26px; } }
-            #sereluna-guarantee-{{ section.id }} .shape-shape_UmiJpj { max-width: 200px; width: 100%; bottom: -52%; right: 0%; z-index: 2; }
-            @media screen and (max-width: 768px) { #sereluna-guarantee-{{ section.id }} .shape-shape_UmiJpj { max-width: 150px; bottom: -70%; right: 0%; z-index: 2; } }
-            #sereluna-guarantee-{{ section.id }} .shape-shape_4GGrP7 { max-width: 155px; width: 100%; top: -72%; right: 0%; z-index: 1; }
-            @media screen and (max-width: 768px) { #sereluna-guarantee-{{ section.id }} .shape-shape_4GGrP7 { max-width: 150px; top: -52%; right: -3%; z-index: 1; } }
-            #sereluna-guarantee-{{ section.id }} .shape-shape_RawXnN { max-width: 235px; width: 100%; top: 30%; left: 0%; z-index: 2; }
-            @media screen and (max-width: 768px) { #sereluna-guarantee-{{ section.id }} .shape-shape_RawXnN { max-width: 150px; top: 46%; left: 0%; z-index: 2; } }
-            #sereluna-guarantee-{{ section.id }} .shape-shape_8KtVnd { max-width: 270px; width: 100%; top: -18%; left: 0%; z-index: 1; }
-            @media screen and (max-width: 768px) { #sereluna-guarantee-{{ section.id }} .shape-shape_8KtVnd { max-width: 200px; top: -24%; left: 0%; z-index: 1; } }
-          </style>
-
-          <div id="sereluna-guarantee-{{ section.id }}" class="sereluna-guarantee-section">
-            <div class="sereluna-banner-wrapper color-{{ section.settings.color_scheme }} gradient">
-            <div class="sereluna-images-wrapper"><img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_30a24d96-0d9b-4704-800c-ba56b8143479.svg?v=1772995220&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_30a24d96-0d9b-4704-800c-ba56b8143479.svg?v=1772995220&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_30a24d96-0d9b-4704-800c-ba56b8143479.svg?v=1772995220&amp;width=400 400w" width="400" height="400" loading="lazy" class="sereluna-shape shape-desktop shape-shape_UmiJpj">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_1.svg?v=1772995774&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_1.svg?v=1772995774&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_244_1.svg?v=1772995774&amp;width=400 400w" width="400" height="400" loading="lazy" class="sereluna-shape shape-mobile shape-shape_UmiJpj">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_2.svg?v=1772995220&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_2.svg?v=1772995220&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_2.svg?v=1772995220&amp;width=400 400w" width="400" height="637" loading="lazy" class="sereluna-shape shape-desktop shape-shape_4GGrP7">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_3.svg?v=1772995773&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_3.svg?v=1772995773&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_243_3.svg?v=1772995773&amp;width=400 400w" width="400" height="416" loading="lazy" class="sereluna-shape shape-mobile shape-shape_4GGrP7">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_1.svg?v=1772995220&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_1.svg?v=1772995220&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_1.svg?v=1772995220&amp;width=400 400w" width="400" height="287" loading="lazy" class="sereluna-shape shape-desktop shape-shape_RawXnN">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_2.svg?v=1772995773&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_2.svg?v=1772995773&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_242_2.svg?v=1772995773&amp;width=400 400w" width="400" height="285" loading="lazy" class="sereluna-shape shape-mobile shape-shape_RawXnN">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_2.svg?v=1772995282&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_2.svg?v=1772995282&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_2.svg?v=1772995282&amp;width=400 400w" width="400" height="295" loading="lazy" class="sereluna-shape shape-desktop shape-shape_8KtVnd">
-<img src="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_3.svg?v=1772995842&amp;width=400" alt="" srcset="//sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_3.svg?v=1772995842&amp;width=352 352w, //sereluna1.myshopify.com/cdn/shop/files/Rectangle_241_3.svg?v=1772995842&amp;width=400 400w" width="400" height="219" loading="lazy" class="sereluna-shape shape-mobile shape-shape_8KtVnd">
-</div>
-
-              <div class="sereluna-content-wrapper">
-                {%- if section.settings.heading != blank -%}
-                  <h2 class="sereluna-block-heading">{{ section.settings.heading }}</h2>
-                {%- endif -%}
-                {%- if section.settings.text_1 != blank -%}
-                  <div class="sereluna-block-richtext">{{ section.settings.text_1 }}</div>
-                {%- endif -%}
-                {%- if section.settings.text_2 != blank -%}
-                  <div class="sereluna-block-richtext">{{ section.settings.text_2 }}</div>
-                {%- endif -%}
-              </div>
-            </div>
-          </div>
-        </div>
         {%- comment -%} --- DRAWER FOOTER --- {%- endcomment -%}
         {% if section.settings.drawer_show_footer %}
           <div class="sl-drawer-footer">

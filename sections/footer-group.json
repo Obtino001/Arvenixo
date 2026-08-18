@@ -11,22 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter_banner_qVCkXL": {
-      "type": "newsletter-banner",
-      "name": "Newsletter Banner",
-      "settings": {
-        "heading": "Subscribe to get 10% on your first order",
-        "text": "<p>You can unsubscribe to our newsletter anytime.</p>",
-        "button_label": "Subscribe",
-        "input_placeholder": "Enter Your Email",
-        "overlay_color": "#000000",
-        "image_overlay_opacity": 35,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0,
-        "margin_bottom": 100
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -74,7 +58,7 @@
       ],
       "settings": {
         "brand_image_width": 170,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": false,
@@ -90,7 +74,6 @@
     }
   },
   "order": [
-    "newsletter_banner_qVCkXL",
     "footer"
   ]
 }

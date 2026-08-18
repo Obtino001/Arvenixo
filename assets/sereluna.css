@@ -2907,7 +2907,6 @@ li.footer-payment-payments_QCqHQe {
     border-radius: inherit !important;
 }
 .button:not([disabled]):hover, .btn:not([disabled]):hover, .shopify-payment-button__button--unbranded:not([disabled]):hover {
-    transform: translateY(-3px) !important;
     transform: translateY(-4px) !important;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
 }

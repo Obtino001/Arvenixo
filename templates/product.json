@@ -484,105 +484,6 @@
         "padding_bottom": 28
       }
     },
-    "who_is_3wiWJQ": {
-      "type": "who-is",
-      "blocks": {
-        "shape_FaDrcg": {
-          "type": "shape",
-          "settings": {
-            "desktop_width": 30,
-            "desktop_top": -10,
-            "desktop_left": -10,
-            "mobile_width": 20,
-            "mobile_top": -10,
-            "mobile_left": -10
-          }
-        },
-        "shape_B6UMrA": {
-          "type": "shape",
-          "settings": {
-            "desktop_width": 30,
-            "desktop_top": -10,
-            "desktop_left": -10,
-            "mobile_width": 20,
-            "mobile_top": -10,
-            "mobile_left": -10
-          }
-        },
-        "heading_zCdyn8": {
-          "type": "heading",
-          "settings": {
-            "heading": "Who is Arvenixo?"
-          }
-        },
-        "text_PMYHW8": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Arvenixo is a premium tech brand founded in 2022. We've helped thousands of customers elevate their daily lives with high-end electronic gadgets and accessories.</p>"
-          }
-        },
-        "subheading_CNxnNH": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "What makes us best"
-          }
-        },
-        "feature_Bz6GzN": {
-          "type": "feature",
-          "settings": {
-            "title": "Fast delivery",
-            "text": "<p>We ship directly from our warehouse just outside Oslo.</p>"
-          }
-        },
-        "feature_eJTpKL": {
-          "type": "feature",
-          "settings": {
-            "title": "Easy payment",
-            "text": "<p>Shop safely with Vipps or Klarna — receive your products first and pay later.</p>"
-          }
-        },
-        "feature_Qrkb4b": {
-          "type": "feature",
-          "settings": {
-            "title": "Personal customer service",
-            "text": "<p>We offer top-quality customer support and are happy to help if you need to change size.</p>"
-          }
-        },
-        "feature_ixX89H": {
-          "type": "feature",
-          "settings": {
-            "title": "Trust & quality",
-            "text": "<p>We are a Norwegian company and naturally follow Norwegian consumer protection laws.</p>"
-          }
-        },
-        "button_qjmz6Y": {
-          "type": "button",
-          "settings": {
-            "button_label": "Learn More",
-            "button_link": "/"
-          }
-        }
-      },
-      "block_order": [
-        "shape_FaDrcg",
-        "shape_B6UMrA",
-        "heading_zCdyn8",
-        "text_PMYHW8",
-        "subheading_CNxnNH",
-        "feature_Bz6GzN",
-        "feature_eJTpKL",
-        "feature_Qrkb4b",
-        "feature_ixX89H",
-        "button_qjmz6Y"
-      ],
-      "name": "Who is Arvenixo",
-      "settings": {
-        "color_scheme": "",
-        "desktop_image_position": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "our_values_QwLmJa": {
       "type": "our-values",
       "blocks": {
@@ -651,7 +552,6 @@
     "testimonials_RUYBWp",
     "177282877365881db0",
     "related-products",
-    "who_is_3wiWJQ",
     "our_values_QwLmJa"
   ]
 }

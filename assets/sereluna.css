@@ -2688,3 +2688,9 @@ li.footer-payment-payments_QCqHQe {
     letter-spacing: 1px !important;
     text-align: center !important;
 }
+.product__description img,
+.rte img,
+.product-description img {
+    max-width: 100% !important;
+    height: auto !important;
+}

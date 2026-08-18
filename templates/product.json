@@ -430,6 +430,24 @@
     },
     "testimonials_RUYBWp": {
       "type": "testimonials",
+      "blocks": {
+        "image_NRUh6d": {
+          "type": "image",
+          "settings": {}
+        },
+        "review_gmgA9U": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        }
+      },
+      "block_order": [
+        "image_NRUh6d",
+        "review_gmgA9U"
+      ],
       "name": "Testimonial Slider",
       "settings": {
         "bg_color": "#f9f8f6",

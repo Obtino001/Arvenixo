@@ -120,13 +120,6 @@
             "benefit_6": ""
           }
         },
-        "text_e49ryr": {
-          "type": "text",
-          "settings": {
-            "text": "<em><strong>Note: </strong></em><em>The 60-day guarantee applies to new customers and covers one pair only.</em>",
-            "text_style": "subtitle"
-          }
-        },
         "faq_blocks_NkWNgc": {
           "type": "faq-blocks",
           "name": "Product Description",
@@ -188,7 +181,6 @@
         "buy_buttons",
         "delivery_payment_mB6BTN",
         "pills_xFGRwJ",
-        "text_e49ryr",
         "faq_blocks_NkWNgc",
         "faq_blocks_CkKVjD",
         "faq_blocks_FN9CnF",

@@ -641,61 +641,6 @@
         "padding_top": 100,
         "padding_bottom": 100
       }
-    },
-    "custom_faq_image_kWn8aU": {
-      "type": "custom-faq-image",
-      "blocks": {
-        "faq_LVeKKh": {
-          "type": "faq",
-          "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
-          }
-        },
-        "faq_9QNzGR": {
-          "type": "faq",
-          "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
-          }
-        },
-        "faq_yxhdi7": {
-          "type": "faq",
-          "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
-          }
-        },
-        "faq_fkTtaL": {
-          "type": "faq",
-          "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
-          }
-        },
-        "faq_iKJFHG": {
-          "type": "faq",
-          "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_LVeKKh",
-        "faq_9QNzGR",
-        "faq_yxhdi7",
-        "faq_fkTtaL",
-        "faq_iKJFHG"
-      ],
-      "name": "Image + FAQ",
-      "settings": {
-        "image": "shopify://shop_images/ax-newsletter-lifestyle.png",
-        "heading": "YOUR QUESTIONS\nANSWERED",
-        "bg_color": "#F6F5F0",
-        "button_label": "READ ALL FAQS",
-        "button_link": ""
-      }
     }
   },
   "order": [
@@ -708,7 +653,6 @@
     "177282877365881db0",
     "related-products",
     "who_is_3wiWJQ",
-    "our_values_QwLmJa",
-    "custom_faq_image_kWn8aU"
+    "our_values_QwLmJa"
   ]
 }

@@ -11,16 +11,58 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "faq_with_images_dWncpn": {
-      "type": "faq-with-images",
-      "name": "Custom Info Banner",
+    "custom_faq_image_BfYwwJ": {
+      "type": "custom-faq-image",
+      "blocks": {
+        "faq_HX4DNV": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
+          }
+        },
+        "faq_NFnayX": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
+          }
+        },
+        "faq_9FVwn6": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
+          }
+        },
+        "faq_tXW4aG": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
+          }
+        },
+        "faq_Qt4gnz": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HX4DNV",
+        "faq_NFnayX",
+        "faq_9FVwn6",
+        "faq_tXW4aG",
+        "faq_Qt4gnz"
+      ],
+      "name": "Image + FAQ",
       "settings": {
-        "bg_color": "#f6f5f3",
-        "quote": "A passion for Good Design & Quality Products",
-        "text": "<p>Tech Accessories Reimagined<br>Designed in Paris<br>Delivering only USA</p>",
-        "logo_width": 65,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "heading": "YOUR QUESTIONS\nANSWERED",
+        "bg_color": "#F6F5F0",
+        "button_label": "READ ALL FAQS",
+        "button_link": ""
       }
     },
     "instagram_gallery_jrn7kP": {
@@ -142,7 +184,7 @@
     }
   },
   "order": [
-    "faq_with_images_dWncpn",
+    "custom_faq_image_BfYwwJ",
     "instagram_gallery_jrn7kP",
     "footer"
   ]

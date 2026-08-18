@@ -67,6 +67,55 @@
         "text_alignment": "left"
       }
     },
+        "pill_marquee_KrybN8": {
+      "type": "pill-marquee",
+      "blocks": {
+        "badge_npDpFf": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/worldwide_shipping.avif",
+            "fallback_image_url": "",
+            "text": "Worldwide Shipping"
+          }
+        },
+        "badge_3QYtBW": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/Free_Return.avif",
+            "fallback_image_url": "",
+            "text": "30 Days Return"
+          }
+        },
+        "badge_VXCyAr": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/secure_payments.avif",
+            "fallback_image_url": "",
+            "text": "100% Secure Payments"
+          }
+        },
+        "badge_aDT3tR": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/warranty.avif",
+            "fallback_image_url": "",
+            "text": "International Warranty"
+          }
+        }
+      },
+      "block_order": [
+        "badge_npDpFf",
+        "badge_3QYtBW",
+        "badge_VXCyAr",
+        "badge_aDT3tR"
+      ],
+      "name": "Pill Marquee",
+      "settings": {
+        "bg_color": "#f6f5f0",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "collections_tabs_X6mbxf": {
       "type": "collections-tabs",
       "blocks": {
@@ -344,6 +393,7 @@
   },
   "order": [
     "custom_banner_XE8idV",
+     "pill_marquee_KrybN8",
     "collections_tabs_X6mbxf",
     "testimonials_qqDXbK",
     "who_is_fRJAyc"

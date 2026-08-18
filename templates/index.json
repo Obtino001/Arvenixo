@@ -231,7 +231,19 @@
           "type": "image",
           "settings": {}
         },
+        "image_BUjmnf": {
+          "type": "image",
+          "settings": {}
+        },
         "review_ntN3QL": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
+        "review_iMUAV3": {
           "type": "review",
           "settings": {
             "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
@@ -249,7 +261,9 @@
         "review_ACeL33",
         "image_AjbtaL",
         "image_AQn3KJ",
-        "review_ntN3QL"
+        "image_BUjmnf",
+        "review_ntN3QL",
+        "review_iMUAV3"
       ],
       "name": "Masonry Reviews",
       "settings": {

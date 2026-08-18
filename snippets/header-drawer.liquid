@@ -574,13 +574,6 @@
               {%- endfor -%}
             </ul>
           </nav>
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'drawer_promotion' -%}
-              <div class="header__drawer-promotion">
-                {% render 'card-countdown-promo', block: block %}
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
 
           <style>
            header-drawer .sereluna-guarantee-section { width: 100vw; max-width: 100%; display: flex; justify-content: center; padding-left: 15px; padding-right: 15px; box-sizing: border-box; overflow: hidden; }

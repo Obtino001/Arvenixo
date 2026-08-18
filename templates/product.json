@@ -15,12 +15,12 @@
         "product_reviews_XX9YT4": {
           "type": "product-reviews",
           "settings": {
-            "flow_image": "shopify://shop_images/Frame_6_1.svg",
             "flow_text": "Premium Electronics",
-            "star_image": "shopify://shop_images/Group_15_1.svg",
+            "flow_bg_color": "#f6f5f0",
             "star_width": 70,
             "review_text": "4.7 (92 Reviews)",
             "link_url": "",
+            "text_color": "#000000",
             "margin_top": 0,
             "margin_bottom": 10
           }
@@ -43,15 +43,12 @@
         "multi_icon_xn8fhg": {
           "type": "multi-icon",
           "settings": {
-            "icon-1": "shopify://shop_images/Group_1413372244_1.svg",
             "icon_size_1": 46,
             "icon_size_m_1": 30,
             "text-1": "High Performance",
-            "icon-2": "shopify://shop_images/Group_1413372203.svg",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
             "text-2": "High Performance",
-            "icon-3": "shopify://shop_images/Group_1413372205.svg",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
             "text-3": "High Performance",
@@ -67,8 +64,10 @@
             "size_guide_page": true,
             "trigger_tag": "størrelse",
             "trigger_label": "Size Guide",
+            "color_primary": "#282828",
+            "color_secondary": "#282828",
+            "color_tertiary": "#f6f5f0",
             "title": "Size Guide",
-            "avatar_image": "shopify://shop_images/hugeicons_tape-measure_1e87abb3-f8e9-47c7-9231-bdd211d9ea0c.svg",
             "show_xs": true,
             "val_xs_int": "34 - 36",
             "val_xs_cm": "88 - 93",
@@ -91,8 +90,7 @@
             "bullet_1": "Check the detailed tech specs.",
             "bullet_2": "Ensure compatibility before purchase.",
             "bullet_3": "Contact support if you need help.",
-            "note_text": "If you need help choosing, please reach out to us.",
-            "illustration_image": "shopify://shop_images/273a1e4e69c294daf57dd3c454855697f92de761.png"
+            "note_text": "If you need help choosing, please reach out to us."
           }
         },
         "buy_buttons": {
@@ -112,6 +110,7 @@
         "pills_xFGRwJ": {
           "type": "pills",
           "settings": {
+            "text_color": "#282828",
             "custom_svg": "",
             "benefit_1": "Waterproof",
             "benefit_2": "2 Year Warranty",
@@ -132,7 +131,6 @@
           "type": "faq-blocks",
           "name": "Product Description",
           "settings": {
-            "custom_image": "shopify://shop_images/material-symbols-light_description-outline-rounded.svg",
             "question": "Product Description",
             "faq_content_type": "product_description",
             "answer": ""
@@ -142,7 +140,6 @@
           "type": "faq-blocks",
           "name": "Materials & Care",
           "settings": {
-            "custom_image": "shopify://shop_images/material-symbols-light_info-outline.svg",
             "question": "Materials & Care",
             "faq_content_type": "manual",
             "answer": ""
@@ -152,7 +149,6 @@
           "type": "faq-blocks",
           "name": "Shipping",
           "settings": {
-            "custom_image": "shopify://shop_images/Group_15.svg",
             "question": "Shipping",
             "faq_content_type": "manual",
             "answer": ""
@@ -162,7 +158,6 @@
           "type": "faq-blocks",
           "name": "Size Guide",
           "settings": {
-            "custom_image": "shopify://shop_images/hugeicons_tape-measure_1e87abb3-f8e9-47c7-9231-bdd211d9ea0c.svg",
             "question": "Size Guide",
             "faq_content_type": "manual",
             "answer": ""
@@ -227,66 +222,46 @@
     "pill_marquee_KrybN8": {
       "type": "pill-marquee",
       "blocks": {
-        "text_block_b6iPNf": {
-          "type": "text_block",
+        "badge_npDpFf": {
+          "type": "badge",
           "settings": {
-            "text": "Fast Shipping",
-            "icon": "teardrop"
+            "fallback_image_url": "",
+            "text": ""
           }
         },
-        "text_block_xgeQG7": {
-          "type": "text_block",
+        "badge_3QYtBW": {
+          "type": "badge",
           "settings": {
-            "text": "Eco-Friendly Tech",
-            "icon": "panties"
+            "fallback_image_url": "",
+            "text": ""
           }
         },
-        "text_block_VKdEXN": {
-          "type": "text_block",
+        "badge_VXCyAr": {
+          "type": "badge",
           "settings": {
-            "text": "Secure Checkout",
-            "icon": "teardrop"
+            "fallback_image_url": "",
+            "text": ""
           }
         },
-        "text_block_YnzgBT": {
-          "type": "text_block",
+        "badge_aDT3tR": {
+          "type": "badge",
           "settings": {
-            "text": "24/7 Tech Support",
-            "icon": "panties"
-          }
-        },
-        "text_block_YP8Bfx": {
-          "type": "text_block",
-          "settings": {
-            "text": "Premium Quality",
-            "icon": "teardrop"
-          }
-        },
-        "text_block_fVYQ6d": {
-          "type": "text_block",
-          "settings": {
-            "text": "Satisfaction Guaranteed",
-            "icon": "panties"
+            "fallback_image_url": "",
+            "text": ""
           }
         }
       },
       "block_order": [
-        "text_block_b6iPNf",
-        "text_block_xgeQG7",
-        "text_block_VKdEXN",
-        "text_block_YnzgBT",
-        "text_block_YP8Bfx",
-        "text_block_fVYQ6d"
+        "badge_npDpFf",
+        "badge_3QYtBW",
+        "badge_VXCyAr",
+        "badge_aDT3tR"
       ],
       "name": "Pill Marquee",
       "settings": {
-        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-        "scroll_speed": 30,
-        "font_size": 16,
+        "bg_color": "#fdfcf9",
         "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20
+        "padding_bottom": 40
       }
     },
     "rich_text_a4qhbw": {
@@ -331,7 +306,6 @@
             "heading": "1. High Performance",
             "heading_size": "h4",
             "text": "<p>Equipped with the latest processors and top-tier specifications.</p>",
-            "custom_icon_image": "shopify://shop_images/Group_1413372230.svg",
             "icon_width": 85,
             "icon": "none",
             "padding_top": 0,
@@ -347,7 +321,6 @@
             "heading": "2. Long Lasting Battery",
             "heading_size": "h4",
             "text": "<p>Designed to last all day so you can work and play without interruption.</p>",
-            "custom_icon_image": "shopify://shop_images/Group_1413372231.svg",
             "icon_width": 85,
             "icon": "none",
             "padding_top": 0,
@@ -363,7 +336,6 @@
             "heading": "3. Premium Build Quality",
             "heading_size": "h4",
             "text": "<p>Crafted from durable materials ensuring your devices withstand everyday wear and tear.</p>",
-            "custom_icon_image": "shopify://shop_images/Group_1413372232.svg",
             "icon_width": 85,
             "icon": "none",
             "padding_top": 0,
@@ -379,7 +351,6 @@
             "heading": "4. Sleek and Modern Design",
             "heading_size": "h4",
             "text": "<p>Aesthetics matter. Our products boast modern designs that look great anywhere.</p>",
-            "custom_icon_image": "shopify://shop_images/Group_1413372232.svg",
             "icon_width": 85,
             "icon": "none",
             "padding_top": 0,
@@ -409,7 +380,6 @@
       "name": "Image with contents",
       "settings": {
         "media": "image",
-        "image": "shopify://shop_images/839185c2a1a0f1e8b3be63e2908d4dcb262b7de7.jpg",
         "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -430,7 +400,6 @@
         "step_F3PJBN": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/49fbcd3648ddd0b9e6ad45f1881cedc06eb95752.png",
             "title": "Keep away from moisture",
             "text": "<p>Water and electronics don't mix. Keep devices dry.</p>"
           }
@@ -438,7 +407,6 @@
         "step_cpAcfU": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/877b5b9d56852a601449d66adbbee643996147f8.png",
             "title": "Clean with microfiber",
             "text": "<p>Gently wipe screens and surfaces with a soft, dry microfiber cloth.</p>"
           }
@@ -446,7 +414,6 @@
         "step_JptjTA": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/55768e876b712375fd0845b6eb74a777b96408ef.png",
             "title": "Avoid direct heat",
             "text": "<p>Do not expose devices to direct sunlight or extreme heat sources.</p>"
           }
@@ -461,6 +428,7 @@
       "settings": {
         "color_scheme": "",
         "card_color_scheme": "scheme-3",
+        "accent_color": "#282828",
         "heading": "How to care for your electronics",
         "note_text": "!Note: Please do not use harsh chemicals on screens as they can damage the anti-reflective coating.",
         "padding_top": 60,
@@ -473,7 +441,6 @@
         "feature_3FqJ9D": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_1413372222_aa80ca08-c439-4ef9-8cc9-5bce97f9f60b.svg",
             "icon_width": 65,
             "title": "Top Global Brands",
             "text": "We bring you the most trusted electronics brands worldwide."
@@ -482,7 +449,6 @@
         "feature_TfTYCV": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_1413372215.svg",
             "icon_width": 65,
             "title": "Comprehensive Warranty",
             "text": "Your purchases are protected with up to 2 years of warranty."
@@ -491,7 +457,6 @@
         "feature_rp8MLg": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_1413372242_08b07af3-de28-4c6e-838d-5e7c6dd239a3.svg",
             "icon_width": 65,
             "title": "Expert Tech Support",
             "text": "Our specialists are ready to help you with any issues."
@@ -500,7 +465,6 @@
         "feature_FfLgjG": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Vector_71.svg",
             "icon_width": 65,
             "title": "Secure Payments",
             "text": "Multiple secure payment gateways to keep your data safe."
@@ -509,7 +473,6 @@
         "feature_WwiqwD": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_1413372221.svg",
             "icon_width": 65,
             "title": "Fast Worldwide Shipping",
             "text": "Receive your electronics quickly, no matter where you are."
@@ -518,7 +481,6 @@
         "feature_wGHEmh": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_1_e03e20aa-4376-4d78-9733-930a67e62ad8.svg",
             "icon_width": 65,
             "title": "30-Day Return Policy",
             "text": "Not satisfied? Return it within 30 days for a full refund."
@@ -546,109 +508,21 @@
       "settings": {
         "color_scheme": "scheme-1",
         "heading": "Why shop with Arvenixo",
-        "wave_image": "shopify://shop_images/Rectangle_207.svg",
         "wave_top_pos": 75,
         "wave_opacity": 100,
-        "center_image": "shopify://shop_images/e3afad0f01078a6a5ae7c9453afb4c46d6b62915.jpg",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
     "testimonials_RUYBWp": {
       "type": "testimonials",
-      "blocks": {
-        "testimonial_KJJnfR": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_U9znP3": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_LHpaqN": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_drJFCa": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_zxytm7": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_P3U7Un": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_WygERQ": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        },
-        "testimonial_fd8rqn": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Anna H.",
-            "stars": 5,
-            "content": "Incredible selection of laptops! Delivery was lightning fast."
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_KJJnfR",
-        "testimonial_U9znP3",
-        "testimonial_LHpaqN",
-        "testimonial_drJFCa",
-        "testimonial_zxytm7",
-        "testimonial_P3U7Un",
-        "testimonial_WygERQ",
-        "testimonial_fd8rqn"
-      ],
       "name": "Testimonial Slider",
       "settings": {
-        "color_scheme": "",
-        "card_color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-        "seen_in_text": "As seen in",
-        "seen_in_logos": "shopify://shop_images/image_2.png",
-        "seen_in_logos_2": "shopify://shop_images/vg-no-logo-vector_1.png",
+        "bg_color": "#f9f8f6",
+        "show_header_stars": true,
         "heading": "What our customers say",
-        "subheading": "<p>Rated 4.8 out of 5 Stars (466 Reviews) on</p>",
-        "rating_logo": "shopify://shop_images/3ae3b0124412cc868b2c6cca19b191d2e858b626.png",
-        "btn_text": "View All",
-        "btn_link": "",
-        "speed": 120,
-        "direction": "normal",
-        "pause_on_hover": true,
-        "card_width_desktop": 350,
-        "card_width_mobile": 280,
+        "button_text": "READ MORE REVIEWS",
+        "button_link": "",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -683,8 +557,6 @@
         "shape_UmiJpj": {
           "type": "shape",
           "settings": {
-            "image_desktop": "shopify://shop_images/Rectangle_244_30a24d96-0d9b-4704-800c-ba56b8143479.svg",
-            "image_mobile": "shopify://shop_images/Rectangle_244_1.svg",
             "width_desktop": 200,
             "width_mobile": 150,
             "vertical_alignment": "bottom",
@@ -699,8 +571,6 @@
         "shape_4GGrP7": {
           "type": "shape",
           "settings": {
-            "image_desktop": "shopify://shop_images/Rectangle_243_2.svg",
-            "image_mobile": "shopify://shop_images/Rectangle_243_3.svg",
             "width_desktop": 155,
             "width_mobile": 150,
             "vertical_alignment": "top",
@@ -715,8 +585,6 @@
         "shape_RawXnN": {
           "type": "shape",
           "settings": {
-            "image_desktop": "shopify://shop_images/Rectangle_242_1.svg",
-            "image_mobile": "shopify://shop_images/Rectangle_242_2.svg",
             "width_desktop": 235,
             "width_mobile": 150,
             "vertical_alignment": "top",
@@ -731,8 +599,6 @@
         "shape_8KtVnd": {
           "type": "shape",
           "settings": {
-            "image_desktop": "shopify://shop_images/Rectangle_241_2.svg",
-            "image_mobile": "shopify://shop_images/Rectangle_241_3.svg",
             "width_desktop": 270,
             "width_mobile": 200,
             "vertical_alignment": "top",
@@ -823,12 +689,8 @@
       "settings": {
         "color_scheme": "",
         "heading": "Frequently asked questions",
-        "image_l1": "shopify://shop_images/14baa852027472691b3fce8f880e4cfbb3c6c4f0.jpg",
-        "image_l2": "shopify://shop_images/1880a1dfd3669a052c150a7a0add01ab1ad26659.jpg",
-        "image_l3": "shopify://shop_images/304d5baf558bd9c1e00b918bb6cb973c705d946e.jpg",
-        "image_r1": "shopify://shop_images/9641a96e670db7e00917d4f46a995736a56cdc01_1.jpg",
-        "image_r2": "shopify://shop_images/14baa852027472691b3fce8f880e4cfbb3c6c4f0.jpg",
-        "image_r3": "shopify://shop_images/304d5baf558bd9c1e00b918bb6cb973c705d946e.jpg",
+        "accordion_bg": "#282828",
+        "accordion_text": "#ffffff",
         "padding_top": 60,
         "padding_bottom": 60
       }

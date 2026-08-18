@@ -29,24 +29,25 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   }
 
-  /* The Grid Setup */
-  .comparison-grid-{{ section.id }} {
-    display: grid;
-    grid-template-columns: 1.2fr 1.6fr 1.2fr 1.2fr; /* Ratios based on the image */
+  /* 
+    FIX: Relative wrapper holds the absolute highlight background 
+    so it doesn't break the CSS Grid auto-flow.
+  */
+  .comparison-inner-relative-{{ section.id }} {
     position: relative;
     z-index: 1;
   }
 
-  /* Highlight Column Background (Overlaps top/bottom) */
+  /* Deep Highlight Background Box (Absolutely Positioned) */
   .comparison-highlight-bg-{{ section.id }} {
-    grid-column: 2;
-    grid-row: 1 / -1; /* Spans all rows in the grid */
+    position: absolute;
+    top: -30px;
+    bottom: -20px;
+    left: 22%;      /* Matches column 2 start */
+    width: 34%;     /* Matches column 2 width */
     background-color: #222222;
     border-radius: 12px;
-    position: relative;
-    z-index: 1;
-    margin-top: -30px;
-    margin-bottom: -30px;
+    z-index: -1;    /* Sits perfectly behind the text */
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     overflow: hidden;
   }
@@ -61,65 +62,79 @@
     opacity: 0.9;
   }
 
+  /* The Grid Setup */
+  .comparison-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 22% 34% 22% 22%; /* Exact column widths */
+    z-index: 1;
+  }
+
   /* Individual Cells */
   .comparison-cell-{{ section.id }} {
     padding: 25px 20px;
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 2;
   }
 
-  /* Borders between rows (skipping the highlight column) */
+  /* Borders between rows */
   .col-1-{{ section.id }}, 
   .col-3-{{ section.id }}, 
   .col-4-{{ section.id }} {
     border-bottom: 1px solid rgba(0,0,0,0.15);
   }
+  
+  .comparison-last-row-{{ section.id }} {
+    border-bottom: none !important;
+  }
 
   /* Header specific styling */
   .comparison-header-{{ section.id }} {
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-size: clamp(20px, 2.5vw, 28px);
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #1a1a1a;
     padding-top: 10px;
     padding-bottom: 25px;
     line-height: 1;
+    margin: 0;
   }
   
   .col-1-{{ section.id }}.comparison-header-{{ section.id }} {
+    color: #1a1a1a;
     justify-content: flex-start;
-  }
-
-  .col-2-{{ section.id }}.comparison-header-{{ section.id }},
-  .col-3-{{ section.id }}.comparison-header-{{ section.id }},
-  .col-4-{{ section.id }}.comparison-header-{{ section.id }} {
-    justify-content: center;
-    text-align: center;
   }
 
   .col-2-{{ section.id }}.comparison-header-{{ section.id }} {
     color: #ffffff;
+    justify-content: center;
+    text-align: center;
   }
 
-  /* Row Text Styling */
+  .col-3-{{ section.id }}.comparison-header-{{ section.id }},
+  .col-4-{{ section.id }}.comparison-header-{{ section.id }} {
+    color: #1a1a1a;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Row Feature Title */
   .comparison-feature-name-{{ section.id }} {
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #1a1a1a;
   }
 
+  /* Text & Icon Wrapper */
   .comparison-desc-wrap-{{ section.id }} {
     display: flex;
     align-items: center;
     gap: 12px;
     width: 100%;
+    justify-content: flex-start;
   }
 
   .comparison-icon-{{ section.id }} {
@@ -142,7 +157,6 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #1a1a1a;
     line-height: 1.4;
   }
 
@@ -150,10 +164,15 @@
     color: #ffffff;
   }
 
+  .col-3-{{ section.id }} .comparison-desc-text-{{ section.id }},
+  .col-4-{{ section.id }} .comparison-desc-text-{{ section.id }} {
+    color: #1a1a1a;
+  }
+
   /* Footer Guarantee Row */
   .comparison-footer-row-{{ section.id }} {
-    padding-top: 40px;
-    padding-bottom: 15px;
+    padding-top: 35px;
+    padding-bottom: 10px;
     justify-content: center;
     text-align: center;
   }
@@ -167,21 +186,15 @@
     color: #ffffff;
   }
 
-  /* Remove borders from the very last feature row to match design */
-  .comparison-last-row-{{ section.id }} {
-    border-bottom: none !important;
-  }
-
-  /* Mobile Handling - Horizontal Scroll */
+  /* Mobile Handling */
   @media screen and (max-width: 900px) {
     .custom-comparison-card-{{ section.id }} {
       padding: 40px 20px;
       overflow-x: auto;
       border-radius: 0;
     }
-    
-    .comparison-grid-{{ section.id }} {
-      min-width: 850px; /* Forces standard desktop layout and enables scrolling */
+    .comparison-inner-relative-{{ section.id }} {
+      min-width: 850px; /* Forces layout and enables touch scrolling */
       margin: 20px 0;
     }
   }
@@ -197,84 +210,91 @@
   <div class="page-width">
     <div class="custom-comparison-card-{{ section.id }}">
       
-      <div class="comparison-grid-{{ section.id }}">
+      <div class="comparison-inner-relative-{{ section.id }}">
         
-        <!-- Deep Highlight Background Box -->
+        <!-- Background Box (Now Absolute so it won't break grid) -->
         <div class="comparison-highlight-bg-{{ section.id }}">
           {% if section.settings.highlight_bg_image != blank %}
             {{ section.settings.highlight_bg_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
           {% endif %}
         </div>
 
-        <!-- HEADERS -->
-        <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-header-{{ section.id }}">
-          {{ section.settings.header_1 }}
-        </div>
-        <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-header-{{ section.id }}">
-          {{ section.settings.header_2 }}
-        </div>
-        <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-header-{{ section.id }}">
-          {{ section.settings.header_3 }}
-        </div>
-        <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-header-{{ section.id }}">
-          {{ section.settings.header_4 }}
-        </div>
+        <div class="comparison-grid-{{ section.id }}">
+          
+          <!-- HEADERS -->
+          <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-header-{{ section.id }}">
+            {{ section.settings.header_1 }}
+          </div>
+          <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-header-{{ section.id }}">
+            {{ section.settings.header_2 }}
+          </div>
+          <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-header-{{ section.id }}">
+            {{ section.settings.header_3 }}
+          </div>
+          <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-header-{{ section.id }}">
+            {{ section.settings.header_4 }}
+          </div>
 
-        <!-- ROWS -->
-        {% for block in section.blocks %}
-          {% assign is_last = forloop.last %}
-          
-          <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}" {{ block.shopify_attributes }}>
-            <span class="comparison-feature-name-{{ section.id }}">{{ block.settings.title }}</span>
-          </div>
-          
-          <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }}">
-            <div class="comparison-desc-wrap-{{ section.id }}">
-              <div class="comparison-icon-{{ section.id }}">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#ffffff"/>
-                  <path d="M7 12.5L10.5 16L17 8" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_2_text }}</span>
+          <!-- ROWS -->
+          {% for block in section.blocks %}
+            {% assign is_last = forloop.last %}
+            
+            <!-- Column 1 -->
+            <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}" {{ block.shopify_attributes }}>
+              <span class="comparison-feature-name-{{ section.id }}">{{ block.settings.title }}</span>
             </div>
-          </div>
-          
-          <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
-            <div class="comparison-desc-wrap-{{ section.id }}">
-              <div class="comparison-icon-{{ section.id }}">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#333333"/>
-                  <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            
+            <!-- Column 2 (Highlight) -->
+            <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }}">
+              <div class="comparison-desc-wrap-{{ section.id }}">
+                <div class="comparison-icon-{{ section.id }}">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#ffffff"/>
+                    <path d="M7 12.5L10.5 16L17 8" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_2_text }}</span>
               </div>
-              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_3_text }}</span>
             </div>
-          </div>
-          
-          <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
-            <div class="comparison-desc-wrap-{{ section.id }}">
-              <div class="comparison-icon-{{ section.id }}">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#333333"/>
-                  <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            
+            <!-- Column 3 -->
+            <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
+              <div class="comparison-desc-wrap-{{ section.id }}">
+                <div class="comparison-icon-{{ section.id }}">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#333333"/>
+                    <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_3_text }}</span>
               </div>
-              <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_4_text }}</span>
             </div>
-          </div>
-        {% endfor %}
+            
+            <!-- Column 4 -->
+            <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} {% if is_last %}comparison-last-row-{{ section.id }}{% endif %}">
+              <div class="comparison-desc-wrap-{{ section.id }}">
+                <div class="comparison-icon-{{ section.id }}">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#333333"/>
+                    <path d="M8 8L16 16M16 8L8 16" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <span class="comparison-desc-text-{{ section.id }}">{{ block.settings.col_4_text }}</span>
+              </div>
+            </div>
+          {% endfor %}
 
-        <!-- FOOTER ROW (Inside Highlight Box Only) -->
-        <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
-        <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-footer-row-{{ section.id }}">
-          {% if section.settings.guarantee_text != blank %}
-            <span class="comparison-footer-text-{{ section.id }}">{{ section.settings.guarantee_text | newline_to_br }}</span>
-          {% endif %}
+          <!-- FOOTER ROW (Inside Highlight Box Only) -->
+          <div class="comparison-cell-{{ section.id }} col-1-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+          <div class="comparison-cell-{{ section.id }} col-2-{{ section.id }} comparison-footer-row-{{ section.id }}">
+            {% if section.settings.guarantee_text != blank %}
+              <span class="comparison-footer-text-{{ section.id }}">{{ section.settings.guarantee_text | newline_to_br }}</span>
+            {% endif %}
+          </div>
+          <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+          <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
+
         </div>
-        <div class="comparison-cell-{{ section.id }} col-3-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
-        <div class="comparison-cell-{{ section.id }} col-4-{{ section.id }} comparison-last-row-{{ section.id }}"></div>
-
       </div>
 
     </div>

@@ -475,64 +475,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "our_values_QwLmJa": {
-      "type": "our-values",
-      "blocks": {
-        "row_MYfKPP": {
-          "type": "row",
-          "settings": {
-            "title": "Moisture Control",
-            "col_2_text": "Naturally repels water",
-            "col_3_text": "Absorbs sweat, gets heavy",
-            "col_4_text": "Stays wet for hours"
-          }
-        },
-        "row_4GtwHH": {
-          "type": "row",
-          "settings": {
-            "title": "Heat Performance",
-            "col_2_text": "Stays cool in 100° heat",
-            "col_3_text": "Traps heat, feels itchy",
-            "col_4_text": "Turns into a sweat pool"
-          }
-        },
-        "row_aqiFDK": {
-          "type": "row",
-          "settings": {
-            "title": "Odor Control",
-            "col_2_text": "Zero Funk",
-            "col_3_text": "A little funk",
-            "col_4_text": "A lot of funk"
-          }
-        },
-        "row_4er4q6": {
-          "type": "row",
-          "settings": {
-            "title": "Durability",
-            "col_2_text": "12-18 Months",
-            "col_3_text": "8-12 Months",
-            "col_4_text": "3-6 Months"
-          }
-        }
-      },
-      "block_order": [
-        "row_MYfKPP",
-        "row_4GtwHH",
-        "row_aqiFDK",
-        "row_4er4q6"
-      ],
-      "name": "Comparison Table 1:1",
-      "settings": {
-        "card_bg_color": "#f8f7f4",
-        "header_1": "US VS. THEM",
-        "header_2": "ALPACA",
-        "header_3": "WOOL",
-        "header_4": "COTTON",
-        "guarantee_text": "BACKED BY OUR 99 DAY\nGUARANTEE",
-        "padding_top": 100,
-        "padding_bottom": 100
-      }
     }
   },
   "order": [
@@ -543,7 +485,6 @@
     "unique_features_YCBxQX",
     "testimonials_RUYBWp",
     "177282877365881db0",
-    "related-products",
-    "our_values_QwLmJa"
+    "related-products"
   ]
 }

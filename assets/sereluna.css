@@ -2890,11 +2890,11 @@ li.footer-payment-payments_QCqHQe {
     height: auto !important;
 }
 
-.header-transparent localization-form .localization-form__select,
-.header-transparent localization-form button {
+.header-transparent:not(.header-scrolled):not(.header-hovered) localization-form .localization-form__select,
+.header-transparent:not(.header-scrolled):not(.header-hovered) localization-form button {
     color: #ffffff !important;
 }
-.header-transparent localization-form svg {
+.header-transparent:not(.header-scrolled):not(.header-hovered) localization-form svg {
     fill: #ffffff !important;
     stroke: #ffffff !important;
 }
@@ -2910,4 +2910,31 @@ li.footer-payment-payments_QCqHQe {
 .button:not([disabled]):active, .btn:not([disabled]):active, .shopify-payment-button__button--unbranded:not([disabled]):active {
     transform: translateY(-1px) !important;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* WOC Scroll Animations */
+.woc-anim {
+  --woc-y: 30px;
+  --woc-duration: 0.8s;
+  --woc-delay: 0s;
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity var(--woc-duration) ease var(--woc-delay), transform var(--woc-duration) cubic-bezier(0.215, 0.61, 0.355, 1) var(--woc-delay);
+}
+.woc-anim--up {
+  transform: translateY(var(--woc-y));
+}
+.woc-anim--fade {
+  transform: none;
+}
+.woc-anim--in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .woc-anim {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

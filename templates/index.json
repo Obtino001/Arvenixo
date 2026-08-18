@@ -184,42 +184,6 @@
         "padding_bottom": 36
       }
     },
-    "guarantee_section": {
-      "type": "sereluna-guarantee-section",
-      "blocks": {
-        "heading_3zUj3k": {
-          "type": "heading",
-          "settings": {
-            "title": "Shop with Confidence"
-          }
-        },
-        "description_iMjCqF": {
-          "type": "description",
-          "settings": {
-            "text": "<p>Your satisfaction is our priority.<br/>If you are not entirely happy with your electronics purchase, our 30-day return policy guarantees a hassle-free experience.</p>"
-          }
-        },
-        "description_HaCbwR": {
-          "type": "description",
-          "settings": {
-            "text": "<p>We provide full tech support to help you get the most out of your devices.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_3zUj3k",
-        "description_iMjCqF",
-        "description_HaCbwR"
-      ],
-      "name": "Store Guarantee Banner",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
-      }
-    },
     "testimonials_qqDXbK": {
       "type": "testimonials",
       "blocks": {
@@ -303,7 +267,6 @@
     "custom_banner_XE8idV",
     "collections_tabs_X6mbxf",
     "unique_features_YCBxQX",
-    "guarantee_section",
     "testimonials_qqDXbK"
   ]
 }

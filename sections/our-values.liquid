@@ -29,10 +29,7 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   }
 
-  /* 
-    FIX: Relative wrapper holds the absolute highlight background 
-    so it doesn't break the CSS Grid auto-flow.
-  */
+  /* Relative wrapper holds the absolute highlight background */
   .comparison-inner-relative-{{ section.id }} {
     position: relative;
     z-index: 1;
@@ -42,7 +39,7 @@
   .comparison-highlight-bg-{{ section.id }} {
     position: absolute;
     top: -30px;
-    bottom: -20px;
+    bottom: -35px;  /* Extended slightly to ensure footer text is covered */
     left: 22%;      /* Matches column 2 start */
     width: 34%;     /* Matches column 2 width */
     background-color: #222222;
@@ -52,7 +49,9 @@
     overflow: hidden;
   }
 
-  .comparison-highlight-bg-{{ section.id }} img {
+  /* Apply same styling to both Image and Video */
+  .comparison-highlight-bg-{{ section.id }} img,
+  .comparison-highlight-bg-{{ section.id }} video {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,6 +59,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0.9;
+    pointer-events: none; /* Prevents users from pausing/clicking the video */
   }
 
   /* The Grid Setup */
@@ -171,8 +171,8 @@
 
   /* Footer Guarantee Row */
   .comparison-footer-row-{{ section.id }} {
-    padding-top: 35px;
-    padding-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     justify-content: center;
     text-align: center;
   }
@@ -204,7 +204,8 @@
   
   <!-- Main Background Image -->
   {% if section.settings.bg_image != blank %}
-    {{ section.settings.bg_image | image_url: width: 2000 | image_tag: class: 'custom-comparison-bg-' | append: section.id, loading: 'lazy' }}
+    {% assign bg_class = 'custom-comparison-bg-' | append: section.id %}
+    {{ section.settings.bg_image | image_url: width: 2000 | image_tag: class: bg_class, loading: 'lazy' }}
   {% endif %}
 
   <div class="page-width">
@@ -212,9 +213,15 @@
       
       <div class="comparison-inner-relative-{{ section.id }}">
         
-        <!-- Background Box (Now Absolute so it won't break grid) -->
+        <!-- Background Highlight Box (Video or Image) -->
         <div class="comparison-highlight-bg-{{ section.id }}">
-          {% if section.settings.highlight_bg_image != blank %}
+          {% if section.settings.highlight_bg_video != blank %}
+            <video autoplay loop muted playsinline>
+              {% for source in section.settings.highlight_bg_video.sources %}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {% endfor %}
+            </video>
+          {% elsif section.settings.highlight_bg_image != blank %}
             {{ section.settings.highlight_bg_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
           {% endif %}
         </div>
@@ -317,9 +324,18 @@
       "default": "#f8f7f4"
     },
     {
+      "type": "header",
+      "content": "Highlight Column Background"
+    },
+    {
+      "type": "video",
+      "id": "highlight_bg_video",
+      "label": "Highlight Video (Autoplays, Replaces Image)"
+    },
+    {
       "type": "image_picker",
       "id": "highlight_bg_image",
-      "label": "Highlight Column Background Image (Dark Texture)"
+      "label": "Highlight Image (Fallback if no video)"
     },
     {
       "type": "header",

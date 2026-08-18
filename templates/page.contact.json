@@ -1,11 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "custom-banner",
       "settings": {
-        "color_scheme": "scheme-4",
-        "heading": "GET IN TOUCH",
-        "text": "<p>We're here to help. Reach out to our team with any questions or concerns.</p>"
+        "color_scheme": "scheme-4"
       }
     },
     "contact_info": {
@@ -58,50 +65,11 @@
         "padding_top": 40,
         "padding_bottom": 60
       }
-    },
-    "faq": {
-      "type": "collapsible_content",
-      "blocks": {
-        "faq1": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What is your return policy?",
-            "row_content": "<p>We offer a 30-day money-back guarantee on all our products.</p>"
-          }
-        },
-        "faq2": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How long does shipping take?",
-            "row_content": "<p>Standard shipping takes 5-7 business days within the USA.</p>"
-          }
-        },
-        "faq3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Do you ship internationally?",
-            "row_content": "<p>Currently, we are delivering only to the USA.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq1",
-        "faq2",
-        "faq3"
-      ],
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "heading_size": "h2",
-        "color_scheme": "scheme-1",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "banner",
     "contact_info",
-    "form",
-    "faq"
+    "form"
   ]
 }

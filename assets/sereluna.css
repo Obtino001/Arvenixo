@@ -2694,3 +2694,12 @@ li.footer-payment-payments_QCqHQe {
     max-width: 100% !important;
     height: auto !important;
 }
+
+.header-wrapper--transparent localization-form .localization-form__select,
+.header-wrapper--transparent localization-form button {
+    color: #ffffff !important;
+}
+.header-wrapper--transparent localization-form svg {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}

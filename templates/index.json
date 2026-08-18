@@ -8,1017 +8,919 @@
  * ------------------------------------------------------------
  */
 {
-    "sections": {
-        "custom_banner_XE8idV": {
-            "type": "custom-banner",
-            "blocks": {
-                "review_badge_PTgVxF": {
-                    "type": "review_badge",
-                    "settings": {
-                        "review_text": "4.8 stjerner | 500+ anmeldelser",
-                        "custom_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"94\" height=\"18\" viewbox=\"0 0 94 18\" fill=\"none\">\n<path d=\"M9 13.7475L5.265 15.9975C5.1 16.1025 4.9275 16.1475 4.7475 16.1325C4.5675 16.1175 4.41 16.0575 4.275 15.9525C4.14 15.8475 4.035 15.7164 3.96 15.5592C3.885 15.402 3.87 15.2256 3.915 15.03L4.905 10.7775L1.5975 7.92001C1.4475 7.78501 1.3539 7.63111 1.3167 7.45831C1.2795 7.28551 1.2906 7.11691 1.35 6.95251C1.4094 6.78811 1.4994 6.65311 1.62 6.54751C1.7406 6.44191 1.9056 6.37441 2.115 6.34501L6.48 5.96251L8.1675 1.95751C8.2425 1.77751 8.3589 1.64251 8.5167 1.55251C8.6745 1.46251 8.8356 1.41751 9 1.41751C9.1644 1.41751 9.3255 1.46251 9.4833 1.55251C9.6411 1.64251 9.7575 1.77751 9.8325 1.95751L11.52 5.96251L15.885 6.34501C16.095 6.37501 16.26 6.44251 16.38 6.54751C16.5 6.65251 16.59 6.78751 16.65 6.95251C16.71 7.11751 16.7214 7.28641 16.6842 7.45921C16.647 7.63201 16.5531 7.78561 16.4025 7.92001L13.095 10.7775L14.085 15.03C14.13 15.225 14.115 15.4014 14.04 15.5592C13.965 15.717 13.86 15.8481 13.725 15.9525C13.59 16.0569 13.4325 16.1169 13.2525 16.1325C13.0725 16.1481 12.9 16.1031 12.735 15.9975L9 13.7475Z\" fill=\"#962071\"><\/path>\n<path d=\"M28 13.7475L24.265 15.9975C24.1 16.1025 23.9275 16.1475 23.7475 16.1325C23.5675 16.1175 23.41 16.0575 23.275 15.9525C23.14 15.8475 23.035 15.7164 22.96 15.5592C22.885 15.402 22.87 15.2256 22.915 15.03L23.905 10.7775L20.5975 7.92001C20.4475 7.78501 20.3539 7.63111 20.3167 7.45831C20.2795 7.28551 20.2906 7.11691 20.35 6.95251C20.4094 6.78811 20.4994 6.65311 20.62 6.54751C20.7406 6.44191 20.9056 6.37441 21.115 6.34501L25.48 5.96251L27.1675 1.95751C27.2425 1.77751 27.3589 1.64251 27.5167 1.55251C27.6745 1.46251 27.8356 1.41751 28 1.41751C28.1644 1.41751 28.3255 1.46251 28.4833 1.55251C28.6411 1.64251 28.7575 1.77751 28.8325 1.95751L30.52 5.96251L34.885 6.34501C35.095 6.37501 35.26 6.44251 35.38 6.54751C35.5 6.65251 35.59 6.78751 35.65 6.95251C35.71 7.11751 35.7214 7.28641 35.6842 7.45921C35.647 7.63201 35.5531 7.78561 35.4025 7.92001L32.095 10.7775L33.085 15.03C33.13 15.225 33.115 15.4014 33.04 15.5592C32.965 15.717 32.86 15.8481 32.725 15.9525C32.59 16.0569 32.4325 16.1169 32.2525 16.1325C32.0725 16.1481 31.9 16.1031 31.735 15.9975L28 13.7475Z\" fill=\"#962071\"><\/path>\n<path d=\"M47 13.7475L43.265 15.9975C43.1 16.1025 42.9275 16.1475 42.7475 16.1325C42.5675 16.1175 42.41 16.0575 42.275 15.9525C42.14 15.8475 42.035 15.7164 41.96 15.5592C41.885 15.402 41.87 15.2256 41.915 15.03L42.905 10.7775L39.5975 7.92001C39.4475 7.78501 39.3539 7.63111 39.3167 7.45831C39.2795 7.28551 39.2906 7.11691 39.35 6.95251C39.4094 6.78811 39.4994 6.65311 39.62 6.54751C39.7406 6.44191 39.9056 6.37441 40.115 6.34501L44.48 5.96251L46.1675 1.95751C46.2425 1.77751 46.3589 1.64251 46.5167 1.55251C46.6745 1.46251 46.8356 1.41751 47 1.41751C47.1644 1.41751 47.3255 1.46251 47.4833 1.55251C47.6411 1.64251 47.7575 1.77751 47.8325 1.95751L49.52 5.96251L53.885 6.34501C54.095 6.37501 54.26 6.44251 54.38 6.54751C54.5 6.65251 54.59 6.78751 54.65 6.95251C54.71 7.11751 54.7214 7.28641 54.6842 7.45921C54.647 7.63201 54.5531 7.78561 54.4025 7.92001L51.095 10.7775L52.085 15.03C52.13 15.225 52.115 15.4014 52.04 15.5592C51.965 15.717 51.86 15.8481 51.725 15.9525C51.59 16.0569 51.4325 16.1169 51.2525 16.1325C51.0725 16.1481 50.9 16.1031 50.735 15.9975L47 13.7475Z\" fill=\"#962071\"><\/path>\n<path d=\"M66 13.7475L62.265 15.9975C62.1 16.1025 61.9275 16.1475 61.7475 16.1325C61.5675 16.1175 61.41 16.0575 61.275 15.9525C61.14 15.8475 61.035 15.7164 60.96 15.5592C60.885 15.402 60.87 15.2256 60.915 15.03L61.905 10.7775L58.5975 7.92001C58.4475 7.78501 58.3539 7.63111 58.3167 7.45831C58.2795 7.28551 58.2906 7.11691 58.35 6.95251C58.4094 6.78811 58.4994 6.65311 58.62 6.54751C58.7406 6.44191 58.9056 6.37441 59.115 6.34501L63.48 5.96251L65.1675 1.95751C65.2425 1.77751 65.3589 1.64251 65.5167 1.55251C65.6745 1.46251 65.8356 1.41751 66 1.41751C66.1644 1.41751 66.3255 1.46251 66.4833 1.55251C66.6411 1.64251 66.7575 1.77751 66.8325 1.95751L68.52 5.96251L72.885 6.34501C73.095 6.37501 73.26 6.44251 73.38 6.54751C73.5 6.65251 73.59 6.78751 73.65 6.95251C73.71 7.11751 73.7214 7.28641 73.6842 7.45921C73.647 7.63201 73.5531 7.78561 73.4025 7.92001L70.095 10.7775L71.085 15.03C71.13 15.225 71.115 15.4014 71.04 15.5592C70.965 15.717 70.86 15.8481 70.725 15.9525C70.59 16.0569 70.4325 16.1169 70.2525 16.1325C70.0725 16.1481 69.9 16.1031 69.735 15.9975L66 13.7475Z\" fill=\"#962071\"><\/path>\n<path d=\"M85 13.7475L81.265 15.9975C81.1 16.1025 80.9275 16.1475 80.7475 16.1325C80.5675 16.1175 80.41 16.0575 80.275 15.9525C80.14 15.8475 80.035 15.7164 79.96 15.5592C79.885 15.402 79.87 15.2256 79.915 15.03L80.905 10.7775L77.5975 7.92001C77.4475 7.78501 77.3539 7.63111 77.3167 7.45831C77.2795 7.28551 77.2906 7.11691 77.35 6.95251C77.4094 6.78811 77.4994 6.65311 77.62 6.54751C77.7406 6.44191 77.9056 6.37441 78.115 6.34501L82.48 5.96251L84.1675 1.95751C84.2425 1.77751 84.3589 1.64251 84.5167 1.55251C84.6745 1.46251 84.8356 1.41751 85 1.41751C85.1644 1.41751 85.3255 1.46251 85.4833 1.55251C85.6411 1.64251 85.7575 1.77751 85.8325 1.95751L87.52 5.96251L91.885 6.34501C92.095 6.37501 92.26 6.44251 92.38 6.54751C92.5 6.65251 92.59 6.78751 92.65 6.95251C92.71 7.11751 92.7214 7.28641 92.6842 7.45921C92.647 7.63201 92.5531 7.78561 92.4025 7.92001L89.095 10.7775L90.085 15.03C90.13 15.225 90.115 15.4014 90.04 15.5592C89.965 15.717 89.86 15.8481 89.725 15.9525C89.59 16.0569 89.4325 16.1169 89.2525 16.1325C89.0725 16.1481 88.9 16.1031 88.735 15.9975L85 13.7475Z\" fill=\"#962071\"><\/path>\n<\/svg>"
-                    }
-                },
-                "heading_VWVA4z": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Glem mensen med mensentruser fra Sereluna"
-                    }
-                },
-                "subheading_DAaYnw": {
-                    "type": "subheading",
-                    "settings": {
-                        "subheading": "<p>Serelunas innovative mensentruser – komfortabel, bærekraftig og sikker beskyttelse som lar deg slappe helt av når du har mensen<br\/><br\/>Ingen lekkasjer, ingen lukt, ingen stress.<\/p>"
-                    }
-                },
-                "buttons_qkDF6J": {
-                    "type": "buttons",
-                    "settings": {
-                        "button_text": "KJØP NÅ",
-                        "button_link": "shopify:\/\/collections\/all",
-                        "button_text2": "",
-                        "button_link2": ""
-                    }
-                }
-            },
-            "block_order": [
-                "review_badge_PTgVxF",
-                "heading_VWVA4z",
-                "subheading_DAaYnw",
-                "buttons_qkDF6J"
-            ],
-            "name": "Image Custom Banner",
-            "settings": {
-                "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-                "media_type": "image",
-                "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
-                "overlay_opacity": 15,
-                "heading_size_desktop": 48,
-                "subheading_size_desktop": 16,
-                "content_width": 650,
-                "min_height_desktop": 700,
-                "adapt_height_desktop": false,
-                "heading_size_mobile": 28,
-                "min_height_mobile": 600,
-                "adapt_height_mobile": false,
-                "show_mobile_content_below": false,
-                "text_position_top": 90,
-                "text_position_left": 3,
-                "text_alignment": "left"
-            }
+  "sections": {
+    "custom_banner_XE8idV": {
+      "type": "custom-banner",
+      "blocks": {
+        "review_badge_PTgVxF": {
+          "type": "review_badge",
+          "settings": {
+            "review_text": "4.8 stjerner | 500+ anmeldelser",
+            "custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"94\" height=\"18\" viewbox=\"0 0 94 18\" fill=\"none\">\n<path d=\"M9 13.7475L5.265 15.9975C5.1 16.1025 4.9275 16.1475 4.7475 16.1325C4.5675 16.1175 4.41 16.0575 4.275 15.9525C4.14 15.8475 4.035 15.7164 3.96 15.5592C3.885 15.402 3.87 15.2256 3.915 15.03L4.905 10.7775L1.5975 7.92001C1.4475 7.78501 1.3539 7.63111 1.3167 7.45831C1.2795 7.28551 1.2906 7.11691 1.35 6.95251C1.4094 6.78811 1.4994 6.65311 1.62 6.54751C1.7406 6.44191 1.9056 6.37441 2.115 6.34501L6.48 5.96251L8.1675 1.95751C8.2425 1.77751 8.3589 1.64251 8.5167 1.55251C8.6745 1.46251 8.8356 1.41751 9 1.41751C9.1644 1.41751 9.3255 1.46251 9.4833 1.55251C9.6411 1.64251 9.7575 1.77751 9.8325 1.95751L11.52 5.96251L15.885 6.34501C16.095 6.37501 16.26 6.44251 16.38 6.54751C16.5 6.65251 16.59 6.78751 16.65 6.95251C16.71 7.11751 16.7214 7.28641 16.6842 7.45921C16.647 7.63201 16.5531 7.78561 16.4025 7.92001L13.095 10.7775L14.085 15.03C14.13 15.225 14.115 15.4014 14.04 15.5592C13.965 15.717 13.86 15.8481 13.725 15.9525C13.59 16.0569 13.4325 16.1169 13.2525 16.1325C13.0725 16.1481 12.9 16.1031 12.735 15.9975L9 13.7475Z\" fill=\"#962071\"></path>\n<path d=\"M28 13.7475L24.265 15.9975C24.1 16.1025 23.9275 16.1475 23.7475 16.1325C23.5675 16.1175 23.41 16.0575 23.275 15.9525C23.14 15.8475 23.035 15.7164 22.96 15.5592C22.885 15.402 22.87 15.2256 22.915 15.03L23.905 10.7775L20.5975 7.92001C20.4475 7.78501 20.3539 7.63111 20.3167 7.45831C20.2795 7.28551 20.2906 7.11691 20.35 6.95251C20.4094 6.78811 20.4994 6.65311 20.62 6.54751C20.7406 6.44191 20.9056 6.37441 21.115 6.34501L25.48 5.96251L27.1675 1.95751C27.2425 1.77751 27.3589 1.64251 27.5167 1.55251C27.6745 1.46251 27.8356 1.41751 28 1.41751C28.1644 1.41751 28.3255 1.46251 28.4833 1.55251C28.6411 1.64251 28.7575 1.77751 28.8325 1.95751L30.52 5.96251L34.885 6.34501C35.095 6.37501 35.26 6.44251 35.38 6.54751C35.5 6.65251 35.59 6.78751 35.65 6.95251C35.71 7.11751 35.7214 7.28641 35.6842 7.45921C35.647 7.63201 35.5531 7.78561 35.4025 7.92001L32.095 10.7775L33.085 15.03C33.13 15.225 33.115 15.4014 33.04 15.5592C32.965 15.717 32.86 15.8481 32.725 15.9525C32.59 16.0569 32.4325 16.1169 32.2525 16.1325C32.0725 16.1481 31.9 16.1031 31.735 15.9975L28 13.7475Z\" fill=\"#962071\"></path>\n<path d=\"M47 13.7475L43.265 15.9975C43.1 16.1025 42.9275 16.1475 42.7475 16.1325C42.5675 16.1175 42.41 16.0575 42.275 15.9525C42.14 15.8475 42.035 15.7164 41.96 15.5592C41.885 15.402 41.87 15.2256 41.915 15.03L42.905 10.7775L39.5975 7.92001C39.4475 7.78501 39.3539 7.63111 39.3167 7.45831C39.2795 7.28551 39.2906 7.11691 39.35 6.95251C39.4094 6.78811 39.4994 6.65311 39.62 6.54751C39.7406 6.44191 39.9056 6.37441 40.115 6.34501L44.48 5.96251L46.1675 1.95751C46.2425 1.77751 46.3589 1.64251 46.5167 1.55251C46.6745 1.46251 46.8356 1.41751 47 1.41751C47.1644 1.41751 47.3255 1.46251 47.4833 1.55251C47.6411 1.64251 47.7575 1.77751 47.8325 1.95751L49.52 5.96251L53.885 6.34501C54.095 6.37501 54.26 6.44251 54.38 6.54751C54.5 6.65251 54.59 6.78751 54.65 6.95251C54.71 7.11751 54.7214 7.28641 54.6842 7.45921C54.647 7.63201 54.5531 7.78561 54.4025 7.92001L51.095 10.7775L52.085 15.03C52.13 15.225 52.115 15.4014 52.04 15.5592C51.965 15.717 51.86 15.8481 51.725 15.9525C51.59 16.0569 51.4325 16.1169 51.2525 16.1325C51.0725 16.1481 50.9 16.1031 50.735 15.9975L47 13.7475Z\" fill=\"#962071\"></path>\n<path d=\"M66 13.7475L62.265 15.9975C62.1 16.1025 61.9275 16.1475 61.7475 16.1325C61.5675 16.1175 61.41 16.0575 61.275 15.9525C61.14 15.8475 61.035 15.7164 60.96 15.5592C60.885 15.402 60.87 15.2256 60.915 15.03L61.905 10.7775L58.5975 7.92001C58.4475 7.78501 58.3539 7.63111 58.3167 7.45831C58.2795 7.28551 58.2906 7.11691 58.35 6.95251C58.4094 6.78811 58.4994 6.65311 58.62 6.54751C58.7406 6.44191 58.9056 6.37441 59.115 6.34501L63.48 5.96251L65.1675 1.95751C65.2425 1.77751 65.3589 1.64251 65.5167 1.55251C65.6745 1.46251 65.8356 1.41751 66 1.41751C66.1644 1.41751 66.3255 1.46251 66.4833 1.55251C66.6411 1.64251 66.7575 1.77751 66.8325 1.95751L68.52 5.96251L72.885 6.34501C73.095 6.37501 73.26 6.44251 73.38 6.54751C73.5 6.65251 73.59 6.78751 73.65 6.95251C73.71 7.11751 73.7214 7.28641 73.6842 7.45921C73.647 7.63201 73.5531 7.78561 73.4025 7.92001L70.095 10.7775L71.085 15.03C71.13 15.225 71.115 15.4014 71.04 15.5592C70.965 15.717 70.86 15.8481 70.725 15.9525C70.59 16.0569 70.4325 16.1169 70.2525 16.1325C70.0725 16.1481 69.9 16.1031 69.735 15.9975L66 13.7475Z\" fill=\"#962071\"></path>\n<path d=\"M85 13.7475L81.265 15.9975C81.1 16.1025 80.9275 16.1475 80.7475 16.1325C80.5675 16.1175 80.41 16.0575 80.275 15.9525C80.14 15.8475 80.035 15.7164 79.96 15.5592C79.885 15.402 79.87 15.2256 79.915 15.03L80.905 10.7775L77.5975 7.92001C77.4475 7.78501 77.3539 7.63111 77.3167 7.45831C77.2795 7.28551 77.2906 7.11691 77.35 6.95251C77.4094 6.78811 77.4994 6.65311 77.62 6.54751C77.7406 6.44191 77.9056 6.37441 78.115 6.34501L82.48 5.96251L84.1675 1.95751C84.2425 1.77751 84.3589 1.64251 84.5167 1.55251C84.6745 1.46251 84.8356 1.41751 85 1.41751C85.1644 1.41751 85.3255 1.46251 85.4833 1.55251C85.6411 1.64251 85.7575 1.77751 85.8325 1.95751L87.52 5.96251L91.885 6.34501C92.095 6.37501 92.26 6.44251 92.38 6.54751C92.5 6.65251 92.59 6.78751 92.65 6.95251C92.71 7.11751 92.7214 7.28641 92.6842 7.45921C92.647 7.63201 92.5531 7.78561 92.4025 7.92001L89.095 10.7775L90.085 15.03C90.13 15.225 90.115 15.4014 90.04 15.5592C89.965 15.717 89.86 15.8481 89.725 15.9525C89.59 16.0569 89.4325 16.1169 89.2525 16.1325C89.0725 16.1481 88.9 16.1031 88.735 15.9975L85 13.7475Z\" fill=\"#962071\"></path>\n</svg>"
+          }
         },
-        "collections_tabs_CftkD8": {
-            "type": "collections-tabs",
-            "blocks": {
-                "collection_wjJ88g": {
-                    "type": "collection",
-                    "settings": {
-                        "tab_title": "Ungdom",
-                        "collection": "all"
-                    }
-                },
-                "collection_i99y6c": {
-                    "type": "collection",
-                    "settings": {
-                        "tab_title": "Blør medium",
-                        "collection": "all"
-                    }
-                },
-                "collection_YhUpAd": {
-                    "type": "collection",
-                    "settings": {
-                        "tab_title": "Blør mye",
-                        "collection": "all"
-                    }
-                },
-                "collection_3Rmy97": {
-                    "type": "collection",
-                    "settings": {
-                        "tab_title": "Bralette",
-                        "collection": "all"
-                    }
-                }
-            },
-            "block_order": [
-                "collection_wjJ88g",
-                "collection_i99y6c",
-                "collection_YhUpAd",
-                "collection_3Rmy97"
-            ],
-            "name": "Collection Tabs",
-            "settings": {
-                "title": "Shop efter flow",
-                "heading_size": "h1",
-                "description": "",
-                "description_style": "body",
-                "products_to_show": 8,
-                "columns_desktop": 4,
-                "columns_mobile": "2",
-                "spacing": 10,
-                "overflow": true,
-                "full_width": false,
-                "enable_slider_desktop": true,
-                "enable_slider_mobile": true,
-                "show_controls_desktop": true,
-                "show_controls_mobile": true,
-                "controls_position": "middle",
-                "enable_autoplay": false,
-                "autoplay_interval": 3,
-                "enable_loop": false,
-                "image_ratio": "adapt",
-                "image_shape": "default",
-                "show_secondary_image": false,
-                "show_vendor": false,
-                "show_rating": false,
-                "quick_add": "none",
-                "show_view_all": false,
-                "view_all_style": "outline",
-                "color_scheme": "scheme-1",
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
+        "heading_VWVA4z": {
+          "type": "heading",
+          "settings": {
+            "heading": "Glem mensen med mensentruser fra Sereluna"
+          }
         },
-        "rich_text_a4qhbw": {
-            "type": "rich-text",
-            "blocks": {
-                "heading_Qw9AHy": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "How our period pants work",
-                        "heading_size": "h1"
-                    }
-                },
-                "text_9NQ8LJ": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Our Period panties look and feel like regular underwear — but they have hidden, built-in protection inside.<\/p>"
-                    }
-                }
-            },
-            "block_order": [
-                "heading_Qw9AHy",
-                "text_9NQ8LJ"
-            ],
-            "custom_css": [
-                ".rich-text__text {max-width: 500px; text-align: center; margin-inline: auto; line-height: 1.3;}"
-            ],
-            "name": "t:sections.rich-text.presets.name",
-            "settings": {
-                "desktop_content_position": "center",
-                "content_alignment": "center",
-                "color_scheme": "scheme-1",
-                "full_width": true,
-                "padding_top": 40,
-                "padding_bottom": 0
-            }
+        "subheading_DAaYnw": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>Serelunas innovative mensentruser – komfortabel, bærekraftig og sikker beskyttelse som lar deg slappe helt av når du har mensen<br/><br/>Ingen lekkasjer, ingen lukt, ingen stress.</p>"
+          }
         },
-        "image_with_text_yKMmRX": {
-            "type": "image-with-text",
-            "blocks": {
-                "icon_with_text_PCKX6Q": {
-                    "type": "icon_with-text",
-                    "name": "Icon with text",
-                    "settings": {
-                        "color_scheme": "",
-                        "heading": "1. The top layer – stays dry",
-                        "heading_size": "h4",
-                        "text": "<p>The inner layer quickly pulls liquid away from your skin, so you feel dry and comfortable throughout the day.<\/p>",
-                        "icon_width": 85,
-                        "icon": "none",
-                        "padding_top": 0,
-                        "padding_bottom": 0
-                    },
-                    "blocks": {}
-                },
-                "icon_with_text_T4mkAE": {
-                    "type": "icon_with-text",
-                    "name": "Icon with text",
-                    "settings": {
-                        "color_scheme": "",
-                        "heading": "2. The absorbent core – locks in flow",
-                        "heading_size": "h4",
-                        "text": "<p>The middle layers absorb menstrual flow and hold it safely inside, just like a pad or tampon — without bulk.<\/p>",
-                        "icon_width": 85,
-                        "icon": "none",
-                        "padding_top": 0,
-                        "padding_bottom": 0
-                    },
-                    "blocks": {}
-                },
-                "icon_with_text_fMpHK8": {
-                    "type": "icon_with-text",
-                    "name": "Icon with text",
-                    "settings": {
-                        "color_scheme": "scheme-1",
-                        "heading": "3. The leak-proof barrier – prevents leaks",
-                        "heading_size": "h4",
-                        "text": "<p>A thin, breathable barrier stops liquid from leaking through, protecting your clothes day and night.<\/p>",
-                        "icon_width": 85,
-                        "icon": "none",
-                        "padding_top": 0,
-                        "padding_bottom": 0
-                    },
-                    "blocks": {}
-                },
-                "icon_with_text_NHdK6n": {
-                    "type": "icon_with-text",
-                    "name": "Icon with text",
-                    "settings": {
-                        "color_scheme": "",
-                        "heading": "4. The outer layer – looks like normal underwear",
-                        "heading_size": "h4",
-                        "text": "<p>From the outside, period panties look and feel just like everyday underwear — no one can tell the difference.<\/p>",
-                        "icon_width": 85,
-                        "icon": "none",
-                        "padding_top": 0,
-                        "padding_bottom": 32
-                    },
-                    "blocks": {}
-                },
-                "button_F4Npmp": {
-                    "type": "button",
-                    "name": "t:sections.image-with-text.blocks.button.name",
-                    "settings": {
-                        "button_label": "Learn More",
-                        "button_link": "shopify:\/\/pages\/how-it-work",
-                        "button_style_secondary": false,
-                        "center_on_mobile": true
-                    },
-                    "blocks": {}
-                }
-            },
-            "block_order": [
-                "icon_with_text_PCKX6Q",
-                "icon_with_text_T4mkAE",
-                "icon_with_text_fMpHK8",
-                "icon_with_text_NHdK6n",
-                "button_F4Npmp"
-            ],
-            "name": "Image with contents",
-            "settings": {
-                "media": "image",
-                "height": "medium",
-                "desktop_image_width": "medium",
-                "layout": "image_first",
-                "image_behavior": "none",
-                "content_layout": "no-overlap",
-                "desktop_content_position": "top",
-                "desktop_content_alignment": "left",
-                "mobile_content_alignment": "left",
-                "section_color_scheme": "scheme-4",
-                "color_scheme": "scheme-4",
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
-        },
-        "pill_marquee_KwQygn": {
-            "type": "pill-marquee",
-            "blocks": {
-                "text_block_ap7M6G": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Stay Fresh & Dry",
-                        "icon": "teardrop"
-                    }
-                },
-                "text_block_pA9HK9": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Planet Friendly",
-                        "icon": "panties"
-                    }
-                },
-                "text_block_hyzEU3": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "360° Protection",
-                        "icon": "teardrop"
-                    }
-                },
-                "text_block_CDwfT9": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Upto 12 Hours Protection",
-                        "icon": "panties"
-                    }
-                },
-                "text_block_cRBQEC": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Soft & Stretchy",
-                        "icon": "teardrop"
-                    }
-                },
-                "text_block_qwb4cz": {
-                    "type": "text_block",
-                    "settings": {
-                        "text": "Designed For Comfort",
-                        "icon": "panties"
-                    }
-                }
-            },
-            "block_order": [
-                "text_block_ap7M6G",
-                "text_block_pA9HK9",
-                "text_block_hyzEU3",
-                "text_block_CDwfT9",
-                "text_block_cRBQEC",
-                "text_block_qwb4cz"
-            ],
-            "name": "Pill Marquee",
-            "settings": {
-                "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-                "scroll_speed": 30,
-                "font_size": 16,
-                "padding_top": 40,
-                "padding_bottom": 40,
-                "padding_top_mobile": 20,
-                "padding_bottom_mobile": 20
-            }
-        },
-        "unique_features_YCBxQX": {
-            "type": "unique-features",
-            "blocks": {
-                "feature_3FqJ9D": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "Feels like regular underwear",
-                        "text": "Soft, stretchy, and breathable — designed to move with your body so you stay comfortable all day."
-                    }
-                },
-                "feature_TfTYCV": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "Reliable multi-layer protection",
-                        "text": "Hidden absorbent layers drain, absorb, and lock in flow while preventing leaks — without feeling bulky."
-                    }
-                },
-                "feature_rp8MLg": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "Absorbs like multiple tampons",
-                        "text": "Built to handle everyday periods confidently, holding the equivalent of several tampons depending on your flow."
-                    }
-                },
-                "feature_FfLgjG": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "PFAS-free & no nanosilver",
-                        "text": "Made without harmful “forever chemicals” or antibacterial agents — gentle on your body and intimate skin."
-                    }
-                },
-                "feature_WwiqwD": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "Designed in Oslo, made in Europe",
-                        "text": "High-quality European production with strict standards for comfort, safety, and durability."
-                    }
-                },
-                "feature_wGHEmh": {
-                    "type": "feature",
-                    "settings": {
-                        "icon_width": 65,
-                        "title": "Try it risk-free",
-                        "text": "Loved by hundreds of customers and backed by a satisfaction guarantee, so you can try Sereluna with confidence."
-                    }
-                },
-                "button_8afKXT": {
-                    "type": "button",
-                    "settings": {
-                        "button_label": "Explore our period pants",
-                        "button_link": "shopify:\/\/collections\/frontpage",
-                        "button_style_secondary": false
-                    }
-                }
-            },
-            "block_order": [
-                "feature_3FqJ9D",
-                "feature_TfTYCV",
-                "feature_rp8MLg",
-                "feature_FfLgjG",
-                "feature_WwiqwD",
-                "feature_wGHEmh",
-                "button_8afKXT"
-            ],
-            "name": "Unique Features",
-            "settings": {
-                "color_scheme": "scheme-1",
-                "heading": "Why our period pants are unique",
-                "wave_top_pos": 75,
-                "wave_opacity": 100,
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
-        },
-        "waterproof_bag_banner_fmPKcy": {
-            "type": "waterproof-bag-banner",
-            "blocks": {
-                "heading_akWdY7": {
-                    "type": "heading",
-                    "settings": {
-                        "text": "Discreet. Waterproof.\nAlways with you."
-                    }
-                },
-                "description_RMUPLC": {
-                    "type": "description",
-                    "settings": {
-                        "text": "The Sereluna waterproof bag keeps used period underwear safely stored when you're on the go — no leaks, no worries."
-                    }
-                },
-                "list_item_3jUVid": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "100% waterproof & leak-proof"
-                    }
-                },
-                "list_item_LVDfTX": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Hygienic & easy to clean"
-                    }
-                },
-                "list_item_EafaLy": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Perfect for work, school & travel"
-                    }
-                },
-                "button_TtQq6D": {
-                    "type": "button",
-                    "settings": {
-                        "btn_text": "Shop Waterproof Bag",
-                        "btn_link": ""
-                    }
-                }
-            },
-            "block_order": [
-                "heading_akWdY7",
-                "description_RMUPLC",
-                "list_item_3jUVid",
-                "list_item_LVDfTX",
-                "list_item_EafaLy",
-                "button_TtQq6D"
-            ],
-            "name": "Waterproof Bag Banner",
-            "settings": {
-                "color_scheme": "scheme-2",
-                "fallback_bg_color": "rgba(0,0,0,0)",
-                "padding_top": 60,
-                "padding_bottom": 60
-            }
-        },
-        "matching_comfort_PDMjyn": {
-            "type": "matching-comfort",
-            "blocks": {
-                "list_item_XEVAAz": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Soft, stretchy fabric for everyday comfort"
-                    }
-                },
-                "list_item_nbecV7": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Perfect for daily wear and lounging"
-                    }
-                },
-                "list_item_b9epzf": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Breathable and gentle on the skin"
-                    }
-                },
-                "list_item_DzKmgB": {
-                    "type": "list_item",
-                    "settings": {
-                        "text": "Feels good all day, with no wires or digging"
-                    }
-                }
-            },
-            "block_order": [
-                "list_item_XEVAAz",
-                "list_item_nbecV7",
-                "list_item_b9epzf",
-                "list_item_DzKmgB"
-            ],
-            "name": "Matching Comfort",
-            "settings": {
-                "color_scheme": "scheme-3",
-                "product_list": [
-                    "arya-teen-brief",
-                    "elsa-shorty-black"
-                ],
-                "heading": "Matching comfort, head to toe",
-                "description": "Our matching Livia bralettes are designed to pair perfectly with your Sereluna period panties — combining comfort, support, and the same premium feel you already love.",
-                "padding_top": 40,
-                "padding_bottom": 52,
-                "image_ratio": "adapt",
-                "image_shape": "default",
-                "show_secondary_image": true,
-                "show_vendor": true,
-                "show_rating": true,
-                "quick_add": "standard"
-            }
-        },
-        "testimonials_RUYBWp": {
-            "type": "testimonials",
-            "blocks": {
-                "testimonial_KJJnfR": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_U9znP3": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_LHpaqN": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_drJFCa": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_zxytm7": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_P3U7Un": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_WygERQ": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                },
-                "testimonial_fd8rqn": {
-                    "type": "testimonial",
-                    "settings": {
-                        "author": "Anna H.",
-                        "stars": 5,
-                        "content": "I was worried about leaks, but these really work. They look and feel like normal underwear, which makes such a difference."
-                    }
-                }
-            },
-            "block_order": [
-                "testimonial_KJJnfR",
-                "testimonial_U9znP3",
-                "testimonial_LHpaqN",
-                "testimonial_drJFCa",
-                "testimonial_zxytm7",
-                "testimonial_P3U7Un",
-                "testimonial_WygERQ",
-                "testimonial_fd8rqn"
-            ],
-            "name": "Testimonial Slider",
-            "settings": {
-                "color_scheme": "",
-                "card_color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-                "seen_in_text": "As seen in",
-                "heading": "What our customers say",
-                "subheading": "<p>Rated 4.8 out of 5 Stars (466 Reviews) on<\/p>",
-                "btn_text": "View All",
-                "btn_link": "shopify:\/\/collections\/all",
-                "speed": 30,
-                "direction": "normal",
-                "pause_on_hover": true,
-                "card_width_desktop": 350,
-                "card_width_mobile": 280,
-                "padding_top": 0,
-                "padding_bottom": 0
-            }
-        },
-        "who_is_qwhQN9": {
-            "type": "who-is",
-            "blocks": {
-                "heading_UwqdwR": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Hvem er Sereluna?"
-                    }
-                },
-                "text_7PqxwJ": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Sereluna er en familiebedrift grunnlagt i 2022 av meg, Charlotte (det er jeg som er på bildet 😊). Vi har hjulpet tusenvis av kvinner med å få en bedre opplevelse under mensen!<\/p>"
-                    }
-                },
-                "subheading_C4BzqV": {
-                    "type": "subheading",
-                    "settings": {
-                        "subheading": "What makes us best"
-                    }
-                },
-                "shape_Axwfzw": {
-                    "type": "shape",
-                    "settings": {
-                        "desktop_width": 30,
-                        "desktop_top": -6,
-                        "desktop_left": 80,
-                        "mobile_width": 30,
-                        "mobile_top": -10,
-                        "mobile_left": 80
-                    }
-                },
-                "shape_n7M78w": {
-                    "type": "shape",
-                    "settings": {
-                        "desktop_width": 30,
-                        "desktop_top": 86,
-                        "desktop_left": -6,
-                        "mobile_width": 20,
-                        "mobile_top": 86,
-                        "mobile_left": -8
-                    }
-                },
-                "feature_EUnbTc": {
-                    "type": "feature",
-                    "settings": {
-                        "title": "Rask levering",
-                        "text": "<p>Vi sender direkte fra vårt lager rett utenfor Oslo – levering tar omtrent 2 dager.<\/p>"
-                    }
-                },
-                "feature_QaJP64": {
-                    "type": "feature",
-                    "settings": {
-                        "title": "Enkel betaling",
-                        "text": "<p>Handle trygt med Vipps eller Klarna – få produktene hjem først og betal senere.<\/p>"
-                    }
-                },
-                "feature_wNwKza": {
-                    "type": "feature",
-                    "settings": {
-                        "title": "Personlig kundeservice",
-                        "text": "<p>Vi har topp kundeservice og hjelper deg om du må bytte størrelse.<\/p>"
-                    }
-                },
-                "feature_xGLkwx": {
-                    "type": "feature",
-                    "settings": {
-                        "title": "Trygghet og kvalitet",
-                        "text": "<p>Vi er et norsk selskap og følger norske forbrukerlover – selvfølgelig.<\/p>"
-                    }
-                },
-                "button_KVA6e3": {
-                    "type": "button",
-                    "settings": {
-                        "button_label": "Kontak oss",
-                        "button_link": "shopify:\/\/pages\/contact"
-                    }
-                }
-            },
-            "block_order": [
-                "heading_UwqdwR",
-                "text_7PqxwJ",
-                "subheading_C4BzqV",
-                "shape_Axwfzw",
-                "shape_n7M78w",
-                "feature_EUnbTc",
-                "feature_QaJP64",
-                "feature_wNwKza",
-                "feature_xGLkwx",
-                "button_KVA6e3"
-            ],
-            "name": "Who is Sereluna",
-            "settings": {
-                "color_scheme": "scheme-3",
-                "desktop_image_position": "left",
-                "padding_top": 48,
-                "padding_bottom": 48
-            }
-        },
-        "how_to_use_rbfJLU": {
-            "type": "how-to-use",
-            "blocks": {
-                "heading_E43zRT": {
-                    "type": "heading",
-                    "settings": {
-                        "title": "Hvordan bruker man mensentruser?"
-                    }
-                },
-                "subheading_UymzEg": {
-                    "type": "subheading",
-                    "settings": {
-                        "text": "Det er enkelt: bruk, vask og bruk igjen."
-                    }
-                },
-                "content_block_8MMnbX": {
-                    "type": "content_block",
-                    "settings": {
-                        "title": "Bruk",
-                        "text": "<p>Mensentrusene kan brukes i opptil 12 timer, avhengig av hvor kraftig mensen din er. De finnes i ulike beskyttelsesnivåer – høyabsorberende truser som tilsvarer 5 bind og middels beskyttelse som tilsvarer 3 bind. Siden menstrusene er laget av naturlig bomull, gir de en tørr og behagelig følelse, samtidig som de effektivt kapsler inn væske og nøytraliserer lukt.<\/p>"
-                    }
-                },
-                "content_block_JWzWhX": {
-                    "type": "content_block",
-                    "settings": {
-                        "title": "How to take care?",
-                        "text": "<p>Skyll etter bruk, vask trusene og la dem tørke – de er like enkle å vaske som vanlige truser.<\/p>"
-                    }
-                },
-                "text_c6izbd": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Mensentruser har blitt superpopulære, først og fremst fordi de er mye mer komfortable – en mensbeskyttelse du knapt merker at du har på deg! 🩷<\/p>"
-                    }
-                },
-                "button_dxLqDC": {
-                    "type": "button",
-                    "settings": {
-                        "button_label": "Kjøp nå",
-                        "button_link": "shopify:\/\/collections\/all"
-                    }
-                },
-                "shape_bottom_right_78aX7Y": {
-                    "type": "shape_bottom_right",
-                    "settings": {
-                        "desktop_width": 30,
-                        "desktop_bottom": -15,
-                        "desktop_right": -10,
-                        "mobile_width": 30,
-                        "mobile_bottom": -17,
-                        "mobile_right": -5
-                    }
-                },
-                "shape_top_left_mwGG7i": {
-                    "type": "shape_top_left",
-                    "settings": {
-                        "desktop_width": 30,
-                        "desktop_top": -10,
-                        "desktop_left": -15,
-                        "mobile_width": 30,
-                        "mobile_top": -10,
-                        "mobile_left": -6
-                    }
-                }
-            },
-            "block_order": [
-                "heading_E43zRT",
-                "subheading_UymzEg",
-                "content_block_8MMnbX",
-                "content_block_JWzWhX",
-                "text_c6izbd",
-                "button_dxLqDC",
-                "shape_bottom_right_78aX7Y",
-                "shape_top_left_mwGG7i"
-            ],
-            "name": "How to Use Section",
-            "settings": {
-                "color_scheme": "scheme-3",
-                "desktop_content_position": "left",
-                "inner_padding_desktop": 40,
-                "gap_desktop": 60,
-                "inner_padding_mobile": 20,
-                "gap_mobile": 30,
-                "padding_top": 0,
-                "padding_bottom": 0
-            }
-        },
-        "sereluna_guarantee_section_AK3U7q": {
-            "type": "sereluna-guarantee-section",
-            "blocks": {
-                "shape_UmiJpj": {
-                    "type": "shape",
-                    "settings": {
-                        "width_desktop": 200,
-                        "width_mobile": 150,
-                        "vertical_alignment": "bottom",
-                        "pos_y_desktop": -52,
-                        "horizontal_alignment": "right",
-                        "pos_x_desktop": 0,
-                        "pos_y_mobile": -70,
-                        "pos_x_mobile": 0,
-                        "z_index": 2
-                    }
-                },
-                "shape_4GGrP7": {
-                    "type": "shape",
-                    "settings": {
-                        "width_desktop": 155,
-                        "width_mobile": 150,
-                        "vertical_alignment": "top",
-                        "pos_y_desktop": -72,
-                        "horizontal_alignment": "right",
-                        "pos_x_desktop": 0,
-                        "pos_y_mobile": -52,
-                        "pos_x_mobile": 0,
-                        "z_index": 1
-                    }
-                },
-                "shape_RawXnN": {
-                    "type": "shape",
-                    "settings": {
-                        "width_desktop": 235,
-                        "width_mobile": 150,
-                        "vertical_alignment": "top",
-                        "pos_y_desktop": 30,
-                        "horizontal_alignment": "left",
-                        "pos_x_desktop": 0,
-                        "pos_y_mobile": 46,
-                        "pos_x_mobile": 0,
-                        "z_index": 2
-                    }
-                },
-                "shape_8KtVnd": {
-                    "type": "shape",
-                    "settings": {
-                        "width_desktop": 270,
-                        "width_mobile": 200,
-                        "vertical_alignment": "top",
-                        "pos_y_desktop": -18,
-                        "horizontal_alignment": "left",
-                        "pos_x_desktop": 0,
-                        "pos_y_mobile": -24,
-                        "pos_x_mobile": 0,
-                        "z_index": 1
-                    }
-                },
-                "heading_3zUj3k": {
-                    "type": "heading",
-                    "settings": {
-                        "title": "Try Sereluna risk-free"
-                    }
-                },
-                "description_iMjCqF": {
-                    "type": "description",
-                    "settings": {
-                        "text": "<p>Your comfort matters.<br\/>If Sereluna isn’t the right fit for you, our 60-day guarantee means you’re not taking any risk.<\/p>"
-                    }
-                },
-                "description_HaCbwR": {
-                    "type": "description",
-                    "settings": {
-                        "text": "<p>We’re here to help — whether that’s a size change, advice, or a refund.<\/p>"
-                    }
-                }
-            },
-            "block_order": [
-                "shape_UmiJpj",
-                "shape_4GGrP7",
-                "shape_RawXnN",
-                "shape_8KtVnd",
-                "heading_3zUj3k",
-                "description_iMjCqF",
-                "description_HaCbwR"
-            ],
-            "name": "Risk Free Banner",
-            "settings": {
-                "color_scheme": "scheme-3",
-                "padding_top": 40,
-                "padding_bottom": 40,
-                "padding_top_mobile": 40,
-                "padding_bottom_mobile": 40
-            }
-        },
-        "instagram_gallery_kKrKtz": {
-            "type": "instagram-gallery",
-            "blocks": {
-                "instagram_image_w4bheb": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_g7p7zG": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_aQxzLy": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_BxbfyW": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_rQ7TxA": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_7ekzLg": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_HmjtJL": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_MBjr6T": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_PeM8At": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_TExDNH": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_rcrwiV": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                },
-                "instagram_image_dGTpRf": {
-                    "type": "instagram_image",
-                    "settings": {
-                        "link": ""
-                    }
-                }
-            },
-            "block_order": [
-                "instagram_image_w4bheb",
-                "instagram_image_g7p7zG",
-                "instagram_image_aQxzLy",
-                "instagram_image_BxbfyW",
-                "instagram_image_rQ7TxA",
-                "instagram_image_7ekzLg",
-                "instagram_image_HmjtJL",
-                "instagram_image_MBjr6T",
-                "instagram_image_PeM8At",
-                "instagram_image_TExDNH",
-                "instagram_image_rcrwiV",
-                "instagram_image_dGTpRf"
-            ],
-            "name": "Instagram Gallery",
-            "settings": {
-                "color_scheme": "scheme-4",
-                "heading": "Our Instagram",
-                "subheading": "@serelunaofficial",
-                "subheading_link": "",
-                "columns_desktop": 6,
-                "columns_mobile": 2,
-                "padding_top": 40,
-                "padding_bottom": 52
-            }
+        "buttons_qkDF6J": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "KJØP NÅ",
+            "button_link": "shopify://collections/all",
+            "button_text2": "",
+            "button_link2": ""
+          }
         }
+      },
+      "block_order": [
+        "review_badge_PTgVxF",
+        "heading_VWVA4z",
+        "subheading_DAaYnw",
+        "buttons_qkDF6J"
+      ],
+      "name": "Image Custom Banner",
+      "settings": {
+        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
+        "media_type": "image",
+        "overlay_opacity": 15,
+        "heading_size_desktop": 48,
+        "subheading_size_desktop": 16,
+        "content_width": 650,
+        "min_height_desktop": 700,
+        "adapt_height_desktop": false,
+        "heading_size_mobile": 28,
+        "min_height_mobile": 600,
+        "adapt_height_mobile": false,
+        "show_mobile_content_below": false,
+        "text_position_top": 90,
+        "text_position_left": 3,
+        "text_alignment": "left"
+      }
     },
-    "order": [
-        "custom_banner_XE8idV",
-        "collections_tabs_CftkD8",
-        "rich_text_a4qhbw",
-        "image_with_text_yKMmRX",
-        "pill_marquee_KwQygn",
-        "unique_features_YCBxQX",
-        "waterproof_bag_banner_fmPKcy",
-        "matching_comfort_PDMjyn",
-        "testimonials_RUYBWp",
-        "who_is_qwhQN9",
-        "how_to_use_rbfJLU",
-        "sereluna_guarantee_section_AK3U7q",
-        "instagram_gallery_kKrKtz"
-    ]
+    "collections_tabs_CftkD8": {
+      "type": "collections-tabs",
+      "blocks": {
+        "collection_wjJ88g": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Ungdom",
+            "collection": "all"
+          }
+        },
+        "collection_i99y6c": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Blør medium",
+            "collection": "all"
+          }
+        },
+        "collection_YhUpAd": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Blør mye",
+            "collection": "all"
+          }
+        },
+        "collection_3Rmy97": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Bralette",
+            "collection": "all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_wjJ88g",
+        "collection_i99y6c",
+        "collection_YhUpAd",
+        "collection_3Rmy97"
+      ],
+      "name": "Collection Tabs",
+      "settings": {
+        "title": "Shop efter flow",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "spacing": 10,
+        "overflow": true,
+        "full_width": false,
+        "enable_slider_desktop": true,
+        "enable_slider_mobile": true,
+        "show_controls_desktop": true,
+        "show_controls_mobile": true,
+        "controls_position": "middle",
+        "enable_autoplay": false,
+        "autoplay_interval": 3,
+        "enable_loop": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_a4qhbw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Qw9AHy": {
+          "type": "heading",
+          "settings": {
+            "heading": "How our period pants work",
+            "heading_size": "h1"
+          }
+        },
+        "text_9NQ8LJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Period panties look and feel like regular underwear — but they have hidden, built-in protection inside.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Qw9AHy",
+        "text_9NQ8LJ"
+      ],
+      "custom_css": [
+        ".rich-text__text {max-width: 500px; text-align: center; margin-inline: auto; line-height: 1.3;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_yKMmRX": {
+      "type": "image-with-text",
+      "blocks": {
+        "icon_with_text_PCKX6Q": {
+          "type": "icon_with-text",
+          "name": "Icon with text",
+          "settings": {
+            "color_scheme": "",
+            "heading": "1. The top layer – stays dry",
+            "heading_size": "h4",
+            "text": "<p>The inner layer quickly pulls liquid away from your skin, so you feel dry and comfortable throughout the day.</p>",
+            "icon_width": 85,
+            "icon": "none",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "icon_with_text_T4mkAE": {
+          "type": "icon_with-text",
+          "name": "Icon with text",
+          "settings": {
+            "color_scheme": "",
+            "heading": "2. The absorbent core – locks in flow",
+            "heading_size": "h4",
+            "text": "<p>The middle layers absorb menstrual flow and hold it safely inside, just like a pad or tampon — without bulk.</p>",
+            "icon_width": 85,
+            "icon": "none",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "icon_with_text_fMpHK8": {
+          "type": "icon_with-text",
+          "name": "Icon with text",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "heading": "3. The leak-proof barrier – prevents leaks",
+            "heading_size": "h4",
+            "text": "<p>A thin, breathable barrier stops liquid from leaking through, protecting your clothes day and night.</p>",
+            "icon_width": 85,
+            "icon": "none",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "icon_with_text_NHdK6n": {
+          "type": "icon_with-text",
+          "name": "Icon with text",
+          "settings": {
+            "color_scheme": "",
+            "heading": "4. The outer layer – looks like normal underwear",
+            "heading_size": "h4",
+            "text": "<p>From the outside, period panties look and feel just like everyday underwear — no one can tell the difference.</p>",
+            "icon_width": 85,
+            "icon": "none",
+            "padding_top": 0,
+            "padding_bottom": 32
+          },
+          "blocks": {}
+        },
+        "button_F4Npmp": {
+          "type": "button",
+          "name": "t:sections.image-with-text.blocks.button.name",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/how-it-work",
+            "button_style_secondary": false,
+            "center_on_mobile": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "icon_with_text_PCKX6Q",
+        "icon_with_text_T4mkAE",
+        "icon_with_text_fMpHK8",
+        "icon_with_text_NHdK6n",
+        "button_F4Npmp"
+      ],
+      "name": "Image with contents",
+      "settings": {
+        "media": "image",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "pill_marquee_KwQygn": {
+      "type": "pill-marquee",
+      "blocks": {
+        "text_block_ap7M6G": {
+          "type": "text_block",
+          "settings": {
+            "text": "Stay Fresh & Dry",
+            "icon": "teardrop"
+          }
+        },
+        "text_block_pA9HK9": {
+          "type": "text_block",
+          "settings": {
+            "text": "Planet Friendly",
+            "icon": "panties"
+          }
+        },
+        "text_block_hyzEU3": {
+          "type": "text_block",
+          "settings": {
+            "text": "360° Protection",
+            "icon": "teardrop"
+          }
+        },
+        "text_block_CDwfT9": {
+          "type": "text_block",
+          "settings": {
+            "text": "Upto 12 Hours Protection",
+            "icon": "panties"
+          }
+        },
+        "text_block_cRBQEC": {
+          "type": "text_block",
+          "settings": {
+            "text": "Soft & Stretchy",
+            "icon": "teardrop"
+          }
+        },
+        "text_block_qwb4cz": {
+          "type": "text_block",
+          "settings": {
+            "text": "Designed For Comfort",
+            "icon": "panties"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_ap7M6G",
+        "text_block_pA9HK9",
+        "text_block_hyzEU3",
+        "text_block_CDwfT9",
+        "text_block_cRBQEC",
+        "text_block_qwb4cz"
+      ],
+      "name": "Pill Marquee",
+      "settings": {
+        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
+        "scroll_speed": 30,
+        "font_size": 16,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "unique_features_YCBxQX": {
+      "type": "unique-features",
+      "blocks": {
+        "feature_3FqJ9D": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "Feels like regular underwear",
+            "text": "Soft, stretchy, and breathable — designed to move with your body so you stay comfortable all day."
+          }
+        },
+        "feature_TfTYCV": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "Reliable multi-layer protection",
+            "text": "Hidden absorbent layers drain, absorb, and lock in flow while preventing leaks — without feeling bulky."
+          }
+        },
+        "feature_rp8MLg": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "Absorbs like multiple tampons",
+            "text": "Built to handle everyday periods confidently, holding the equivalent of several tampons depending on your flow."
+          }
+        },
+        "feature_FfLgjG": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "PFAS-free & no nanosilver",
+            "text": "Made without harmful “forever chemicals” or antibacterial agents — gentle on your body and intimate skin."
+          }
+        },
+        "feature_WwiqwD": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "Designed in Oslo, made in Europe",
+            "text": "High-quality European production with strict standards for comfort, safety, and durability."
+          }
+        },
+        "feature_wGHEmh": {
+          "type": "feature",
+          "settings": {
+            "icon_width": 65,
+            "title": "Try it risk-free",
+            "text": "Loved by hundreds of customers and backed by a satisfaction guarantee, so you can try Sereluna with confidence."
+          }
+        },
+        "button_8afKXT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore our period pants",
+            "button_link": "shopify://collections/frontpage",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "feature_3FqJ9D",
+        "feature_TfTYCV",
+        "feature_rp8MLg",
+        "feature_FfLgjG",
+        "feature_WwiqwD",
+        "feature_wGHEmh",
+        "button_8afKXT"
+      ],
+      "name": "Unique Features",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Why our period pants are unique",
+        "wave_top_pos": 75,
+        "wave_opacity": 100,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "waterproof_bag_banner_fmPKcy": {
+      "type": "waterproof-bag-banner",
+      "blocks": {
+        "heading_akWdY7": {
+          "type": "heading",
+          "settings": {
+            "text": "Discreet. Waterproof.\nAlways with you."
+          }
+        },
+        "description_RMUPLC": {
+          "type": "description",
+          "settings": {
+            "text": "The Sereluna waterproof bag keeps used period underwear safely stored when you're on the go — no leaks, no worries."
+          }
+        },
+        "list_item_3jUVid": {
+          "type": "list_item",
+          "settings": {
+            "text": "100% waterproof & leak-proof"
+          }
+        },
+        "list_item_LVDfTX": {
+          "type": "list_item",
+          "settings": {
+            "text": "Hygienic & easy to clean"
+          }
+        },
+        "list_item_EafaLy": {
+          "type": "list_item",
+          "settings": {
+            "text": "Perfect for work, school & travel"
+          }
+        },
+        "button_TtQq6D": {
+          "type": "button",
+          "settings": {
+            "btn_text": "Shop Waterproof Bag",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_akWdY7",
+        "description_RMUPLC",
+        "list_item_3jUVid",
+        "list_item_LVDfTX",
+        "list_item_EafaLy",
+        "button_TtQq6D"
+      ],
+      "name": "Waterproof Bag Banner",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "fallback_bg_color": "rgba(0,0,0,0)",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "matching_comfort_PDMjyn": {
+      "type": "matching-comfort",
+      "blocks": {
+        "list_item_XEVAAz": {
+          "type": "list_item",
+          "settings": {
+            "text": "Soft, stretchy fabric for everyday comfort"
+          }
+        },
+        "list_item_nbecV7": {
+          "type": "list_item",
+          "settings": {
+            "text": "Perfect for daily wear and lounging"
+          }
+        },
+        "list_item_b9epzf": {
+          "type": "list_item",
+          "settings": {
+            "text": "Breathable and gentle on the skin"
+          }
+        },
+        "list_item_DzKmgB": {
+          "type": "list_item",
+          "settings": {
+            "text": "Feels good all day, with no wires or digging"
+          }
+        }
+      },
+      "block_order": [
+        "list_item_XEVAAz",
+        "list_item_nbecV7",
+        "list_item_b9epzf",
+        "list_item_DzKmgB"
+      ],
+      "name": "Matching Comfort",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "product_list": [
+          "arya-teen-brief",
+          "elsa-shorty-black"
+        ],
+        "heading": "Matching comfort, head to toe",
+        "description": "Our matching Livia bralettes are designed to pair perfectly with your Sereluna period panties — combining comfort, support, and the same premium feel you already love.",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "quick_add": "standard"
+      }
+    },
+    "who_is_qwhQN9": {
+      "type": "who-is",
+      "blocks": {
+        "heading_UwqdwR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hvem er Sereluna?"
+          }
+        },
+        "text_7PqxwJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sereluna er en familiebedrift grunnlagt i 2022 av meg, Charlotte (det er jeg som er på bildet 😊). Vi har hjulpet tusenvis av kvinner med å få en bedre opplevelse under mensen!</p>"
+          }
+        },
+        "subheading_C4BzqV": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What makes us best"
+          }
+        },
+        "shape_Axwfzw": {
+          "type": "shape",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_top": -6,
+            "desktop_left": 80,
+            "mobile_width": 30,
+            "mobile_top": -10,
+            "mobile_left": 80
+          }
+        },
+        "shape_n7M78w": {
+          "type": "shape",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_top": 86,
+            "desktop_left": -6,
+            "mobile_width": 20,
+            "mobile_top": 86,
+            "mobile_left": -8
+          }
+        },
+        "feature_EUnbTc": {
+          "type": "feature",
+          "settings": {
+            "title": "Rask levering",
+            "text": "<p>Vi sender direkte fra vårt lager rett utenfor Oslo – levering tar omtrent 2 dager.</p>"
+          }
+        },
+        "feature_QaJP64": {
+          "type": "feature",
+          "settings": {
+            "title": "Enkel betaling",
+            "text": "<p>Handle trygt med Vipps eller Klarna – få produktene hjem først og betal senere.</p>"
+          }
+        },
+        "feature_wNwKza": {
+          "type": "feature",
+          "settings": {
+            "title": "Personlig kundeservice",
+            "text": "<p>Vi har topp kundeservice og hjelper deg om du må bytte størrelse.</p>"
+          }
+        },
+        "feature_xGLkwx": {
+          "type": "feature",
+          "settings": {
+            "title": "Trygghet og kvalitet",
+            "text": "<p>Vi er et norsk selskap og følger norske forbrukerlover – selvfølgelig.</p>"
+          }
+        },
+        "button_KVA6e3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Kontak oss",
+            "button_link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UwqdwR",
+        "text_7PqxwJ",
+        "subheading_C4BzqV",
+        "shape_Axwfzw",
+        "shape_n7M78w",
+        "feature_EUnbTc",
+        "feature_QaJP64",
+        "feature_wNwKza",
+        "feature_xGLkwx",
+        "button_KVA6e3"
+      ],
+      "name": "Who is Sereluna",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "desktop_image_position": "left",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "how_to_use_rbfJLU": {
+      "type": "how-to-use",
+      "blocks": {
+        "heading_E43zRT": {
+          "type": "heading",
+          "settings": {
+            "title": "Hvordan bruker man mensentruser?"
+          }
+        },
+        "subheading_UymzEg": {
+          "type": "subheading",
+          "settings": {
+            "text": "Det er enkelt: bruk, vask og bruk igjen."
+          }
+        },
+        "content_block_8MMnbX": {
+          "type": "content_block",
+          "settings": {
+            "title": "Bruk",
+            "text": "<p>Mensentrusene kan brukes i opptil 12 timer, avhengig av hvor kraftig mensen din er. De finnes i ulike beskyttelsesnivåer – høyabsorberende truser som tilsvarer 5 bind og middels beskyttelse som tilsvarer 3 bind. Siden menstrusene er laget av naturlig bomull, gir de en tørr og behagelig følelse, samtidig som de effektivt kapsler inn væske og nøytraliserer lukt.</p>"
+          }
+        },
+        "content_block_JWzWhX": {
+          "type": "content_block",
+          "settings": {
+            "title": "How to take care?",
+            "text": "<p>Skyll etter bruk, vask trusene og la dem tørke – de er like enkle å vaske som vanlige truser.</p>"
+          }
+        },
+        "text_c6izbd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mensentruser har blitt superpopulære, først og fremst fordi de er mye mer komfortable – en mensbeskyttelse du knapt merker at du har på deg! 🩷</p>"
+          }
+        },
+        "button_dxLqDC": {
+          "type": "button",
+          "settings": {
+            "button_label": "Kjøp nå",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "shape_bottom_right_78aX7Y": {
+          "type": "shape_bottom_right",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_bottom": -15,
+            "desktop_right": -10,
+            "mobile_width": 30,
+            "mobile_bottom": -17,
+            "mobile_right": -5
+          }
+        },
+        "shape_top_left_mwGG7i": {
+          "type": "shape_top_left",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_top": -10,
+            "desktop_left": -15,
+            "mobile_width": 30,
+            "mobile_top": -10,
+            "mobile_left": -6
+          }
+        }
+      },
+      "block_order": [
+        "heading_E43zRT",
+        "subheading_UymzEg",
+        "content_block_8MMnbX",
+        "content_block_JWzWhX",
+        "text_c6izbd",
+        "button_dxLqDC",
+        "shape_bottom_right_78aX7Y",
+        "shape_top_left_mwGG7i"
+      ],
+      "name": "How to Use Section",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "desktop_content_position": "left",
+        "inner_padding_desktop": 40,
+        "gap_desktop": 60,
+        "inner_padding_mobile": 20,
+        "gap_mobile": 30,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "sereluna_guarantee_section_AK3U7q": {
+      "type": "sereluna-guarantee-section",
+      "blocks": {
+        "shape_UmiJpj": {
+          "type": "shape",
+          "settings": {
+            "width_desktop": 200,
+            "width_mobile": 150,
+            "vertical_alignment": "bottom",
+            "pos_y_desktop": -52,
+            "horizontal_alignment": "right",
+            "pos_x_desktop": 0,
+            "pos_y_mobile": -70,
+            "pos_x_mobile": 0,
+            "z_index": 2
+          }
+        },
+        "shape_4GGrP7": {
+          "type": "shape",
+          "settings": {
+            "width_desktop": 155,
+            "width_mobile": 150,
+            "vertical_alignment": "top",
+            "pos_y_desktop": -72,
+            "horizontal_alignment": "right",
+            "pos_x_desktop": 0,
+            "pos_y_mobile": -52,
+            "pos_x_mobile": 0,
+            "z_index": 1
+          }
+        },
+        "shape_RawXnN": {
+          "type": "shape",
+          "settings": {
+            "width_desktop": 235,
+            "width_mobile": 150,
+            "vertical_alignment": "top",
+            "pos_y_desktop": 30,
+            "horizontal_alignment": "left",
+            "pos_x_desktop": 0,
+            "pos_y_mobile": 46,
+            "pos_x_mobile": 0,
+            "z_index": 2
+          }
+        },
+        "shape_8KtVnd": {
+          "type": "shape",
+          "settings": {
+            "width_desktop": 270,
+            "width_mobile": 200,
+            "vertical_alignment": "top",
+            "pos_y_desktop": -18,
+            "horizontal_alignment": "left",
+            "pos_x_desktop": 0,
+            "pos_y_mobile": -24,
+            "pos_x_mobile": 0,
+            "z_index": 1
+          }
+        },
+        "heading_3zUj3k": {
+          "type": "heading",
+          "settings": {
+            "title": "Try Sereluna risk-free"
+          }
+        },
+        "description_iMjCqF": {
+          "type": "description",
+          "settings": {
+            "text": "<p>Your comfort matters.<br/>If Sereluna isn’t the right fit for you, our 60-day guarantee means you’re not taking any risk.</p>"
+          }
+        },
+        "description_HaCbwR": {
+          "type": "description",
+          "settings": {
+            "text": "<p>We’re here to help — whether that’s a size change, advice, or a refund.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shape_UmiJpj",
+        "shape_4GGrP7",
+        "shape_RawXnN",
+        "shape_8KtVnd",
+        "heading_3zUj3k",
+        "description_iMjCqF",
+        "description_HaCbwR"
+      ],
+      "name": "Risk Free Banner",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "instagram_gallery_kKrKtz": {
+      "type": "instagram-gallery",
+      "blocks": {
+        "instagram_image_w4bheb": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_g7p7zG": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_aQxzLy": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_BxbfyW": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_rQ7TxA": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_7ekzLg": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_HmjtJL": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_MBjr6T": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_PeM8At": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_TExDNH": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_rcrwiV": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "instagram_image_dGTpRf": {
+          "type": "instagram_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_image_w4bheb",
+        "instagram_image_g7p7zG",
+        "instagram_image_aQxzLy",
+        "instagram_image_BxbfyW",
+        "instagram_image_rQ7TxA",
+        "instagram_image_7ekzLg",
+        "instagram_image_HmjtJL",
+        "instagram_image_MBjr6T",
+        "instagram_image_PeM8At",
+        "instagram_image_TExDNH",
+        "instagram_image_rcrwiV",
+        "instagram_image_dGTpRf"
+      ],
+      "name": "Instagram Gallery",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "heading": "Our Instagram",
+        "subheading": "@serelunaofficial",
+        "subheading_link": "",
+        "columns_desktop": 6,
+        "columns_mobile": 2,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_banner_XE8idV",
+    "collections_tabs_CftkD8",
+    "rich_text_a4qhbw",
+    "image_with_text_yKMmRX",
+    "pill_marquee_KwQygn",
+    "unique_features_YCBxQX",
+    "waterproof_bag_banner_fmPKcy",
+    "matching_comfort_PDMjyn",
+    "who_is_qwhQN9",
+    "how_to_use_rbfJLU",
+    "sereluna_guarantee_section_AK3U7q",
+    "instagram_gallery_kKrKtz"
+  ]
 }

@@ -2938,3 +2938,28 @@ li.footer-payment-payments_QCqHQe {
     transform: none !important;
   }
 }
+
+/* Premium Pricing UI/UX */
+.woc-price-sale {
+    font-weight: 800 !important;
+    color: #111111 !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.woc-premium-sale-badge {
+    background-color: #e63946 !important;
+    color: #ffffff !important;
+    padding: 3px 8px !important;
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
+    border-radius: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.25) !important;
+    line-height: 1.2;
+}
+.price-item--regular {
+    color: #888888 !important;
+    font-weight: 500;
+}

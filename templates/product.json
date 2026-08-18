@@ -631,6 +631,7 @@
       ],
       "name": "Comparison Table 1:1",
       "settings": {
+        "bg_image": "shopify://shop_images/ax-review-pocket.png",
         "card_bg_color": "#f8f7f4",
         "header_1": "US VS. THEM",
         "header_2": "ALPACA",

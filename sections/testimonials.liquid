@@ -30,21 +30,21 @@
   .masonry-header-title {
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback), sans-serif;
     font-size: clamp(24px, 3vw, 34px);
-    text-transform: uppercase;
-    font-weight: 800;
+    text-transform: none;
+    font-weight: 500;
     color: #1a1a1a;
     margin: 0;
     line-height: 1.1;
-    letter-spacing: -0.02em; /* Gives that condensed, bold look */
+    letter-spacing: -0.03em;
   }
 
   /* Masonry Grid Setup */
   .masonry-grid-{{ section.id }} {
     column-count: 1;
-    column-gap: 16px; /* Tighter gap matching the image */
-    max-width: 1280px;
+    column-gap: 16px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
   }
 
   @media screen and (min-width: 768px) {

@@ -42,46 +42,52 @@
 
 .collection-tabs-nav {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
     justify-content: center;
-    position: relative;
-    flex-wrap: inherit;
+    align-items: stretch;
+    gap: 2.75rem;
+    width: max-content;
+    max-width: 100%;
+    margin: 1.5rem auto 2.25rem;
+    padding: 0;
+    border-bottom: 1px solid #d8d8d8;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scroll-padding-left: 1.5rem;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1rem;
-    margin-bottom: 30px;
     scrollbar-width: none;
 }
-  
-.collection-tab-btn {
-    background: #F6F5F0;
-    border: none;
-    font-size: 16px;
-    font-family: inherit;
-    color: #282828;
-    cursor: pointer;
-    padding: 12px 25px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-    opacity: 1;
-    border-radius: 50px;
+
+.collection-tabs-nav::-webkit-scrollbar {
+    display: none;
 }
 
-  .collection-tab-btn:hover {
-    opacity: 1;
-    background: #282828;
-    color: white;
-  }
-  
-  .collection-tab-btn.is-active {
-    opacity: 1;
-    background: #282828;
-    color: white;
-  }
+.collection-tab-btn {
+    background: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    padding: 0 0 0.85rem;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #111111;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: none;
+    transition: border-color 0.2s ease;
+}
+
+.collection-tab-btn:hover {
+    background: none;
+    color: #111111;
+    border-bottom-color: #111111;
+}
+
+.collection-tab-btn.is-active {
+    background: none;
+    color: #111111;
+    border-bottom-color: #111111;
+}
 
   /* --- Tab Panel Styles --- */
   .collection-tab-panel {
@@ -106,7 +112,9 @@
   }
   @media screen and (max-width: 800px) {
     .collection-tabs-nav {
-    justify-content: start;
+      gap: 1.75rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 </style>

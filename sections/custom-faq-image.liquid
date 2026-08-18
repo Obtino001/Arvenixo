@@ -39,10 +39,10 @@
     font-size: 32px;
     margin-bottom: 40px;
     color: #282828;
-    text-transform: uppercase;
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: 1px;
+    text-transform: none;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
   }
   .custom-faq-image__footer {
     text-align: center;
@@ -65,6 +65,7 @@
   }
 </style>
 
+<div class="page-width">
 <div class="custom-faq-image" id="CustomFaqImage-{{ section.id }}">
   <div class="custom-faq-image__left">
     {%- if section.settings.image != blank -%}
@@ -100,6 +101,7 @@
       {%- endif -%}
     </div>
   </div>
+</div>
 </div>
 
 {% schema %}

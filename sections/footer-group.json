@@ -17,36 +17,36 @@
         "faq_HX4DNV": {
           "type": "faq",
           "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
+            "question": "How long does shipping take?",
+            "answer": "<p>Most orders ship within 1–2 business days. Delivery times depend on your region and are shown at checkout.</p>"
           }
         },
         "faq_NFnayX": {
           "type": "faq",
           "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
+            "question": "What is your return policy?",
+            "answer": "<p>Unused items can be returned within 30 days. Start a return from your order email or the contact page.</p>"
           }
         },
         "faq_9FVwn6": {
           "type": "faq",
           "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
+            "question": "Are the cases MagSafe compatible?",
+            "answer": "<p>Yes — our MagSafe cases are designed to align and hold on official MagSafe chargers and mounts.</p>"
           }
         },
         "faq_tXW4aG": {
           "type": "faq",
           "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
+            "question": "Which iPhone models do you cover?",
+            "answer": "<p>Each product page lists compatible models. If you are unsure, message us with your device before you order.</p>"
           }
         },
         "faq_Qt4gnz": {
           "type": "faq",
           "settings": {
-            "question": "WHY DOES OUR PRODUCT PERFORM BETTER?",
-            "answer": "<p>We use premium materials and modern engineering.</p>"
+            "question": "How do I care for a device or case?",
+            "answer": "<p>Wipe with a soft dry cloth. Avoid solvents, heat, and leaving beauty devices on charge overnight.</p>"
           }
         }
       },
@@ -60,10 +60,10 @@
       "name": "Image + FAQ",
       "settings": {
         "image": "shopify://shop_images/genrate-iamge-thwt-we-can-ue-for-faq-with-image-sections.png",
-        "heading": "YOUR QUESTIONS\nANSWERED",
-        "note_text": "<p><em><strong>Note:</strong></em> <em>The 60-day guarantee applies to new customers and covers one pair only.</em></p>",
+        "heading": "Questions,\nanswered",
+        "note_text": "<p>30-day returns on unused items. If something is off, write us — we will sort it.</p>",
         "bg_color": "#f6f5f0",
-        "button_label": "READ ALL FAQS",
+        "button_label": "",
         "button_link": ""
       }
     },
@@ -140,7 +140,7 @@
       "name": "Social Auto-Slider",
       "settings": {
         "bg_color": "#ffffff",
-        "heading": "GEAR UP FOR GREAT DAYS",
+        "heading": "In the world",
         "hashtag": "#Arvenixo",
         "show_facebook": true,
         "facebook_link": "",
@@ -185,8 +185,8 @@
       ],
       "settings": {
         "newsletter_image": "shopify://shop_images/ax-newsletter-lifestyle.png",
-        "newsletter_heading": "JOIN THE ARVENIXO CREW",
-        "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
+        "newsletter_heading": "Stay in touch",
+        "newsletter_subheading": "New releases and the occasional note. No noise.",
         "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"#\">View Terms & Privacy</a>.</p>",
         "brand_text": "ARVENIXO",
         "bottom_menu": "main-menu"

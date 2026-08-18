@@ -122,68 +122,6 @@
         "padding_bottom": 36
       }
     },
-    "unique_features_YCBxQX": {
-      "type": "unique-features",
-      "blocks": {
-        "feature_3FqJ9D": {
-          "type": "feature",
-          "settings": {
-            "icon_width": 65,
-            "title": "Fast & Secure Delivery",
-            "text": "Get your gadgets delivered quickly and securely right to your doorstep."
-          }
-        },
-        "feature_TfTYCV": {
-          "type": "feature",
-          "settings": {
-            "icon_width": 65,
-            "title": "2-Year Warranty",
-            "text": "Rest easy knowing your electronics are covered by a comprehensive warranty."
-          }
-        },
-        "feature_rp8MLg": {
-          "type": "feature",
-          "settings": {
-            "icon_width": 65,
-            "title": "Top Global Brands",
-            "text": "We source only the best products from industry-leading electronics brands."
-          }
-        },
-        "feature_wGHEmh": {
-          "type": "feature",
-          "settings": {
-            "icon_width": 65,
-            "title": "Expert Tech Support",
-            "text": "Our dedicated tech specialists are ready to assist you with any questions."
-          }
-        },
-        "button_8afKXT": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Electronics",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "feature_3FqJ9D",
-        "feature_TfTYCV",
-        "feature_rp8MLg",
-        "feature_wGHEmh",
-        "button_8afKXT"
-      ],
-      "name": "Why Choose Arvenixo",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "heading": "Why buy from Arvenixo?",
-        "wave_top_pos": 75,
-        "wave_opacity": 100,
-        "center_image": "shopify://shop_images/S9e64020353434d32819dafc3865c52d8c.webp",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "testimonials_qqDXbK": {
       "type": "testimonials",
       "blocks": {
@@ -384,7 +322,6 @@
   "order": [
     "custom_banner_XE8idV",
     "collections_tabs_X6mbxf",
-    "unique_features_YCBxQX",
     "testimonials_qqDXbK",
     "who_is_fRJAyc"
   ]

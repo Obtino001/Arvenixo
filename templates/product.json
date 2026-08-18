@@ -211,6 +211,64 @@
         "padding_bottom": 12
       }
     },
+    "our_values_7aAqFj": {
+      "type": "our-values",
+      "blocks": {
+        "row_8yCfXU": {
+          "type": "row",
+          "settings": {
+            "title": "Therapy Types",
+            "col_2_text": "Hot & Cold Therapy",
+            "col_3_text": "Cold only",
+            "col_4_text": "None"
+          }
+        },
+        "row_rwPnUp": {
+          "type": "row",
+          "settings": {
+            "title": "Product Absorption",
+            "col_2_text": "Deep Penetration",
+            "col_3_text": "Surface Level",
+            "col_4_text": "Wastes Product"
+          }
+        },
+        "row_WWDYeX": {
+          "type": "row",
+          "settings": {
+            "title": "Skin Tightening",
+            "col_2_text": "Visible Lifting",
+            "col_3_text": "Temporary Depuffing",
+            "col_4_text": "None"
+          }
+        },
+        "row_GCXiet": {
+          "type": "row",
+          "settings": {
+            "title": "LED Light Therapy",
+            "col_2_text": "Built-in",
+            "col_3_text": "None",
+            "col_4_text": "None"
+          }
+        }
+      },
+      "block_order": [
+        "row_8yCfXU",
+        "row_rwPnUp",
+        "row_WWDYeX",
+        "row_GCXiet"
+      ],
+      "name": "Comparison Table 1:1",
+      "settings": {
+        "card_bg_color": "transparent",
+        "header_1": "US VS. THEM",
+        "header_2": "LUMITHERM PRO",
+        "header_3": "CHEAP ROLLERS",
+        "header_4": "BARE HANDS",
+        "guarantee_text": "BACKED BY OUR 60-DAY\nGUARANTEE",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
     "pill_marquee_KrybN8": {
       "type": "pill-marquee",
       "blocks": {
@@ -479,6 +537,7 @@
   },
   "order": [
     "main",
+    "our_values_7aAqFj",
     "pill_marquee_KrybN8",
     "rich_text_a4qhbw",
     "washing_guide_JwqBHy",

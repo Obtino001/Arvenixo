@@ -8,205 +8,194 @@
  * ------------------------------------------------------------
  */
 {
-    "sections": {
-        "banner": {
-            "type": "main-collection-banner",
-            "disabled": true,
-            "settings": {
-                "show_collection_description": true,
-                "show_collection_image": false,
-                "color_scheme": "scheme-1"
-            }
-        },
-        "richtext_custom_KefGPf": {
-            "type": "richtext-custom",
-            "blocks": {
-                "heading_PrkTwg": {
-                    "type": "heading",
-                    "settings": {
-                        "title": "Premium Electronics"
-                    }
-                },
-                "text_DjqEEg": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Upgrade your lifestyle with our curated selection of top-tier gadgets. We offer cutting-edge technology to keep you connected, productive, and entertained all day.</p>"
-                    }
-                },
-                "features_FAEbMN": {
-                    "type": "features",
-                    "settings": {
-                        "icon_image": "shopify://shop_images/Vector_70.svg",
-                        "feature_1": "Cutting-edge technology",
-                        "feature_2": "Durable build quality",
-                        "feature_3": "Premium & Reliable"
-                    }
-                },
-                "rating_dxMhn4": {
-                    "type": "rating",
-                    "settings": {
-                        "stars_image": "shopify://shop_images/Group_15_3.svg",
-                        "rating_label": "EXCELLENT"
-                    }
-                },
-                "trust_score_EJyUVJ": {
-                    "type": "trust_score",
-                    "settings": {
-                        "trust_text": "Rated 4.8/5 by 471 customers",
-                        "trust_badge": "shopify://shop_images/3ae3b0124412cc868b2c6cca19b191d2e858b626.png"
-                    }
-                }
-            },
-            "block_order": [
-                "heading_PrkTwg",
-                "text_DjqEEg",
-                "features_FAEbMN",
-                "rating_dxMhn4",
-                "trust_score_EJyUVJ"
-            ],
-            "name": "Custom Rich Text",
-            "settings": {
-                "color_scheme": "scheme-1",
-                "padding_top": 52,
-                "padding_bottom": 32
-            }
-        },
-        "collection_nav_QTtqAb": {
-            "type": "collection-nav",
-            "blocks": {
-                "collection_item_L8HCaH": {
-                    "type": "collection_item",
-                    "settings": {
-                        "collection_ref": "all",
-                        "title": "Laptops",
-                        "custom_image": "",
-                        "droplet_image": "",
-                        "custom_url": ""
-                    }
-                },
-                "collection_item_egzmhA": {
-                    "type": "collection_item",
-                    "settings": {
-                        "collection_ref": "all",
-                        "title": "Smartphones",
-                        "custom_image": "",
-                        "droplet_image": "",
-                        "custom_url": ""
-                    }
-                },
-                "collection_item_twnPMc": {
-                    "type": "collection_item",
-                    "settings": {
-                        "collection_ref": "all",
-                        "title": "Accessories",
-                        "custom_image": "",
-                        "droplet_image": "",
-                        "custom_url": ""
-                    }
-                }
-            },
-            "block_order": [
-                "collection_item_L8HCaH",
-                "collection_item_egzmhA",
-                "collection_item_twnPMc"
-            ],
-            "name": "Collection Navigation",
-            "settings": {
-                "color_scheme": "scheme-1",
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
-        },
-        "product-grid": {
-            "type": "main-collection-product-grid",
-            "blocks": {
-                "feature_promo_yEHT8t": {
-                    "type": "feature_promo",
-                    "settings": {
-                        "insert_after": 6,
-                        "color_scheme": "scheme-1",
-                        "heading": "Secure. Durable. Always with you.",
-                        "text": "The Arvenixo carrying case keeps your premium electronics safely stored when you're on the go \u2014 no scratches, no worries.",
-                        "feature_1": "Shockproof & Water-resistant",
-                        "feature_2": "Durable & easy to maintain",
-                        "feature_3": "Perfect for work, school & travel",
-                        "button_label": "Shop Carrying Cases",
-                        "button_link": "",
-                        "image": "shopify://shop_images/ec86227ff1fa193c02f5e8812342a8bc32d60c0d_2.jpg",
-                        "image_mobile": "shopify://shop_images/c693c608f0f3798e0edd591f0f83b417766de242_cbabc291-d6cf-46ed-93bc-e3b7d6583556.jpg"
-                    }
-                },
-                "bmsm_promo_Mqkjaf": {
-                    "type": "bmsm_promo",
-                    "settings": {
-                        "insert_after": 2,
-                        "color_scheme": "scheme-1",
-                        "card_color_scheme": "scheme-2",
-                        "heading": "Buy More, Save More",
-                        "image": "shopify://shop_images/beaf2c30844a07219c5f3766d42ff22b752e6986.png",
-                        "desktop_image_position": "right",
-                        "tier_1_qty_text": "3+ Items",
-                        "tier_1_discount_text": "5% OFF",
-                        "tier_2_qty_text": "5+ Items",
-                        "tier_2_discount_text": "10% OFF",
-                        "tier_3_qty_text": "8+ Items",
-                        "tier_3_discount_text": "15% OFF",
-                        "shape_image": "",
-                        "shape_desktop_width": 26,
-                        "shape_desktop_top": 0,
-                        "shape_desktop_left": 0,
-                        "shape_mobile_width": 20,
-                        "shape_mobile_top": 0,
-                        "shape_mobile_left": 10,
-                        "panty_top_image": "",
-                        "panty_top_desktop_width": 50,
-                        "panty_top_desktop_top": 0,
-                        "panty_top_desktop_left": 50,
-                        "panty_top_mobile_width": 25,
-                        "panty_top_mobile_top": 5,
-                        "panty_top_mobile_left": 5,
-                        "panty_bottom_image": "",
-                        "panty_bottom_desktop_width": 50,
-                        "panty_bottom_desktop_bottom": 0,
-                        "panty_bottom_desktop_right": 50,
-                        "panty_bottom_mobile_width": 25,
-                        "panty_bottom_mobile_bottom": 5,
-                        "panty_bottom_mobile_right": 5,
-                        "padding_top": 0,
-                        "padding_bottom": 0
-                    }
-                }
-            },
-            "block_order": [
-                "feature_promo_yEHT8t",
-                "bmsm_promo_Mqkjaf"
-            ],
-            "settings": {
-                "products_per_page": 36,
-                "columns_desktop": 4,
-                "columns_mobile": "2",
-                "color_scheme": "scheme-1",
-                "infinite": "infinite",
-                "infinite_btn": true,
-                "infinite_progressbar": true,
-                "image_ratio": "adapt",
-                "image_shape": "default",
-                "show_secondary_image": true,
-                "show_vendor": false,
-                "show_rating": false,
-                "quick_add": "standard",
-                "enable_filtering": true,
-                "filter_type": "drawer",
-                "enable_sorting": true,
-                "padding_top": 0,
-                "padding_bottom": 36
-            }
-        },
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
     },
-    "order": [
-        "banner",
-        "richtext_custom_KefGPf",
-        "collection_nav_QTtqAb",
-        "product-grid",
-    ]
+    "richtext_custom_KefGPf": {
+      "type": "richtext-custom",
+      "blocks": {
+        "heading_PrkTwg": {
+          "type": "heading",
+          "settings": {
+            "title": "Premium Electronics"
+          }
+        },
+        "text_DjqEEg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Upgrade your lifestyle with our curated selection of top-tier gadgets. We offer cutting-edge technology to keep you connected, productive, and entertained all day.</p>"
+          }
+        },
+        "features_FAEbMN": {
+          "type": "features",
+          "settings": {
+            "feature_1": "Cutting-edge technology",
+            "feature_2": "Durable build quality",
+            "feature_3": "Premium & Reliable"
+          }
+        },
+        "rating_dxMhn4": {
+          "type": "rating",
+          "settings": {
+            "rating_label": "EXCELLENT"
+          }
+        },
+        "trust_score_EJyUVJ": {
+          "type": "trust_score",
+          "settings": {
+            "trust_text": "Rated 4.8/5 by 471 customers"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PrkTwg",
+        "text_DjqEEg",
+        "features_FAEbMN",
+        "rating_dxMhn4",
+        "trust_score_EJyUVJ"
+      ],
+      "name": "Custom Rich Text",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 32
+      }
+    },
+    "collection_nav_QTtqAb": {
+      "type": "collection-nav",
+      "blocks": {
+        "collection_item_L8HCaH": {
+          "type": "collection_item",
+          "settings": {
+            "collection_ref": "all",
+            "title": "Laptops",
+            "custom_image": "shopify://shop_images/bags.webp",
+            "custom_url": ""
+          }
+        },
+        "collection_item_egzmhA": {
+          "type": "collection_item",
+          "settings": {
+            "collection_ref": "all",
+            "title": "Smartphones",
+            "custom_image": "shopify://shop_images/Rise_5271.jpg",
+            "custom_url": ""
+          }
+        },
+        "collection_item_twnPMc": {
+          "type": "collection_item",
+          "settings": {
+            "collection_ref": "all",
+            "title": "Accessories",
+            "custom_image": "shopify://shop_images/tech_review_3.jpg",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_L8HCaH",
+        "collection_item_egzmhA",
+        "collection_item_twnPMc"
+      ],
+      "name": "Collection Navigation",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "feature_promo_yEHT8t": {
+          "type": "feature_promo",
+          "settings": {
+            "insert_after": 6,
+            "color_scheme": "scheme-1",
+            "heading": "Secure. Durable. Always with you.",
+            "text": "The Arvenixo carrying case keeps your premium electronics safely stored when you're on the go — no scratches, no worries.",
+            "feature_1": "Shockproof & Water-resistant",
+            "feature_2": "Durable & easy to maintain",
+            "feature_3": "Perfect for work, school & travel",
+            "button_label": "Shop Carrying Cases",
+            "button_link": ""
+          }
+        },
+        "bmsm_promo_Mqkjaf": {
+          "type": "bmsm_promo",
+          "settings": {
+            "insert_after": 2,
+            "color_scheme": "scheme-1",
+            "card_color_scheme": "scheme-2",
+            "heading": "Buy More, Save More",
+            "image": "shopify://shop_images/cables.webp",
+            "desktop_image_position": "right",
+            "tier_1_qty_text": "3+ Items",
+            "tier_1_discount_text": "5% OFF",
+            "tier_2_qty_text": "5+ Items",
+            "tier_2_discount_text": "10% OFF",
+            "tier_3_qty_text": "8+ Items",
+            "tier_3_discount_text": "15% OFF",
+            "shape_desktop_width": 26,
+            "shape_desktop_top": 0,
+            "shape_desktop_left": 0,
+            "shape_mobile_width": 20,
+            "shape_mobile_top": 0,
+            "shape_mobile_left": 10,
+            "panty_top_desktop_width": 50,
+            "panty_top_desktop_top": 0,
+            "panty_top_desktop_left": 50,
+            "panty_top_mobile_width": 25,
+            "panty_top_mobile_top": 5,
+            "panty_top_mobile_left": 5,
+            "panty_bottom_desktop_width": 50,
+            "panty_bottom_desktop_bottom": 0,
+            "panty_bottom_desktop_right": 50,
+            "panty_bottom_mobile_width": 25,
+            "panty_bottom_mobile_bottom": 5,
+            "panty_bottom_mobile_right": 5,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "feature_promo_yEHT8t",
+        "bmsm_promo_Mqkjaf"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "infinite": "infinite",
+        "infinite_btn": true,
+        "infinite_progressbar": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "richtext_custom_KefGPf",
+    "collection_nav_QTtqAb",
+    "product-grid"
+  ]
 }

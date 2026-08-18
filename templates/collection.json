@@ -113,63 +113,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "blocks": {
-        "feature_promo_yEHT8t": {
-          "type": "feature_promo",
-          "settings": {
-            "insert_after": 6,
-            "color_scheme": "scheme-1",
-            "heading": "Secure. Durable. Always with you.",
-            "text": "The Arvenixo carrying case keeps your premium electronics safely stored when you're on the go — no scratches, no worries.",
-            "feature_1": "Shockproof & Water-resistant",
-            "feature_2": "Durable & easy to maintain",
-            "feature_3": "Perfect for work, school & travel",
-            "button_label": "Shop Carrying Cases",
-            "button_link": ""
-          }
-        },
-        "bmsm_promo_Mqkjaf": {
-          "type": "bmsm_promo",
-          "settings": {
-            "insert_after": 2,
-            "color_scheme": "scheme-1",
-            "card_color_scheme": "scheme-2",
-            "heading": "Buy More, Save More",
-            "image": "shopify://shop_images/cables.webp",
-            "desktop_image_position": "right",
-            "tier_1_qty_text": "3+ Items",
-            "tier_1_discount_text": "5% OFF",
-            "tier_2_qty_text": "5+ Items",
-            "tier_2_discount_text": "10% OFF",
-            "tier_3_qty_text": "8+ Items",
-            "tier_3_discount_text": "15% OFF",
-            "shape_desktop_width": 26,
-            "shape_desktop_top": 0,
-            "shape_desktop_left": 0,
-            "shape_mobile_width": 20,
-            "shape_mobile_top": 0,
-            "shape_mobile_left": 10,
-            "panty_top_desktop_width": 50,
-            "panty_top_desktop_top": 0,
-            "panty_top_desktop_left": 50,
-            "panty_top_mobile_width": 25,
-            "panty_top_mobile_top": 5,
-            "panty_top_mobile_left": 5,
-            "panty_bottom_desktop_width": 50,
-            "panty_bottom_desktop_bottom": 0,
-            "panty_bottom_desktop_right": 50,
-            "panty_bottom_mobile_width": 25,
-            "panty_bottom_mobile_bottom": 5,
-            "panty_bottom_mobile_right": 5,
-            "padding_top": 0,
-            "padding_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "feature_promo_yEHT8t",
-        "bmsm_promo_Mqkjaf"
-      ],
       "settings": {
         "products_per_page": 36,
         "columns_desktop": 4,
@@ -186,7 +129,7 @@
         "quick_add": "standard",
         "enable_filtering": true,
         "filter_type": "drawer",
-        "enable_sorting": true,
+        "enable_sorting": false,
         "padding_top": 0,
         "padding_bottom": 36
       }

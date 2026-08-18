@@ -244,7 +244,7 @@
                     "elsa-shorty-black"
                 ],
                 "heading": "The Ultimate Ecosystem",
-                "description": "Our matching Livia bralettes are designed to pair perfectly with your Sereluna period panties \u2014 combining comfort, support, and the same premium feel you already love.",
+                "description": "Our matching Livia bralettes are designed to pair perfectly with your Arvenixo electronic gadgets \u2014 combining comfort, support, and the same premium feel you already love.",
                 "padding_top": 40,
                 "padding_bottom": 52,
                 "image_ratio": "adapt",
@@ -255,8 +255,8 @@
                 "quick_add": "standard"
             }
         },
-        "sereluna_guarantee_section_AK3U7q": {
-            "type": "sereluna-guarantee-section",
+        "Arvenixo_guarantee_section_AK3U7q": {
+            "type": "Arvenixo-guarantee-section",
             "blocks": {
                 "shape_UmiJpj": {
                     "type": "shape",
@@ -331,7 +331,7 @@
                 "description_iMjCqF": {
                     "type": "description",
                     "settings": {
-                        "text": "<p>Your comfort matters.<br/>If Sereluna isn\u2019t the right fit for you, our 60-day guarantee means you\u2019re not taking any risk.</p>"
+                        "text": "<p>Your comfort matters.<br/>If Arvenixo isn\u2019t the right fit for you, our 60-day guarantee means you\u2019re not taking any risk.</p>"
                     }
                 },
                 "description_HaCbwR": {
@@ -483,7 +483,7 @@
         "collection_nav_QTtqAb",
         "product-grid",
         "matching_comfort_PDMjyn",
-        "sereluna_guarantee_section_AK3U7q",
+        "Arvenixo_guarantee_section_AK3U7q",
         "faq_with_images_9bEYkm",
         "pill_marquee_KwQygn"
     ]

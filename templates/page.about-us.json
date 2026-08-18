@@ -30,7 +30,7 @@
                 "text_BPxxKk": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Sereluna is a family-owned Norwegian brand creating high-quality, safe period underwear designed to make periods feel simpler and more comfortable.</p>"
+                        "text": "<p>Arvenixo is an innovative tech brand creating high-quality, safe electronic accessories designed to make your digital life simpler and more seamless.</p>"
                     }
                 }
             },
@@ -74,14 +74,14 @@
                 "heading_kPbKdE": {
                     "type": "heading",
                     "settings": {
-                        "heading": "How Sereluna started",
+                        "heading": "How Arvenixo started",
                         "heading_size": "h1"
                     }
                 },
                 "text_nY3iXe": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Sereluna was founded in 2022 by Charlotte, who struggled to find comfortable and safe alternatives to pads and tampons in Norway. While period underwear was already popular in other European countries, it was still hard to find in Norway. <br/><br/>Sereluna was created to change that \u2014 by offering high-quality period underwear designed to feel like regular underwear, made in Europe, and gentle on both the body and the environment.</p>",
+                        "text": "<p>Arvenixo was founded in 2022 by tech enthusiasts who struggled to find premium and reliable charging accessories. While tech accessories was already popular in other European countries, it was still hard to find in Norway. <br/><br/>Arvenixo was created to change that \u2014 by offering high-quality tech accessories designed to feel like regular underwear, made in Europe, and gentle on both the body and the environment.</p>",
                         "text_style": "body"
                     }
                 }
@@ -114,7 +114,7 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Sereluna is quality",
+                        "title": "Arvenixo is quality",
                         "subtitle": "We control the entire value chain",
                         "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
                         "shape_1": "shopify://shop_images/Rectangle_251.svg",
@@ -144,7 +144,7 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Sereluna is quality",
+                        "title": "Arvenixo is quality",
                         "subtitle": "We control the entire value chain",
                         "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
                         "shape_1": "shopify://shop_images/Rectangle_251.svg",
@@ -174,7 +174,7 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Sereluna is quality",
+                        "title": "Arvenixo is quality",
                         "subtitle": "We control the entire value chain",
                         "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
                         "shape_1": "shopify://shop_images/Rectangle_253_1.svg",
@@ -208,7 +208,7 @@
             ],
             "name": "Custom Feature Blocks",
             "settings": {
-                "heading": "What is Sereluna",
+                "heading": "What is Arvenixo",
                 "heading_size": "h1",
                 "color_scheme": "",
                 "card_radius": 26,
@@ -224,7 +224,7 @@
                     "settings": {
                         "image": "shopify://shop_images/1880a1dfd3669a052c150a7a0add01ab1ad26659_1.jpg",
                         "title": "Women's Health",
-                        "text": "<p>Sereluna was created because there are better alternatives to disposable period products. We believe women deserve better.</p>"
+                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 },
                 "value_tzBd7y": {
@@ -232,7 +232,7 @@
                     "settings": {
                         "image": "shopify://shop_images/7ed9cbe82123bc6298ef240d3b98760724abfd7e_be3453e8-1f48-4ac4-b2d2-a36f703882b7.png",
                         "title": "Women's Health",
-                        "text": "<p>Sereluna was created because there are better alternatives to disposable period products. We believe women deserve better.</p>"
+                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 },
                 "value_DcKyca": {
@@ -240,7 +240,7 @@
                     "settings": {
                         "image": "shopify://shop_images/b5a93abf8a4339b084bc4fd0db3aa57bf7d3588a_3a8d3a9e-b811-4430-bb5a-c8133f2cba67.png",
                         "title": "Women's Health",
-                        "text": "<p>Sereluna was created because there are better alternatives to disposable period products. We believe women deserve better.</p>"
+                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 }
             },
@@ -437,8 +437,8 @@
                 "padding_bottom": 36
             }
         },
-        "sereluna_guarantee_section_AK3U7q": {
-            "type": "sereluna-guarantee-section",
+        "Arvenixo_guarantee_section_AK3U7q": {
+            "type": "Arvenixo-guarantee-section",
             "blocks": {
                 "shape_UmiJpj": {
                     "type": "shape",
@@ -666,7 +666,7 @@
         "obstacles_grid_fV6Qbb",
         "our_values_KCptGT",
         "testimonials_RUYBWp",
-        "sereluna_guarantee_section_AK3U7q",
+        "Arvenixo_guarantee_section_AK3U7q",
         "faq_with_images_9bEYkm",
         "collections_tabs_CftkD8",
         "pill_marquee_KwQygn"

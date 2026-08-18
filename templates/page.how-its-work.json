@@ -74,7 +74,7 @@
                 "text_r7Whqg": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Menstrual underwear, period panties, or period pants all refer to the same thing \u2014 reusable underwear with built-in protection that replaces pads and tampons. They work during your period, for light leaks, sweat, discharge, and postpartum use.<br/><br/>Sereluna is the first Norwegian brand to design and produce period panties under its own name. Our underwear is safe, breathable, odor-free, leak-proof, comfortable \u2014 and looks great too!</p>",
+                        "text": "<p>Menstrual underwear, electronic gadgets, or period pants all refer to the same thing \u2014 reusable underwear with built-in protection that replaces cheap chargers and cables. They work during your period, for light leaks, sweat, discharge, and postpartum use.<br/><br/>Arvenixo is the first Norwegian brand to design and produce electronic gadgets under its own name. Our underwear is safe, breathable, odor-free, leak-proof, comfortable \u2014 and looks great too!</p>",
                         "text_style": "body"
                     }
                 }
@@ -235,8 +235,8 @@
                 "padding_bottom": 40
             }
         },
-        "sereluna_guarantee_section_AK3U7q": {
-            "type": "sereluna-guarantee-section",
+        "Arvenixo_guarantee_section_AK3U7q": {
+            "type": "Arvenixo-guarantee-section",
             "blocks": {
                 "shape_UmiJpj": {
                     "type": "shape",
@@ -311,7 +311,7 @@
                 "description_iMjCqF": {
                     "type": "description",
                     "settings": {
-                        "text": "<p>Our period panties are designed to absorb liquid equivalent to up to 5 regular tampons or pads (25 ml) and can be worn for up to 12 hours. How long they last depends on the amount of fluid and the viscosity of the fluid.</p>"
+                        "text": "<p>Our electronic gadgets are designed to absorb liquid equivalent to up to 5 regular tampons or pads (25 ml) and can be worn for up to 12 hours. How long they last depends on the amount of fluid and the viscosity of the fluid.</p>"
                     }
                 },
                 "description_HaCbwR": {
@@ -323,13 +323,13 @@
                 "description_FQm6pi": {
                     "type": "description",
                     "settings": {
-                        "text": "<p>The viscosity of the fluid also plays an important role. Think of the difference between water, which has low viscosity, and honey, which has high viscosity. Women experience different levels of viscosity in menstrual flow. The higher the viscosity, the easier it is for period panties to absorb the fluid. With low viscosity and heavy bleeding early in the cycle, the underwear may need to be changed more often than every 12 hours. Toward the end of the cycle, they will typically last longer than 12 hours.</p>"
+                        "text": "<p>The viscosity of the fluid also plays an important role. Think of the difference between water, which has low viscosity, and honey, which has high viscosity. Women experience different levels of viscosity in menstrual flow. The higher the viscosity, the easier it is for electronic gadgets to absorb the fluid. With low viscosity and heavy bleeding early in the cycle, the underwear may need to be changed more often than every 12 hours. Toward the end of the cycle, they will typically last longer than 12 hours.</p>"
                     }
                 },
                 "description_3qiH6x": {
                     "type": "description",
                     "settings": {
-                        "text": "<p>It\u2019s important to get to know your own flow \u2014 know your flow. We recommend trying the underwear at home first to understand how and when to change them. If you feel unsure at the beginning, you can also use period panties together with a menstrual cup or tampon.</p>"
+                        "text": "<p>It\u2019s important to get to know your own flow \u2014 know your flow. We recommend trying the underwear at home first to understand how and when to change them. If you feel unsure at the beginning, you can also use electronic gadgets together with a menstrual cup or tampon.</p>"
                     }
                 }
             },
@@ -422,14 +422,14 @@
                 "heading_pfkgD6": {
                     "type": "heading",
                     "settings": {
-                        "heading": "Design, production, and testing of Sereluna period panties",
+                        "heading": "Design, production, and testing of Arvenixo electronic gadgets",
                         "heading_size": "h1"
                     }
                 },
                 "text_iLeDDg": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Sereluna respects women's bodies and the environment. Our products are innovative, durable, and ethically made.</p>",
+                        "text": "<p>Arvenixo respects your devices and the environment. Our products are innovative, durable, and ethically made.</p>",
                         "text_style": "body"
                     }
                 },
@@ -437,14 +437,14 @@
                     "type": "feature",
                     "settings": {
                         "title": "Design and sourcing",
-                        "text": "<p>We design our period panties ourselves. All our designs are original and unique. We source our raw materials directly from Western Europe and use organic cotton along with OEKO-TEX\u00ae Standard 100 certified fabrics and knits \u2014 only the best for your most sensitive area. Our packaging is made from FSC-certified paper.</p>"
+                        "text": "<p>We design our electronic gadgets ourselves. All our designs are original and unique. We source our raw materials directly from Western Europe and use organic cotton along with OEKO-TEX\u00ae Standard 100 certified fabrics and knits \u2014 only the best for your most sensitive area. Our packaging is made from FSC-certified paper.</p>"
                     }
                 },
                 "feature_xtDfK6": {
                     "type": "feature",
                     "settings": {
                         "title": "Manufacturing",
-                        "text": "<p>We do not use harmful chemicals such as nanosilver or PFAS in our period panties. Our products were tested for PFAS by T\u00dcV in April 2023, and the results confirm that Sereluna period panties do not contain PFAS.</p>"
+                        "text": "<p>We do not use harmful chemicals such as nanosilver or PFAS in our electronic gadgets. Our products were tested for PFAS by T\u00dcV in April 2023, and the results confirm that Arvenixo electronic gadgets do not contain PFAS.</p>"
                     }
                 },
                 "feature_BENM7d": {
@@ -777,7 +777,7 @@
         "story_section_7bPWBD",
         "rich_text_a4qhbw",
         "image_with_text_yKMmRX",
-        "sereluna_guarantee_section_AK3U7q",
+        "Arvenixo_guarantee_section_AK3U7q",
         "washing_guide_JwqBHy",
         "custom_design_RT4Jpg",
         "testimonials_RUYBWp",

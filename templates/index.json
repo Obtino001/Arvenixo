@@ -99,7 +99,7 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "spacing": 20,
-        "overflow": false,
+        "overflow": true,
         "full_width": false,
         "enable_slider_desktop": true,
         "enable_slider_mobile": true,

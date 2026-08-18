@@ -35,13 +35,13 @@
 }
 
 :root {
-    --sl-brand-primary: #962071;
+    --sl-brand-primary: #282828;
     --sl-brand-primary-light: #FFF2F2;
-    --sl-brand-accent: #962071;
+    --sl-brand-accent: #282828;
     --sl-brand-blush: #faeeef;
     --sl-brand-lavender: #d8bfd8;
-    --sl-brand-deep-purple: #962071;
-    --sl-brand-magenta: #962071;
+    --sl-brand-deep-purple: #282828;
+    --sl-brand-magenta: #282828;
     --sl-radius-pill: 20px;
     --sl-radius-round: 50%;
     --sl-radius-card: 15px;
@@ -1001,7 +1001,7 @@ nav-container:hover .header__menu-item .icon-caret {
     gap: 10px;
     justify-content: center;
     align-items: flex-start;
-    border-bottom: 1px solid #96207133;
+    border-bottom: 1px solid #28282833;
     padding-bottom: 14px;
 }
 

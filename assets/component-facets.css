@@ -1359,7 +1359,7 @@ details.js-filter>summary::before {
 .mobile-facets__arrow::after {
   content: '';
   position: absolute;
-  background-color: #962071;
+  background-color: #282828;
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }

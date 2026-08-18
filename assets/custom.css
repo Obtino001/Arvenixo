@@ -121,7 +121,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--sl-brand-primary, #962071);
+  background-color: var(--sl-brand-primary, #282828);
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -266,7 +266,7 @@ body {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  color: #962071;
+  color: #282828;
   font-size: 1.3rem;
   font-weight: 500;
 }

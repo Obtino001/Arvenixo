@@ -39,17 +39,18 @@
 #custom-banner-{{ section.id }} .banner-content {
   position: absolute;
   top: {{ section.settings.text_position_top }}%;
-  left: {{ section.settings.text_position_left }}%;
-  transform: translate(-{{ section.settings.text_position_left }}%, -{{ section.settings.text_position_top }}%);
+  left: 50%;
+  transform: translate(-50%, -{{ section.settings.text_position_top }}%);
   z-index: 2;
   text-align: {{ section.settings.text_alignment }};
-  max-width: {{ section.settings.content_width }}px;
+  max-width: var(--page-width);
   width: 100%;
-  padding: 20px;
+  padding: 20px 5rem;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Clean spacing between all blocks */
+  gap: 15px;
   align-items: {% if section.settings.text_alignment == 'left' %}flex-start{% elsif section.settings.text_alignment == 'right' %}flex-end{% else %}center{% endif %};
+  box-sizing: border-box;
 }
 
 /* BLOCK: HEADING */
@@ -144,13 +145,11 @@ letter-spacing: 0%;
     left: 50%;
     transform: translate(-50%, -90%);
     text-align: center;
-    max-width: calc(100% - 0.5rem);
+    max-width: 100%;
     align-items: center;
     justify-content: end;
     gap: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 20px 1.5rem 0;
   }
 }
 
@@ -159,7 +158,7 @@ letter-spacing: 0%;
 }
 {%- endstyle -%}
 
-<div id="custom-banner-{{ section.id }}" class="custom-banner-section page-width color-{{ section.settings.color_scheme }} gradient">
+<div id="custom-banner-{{ section.id }}" class="custom-banner-section color-{{ section.settings.color_scheme }} gradient">
   
   <div class="banner-image-wrapper">
     {%- if section.settings.media_type == 'video' and section.settings.video != blank -%}

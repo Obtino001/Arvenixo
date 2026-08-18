@@ -58,7 +58,7 @@
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "enable_transparent_header": true,
-        "enable_full_width": false,
+        "enable_full_width": true,
         "color_scheme": "scheme-3",
         "menu_color_scheme": "scheme-3",
         "enable_country_selector": true,

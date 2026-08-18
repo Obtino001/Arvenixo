@@ -142,7 +142,10 @@
           {%- if block.settings.image != blank -%}
             <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
           {%- else -%}
-            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- assign img_url = 'tech_review_1.jpg' | asset_url -%}
+            {%- if forloop.index == 3 -%}{%- assign img_url = 'tech_review_2.jpg' | asset_url -%}{%- endif -%}
+            {%- if forloop.index == 5 -%}{%- assign img_url = 'tech_review_3.jpg' | asset_url -%}{%- endif -%}
+            <img src="{{ img_url }}" alt="Tech Review" loading="lazy" style="width: 100%; height: auto; display: block;">
           {%- endif -%}
         </div>
       {%- endif -%}

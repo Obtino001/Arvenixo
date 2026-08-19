@@ -49,25 +49,6 @@
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "megamenu_6rMtA6": {
-          "type": "megamenu",
-          "settings": {
-            "column_size": "75%",
-            "title": "Products",
-            "widget": "menu",
-            "menu_heading": "",
-            "menu_link_list_child": "main-menu",
-            "image": "shopify://shop_images/sale.webp",
-            "banner_title": "Banner image",
-            "banner_button": "Banner image",
-            "banner_link": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "megamenu_6rMtA6"
-      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",

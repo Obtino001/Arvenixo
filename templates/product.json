@@ -36,23 +36,35 @@
         "text_YJpJae": {
           "type": "text",
           "settings": {
-            "text": "Choose your model and color, then add to cart. Compatibility is listed in the options below — message support if you are unsure.",
+            "text": "Use as directed on the product page. Cosmetic devices are for skincare routines only — results vary. Check charging and care notes before first use.",
             "text_style": "body"
           }
         },
         "multi_icon_xn8fhg": {
           "type": "multi-icon",
           "settings": {
+            "icon-1": "shopify://shop_images/Free_Return.avif",
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "30-day returns",
+            "text-1": "30 Days Return",
+            "icon-2": "shopify://shop_images/secure_payments.avif",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
-            "text-2": "Tracked shipping",
+            "text-2": "100% Secure Payments",
+            "icon-3": "shopify://shop_images/warranty.avif",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
-            "text-3": "Secure checkout",
+            "text-3": "Email support",
             "text-size": 14
+          }
+        },
+        "inventory_9gdd8V": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": false
           }
         },
         "variant_picker": {
@@ -93,29 +105,49 @@
             "note_text": "If you need help choosing, please reach out to us."
           }
         },
+        "shipping_info_FbM7ih": {
+          "type": "shipping-info",
+          "settings": {
+            "icon_width": 14,
+            "status_text": "In Stock",
+            "pre_date_text": "Order today and get it by",
+            "text_color": "#333333",
+            "font_size": 14,
+            "date_type": "hardcoded",
+            "hardcoded_text": "2-3 days",
+            "delivery_days": 9,
+            "padding_bottom": 16
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
         "delivery_payment_mB6BTN": {
           "type": "delivery_payment",
+          "disabled": true,
           "settings": {
             "text": "Ships in 1–2 business days. Delivery time depends on your region.",
             "margin_bottom": 16
           }
         },
+        "payments_mxWmKT": {
+          "type": "Payments",
+          "settings": {}
+        },
         "pills_xFGRwJ": {
           "type": "pills",
+          "disabled": true,
           "settings": {
             "text_color": "#282828",
             "custom_svg": "",
             "benefit_1": "30-day returns",
-            "benefit_2": "Secure checkout",
+            "benefit_2": "Cosmetic use only",
             "benefit_3": "Tracked shipping",
-            "benefit_4": "Support via email",
+            "benefit_4": "Care notes below",
             "benefit_5": "",
             "benefit_6": ""
           }
@@ -177,9 +209,12 @@
         "price",
         "text_YJpJae",
         "multi_icon_xn8fhg",
+        "inventory_9gdd8V",
         "variant_picker",
+        "shipping_info_FbM7ih",
         "buy_buttons",
         "delivery_payment_mB6BTN",
+        "payments_mxWmKT",
         "pills_xFGRwJ",
         "faq_blocks_NkWNgc",
         "faq_blocks_CkKVjD",
@@ -262,7 +297,6 @@
     },
     "our_values_7aAqFj": {
       "type": "our-values",
-      "disabled": true,
       "blocks": {
         "row_8yCfXU": {
           "type": "row",
@@ -307,6 +341,7 @@
         "row_WWDYeX",
         "row_GCXiet"
       ],
+      "disabled": true,
       "name": "Comparison Table 1:1",
       "settings": {
         "card_bg_color": "rgba(0,0,0,0)",
@@ -401,7 +436,6 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
-      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",
@@ -504,6 +538,7 @@
         "image_BUjmnf",
         "review_r4YBxd"
       ],
+      "disabled": true,
       "name": "Masonry Reviews",
       "settings": {
         "bg_color": "#f9f8f6",

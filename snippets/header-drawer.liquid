@@ -132,7 +132,7 @@
                 <p class="nlk-submenu-title">{{ link.title | escape }}</p>
               </div>
               <nav class="nlk-nav" aria-label="{{ link.title | escape }}">
-                {%- if link.links.size > 0 -%}
+                {%- if link.links != blank -%}
                   {%- assign mob_link_handle = link.title | handleize -%}
                   {%- if mob_link_handle == 'brands' -%}
                     {%- assign alphabet = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z' | split: ',' -%}
@@ -183,7 +183,7 @@
               </nav>
             </div>
 
-            {%- if link.links.size > 0 -%}
+            {%- if link.links != blank -%}
               {%- for child in link.links -%}
                 {%- if child.links != blank -%}
                   <div

@@ -55,7 +55,7 @@
                     endif
                   endfor
                   assign nlk_has_kids = false
-                  if link.links != blank or has_mega
+                  if link.links.size > 0 or has_mega
                     assign nlk_has_kids = true
                   endif
                 -%}
@@ -125,7 +125,8 @@
               endif
             endfor
           -%}
-          {%- if link.title != blank and link.links != blank or has_mega -%}
+          {%- if link.title != blank -%}
+          {%- if link.links.size > 0 or has_mega -%}
             <div class="nlk-submenu" id="nlk-panel-{{ link.handle }}" data-nlk-title="{{ link.title | escape }}">
               <div class="nlk-submenu-head">
                 <button type="button" class="nlk-submenu-back" data-nlk-back aria-label="{{ 'general.pagination.previous' | t }}">
@@ -243,6 +244,7 @@
                 {%- endfor -%}
               {%- endif -%}
             {%- endfor -%}
+          {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
       </div>

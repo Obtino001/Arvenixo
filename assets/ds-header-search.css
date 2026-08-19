@@ -598,7 +598,9 @@
   justify-content: space-between;
   text-decoration: none;
   color: #212121;
+  font-family: var(--font-body-family);
   font-size: 1.4rem;
+  font-weight: 400;
   padding: 0.6rem 0;
   transition: color 0.15s ease;
 }
@@ -640,19 +642,19 @@
 
 .ds-predictive-products__heading {
   font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
   color: #000;
   margin: 0;
-  font-family: inherit;
+  font-family: var(--font-heading-family);
 }
 
 .ds-predictive-products__see-all {
   font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
   color: #000;
   text-decoration: none;
   transition: opacity 0.15s ease;

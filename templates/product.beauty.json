@@ -262,7 +262,6 @@
     },
     "our_values_7aAqFj": {
       "type": "our-values",
-      "disabled": true,
       "blocks": {
         "row_8yCfXU": {
           "type": "row",
@@ -307,6 +306,7 @@
         "row_WWDYeX",
         "row_GCXiet"
       ],
+      "disabled": true,
       "name": "Comparison Table 1:1",
       "settings": {
         "card_bg_color": "rgba(0,0,0,0)",
@@ -401,7 +401,6 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
-      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",

@@ -126,8 +126,6 @@
     "popular_brands_heading": "Shop",
     "popular_blogs_heading": "Help",
     "trending_heading": "Trending",
-    "search_menu": "main-menu",
-    "search_product_collection": "all",
     "upsell__container": true,
     "upsell__heading": "We recommend",
     "upsell__products": [
@@ -170,6 +168,8 @@
     ],
     "cart_drawer_collection": "frontpage",
     "cart_color_scheme": "scheme-1",
+    "search_menu": "main-menu",
+    "search_product_collection": "all",
     "drawer_mobile_scrollbar": true,
     "drawer_mobile_progress_bar": true,
     "drawer_desktop_slides": 1.5,
@@ -245,6 +245,17 @@
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
+        }
+      },
+      "scheme-a48757f2-b0ca-4125-aa9d-572aa6225a09": {
+        "settings": {
+          "background": "#f6f5f0",
+          "background_gradient": "",
+          "text": "#F6F5F0",
+          "button": "#282828",
+          "button_label": "#f6f5f0",
+          "secondary_button_label": "#282828",
+          "shadow": "#282828"
         }
       }
     }

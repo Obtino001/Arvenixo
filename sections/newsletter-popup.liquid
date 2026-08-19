@@ -1,406 +1,244 @@
-{%- if section.settings.enable_popup -%}
-  {%- assign discount_code = section.settings.discount_code | default: 'WELCOME10' | strip | upcase -%}
-  <style>
-    .ax-welcome {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.6rem;
-      background: rgba(17, 17, 17, 0.45);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .ax-welcome.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-    .ax-welcome__modal {
-      position: relative;
-      display: flex;
-      width: min(92vw, 92rem);
+{%- if section.settings.enable_popup and template.name != 'product' -%}
+<style>
+  .newsletter-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .newsletter-popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .newsletter-popup-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 950px;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  .newsletter-popup-overlay.show .newsletter-popup-modal {
+    transform: translateY(0);
+  }
+  .newsletter-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+    z-index: 10;
+  }
+  .newsletter-popup-image {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #e5e5e5;
+  }
+  .newsletter-popup-content {
+    width: 50%;
+    height: 100%;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .newsletter-popup-content h2 {
+    font-size: 38px;
+    margin: 0 0 10px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -0.5px;
+  }
+  .newsletter-popup-content p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  .newsletter-popup-form {
+    width: 100%;
+  }
+  .newsletter-popup-form input[type="email"] {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 0;
+    font-size: 14px;
+    outline: none;
+  }
+  .newsletter-popup-form input[type="email"]::placeholder {
+    color: #999;
+  }
+  .newsletter-popup-form button {
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+  }
+  .newsletter-popup-form button:hover {
+    background: #333;
+  }
+  .newsletter-popup-dismiss {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #555;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .newsletter-popup-disclaimer {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 30px;
+    line-height: 1.4;
+  }
+  @media (max-width: 767px) {
+    .newsletter-popup-modal {
+      flex-direction: column;
+      height: auto;
       max-height: 90vh;
-      overflow: hidden;
-      background: #fff;
-      border-radius: 1.2rem;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-      transform: translateY(12px);
-      transition: transform 0.3s ease;
+      overflow-y: auto;
     }
-    .ax-welcome.is-open .ax-welcome__modal {
-      transform: translateY(0);
-    }
-    .ax-welcome__close {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      z-index: 2;
-      width: 3.6rem;
-      height: 3.6rem;
-      border: 0;
-      background: transparent;
-      font-size: 2.4rem;
-      line-height: 1;
-      color: #111;
-      cursor: pointer;
-    }
-    .ax-welcome__image {
-      display: none;
-      width: 48%;
-      min-height: 42rem;
-      background: #f3f1ec center / cover no-repeat;
-    }
-    .ax-welcome__content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 4.8rem 4rem;
-      text-align: left;
-    }
-    .ax-welcome__brand {
-      margin: 0 0 1.6rem;
-      font-family: var(--font-heading-family);
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #111;
-    }
-    .ax-welcome__heading {
-      margin: 0 0 1rem;
-      font-family: var(--font-heading-family);
-      font-size: clamp(2.8rem, 4vw, 4.2rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: #111;
-    }
-    .ax-welcome__text,
-    .ax-welcome__text p {
-      margin: 0 0 2.4rem;
-      font-family: var(--font-body-family);
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #555;
-    }
-    .ax-welcome__form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+    .newsletter-popup-image {
       width: 100%;
+      min-height: 250px;
     }
-    .ax-welcome__form input[type='email'] {
+    .newsletter-popup-content {
       width: 100%;
-      margin: 0;
-      padding: 1.4rem 1.6rem;
-      border: 1px solid #d8d8d8;
-      border-radius: 0.6rem;
-      background: #faf9f7;
-      font-family: var(--font-body-family);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #111;
+      padding: 40px 30px;
     }
-    .ax-welcome__form input[type='email']:focus {
-      outline: none;
-      border-color: #111;
-    }
-    .ax-welcome__submit,
-    .ax-welcome__copy {
-      width: 100%;
-      padding: 1.5rem 1.8rem;
-      border: 0;
-      border-radius: 999px;
-      background: #111;
-      color: #fff;
-      font-family: var(--font-body-family);
-      font-size: 1.3rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-    }
-    .ax-welcome__submit:hover,
-    .ax-welcome__copy:hover {
-      background: #2a2a2a;
-    }
-    .ax-welcome__submit:disabled {
-      opacity: 0.65;
-      cursor: wait;
-    }
-    .ax-welcome__dismiss {
-      margin-top: 1.4rem;
-      padding: 0;
-      border: 0;
-      background: none;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: #666;
-      text-decoration: underline;
-      cursor: pointer;
-      text-align: left;
-    }
-    .ax-welcome__disclaimer,
-    .ax-welcome__disclaimer p {
-      margin: 2rem 0 0;
-      font-size: 1.1rem;
-      line-height: 1.45;
-      color: #999;
-    }
-    .ax-welcome__code-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-      padding: 1.4rem 1.6rem;
-      border: 1px dashed #cfcfcf;
-      border-radius: 0.6rem;
-      background: #faf9f7;
-    }
-    .ax-welcome__code {
-      font-family: var(--font-heading-family);
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: #111;
-    }
-    .ax-welcome__errors {
-      margin: 0 0 1rem;
-      color: #b42318;
-      font-size: 1.3rem;
-    }
-    .ax-welcome__panel[hidden] {
-      display: none;
-    }
-    @media screen and (min-width: 750px) {
-      .ax-welcome__image {
-        display: block;
-      }
-    }
-    @media screen and (max-width: 749px) {
-      .ax-welcome__modal {
-        flex-direction: column;
-        max-width: 42rem;
-      }
-      .ax-welcome__image {
-        display: block;
-        width: 100%;
-        min-height: 18rem;
-      }
-      .ax-welcome__content {
-        padding: 2.8rem 2.2rem 3.2rem;
-      }
-    }
-  </style>
+  }
+</style>
 
-  <div
-    class="ax-welcome"
-    id="AxWelcomePopup"
-    data-delay="{{ section.settings.delay }}"
-    data-code="{{ discount_code | escape }}"
-    hidden
-  >
-    <div class="ax-welcome__modal" role="dialog" aria-modal="true" aria-labelledby="AxWelcomeHeading">
-      <button type="button" class="ax-welcome__close" data-ax-welcome-close aria-label="{{ 'accessibility.close' | t }}">
-        &times;
-      </button>
-
-      {%- if section.settings.image != blank -%}
-        <div
-          class="ax-welcome__image"
-          style="background-image: url('{{ section.settings.image | image_url: width: 1200 }}');"
-        ></div>
-      {%- else -%}
-        <div class="ax-welcome__image"></div>
+<div class="newsletter-popup-overlay" id="NewsletterPopup">
+  <div class="newsletter-popup-modal">
+    <button class="newsletter-popup-close" id="NewsletterPopupClose">&times;</button>
+    
+    {%- assign popup_image_url = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png' -%}
+    {%- if section.settings.image != blank -%}
+      {%- assign popup_image_url = section.settings.image | image_url: width: 800 -%}
+    {%- endif -%}
+    
+    <div class="newsletter-popup-image" style="background-image: url('{{ popup_image_url }}');"></div>
+    
+    <div class="newsletter-popup-content">
+      {%- if section.settings.logo_image != blank -%}
+        <div style="margin-bottom: 25px;">
+          <img src="{{ section.settings.logo_image | image_url: width: 300 }}" alt="{{ section.settings.logo_image.alt | default: section.settings.logo_text | escape }}" style="max-width: 150px; height: auto;">
+        </div>
+      {%- elsif section.settings.logo_text != blank -%}
+        <div style="font-weight: 700; margin-bottom: 25px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #000;">{{ section.settings.logo_text }}</div>
       {%- endif -%}
-
-      <div class="ax-welcome__content">
-        {%- if section.settings.logo_text != blank -%}
-          <p class="ax-welcome__brand">{{ section.settings.logo_text }}</p>
-        {%- endif -%}
-
-        <div class="ax-welcome__panel" data-ax-welcome-form-panel>
-          <h2 class="ax-welcome__heading" id="AxWelcomeHeading">{{ section.settings.heading }}</h2>
-          {%- if section.settings.text != blank -%}
-            <div class="ax-welcome__text">{{ section.settings.text }}</div>
-          {%- endif -%}
-
-          {% form 'customer', class: 'ax-welcome__form', id: 'AxWelcomeForm' %}
-            {%- if form.errors -%}
-              <p class="ax-welcome__errors">{{ form.errors | default_errors }}</p>
-            {%- endif -%}
-            <input type="hidden" name="contact[tags]" value="newsletter, popup, welcome10">
-            <input
-              type="email"
-              name="contact[email]"
-              placeholder="{{ section.settings.email_placeholder | escape }}"
-              autocomplete="email"
-              required
-            >
-            <button type="submit" class="ax-welcome__submit">{{ section.settings.button_label }}</button>
-          {% endform %}
-
-          {%- if section.settings.dismiss_text != blank -%}
-            <button type="button" class="ax-welcome__dismiss" data-ax-welcome-close>
-              {{ section.settings.dismiss_text }}
-            </button>
-          {%- endif -%}
-        </div>
-
-        <div class="ax-welcome__panel" data-ax-welcome-success-panel hidden>
-          <h2 class="ax-welcome__heading">{{ section.settings.success_heading }}</h2>
-          {%- if section.settings.success_text != blank -%}
-            <div class="ax-welcome__text">{{ section.settings.success_text }}</div>
-          {%- endif -%}
-          <div class="ax-welcome__code-box">
-            <span class="ax-welcome__code">{{ discount_code }}</span>
-          </div>
-          <button type="button" class="ax-welcome__copy" data-ax-welcome-copy>
-            {{ section.settings.copy_label }}
-          </button>
-        </div>
-
-        {%- if section.settings.disclaimer != blank -%}
-          <div class="ax-welcome__disclaimer">{{ section.settings.disclaimer }}</div>
-        {%- endif -%}
+      
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+      
+      {% form 'customer', class: 'newsletter-popup-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter, popup">
+        <input type="email" name="contact[email]" placeholder="Email" required>
+        <button type="submit">{{ section.settings.button_label }}</button>
+      {% endform %}
+      
+      <button class="newsletter-popup-dismiss" id="NewsletterPopupDismiss">{{ section.settings.dismiss_text }}</button>
+      
+      <div class="newsletter-popup-disclaimer">
+        {{ section.settings.disclaimer }}
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var popup = document.getElementById('AxWelcomePopup');
-      if (!popup) return;
-
-      var storageKey = 'arvenixo_welcome_popup';
-      var formPanel = popup.querySelector('[data-ax-welcome-form-panel]');
-      var successPanel = popup.querySelector('[data-ax-welcome-success-panel]');
-      var form = document.getElementById('AxWelcomeForm');
-      var submitBtn = form ? form.querySelector('[type="submit"]') : null;
-      var copyBtn = popup.querySelector('[data-ax-welcome-copy]');
-      var code = popup.getAttribute('data-code') || 'WELCOME10';
-      var delay = parseInt(popup.getAttribute('data-delay'), 10);
-      if (isNaN(delay)) delay = 5;
-
-      var seen = null;
-      try {
-        seen = window.localStorage.getItem(storageKey);
-      } catch (err) {}
-
-      function openPopup() {
-        popup.hidden = false;
-        requestAnimationFrame(function () {
-          popup.classList.add('is-open');
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('NewsletterPopup');
+    if (!popup) return;
+    if (document.body.classList.contains('template-product')) return;
+    var closeBtn = document.getElementById('NewsletterPopupClose');
+    var dismissBtn = document.getElementById('NewsletterPopupDismiss');
+    
+    // Check if popup has been seen
+    if (!localStorage.getItem('newsletter_popup_seen')) {
+      var delay = {{ section.settings.delay }} * 1000;
+      setTimeout(function() {
+        popup.classList.add('show');
+      }, delay);
+    }
+    
+    function closePopup() {
+      popup.classList.remove('show');
+      localStorage.setItem('newsletter_popup_seen', 'true');
+    }
+    
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (dismissBtn) dismissBtn.addEventListener('click', closePopup);
+    
+    // Close on outside click
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        closePopup();
       }
-
-      function closePopup(mark) {
-        popup.classList.remove('is-open');
-        setTimeout(function () {
-          popup.hidden = true;
-        }, 280);
-        if (mark) {
-          try {
-            window.localStorage.setItem(storageKey, mark);
-          } catch (err) {}
-        }
-      }
-
-      function showCode() {
-        if (formPanel) formPanel.hidden = true;
-        if (successPanel) successPanel.hidden = false;
-        fetch('/discount/' + encodeURIComponent(code), { credentials: 'same-origin' }).catch(function () {});
-        try {
-          window.localStorage.setItem(storageKey, 'subscribed');
-        } catch (err) {}
-      }
-
-      popup.querySelectorAll('[data-ax-welcome-close]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          closePopup(seen === 'subscribed' ? 'subscribed' : 'dismissed');
-        });
-      });
-
-      popup.addEventListener('click', function (event) {
-        if (event.target === popup) {
-          closePopup(seen === 'subscribed' ? 'subscribed' : 'dismissed');
-        }
-      });
-
-      if (copyBtn) {
-        copyBtn.addEventListener('click', function () {
-          var done = function () {
-            copyBtn.textContent = {{ section.settings.copied_label | json }};
-          };
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(code).then(done).catch(done);
-          } else {
-            done();
-          }
-        });
-      }
-
-      if (form) {
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = {{ section.settings.loading_label | json }};
-          }
-          fetch(form.action || '/contact', {
-            method: 'POST',
-            body: new FormData(form),
-            credentials: 'same-origin',
-          })
-            .catch(function () {})
-            .finally(function () {
-              showCode();
-              if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = {{ section.settings.button_label | json }};
-              }
-            });
-        });
-      }
-
-      if (window.Shopify && window.Shopify.designMode) {
-        openPopup();
-        return;
-      }
-
-      if (seen === 'dismissed' || seen === 'subscribed') return;
-
-      setTimeout(openPopup, Math.max(delay, 0) * 1000);
     });
-  </script>
+
+    // If form is submitted successfully, set local storage
+    var form = popup.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        localStorage.setItem('newsletter_popup_seen', 'true');
+      });
+    }
+  });
+</script>
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "Welcome popup",
+  "name": "Newsletter Popup",
   "settings": [
     {
       "type": "checkbox",
       "id": "enable_popup",
-      "label": "Enable popup",
+      "label": "Enable Popup",
       "default": true
     },
     {
       "type": "range",
       "id": "delay",
       "min": 1,
-      "max": 20,
+      "max": 30,
       "step": 1,
-      "unit": "s",
+      "unit": "sec",
       "label": "Delay before showing",
-      "default": 5
+      "default": 30
     },
     {
       "type": "image_picker",
@@ -408,83 +246,51 @@
       "label": "Image"
     },
     {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
       "type": "text",
       "id": "logo_text",
-      "label": "Brand text",
-      "default": "Arvenixo"
+      "label": "Logo \/ Brand Text",
+      "default": "Arvenixo",
+      "info": "Displayed if no logo image is selected"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "10% off your first order"
+      "default": "15% OFF"
     },
     {
       "type": "textarea",
       "id": "text",
       "label": "Text",
-      "default": "Enter your email to get your code."
-    },
-    {
-      "type": "text",
-      "id": "email_placeholder",
-      "label": "Email placeholder",
-      "default": "Email address"
+      "default": "Save on your first order:"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Button",
-      "default": "Get my code"
-    },
-    {
-      "type": "text",
-      "id": "loading_label",
-      "label": "Loading button",
-      "default": "Getting code…"
-    },
-    {
-      "type": "text",
-      "id": "discount_code",
-      "label": "Discount code",
-      "default": "WELCOME10",
-      "info": "Create this exact code in Shopify Admin → Discounts (10% off, first order / one per customer)."
-    },
-    {
-      "type": "text",
-      "id": "success_heading",
-      "label": "Success heading",
-      "default": "Your 10% code"
-    },
-    {
-      "type": "textarea",
-      "id": "success_text",
-      "label": "Success text",
-      "default": "The code is applied to your cart. You can also copy it for checkout."
-    },
-    {
-      "type": "text",
-      "id": "copy_label",
-      "label": "Copy button",
-      "default": "Copy code"
-    },
-    {
-      "type": "text",
-      "id": "copied_label",
-      "label": "Copied button",
-      "default": "Copied"
+      "label": "Button Label",
+      "default": "GET MY CODE"
     },
     {
       "type": "text",
       "id": "dismiss_text",
-      "label": "Dismiss text",
-      "default": "No thanks"
+      "label": "Dismiss Text",
+      "default": "No thanks, I'll pay full price"
     },
     {
       "type": "richtext",
       "id": "disclaimer",
       "label": "Disclaimer",
-      "default": "<p>By continuing you agree to receive emails from Arvenixo. Unsubscribe anytime.</p>"
+      "default": "<p>By clicking the link above you agree to receive our newsletter. You can unsubscribe at any time.<\/p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Popup"
     }
   ]
 }

@@ -245,7 +245,7 @@ faq-item.faqrs-active .faqrs-answer,
 }
 
 .faqrs-answer-inner {
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 0px 20px;
     color: #282828;
     font-size: 15px;
     line-height: 1.5;

@@ -353,6 +353,15 @@ function initDsSearchEnhancements() {
 
 document.addEventListener('DOMContentLoaded', initDsSearchEnhancements);
 
+document.addEventListener('ds-search-results-change', () => {
+  document.querySelectorAll('.ds-search-panel.is-open').forEach((panel) => {
+    if (panel.classList.contains('is-animating')) return;
+    const top = placePanelUnderHeader(panel);
+    panel.style.height = 'auto';
+    panel.style.maxHeight = `${getSearchPanelMaxHeight(top)}px`;
+  });
+});
+
 window.addEventListener(
   'resize',
   () => {

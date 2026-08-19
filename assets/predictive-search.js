@@ -12,8 +12,9 @@ class PredictiveSearch extends SearchForm {
   }
 
   setupEventListeners() {
-    this.input.form.addEventListener('submit', this.onFormSubmit.bind(this));
+    if (!this.input || !this.input.form) return;
 
+    this.input.form.addEventListener('submit', this.onFormSubmit.bind(this));
     this.input.addEventListener('focus', this.onFocus.bind(this));
     this.addEventListener('focusout', this.onFocusOut.bind(this));
     this.addEventListener('keyup', this.onKeyup.bind(this));
@@ -189,10 +190,15 @@ class PredictiveSearch extends SearchForm {
         return response.text();
       })
       .then((text) => {
-        const resultsMarkup = new DOMParser()
-          .parseFromString(text, 'text/html')
-          .querySelector('#shopify-section-predictive-search').innerHTML;
-        // Save bandwidth keeping the cache in all instances synced
+        const parsed = new DOMParser().parseFromString(text, 'text/html');
+        const sectionEl =
+          parsed.querySelector('#shopify-section-predictive-search') ||
+          parsed.querySelector('[id*="predictive-search"]');
+        if (!sectionEl) {
+          this.removeAttribute('loading');
+          return;
+        }
+        const resultsMarkup = sectionEl.innerHTML;
         this.allPredictiveSearchInstances.forEach((predictiveSearchInstance) => {
           predictiveSearchInstance.cachedResults[queryKey] = resultsMarkup;
         });
@@ -235,7 +241,8 @@ class PredictiveSearch extends SearchForm {
 
   setLiveRegionResults() {
     this.removeAttribute('loading');
-    this.setLiveRegionText(this.querySelector('[data-predictive-search-live-region-count-value]').textContent);
+    const countEl = this.querySelector('[data-predictive-search-live-region-count-value]');
+    if (countEl) this.setLiveRegionText(countEl.textContent);
   }
 
   getResultsMaxHeight() {
@@ -249,6 +256,7 @@ class PredictiveSearch extends SearchForm {
     this.setAttribute('open', true);
     this.input.setAttribute('aria-expanded', true);
     this.isOpen = true;
+    this.dispatchEvent(new CustomEvent('ds-search-results-change', { bubbles: true }));
   }
 
   close(clearSearchTerm = false) {
@@ -271,7 +279,10 @@ class PredictiveSearch extends SearchForm {
     this.input.setAttribute('aria-expanded', false);
     this.resultsMaxHeight = false;
     this.predictiveSearchResults.removeAttribute('style');
+    this.dispatchEvent(new CustomEvent('ds-search-results-change', { bubbles: true }));
   }
 }
 
-customElements.define('predictive-search', PredictiveSearch);
+if (!customElements.get('predictive-search')) {
+  customElements.define('predictive-search', PredictiveSearch);
+}

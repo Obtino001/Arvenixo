@@ -88,6 +88,8 @@
           {%- endif -%}
         </div>
       </div>
+    {%- else -%}
+      <p class="ds-predictive-no-products">{{ 'templates.search.no_results' | t: terms: predictive_search.terms }}</p>
     {%- endif -%}
   </div>
 

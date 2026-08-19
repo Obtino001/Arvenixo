@@ -54,32 +54,52 @@
             product: product,
             option: option,
             block: block,
-            picker_type: picker_type
+            picker_type: picker_type,
+            product_form_id: product_form_id
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill {% if option_name_downcase == 'size' or option_name_downcase == 'størrelse' or option_name_downcase == "størrelse tenåringer"%} size_options{% endif%}">
-          <legend
-            class="form__label"
-            style="display: flex; justify-content: space-between; align-items: center; width: 100%;"
-          >
-            <span>{{ option.name }}</span>
-            {%- assign option_name_downcase = option.name | downcase | strip -%}
-            {%- if block.settings.size_guide_page
-              and option_name_downcase == 'size'
-              or option_name_downcase == 'størrelse'
-              or option_name_downcase == "størrelse tenåringer"
-            -%}
-              {% render 'size-chart',  block: block%}
+        {%- assign use_model_picker = false -%}
+        {%- if option.values.size > 7 -%}
+          {%- assign use_model_picker = true -%}
+        {%- endif -%}
+        <{% if use_model_picker %}model-variant-picker{% else %}div{% endif %}>
+          <fieldset class="js product-form__input product-form__input--pill{% if use_model_picker %} product-form__input--models{% endif %} {% if option_name_downcase == 'size' or option_name_downcase == 'størrelse' or option_name_downcase == "størrelse tenåringer"%} size_options{% endif%}">
+            <legend
+              class="form__label"
+              style="display: flex; justify-content: space-between; align-items: center; width: 100%;"
+            >
+              <span>
+                {{ option.name }}
+                {%- if use_model_picker -%}
+                  <span class="model-picker__current" data-selected-value>{{ option.selected_value }}</span>
+                {%- endif -%}
+              </span>
+              {%- assign option_name_downcase = option.name | downcase | strip -%}
+              {%- if block.settings.size_guide_page
+                and option_name_downcase == 'size'
+                or option_name_downcase == 'størrelse'
+                or option_name_downcase == "størrelse tenåringer"
+              -%}
+                {% render 'size-chart',  block: block%}
+              {%- endif -%}
+            </legend>
+            {%- if use_model_picker -%}
+              <div class="model-series" data-model-series hidden></div>
+              <div class="model-pills">
             {%- endif -%}
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
+            {% render 'product-variant-options',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type,
+              product_form_id: product_form_id
+            %}
+            {%- if use_model_picker -%}
+              </div>
+            {%- endif -%}
+          </fieldset>
+        </{% if use_model_picker %}model-variant-picker{% else %}div{% endif %}>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label
@@ -128,7 +148,8 @@
                 product: product,
                 option: option,
                 block: block,
-                picker_type: picker_type
+                picker_type: picker_type,
+                product_form_id: product_form_id
               %}
             </select>
             <span class="svg-wrapper">
@@ -143,4 +164,5 @@
       {{ product.selected_or_first_available_variant | json }}
     </script>
   </variant-selects>
+  <script src="{{ 'model-variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}

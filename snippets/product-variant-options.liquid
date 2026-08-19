@@ -1,0 +1,117 @@
+{%- comment -%}
+  Renders product variant options.
+
+  Accepts:
+  - product: {Object}
+  - option: {Object}
+  - block: {Object}
+  - picker_type: {String}
+  - product_form_id: {String}
+{%- endcomment -%}
+
+{%- liquid
+  if product_form_id == blank
+    assign product_form_id = 'product-form-' | append: section.id
+  endif
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = nil
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  {%- if picker_type == 'swatch' -%}
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      class="swatch-input__input{% if value.available == false %} visually-disabled{% endif %}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if value.product_url != blank %}
+        data-product-url="{{ value.product_url }}"
+      {% endif %}
+      data-option-value-id="{{ value.id }}"
+    >
+    <label
+      for="{{ input_id }}"
+      title="{{ value | escape }}"
+      class="swatch-input__label"
+    >
+      {% render 'swatch', swatch: value.swatch, shape: block.settings.swatch_shape %}
+      <span class="visually-hidden">{{ value -}}{{ label_unavailable }}</span>
+    </label>
+  {%- elsif picker_type == 'button' -%}
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      data-option-value-id="{{ value.id }}"
+      {% if value.product_url != blank %}
+        data-product-url="{{ value.product_url }}"
+      {% endif %}
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if value.available == false %}
+        class="disabled"
+      {% endif %}
+    >
+    <label for="{{ input_id }}">
+      {{ value -}}
+      {{ label_unavailable }}
+    </label>
+  {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
+    <option
+      id="{{ input_id }}"
+      value="{{ value | escape }}"
+      data-option-value-id="{{ value.id }}"
+      {% if value.selected %}
+        selected="selected"
+      {% endif %}
+      {% if swatch_value %}
+        data-option-swatch-value="{{ swatch_value }}"
+      {% endif %}
+      {% if swatch_focal_point %}
+        data-option-swatch-focal-point="{{ swatch_focal_point }}"
+      {% endif %}
+      {% if value.product_url != blank %}
+        data-product-url="{{ value.product_url }}"
+      {% endif %}
+    >
+      {% if value.available == false -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}

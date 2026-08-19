@@ -582,6 +582,7 @@ class HeaderDrawer extends MenuDrawer {
 
   closeMenuDrawer(event, elementToFocus) {
     if (!elementToFocus) return;
+    if (typeof window.nlkResetPanels === 'function') window.nlkResetPanels();
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
     window.removeEventListener('resize', this.onResize);

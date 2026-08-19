@@ -2587,6 +2587,15 @@ input[type='checkbox'] {
   background: rgba(var(--color-foreground), 0.5);
 }
 
+header-drawer details:not([open]) > .header__icon--menu::before,
+header-drawer details:not(.menu-opening) > .header__icon--menu::before {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .header__icon--account shop-user-avatar {
   --shop-avatar-size: 2.8rem;
 }

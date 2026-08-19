@@ -107,6 +107,7 @@
     const drawer = drawerRoot();
     if (!drawer) return;
     const summary = drawer.querySelector('details > summary');
+    if (summary) summary.setAttribute('aria-expanded', 'false');
     if (typeof drawer.closeMenuDrawer === 'function' && summary) {
       drawer.closeMenuDrawer(new Event('click'), summary);
     } else {
@@ -115,8 +116,14 @@
         details.removeAttribute('open');
         details.classList.remove('menu-opening');
       }
-      document.body.classList.remove('overflow-hidden-tablet', 'overflow-hidden-desktop');
     }
+    document.body.classList.remove(
+      'overflow-hidden',
+      'overflow-hidden-mobile',
+      'overflow-hidden-tablet',
+      'overflow-hidden-desktop'
+    );
+    document.querySelector('.section-header')?.classList.remove('menu-open');
     resetPanels();
   }
 

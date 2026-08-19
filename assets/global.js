@@ -502,10 +502,17 @@ class MenuDrawer extends HTMLElement {
       submenu.classList.remove('submenu-open');
     });
     document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
+    document.body.classList.remove(
+      'overflow-hidden',
+      'overflow-hidden-mobile',
+      'overflow-hidden-tablet',
+      'overflow-hidden-desktop'
+    );
     removeTrapFocus(elementToFocus);
     this.closeAnimation(this.mainDetailsToggle);
 
-    if (event instanceof KeyboardEvent) elementToFocus?.setAttribute('aria-expanded', false);
+    const summary = this.mainDetailsToggle.querySelector('summary');
+    if (summary) summary.setAttribute('aria-expanded', 'false');
   }
 
   onFocusOut() {

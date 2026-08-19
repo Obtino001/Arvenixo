@@ -567,3 +567,10 @@ details.menu-opening > .nlk-drawer {
   transform: translateX(0);
   visibility: visible;
 }
+
+header-drawer details:not([open]) .nlk-drawer,
+header-drawer details:not(.menu-opening) .nlk-drawer {
+  transform: translateX(-100%);
+  visibility: hidden;
+  pointer-events: none;
+}

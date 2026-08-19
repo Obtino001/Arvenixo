@@ -613,3 +613,11 @@
 .product-card-wrapper .quick-add {
   z-index: 2;
 }
+
+@media screen and (max-width: 989px) {
+  .product-card-wrapper .quick-add,
+  .card .quick-add,
+  .quick-add.no-js-hidden {
+    display: none !important;
+  }
+}

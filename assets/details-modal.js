@@ -6,7 +6,13 @@ class DetailsModal extends HTMLElement {
 
     this.detailsContainer.addEventListener('keyup', (event) => event.code.toUpperCase() === 'ESCAPE' && this.close());
     this.summaryToggle.addEventListener('click', this.onSummaryClick.bind(this));
-    this.querySelector('button[type="button"]').addEventListener('click', this.close.bind(this));
+    const closeButton = this.querySelector('button[type="button"]');
+    if (closeButton) {
+      closeButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.close();
+      });
+    }
 
     this.summaryToggle.setAttribute('role', 'button');
   }
@@ -28,7 +34,9 @@ class DetailsModal extends HTMLElement {
     this.onBodyClickEvent = this.onBodyClickEvent || this.onBodyClick.bind(this);
     event.target.closest('details').setAttribute('open', true);
     document.body.addEventListener('click', this.onBodyClickEvent);
-    document.body.classList.add('overflow-hidden');
+    if (!this.classList.contains('ds-header-search')) {
+      document.body.classList.add('overflow-hidden');
+    }
 
     trapFocus(
       this.detailsContainer.querySelector('[tabindex="-1"]'),

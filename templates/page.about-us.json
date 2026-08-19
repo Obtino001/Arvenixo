@@ -223,24 +223,24 @@
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/1880a1dfd3669a052c150a7a0add01ab1ad26659_1.jpg",
-                        "title": "Daily use",
-                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
+                        "title": "Quiet design",
+                        "text": "<p>Objects that stay out of the way in daily life — slim MagSafe cases and small devices you actually want to keep.</p>"
                     }
                 },
                 "value_tzBd7y": {
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/7ed9cbe82123bc6298ef240d3b98760724abfd7e_be3453e8-1f48-4ac4-b2d2-a36f703882b7.png",
-                        "title": "Daily use",
-                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
+                        "title": "Clear specs",
+                        "text": "<p>Model fit, MagSafe notes, and care instructions belong on the product page. We would rather be specific than loud.</p>"
                     }
                 },
                 "value_DcKyca": {
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/b5a93abf8a4339b084bc4fd0db3aa57bf7d3588a_3a8d3a9e-b811-4430-bb5a-c8133f2cba67.png",
-                        "title": "Daily use",
-                        "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
+                        "title": "Straightforward support",
+                        "text": "<p>Unused items can be returned within 30 days. Email support@arvenixo.com for orders, compatibility, or a refund.</p>"
                     }
                 }
             },
@@ -549,29 +549,29 @@
                 "faq_item_N4cpaP": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "Do you offer international shipping?",
-                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
+                        "question": "Do you ship internationally?",
+                        "answer": "<p>Yes. We ship worldwide with tracking once the order is on the way. Delivery time depends on your region and is shown at checkout.</p>"
                     }
                 },
                 "faq_item_GLXP7r": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "Do you offer international shipping?",
-                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
+                        "question": "What is your return policy?",
+                        "answer": "<p>Unused items can be returned within 30 days. Start a return from your order email or the contact page.</p>"
                     }
                 },
                 "faq_item_YW4GFc": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "Do you offer international shipping?",
-                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
+                        "question": "Are the cases MagSafe compatible?",
+                        "answer": "<p>Our MagSafe cases are designed to align and hold on official MagSafe chargers and mounts. Check the product page for your iPhone model.</p>"
                     }
                 },
                 "faq_item_Dckzqr": {
                     "type": "faq_item",
                     "settings": {
-                        "question": "Do you offer international shipping?",
-                        "answer": "<p>Yes, we ship globally using secure carriers.</p>"
+                        "question": "How do I reach support?",
+                        "answer": "<p>Email support@arvenixo.com. We can help with orders, compatibility, or a refund.</p>"
                     }
                 }
             },

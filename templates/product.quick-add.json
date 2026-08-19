@@ -146,7 +146,7 @@
             "custom_image": "shopify://shop_images/material-symbols-light_info-outline.svg",
             "question": "Materials & Care",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Wipe with a soft dry cloth. Avoid solvents, extreme heat, and leaving rechargeable devices on charge overnight.</p>"
           }
         },
         "faq_blocks_FN9CnF": {
@@ -156,7 +156,7 @@
             "custom_image": "shopify://shop_images/Group_15.svg",
             "question": "Shipping",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Most orders ship within 1–2 business days. Delivery time depends on your region and is shown at checkout.</p>"
           }
         },
         "faq_blocks_k8EnCc": {

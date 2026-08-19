@@ -12,7 +12,22 @@
     "banner": {
       "type": "custom-banner",
       "settings": {
-        "color_scheme": "scheme-4"
+        "color_scheme": "scheme-4",
+        "media_type": "image",
+        "image": "shopify://shop_images/cables.webp",
+        "overlay_opacity": 20,
+        "heading_size_desktop": 48,
+        "subheading_size_desktop": 16,
+        "content_width": 650,
+        "min_height_desktop": 600,
+        "adapt_height_desktop": false,
+        "heading_size_mobile": 36,
+        "min_height_mobile": 400,
+        "adapt_height_mobile": false,
+        "show_mobile_content_below": true,
+        "text_position_top": 50,
+        "text_position_left": 50,
+        "text_alignment": "left"
       }
     },
     "contact_info": {
@@ -22,21 +37,27 @@
           "type": "column",
           "settings": {
             "title": "Customer Support",
-            "text": "<p>Email: support@arvenixo.com<br>Available 24/7</p>"
+            "text": "<p>Email: support@arvenixo.com<br>Available 24/7</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "hq": {
           "type": "column",
           "settings": {
             "title": "Corporate Office",
-            "text": "<p>Designed in Paris<br>Delivering only USA</p>"
+            "text": "<p>Designed in Paris<br>Delivering only USA</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "pr": {
           "type": "column",
           "settings": {
             "title": "Press & Media",
-            "text": "<p>For all PR inquiries, please email:<br>press@arvenixo.com</p>"
+            "text": "<p>For all PR inquiries, please email:<br/>press@arvenixo.com</p>",
+            "link_label": "",
+            "link": ""
           }
         }
       },
@@ -48,10 +69,16 @@
       "settings": {
         "title": "How Can We Help?",
         "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 60,
         "padding_bottom": 20
       }

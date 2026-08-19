@@ -58,6 +58,14 @@
             "text-size": 14
           }
         },
+        "inventory_9gdd8V": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -181,6 +189,7 @@
         "price",
         "text_YJpJae",
         "multi_icon_xn8fhg",
+        "inventory_9gdd8V",
         "variant_picker",
         "buy_buttons",
         "delivery_payment_mB6BTN",

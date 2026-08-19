@@ -37,7 +37,7 @@
           "type": "column",
           "settings": {
             "title": "Customer Support",
-            "text": "<p>Email: support@arvenixo.com<br>Available 24/7</p>",
+            "text": "<p>Email: support@arvenixo.com<br>We answer by email.</p>",
             "link_label": "",
             "link": ""
           }
@@ -45,14 +45,10 @@
         "hq": {
           "type": "column",
           "settings": {
-            "title": "Corporate Office",
-<<<<<<< Updated upstream
-            "text": "<p>Designed in Paris<br>Delivering only USA</p>",
+            "title": "Shipping",
+            "text": "<p>We ship worldwide.<br>Delivery time depends on your region and is shown at checkout.</p>",
             "link_label": "",
             "link": ""
-=======
-            "text": "<p>We ship worldwide.<br>Delivery time depends on your region and is shown at checkout.</p>"
->>>>>>> Stashed changes
           }
         },
         "pr": {

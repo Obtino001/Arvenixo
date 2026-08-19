@@ -907,7 +907,7 @@ cart-drawer .quantity {
   color: var(--cd-btn-color);
   cursor: pointer;
   font-size: var(--cd-btn-font-size);
-
+  border-radius: 50px;
 }
 
 .ma_quickAdd_atc svg {

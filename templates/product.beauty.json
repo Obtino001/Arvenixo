@@ -36,7 +36,7 @@
         "text_YJpJae": {
           "type": "text",
           "settings": {
-            "text": "Choose your model and color, then add to cart. Compatibility is listed in the options below — message support if you are unsure.",
+            "text": "Use as directed on the product page. Cosmetic devices are for skincare routines only — results vary. Check charging and care notes before first use.",
             "text_style": "body"
           }
         },
@@ -45,7 +45,7 @@
           "settings": {
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "30-day returns",
+            "text-1": "How-to on the page",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
             "text-2": "Tracked shipping",
@@ -113,9 +113,9 @@
             "text_color": "#282828",
             "custom_svg": "",
             "benefit_1": "30-day returns",
-            "benefit_2": "Secure checkout",
+            "benefit_2": "Cosmetic use only",
             "benefit_3": "Tracked shipping",
-            "benefit_4": "Support via email",
+            "benefit_4": "Care notes below",
             "benefit_5": "",
             "benefit_6": ""
           }
@@ -314,7 +314,7 @@
         "header_2": "LUMITHERM PRO",
         "header_3": "CHEAP ROLLERS",
         "header_4": "BARE HANDS",
-        "guarantee_text": "BACKED BY OUR 60-DAY\nGUARANTEE",
+        "guarantee_text": "BACKED BY OUR 30-DAY\nRETURNS",
         "padding_top": 100,
         "padding_bottom": 100
       }

@@ -199,13 +199,8 @@
           "delay": 30,
           "image": "shopify://shop_images/ax-review-carry.png",
           "logo_text": "Arvenixo",
-<<<<<<< Updated upstream
-          "heading": "10% OFF",
-          "text": "Save on your first order:",
-=======
           "heading": "10% off your first order",
-          "text": "Join the list for new releases. One code per customer. No fake countdown.",
->>>>>>> Stashed changes
+          "text": "Join the list for new releases. One code per customer.",
           "button_label": "GET MY CODE",
           "dismiss_text": "No thanks",
           "disclaimer": "<p>By clicking the link above you agree to receive our newsletter. You can unsubscribe at any time.</p>"

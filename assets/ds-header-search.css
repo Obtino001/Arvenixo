@@ -213,7 +213,7 @@
 }
 
 .ds-header-search details[open] > .ds-search-backdrop {
-  display: block;
+  display: none;
   position: fixed;
   left: 0;
   right: 0;

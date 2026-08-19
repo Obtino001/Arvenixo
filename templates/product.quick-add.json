@@ -239,8 +239,8 @@
         "text_block_xgeQG7": {
           "type": "text_block",
           "settings": {
-            "text": "Eco-Friendly Tech",
-            "icon": "panties"
+            "text": "MagSafe ready",
+            "icon": "teardrop"
           }
         },
         "text_block_VKdEXN": {
@@ -253,8 +253,8 @@
         "text_block_YnzgBT": {
           "type": "text_block",
           "settings": {
-            "text": "24/7 Tech Support",
-            "icon": "panties"
+            "text": "Email support",
+            "icon": "teardrop"
           }
         },
         "text_block_YP8Bfx": {
@@ -268,7 +268,7 @@
           "type": "text_block",
           "settings": {
             "text": "Satisfaction Guaranteed",
-            "icon": "panties"
+            "icon": "teardrop"
           }
         }
       },
@@ -324,6 +324,7 @@
     },
     "image_with_text_yKMmRX": {
       "type": "image-with-text",
+      "disabled": true,
       "blocks": {
         "icon_with_text_PCKX6Q": {
           "type": "icon_with-text",

@@ -1385,44 +1385,122 @@
     ]
   },
   {
-    "name": "TBH Search Drawer",
+    "name": "Search Drawer",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "predictive_search_enable",
-        "default": true,
-        "label": "Predictive search"
-      },
-      {
-        "type": "link_list",
-        "id": "search_menu",
-        "label": "Popular searches",
-        "info": "Select menu to show popular search links"
-      },
-      {
-        "type": "header",
-        "content": "Promotion",
-        "info": "Promote products while a search hasn’t been made yet."
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search placeholder",
+        "default": "Søg blandt over 2.000 koreanske produkter..."
       },
       {
         "type": "text",
-        "id": "search_product_heading",
-        "label": "Promotion heading",
-        "default": "Trending Now"
+        "id": "popular_searches_heading",
+        "label": "Popular searches heading",
+        "default": "Populære søgninger"
       },
       {
-        "type": "collection",
-        "id": "search_product_collection",
-        "label": "Promotion collection"
+        "type": "link_list",
+        "id": "popular_searches_menu",
+        "label": "Popular searches menu"
       },
       {
-        "type": "range",
-        "id": "search_product_collection_limit",
-        "min": 2,
-        "max": 12,
-        "step": 1,
-        "label": "Maximum products to show",
-        "default": 6
+        "type": "text",
+        "id": "popular_brands_heading",
+        "label": "Popular brands heading",
+        "default": "Populære brands"
+      },
+      {
+        "type": "link_list",
+        "id": "popular_brands_menu",
+        "label": "Popular brands menu"
+      },
+      {
+        "type": "text",
+        "id": "popular_blogs_heading",
+        "label": "Popular blogs heading",
+        "default": "Efterspurgte blogs"
+      },
+      {
+        "type": "link_list",
+        "id": "popular_blogs_menu",
+        "label": "Popular blogs menu"
+      },
+      {
+        "type": "text",
+        "id": "trending_heading",
+        "label": "Trending heading",
+        "default": "Trending"
+      },
+      {
+        "type": "collection_list",
+        "id": "trending_collections",
+        "label": "Trending collections (Optional)",
+        "limit": 4
+      },
+      {
+        "type": "header",
+        "content": "Trending Fallback Items"
+      },
+      {
+        "type": "image_picker",
+        "id": "trending_1_image",
+        "label": "Trending 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "trending_1_title",
+        "label": "Trending 1 Title"
+      },
+      {
+        "type": "url",
+        "id": "trending_1_link",
+        "label": "Trending 1 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "trending_2_image",
+        "label": "Trending 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "trending_2_title",
+        "label": "Trending 2 Title"
+      },
+      {
+        "type": "url",
+        "id": "trending_2_link",
+        "label": "Trending 2 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "trending_3_image",
+        "label": "Trending 3 Image"
+      },
+      {
+        "type": "text",
+        "id": "trending_3_title",
+        "label": "Trending 3 Title"
+      },
+      {
+        "type": "url",
+        "id": "trending_3_link",
+        "label": "Trending 3 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "trending_4_image",
+        "label": "Trending 4 Image"
+      },
+      {
+        "type": "text",
+        "id": "trending_4_title",
+        "label": "Trending 4 Title"
+      },
+      {
+        "type": "url",
+        "id": "trending_4_link",
+        "label": "Trending 4 Link"
       }
     ]
   },

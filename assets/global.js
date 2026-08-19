@@ -569,6 +569,7 @@ class HeaderDrawer extends MenuDrawer {
       `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
     );
     this.header.classList.add('menu-open');
+    if (typeof window.nlkResetPanels === 'function') window.nlkResetPanels();
 
     setTimeout(() => {
       this.mainDetailsToggle.classList.add('menu-opening');
@@ -583,7 +584,7 @@ class HeaderDrawer extends MenuDrawer {
   closeMenuDrawer(event, elementToFocus) {
     if (!elementToFocus) return;
     super.closeMenuDrawer(event, elementToFocus);
-    this.header.classList.remove('menu-open');
+    this.header?.classList.remove('menu-open');
     window.removeEventListener('resize', this.onResize);
   }
 

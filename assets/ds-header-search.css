@@ -13,7 +13,7 @@
   position: fixed !important;
   left: 0 !important;
   right: 0 !important;
-  top: 0;
+  top: var(--ds-search-top, 0);
   bottom: auto !important;
   width: 100% !important;
   height: 0;
@@ -34,20 +34,23 @@
   justify-content: flex-start !important;
   line-height: normal !important;
   overflow: hidden;
-  will-change: height;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
-/* Open state is driven by JS (.is-open) for smooth 0 → auto height */
-.ds-header-search .ds-search-panel.is-open {
+.ds-header-search details:not([open]) > .ds-search-panel {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.ds-header-search details[open] > .ds-search-panel,
+.ds-header-search details[open] > .ds-search-panel.is-open,
+.ds-header-search details[open] > .ds-search-panel.is-animating {
   visibility: visible !important;
   pointer-events: auto !important;
-}
-
-.ds-header-search .ds-search-panel.is-open:not(.is-animating) {
-  height: auto;
-  overflow: auto;
+  height: auto !important;
+  max-height: min(90vh, calc(100dvh - var(--ds-search-top, 7rem))) !important;
+  overflow: auto !important;
 }
 
 /* Keep header search icon stable (close only inside panel, like Derma Space) */
@@ -205,23 +208,58 @@
   display: block;
 }
 
-.ds-header-search details[open] .ds-search-backdrop {
+.ds-search-backdrop {
+  display: none;
+}
+
+.ds-header-search details[open] > .ds-search-backdrop {
   display: block;
   position: fixed;
   left: 0;
   right: 0;
-  top: var(--ds-search-top, 0);
+  top: 0;
   bottom: 0;
-  z-index: 19;
+  z-index: 18;
   border: 0;
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.45);
   cursor: pointer;
 }
 
-.ds-search-backdrop {
+.ds-search-close-float {
   display: none;
+}
+
+.ds-header-search details[open] > .ds-search-close-float {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 42;
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+  padding: 0.8rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ds-header-search details[open] > .ds-search-close-float svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  display: block;
 }
 
 /* Discovery layout */

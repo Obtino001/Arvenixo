@@ -133,7 +133,7 @@
 .ds-search-form__icon {
   position: absolute;
   top: 50%;
-  left: 1.2rem;
+  left: 2.2rem;
   transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
@@ -153,7 +153,7 @@
   -webkit-appearance: none;
   background: #faf9f7 !important;
   border: 1px solid #e6e6e6 !important;
-  border-radius: 0.6rem !important;
+  border-radius: 3.6rem !important;
   padding: 1.6rem 1.6rem 1.6rem 4.2rem !important;
   font-size: 1.4rem !important;
   line-height: 1.4 !important;

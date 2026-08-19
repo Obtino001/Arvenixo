@@ -3841,34 +3841,11 @@ details-disclosure>details {
     padding-right: 1.5rem;
   }
 
-  .shopify-section .title,
-  .shopify-section .collection__title,
-  .shopify-section .title-wrapper,
-  .shopify-section h1,
-  .shopify-section h2,
-  .shopify-section h3,
-  .shopify-section p,
-  .shopify-section .rte,
-  .shopify-section .card__information,
-  .shopify-section .card__heading,
-  .shopify-section .price {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .shopify-section .button,
-  .shopify-section .btn-style-pill,
-  .collection-tabs-nav {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
 
-  .shopify-section .card__content,
-  .shopify-section .card-information {
-    align-items: center;
-  }
+
+
+
 }
 /* CRO Urgency Features */
 .cro-inventory-urgency {

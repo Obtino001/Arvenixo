@@ -40,12 +40,18 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: none;
+    background: #fff;
     border: none;
-    font-size: 24px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: #000;
     z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
   .newsletter-popup-image {
     width: 50%;
@@ -126,7 +132,8 @@
     .newsletter-popup-modal {
       flex-direction: column;
       height: auto;
-      max-height: 90vh;
+      max-height: calc(100vh - 30px);
+      margin: 15px;
       overflow-y: auto;
     }
     .newsletter-popup-image {
@@ -142,7 +149,9 @@
 
 <div class="newsletter-popup-overlay" id="NewsletterPopup">
   <div class="newsletter-popup-modal">
-    <button class="newsletter-popup-close" id="NewsletterPopupClose">&times;</button>
+    <button class="newsletter-popup-close" id="NewsletterPopupClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
     
     {%- assign popup_image_url = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png' -%}
     {%- if section.settings.image != blank -%}

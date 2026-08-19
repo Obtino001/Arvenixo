@@ -3,9 +3,6 @@
   including Arvenixo mega menu blocks (collections, categories, banners).
 {%- enddoc -%}
 
-{{ 'nlk-mobile-menu.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'nlk-mobile-menu.js' | asset_url }}" defer="defer"></script>
-
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary

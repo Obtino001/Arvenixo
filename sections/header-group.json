@@ -50,35 +50,23 @@
     "header": {
       "type": "header",
       "blocks": {
-        "categories_WCpmVF": {
-          "type": "categories",
+        "megamenu_6rMtA6": {
+          "type": "megamenu",
           "settings": {
             "column_size": "75%",
             "title": "Products",
-            "heading": "SHOP BY CATEGORY",
-            "collection_1": "",
-            "custom_title_1": "",
-            "custom_desc_1": "",
-            "collection_2": "",
-            "custom_title_2": "",
-            "custom_desc_2": "",
-            "collection_3": "",
-            "custom_title_3": "",
-            "custom_desc_3": "",
-            "collection_4": "",
-            "custom_title_4": "",
-            "custom_desc_4": "",
-            "collection_5": "",
-            "custom_title_5": "",
-            "custom_desc_5": "",
-            "collection_6": "",
-            "custom_title_6": "",
-            "custom_desc_6": ""
+            "widget": "menu",
+            "menu_heading": "",
+            "menu_link_list_child": "main-menu",
+            "image": "shopify://shop_images/sale.webp",
+            "banner_title": "Banner image",
+            "banner_button": "Banner image",
+            "banner_link": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "categories_WCpmVF"
+        "megamenu_6rMtA6"
       ],
       "settings": {
         "logo_position": "middle-left",

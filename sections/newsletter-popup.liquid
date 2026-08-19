@@ -196,7 +196,7 @@
     var dismissBtn = document.getElementById('NewsletterPopupDismiss');
     
     // Show popup every time (localStorage check removed)
-    var delay = {{ section.settings.delay }} * 1000;
+    var delay = 1000; // Hardcoded to 1 second for immediate visibility
     setTimeout(function() {
       popup.classList.add('show');
     }, delay);

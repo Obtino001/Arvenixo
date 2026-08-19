@@ -246,13 +246,14 @@
         "padding_bottom": 12
       }
     },
-"feature_alternating_e4iaqP": {
+    "feature_alternating_e4iaqP": {
       "type": "feature-alternating",
       "blocks": {
         "feature_block_N3wXEY": {
           "type": "feature_block",
           "settings": {
             "color_scheme": "",
+            "image": "shopify://shop_images/tech_review_2.jpg",
             "image_fit": "contain",
             "layout": "left",
             "heading": "COMPREHENSIVE PROTECTION FOR YOUR DEVICES.",
@@ -273,6 +274,7 @@
           "type": "feature_block",
           "settings": {
             "color_scheme": "",
+            "image": "shopify://shop_images/ax-hero-lifestyle.png",
             "image_fit": "contain",
             "layout": "right",
             "heading": "UNLEASH NEXT-GENERATION PERFORMANCE",

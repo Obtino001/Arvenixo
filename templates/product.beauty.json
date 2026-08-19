@@ -43,15 +43,18 @@
         "multi_icon_xn8fhg": {
           "type": "multi-icon",
           "settings": {
+            "icon-1": "shopify://shop_images/Free_Return.avif",
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "How-to on the page",
+            "text-1": "30 Days Return",
+            "icon-2": "shopify://shop_images/secure_payments.avif",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
-            "text-2": "Tracked shipping",
+            "text-2": "100% Secure Payments",
+            "icon-3": "shopify://shop_images/warranty.avif",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
-            "text-3": "Secure checkout",
+            "text-3": "Email support",
             "text-size": 14
           }
         },

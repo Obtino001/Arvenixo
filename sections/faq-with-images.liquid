@@ -19,11 +19,10 @@
 
   @media screen and (min-width: 990px) {
     .faqrs-grid {
-      grid-template-columns: 1fr 1fr; /* Matches the screenshot's left/right balance */
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
-    /* Center the FAQ list when there is no heading */
     .faqrs-grid.faqrs-grid--no-heading {
       grid-template-columns: minmax(0, 800px);
       justify-content: center;
@@ -81,14 +80,14 @@
     stroke: currentColor;
     stroke-width: 1.5;
     fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
-  /* Hide minus by default, show plus */
   .faqrs-icon-minus {
     display: none;
   }
 
-  /* When active, swap icons */
   faq-item.faqrs-active .faqrs-icon-plus {
     display: none;
   }
@@ -105,7 +104,7 @@
 
   .faqrs-answer-inner {
     padding-bottom: 24px;
-    padding-left: 48px; /* Aligns text with the question, pushing past the icon */
+    padding-left: 48px;
     font-size: 15.2px;
     line-height: 1.6;
     color: rgba(var(--color-foreground), 0.75);
@@ -132,14 +131,16 @@
             <faq-item class="faqrs-item" {{ block.shopify_attributes }}>
               <div class="faqrs-question" aria-expanded="false">
                 <span class="faqrs-icon faqrs-icon-plus">
-                  <svg viewBox="0 0 24 24">
+                  <!-- Added xmlns attribute here -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="4"></rect>
                     <line x1="12" y1="8" x2="12" y2="16"></line>
                     <line x1="8" y1="12" x2="16" y2="12"></line>
                   </svg>
                 </span>
                 <span class="faqrs-icon faqrs-icon-minus">
-                  <svg viewBox="0 0 24 24">
+                  <!-- Added xmlns attribute here -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="4"></rect>
                     <line x1="8" y1="12" x2="16" y2="12"></line>
                   </svg>
@@ -187,10 +188,8 @@
         const isActive = this.classList.contains("faqrs-active");
         const allItems = document.querySelectorAll("faq-item");
         
-        // Close all other items
         allItems.forEach(item => item.close());
         
-        // Open this one if it wasn't already active
         if (!isActive) {
           this.open();
         }
@@ -228,7 +227,6 @@
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
     },
-    
     {
       "type": "textarea",
       "id": "heading",

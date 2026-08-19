@@ -57,9 +57,9 @@
         "faq_tXW4aG",
         "faq_Qt4gnz"
       ],
+      "disabled": true,
       "name": "Image + FAQ",
       "settings": {
-        "image": "shopify://shop_images/tech_review_3.jpg",
         "heading": "Questions,\nanswered",
         "note_text": "<p>30-day returns on unused items. If something is off, write us — we will sort it.</p>",
         "bg_color": "#f6f5f0",

@@ -41,10 +41,10 @@
       ],
       "name": "Image Custom Banner",
       "settings": {
-        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
+        "color_scheme": "scheme-a48757f2-b0ca-4125-aa9d-572aa6225a09",
         "media_type": "image",
         "image": "shopify://shop_images/ax-about-craft.png",
-        "overlay_opacity": 15,
+        "overlay_opacity": 30,
         "heading_size_desktop": 48,
         "subheading_size_desktop": 16,
         "content_width": 650,
@@ -111,24 +111,24 @@
     "collections_tabs_X6mbxf": {
       "type": "collections-tabs",
       "blocks": {
-        "collection_Vq98xC": {
-          "type": "collection",
-          "settings": {
-            "tab_title": "Cases",
-            "collection": "phone-cases-example-products"
-          }
-        },
         "collection_RVRjx3": {
           "type": "collection",
           "settings": {
             "tab_title": "All products",
             "collection": "all-products"
           }
+        },
+        "collection_Vq98xC": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Cases",
+            "collection": "phone-cases-example-products"
+          }
         }
       },
       "block_order": [
-        "collection_Vq98xC",
-        "collection_RVRjx3"
+        "collection_RVRjx3",
+        "collection_Vq98xC"
       ],
       "name": "Collection Tabs",
       "settings": {

@@ -45,7 +45,8 @@
         "faq_Qt4gnz": {
           "type": "faq",
           "settings": {
-            "question": "How do I care for a device or case?"
+            "question": "How do I care for a device or case?",
+            "answer": "<p>We use premium materials and modern engineering.</p>"
           }
         }
       },
@@ -58,7 +59,7 @@
       ],
       "name": "Image + FAQ",
       "settings": {
-        "image": "shopify://shop_images/genrate-iamge-thwt-we-can-ue-for-faq-with-image-sections.png",
+        "image": "shopify://shop_images/tech_review_3.jpg",
         "heading": "Questions,\nanswered",
         "note_text": "<p>30-day returns on unused items. If something is off, write us — we will sort it.</p>",
         "bg_color": "#f6f5f0",
@@ -138,7 +139,7 @@
       ],
       "name": "Social Auto-Slider",
       "settings": {
-        "bg_color": "#F6F5F0",
+        "bg_color": "#f6f5f0",
         "heading": "In the world",
         "hashtag": "#Arvenixo",
         "show_facebook": true,

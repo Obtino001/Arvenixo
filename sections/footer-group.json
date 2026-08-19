@@ -11,77 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "faq_with_images_F8AYpT": {
-      "type": "faq-with-images",
-      "blocks": {
-        "faq_CBPDfc": {
-          "type": "faq",
-          "settings": {
-            "question": "What kind of performance can I expect?",
-            "answer": "<p>Our devices feature state-of-the-art processors designed for seamless multitasking, high-speed gaming, and lightning-fast app loading times.</p>"
-          }
-        },
-        "faq_m898p3": {
-          "type": "faq",
-          "settings": {
-            "question": "What battery life can I expect on a full charge?",
-            "answer": "<p>Depending on the model and usage patterns, you can typically expect an all-day battery life, ranging from 12 to 18 hours on a single charge.</p>"
-          }
-        },
-        "faq_j6QqjU": {
-          "type": "faq",
-          "settings": {
-            "question": "How long does the device take to charge?",
-            "answer": "<p>With our advanced fast-charging technology, a full charge takes approximately 1 to 2 hours using the included standard adapter.</p>"
-          }
-        },
-        "faq_4wpPUb": {
-          "type": "faq",
-          "settings": {
-            "question": "Are these devices travel-friendly?",
-            "answer": "<p>Yes, our gadgets are designed with portability in mind, featuring lightweight materials and slim profiles that easily fit into any backpack or carry-on.</p>"
-          }
-        },
-        "faq_KJtWDP": {
-          "type": "faq",
-          "settings": {
-            "question": "What warranty do I get?",
-            "answer": "<p>All our electronic devices come with a standard 1-year warranty covering manufacturing defects and internal hardware failures.</p>"
-          }
-        },
-        "faq_cbxhU4": {
-          "type": "faq",
-          "settings": {
-            "question": "Do you provide technical support or repair services?",
-            "answer": "<p>Yes, we have certified repair centers and provide 24/7 online technical support to ensure your devices are always running at their best.</p>"
-          }
-        },
-        "faq_q7T7m8": {
-          "type": "faq",
-          "settings": {
-            "question": "Can I return the device if I'm not satisfied?",
-            "answer": "<p>We offer a 30-day money-back guarantee. If you're not completely satisfied with your gadget, you can return it for a full refund.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_CBPDfc",
-        "faq_m898p3",
-        "faq_j6QqjU",
-        "faq_4wpPUb",
-        "faq_KJtWDP",
-        "faq_cbxhU4",
-        "faq_q7T7m8"
-      ],
-      "name": "Custom FAQ Split",
-      "settings": {
-        "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
-        "heading": "FREQUENTLY ASKED\nQUESTIONS",
-        "heading_size": "h1",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "instagram_gallery_jrn7kP": {
       "type": "instagram-gallery",
       "blocks": {
@@ -209,7 +138,6 @@
     }
   },
   "order": [
-    "faq_with_images_F8AYpT",
     "instagram_gallery_jrn7kP",
     "footer"
   ]

@@ -411,6 +411,64 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "tabbed_hero_slider_aD8UBn": {
+      "type": "tabbed-hero-slider",
+      "blocks": {
+        "slide_pHhDPX": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "INNOVATION",
+            "heading": "ENGINEERED FOR THE FUTURE. BUILT TO LAST.",
+            "heading_size": "h0",
+            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+          }
+        },
+        "slide_pQrQKC": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "PERFORMANCE",
+            "heading": "ADVANCED TECH FOR SEAMLESS EXPERIENCES.",
+            "heading_size": "h0",
+            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+          }
+        },
+        "slide_jLd9c9": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "DURABILITY",
+            "heading": "RELIABLE DEVICES FOR EVERYDAY USE.",
+            "heading_size": "h0",
+            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+          }
+        },
+        "slide_hi8KKd": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "SECURITY",
+            "heading": "YOUR DATA, ALWAYS PROTECTED.",
+            "heading_size": "h0",
+            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+          }
+        }
+      },
+      "block_order": [
+        "slide_pHhDPX",
+        "slide_pQrQKC",
+        "slide_jLd9c9",
+        "slide_hi8KKd"
+      ],
+      "name": "Tabbed Hero Slider",
+      "settings": {
+        "color_scheme": "",
+        "desktop_height": 800,
+        "mobile_height": 600,
+        "overlay_opacity": 70,
+        "enable_autoplay": false,
+        "autoplay_interval": 5,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -419,6 +477,7 @@
     "collections_tabs_X6mbxf",
     "washing_guide_JwqBHy",
     "testimonials_qqDXbK",
-    "who_is_fRJAyc"
+    "who_is_fRJAyc",
+    "tabbed_hero_slider_aD8UBn"
   ]
 }

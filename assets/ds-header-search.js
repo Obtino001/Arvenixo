@@ -66,31 +66,18 @@ function getScrollbarWidth() {
   return window.innerWidth - document.documentElement.clientWidth;
 }
 
-function lockBodyScroll() {
-  if (document.body.dataset.dsScrollLocked === 'true') return;
-
-  const scrollY = window.scrollY || window.pageYOffset;
-  const scrollbar = getScrollbarWidth();
-
-  document.body.dataset.dsScrollLocked = 'true';
-  document.body.dataset.dsScrollY = String(scrollY);
-  document.body.style.overflow = 'hidden';
-  if (scrollbar > 0) {
-    document.body.style.paddingRight = `${scrollbar}px`;
-  }
-}
-
 function unlockBodyScroll() {
-  if (document.body.dataset.dsScrollLocked !== 'true') return;
-
-  const scrollY = parseInt(document.body.dataset.dsScrollY || '0', 10);
-
+  document.body.classList.remove(
+    'overflow-hidden',
+    'overflow-hidden-mobile',
+    'overflow-hidden-tablet',
+    'overflow-hidden-desktop'
+  );
   document.body.style.overflow = '';
   document.body.style.paddingRight = '';
+  document.documentElement.style.overflow = '';
   delete document.body.dataset.dsScrollLocked;
   delete document.body.dataset.dsScrollY;
-
-  window.scrollTo(0, scrollY);
 }
 
 function pinHeaderForSearch() {
@@ -294,35 +281,31 @@ function bindDsSearchCollapse(modal) {
   modal.open = function dsAnimatedOpen(event) {
     pinHeaderForSearch();
     placePanelUnderHeader(panel);
-    lockBodyScroll();
     originalOpen(event);
-    document.body.classList.remove('overflow-hidden');
-    lockBodyScroll();
+    unlockBodyScroll();
   };
 
   modal.close = function dsAnimatedClose(focusToggle = true) {
     if (modal.dataset.dsClosing === 'true') return;
 
-    if (!details.open) {
+    const finishClose = () => {
+      originalClose(focusToggle);
       unlockBodyScroll();
       unpinHeaderForSearch();
-      originalClose(focusToggle);
+      delete modal.dataset.dsClosing;
+    };
+
+    if (!details.open) {
+      finishClose();
       return;
     }
 
     modal.dataset.dsClosing = 'true';
-    collapseSearchPanel(panel).then(() => {
-      originalClose(focusToggle);
-      document.body.classList.remove('overflow-hidden');
-      unlockBodyScroll();
-      unpinHeaderForSearch();
-      delete modal.dataset.dsClosing;
-    });
+    collapseSearchPanel(panel).then(finishClose);
   };
 
-  const closeBtn = modal.querySelector('.ds-search-form__close');
-  if (closeBtn) {
-    closeBtn.addEventListener(
+  modal.querySelectorAll('[data-ds-search-close]').forEach((btn) => {
+    btn.addEventListener(
       'click',
       (event) => {
         event.preventDefault();
@@ -331,7 +314,7 @@ function bindDsSearchCollapse(modal) {
       },
       true
     );
-  }
+  });
 
   details.addEventListener('toggle', () => {
     if (!details.open) return;

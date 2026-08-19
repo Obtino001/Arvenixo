@@ -178,8 +178,6 @@
       {%- for block in section.blocks -%}
         <a href="{{ block.settings.link | default: '#' }}" class="kd-card" {{ block.shopify_attributes }}>
           <h3 class="kd-card__title">{{ block.settings.title | escape }}</h3>
-
-          {%- if block.type == 'external_link' -%}
             <div class="kd-card__icon-wrapper">
               <span class="kd-card__icon-external">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -189,7 +187,6 @@
                 </svg>
               </span>
             </div>
-          {%- endif -%}
         </a>
       {%- endfor -%}
     </div>

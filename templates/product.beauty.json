@@ -104,6 +104,20 @@
             "note_text": "If you need help choosing, please reach out to us."
           }
         },
+        "shipping_info_FbM7ih": {
+          "type": "shipping-info",
+          "settings": {
+            "icon_width": 14,
+            "status_text": "In Stock",
+            "pre_date_text": "Order today and get it by",
+            "text_color": "#333333",
+            "font_size": 14,
+            "date_type": "hardcoded",
+            "hardcoded_text": "2-3 days",
+            "delivery_days": 9,
+            "padding_bottom": 16
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -191,6 +205,7 @@
         "multi_icon_xn8fhg",
         "inventory_9gdd8V",
         "variant_picker",
+        "shipping_info_FbM7ih",
         "buy_buttons",
         "delivery_payment_mB6BTN",
         "pills_xFGRwJ",

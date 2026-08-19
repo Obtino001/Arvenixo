@@ -255,7 +255,7 @@
 
             {%- liquid
               assign trending_has_collections = false
-              if trending_collections != blank and trending_collections.count > 0
+              if trending_collections != blank and trending_collections.size > 0
                 assign trending_has_collections = true
               endif
 

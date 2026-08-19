@@ -419,6 +419,7 @@
           "type": "slide",
           "settings": {
             "tab_title": "INNOVATION",
+            "image": "shopify://shop_images/tech_review_2.jpg",
             "heading": "ENGINEERED FOR THE FUTURE. BUILT TO LAST.",
             "heading_size": "h0",
             "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
@@ -428,6 +429,7 @@
           "type": "slide",
           "settings": {
             "tab_title": "PERFORMANCE",
+            "image": "shopify://shop_images/ax-about-earth.png",
             "heading": "ADVANCED TECH FOR SEAMLESS EXPERIENCES.",
             "heading_size": "h0",
             "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
@@ -437,6 +439,7 @@
           "type": "slide",
           "settings": {
             "tab_title": "DURABILITY",
+            "image": "shopify://shop_images/ax-about-hero.png",
             "heading": "RELIABLE DEVICES FOR EVERYDAY USE.",
             "heading_size": "h0",
             "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
@@ -446,6 +449,7 @@
           "type": "slide",
           "settings": {
             "tab_title": "SECURITY",
+            "image": "shopify://shop_images/ax-review-pocket.png",
             "heading": "YOUR DATA, ALWAYS PROTECTED.",
             "heading_size": "h0",
             "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
@@ -464,7 +468,7 @@
         "desktop_height": 800,
         "mobile_height": 600,
         "overlay_opacity": 70,
-        "enable_autoplay": false,
+        "enable_autoplay": true,
         "autoplay_interval": 5,
         "padding_top": 0,
         "padding_bottom": 0

@@ -819,17 +819,18 @@
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
+      {%- assign social_urls = settings.social_twitter_link | append: '|' | append: settings.social_facebook_link | append: '|' | append: settings.social_pinterest_link | append: '|' | append: settings.social_instagram_link | append: '|' | append: settings.social_tiktok_link | append: '|' | append: settings.social_tumblr_link | append: '|' | append: settings.social_snapchat_link | append: '|' | append: settings.social_youtube_link | append: '|' | append: settings.social_vimeo_link | split: '|' -%}
+      {%- assign social_first = true -%}
+      {%- for social_url in social_urls -%}
+        {%- assign social_clean = social_url | strip -%}
+        {%- if social_clean != blank and social_clean != '#' -%}
+          {%- unless social_first -%},{%- endunless -%}
+          {{ social_clean | json }}
+          {%- assign social_first = false -%}
+        {%- endif -%}
+      {%- endfor -%}
     ],
-    "url": {{ request.origin | append: page.url | json }}
+    "url": {{ request.origin | json }}
   }
 </script>
 
@@ -845,7 +846,7 @@
         "target": {{ potential_action_target | json }},
         "query-input": "required name=search_term_string"
       },
-      "url": {{ request.origin | append: page.url | json }}
+      "url": {{ request.origin | json }}
     }
   </script>
 {%- endif -%}

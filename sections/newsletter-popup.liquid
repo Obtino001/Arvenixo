@@ -1,4 +1,4 @@
-{%- if section.settings.enable_popup -%}
+{%- if section.settings.enable_popup and template.name != 'product' -%}
 <style>
   .newsletter-popup-overlay {
     position: fixed;
@@ -182,6 +182,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('NewsletterPopup');
     if (!popup) return;
+    if (document.body.classList.contains('template-product')) return;
     var closeBtn = document.getElementById('NewsletterPopupClose');
     var dismissBtn = document.getElementById('NewsletterPopupDismiss');
     
@@ -237,7 +238,7 @@
       "step": 1,
       "unit": "sec",
       "label": "Delay before showing",
-      "default": 3
+      "default": 30
     },
     {
       "type": "image_picker",

@@ -19,7 +19,7 @@
             "flow_text": "Premium Electronics",
             "star_image": "shopify://shop_images/Group_15_1.svg",
             "star_width": 70,
-            "review_text": "4.7 (92 Reviews)",
+            "review_text": "",
             "link_url": "",
             "margin_top": 0,
             "margin_bottom": 10
@@ -36,7 +36,7 @@
         "text_YJpJae": {
           "type": "text",
           "settings": {
-            "text": "Experience top-tier performance with this premium device. Designed for durability and cutting-edge functionality.",
+            "text": "Choose your model and color, then add to cart. Compatibility is listed in the options below.",
             "text_style": "body"
           }
         },
@@ -46,15 +46,15 @@
             "icon-1": "shopify://shop_images/Group_1413372244_1.svg",
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "High Performance",
+            "text-1": "30-day returns",
             "icon-2": "shopify://shop_images/Group_1413372203.svg",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
-            "text-2": "High Performance",
+            "text-2": "Tracked shipping",
             "icon-3": "shopify://shop_images/Group_1413372205.svg",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
-            "text-3": "High Performance",
+            "text-3": "Secure checkout",
             "text-size": 14
           }
         },
@@ -64,10 +64,10 @@
             "picker_type": "button",
             "swatch_shape": "circle",
             "show_variant_images_in_swatches": false,
-            "size_guide_page": true,
-            "trigger_tag": "størrelse",
-            "trigger_label": "Size Guide",
-            "title": "Size Guide",
+            "size_guide_page": false,
+            "trigger_tag": "",
+            "trigger_label": "Compatibility",
+            "title": "Compatibility",
             "avatar_image": "shopify://shop_images/hugeicons_tape-measure_1e87abb3-f8e9-47c7-9231-bdd211d9ea0c.svg",
             "show_xs": true,
             "val_xs_int": "34 - 36",
@@ -98,14 +98,14 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
         },
         "delivery_payment_mB6BTN": {
           "type": "delivery_payment",
           "settings": {
-            "text": "Buy now & get it delivered in 2-3 days",
+            "text": "Ships in 1–2 business days. Delivery time depends on your region.",
             "margin_bottom": 16
           }
         },
@@ -113,16 +113,17 @@
           "type": "pills",
           "settings": {
             "custom_svg": "",
-            "benefit_1": "Waterproof",
-            "benefit_2": "2 Year Warranty",
-            "benefit_3": "Swiss Movement",
-            "benefit_4": "Premium Leather",
+            "benefit_1": "30-day returns",
+            "benefit_2": "Secure checkout",
+            "benefit_3": "Tracked shipping",
+            "benefit_4": "Support via email",
             "benefit_5": "",
             "benefit_6": ""
           }
         },
         "text_e49ryr": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<em><strong>Note: </strong></em><em>The 60-day guarantee applies to new customers and covers one pair only.</em>",
             "text_style": "subtitle"
@@ -160,19 +161,19 @@
         },
         "faq_blocks_k8EnCc": {
           "type": "faq-blocks",
-          "name": "Size Guide",
+          "name": "Returns & warranty",
           "settings": {
             "custom_image": "shopify://shop_images/hugeicons_tape-measure_1e87abb3-f8e9-47c7-9231-bdd211d9ea0c.svg",
-            "question": "Size Guide",
+            "question": "Returns & warranty",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Unused items can be returned within 30 days. Manufacturer warranty, if offered, is listed on the product.</p>"
           }
         },
         "upsell_product_jgWVE7": {
           "type": "upsell_product",
           "disabled": true,
           "settings": {
-            "upsell__heading": "Complete your look",
+            "upsell__heading": "You might also need",
             "drawer_mobile_arrows": false,
             "drawer_enable_autoplay": false,
             "drawer_autoplay_interval": 3,
@@ -219,7 +220,7 @@
         "enable_group_by_color": true,
         "color_option_name": "Color",
         "fancybox_show_all": false,
-        "trigger_label": "Size Guide",
+        "trigger_label": "Compatibility",
         "default_metric": true,
         "padding_top": 36,
         "padding_bottom": 12

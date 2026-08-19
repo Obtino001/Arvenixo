@@ -798,6 +798,9 @@
   </div>
 </product-info>
 
+{%- assign sticky_form_id = 'product-form-' | append: section.id -%}
+{% render 'sticky-atc', product: product, product_form_id: sticky_form_id, section_id: section.id %}
+
 {% comment %} Styles moved to Arvenixo.css {% endcomment %}
 
 <script>
@@ -1327,7 +1330,7 @@
           "info": "Paste SVG code here to override the default checkmark. Leave blank to use the default."
         },
         { "type": "text", "id": "benefit_1", "label": "Benefit 1", "default": "60 days return guarantee" },
-        { "type": "text", "id": "benefit_2", "label": "Benefit 2", "default": "Delivered within 2-3 days" },
+        { "type": "text", "id": "benefit_2", "label": "Benefit 2", "default": "Tracked shipping" },
         { "type": "text", "id": "benefit_3", "label": "Benefit 3", "default": "Free shipping over NOK 800" },
         { "type": "text", "id": "benefit_4", "label": "Benefit 4", "default": "Pay in Installments" },
         { "type": "text", "id": "benefit_5", "label": "Benefit 5" },
@@ -2948,7 +2951,7 @@
         {
           "type": "text",
           "id": "text",
-          "default": "Buy now & get it delivered in 2-3 days",
+          "default": "Ships in 1–2 business days. Delivery time depends on your region.",
           "label": "Banner Text"
         },
         {

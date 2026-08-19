@@ -82,7 +82,8 @@
   inset: 0;
   top: 0;
   z-index: -1;
-  background: transparent !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(2px);
 }
 
 .ds-header-search details[open] .modal-overlay::after {

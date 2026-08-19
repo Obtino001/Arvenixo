@@ -1281,6 +1281,20 @@ a.product__text {
   width: 33%;
 }
 
+@media screen and (max-width: 749px) {
+  .icon-with-text--horizontal {
+    justify-content: flex-start;
+  }
+
+  .icon-with-text--horizontal .h4 {
+    text-align: left;
+  }
+
+  .icon-with-text--horizontal .icon-with-text__item {
+    align-items: flex-start;
+  }
+}
+
 .icon-with-text--vertical .icon-with-text__item {
   margin-bottom: var(--icon-size);
 }

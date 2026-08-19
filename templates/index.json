@@ -219,7 +219,6 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
-      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",

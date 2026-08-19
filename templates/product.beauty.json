@@ -43,16 +43,27 @@
         "multi_icon_xn8fhg": {
           "type": "multi-icon",
           "settings": {
+            "icon-1": "shopify://shop_images/Free_Return.avif",
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "How-to on the page",
+            "text-1": "30 Days Return",
+            "icon-2": "shopify://shop_images/secure_payments.avif",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
-            "text-2": "Tracked shipping",
+            "text-2": "100% Secure Payments",
+            "icon-3": "shopify://shop_images/warranty.avif",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
-            "text-3": "Secure checkout",
+            "text-3": "Email support",
             "text-size": 14
+          }
+        },
+        "inventory_9gdd8V": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
           }
         },
         "variant_picker": {
@@ -93,10 +104,24 @@
             "note_text": "If you need help choosing, please reach out to us."
           }
         },
+        "shipping_info_FbM7ih": {
+          "type": "shipping-info",
+          "settings": {
+            "icon_width": 14,
+            "status_text": "In Stock",
+            "pre_date_text": "Order today and get it by",
+            "text_color": "#333333",
+            "font_size": 14,
+            "date_type": "hardcoded",
+            "hardcoded_text": "2-3 days",
+            "delivery_days": 9,
+            "padding_bottom": 16
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
@@ -109,6 +134,7 @@
         },
         "pills_xFGRwJ": {
           "type": "pills",
+          "disabled": true,
           "settings": {
             "text_color": "#282828",
             "custom_svg": "",
@@ -177,7 +203,9 @@
         "price",
         "text_YJpJae",
         "multi_icon_xn8fhg",
+        "inventory_9gdd8V",
         "variant_picker",
+        "shipping_info_FbM7ih",
         "buy_buttons",
         "delivery_payment_mB6BTN",
         "pills_xFGRwJ",

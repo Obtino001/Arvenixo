@@ -49,6 +49,37 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "categories_WCpmVF": {
+          "type": "categories",
+          "settings": {
+            "column_size": "75%",
+            "title": "Products",
+            "heading": "SHOP BY CATEGORY",
+            "collection_1": "",
+            "custom_title_1": "",
+            "custom_desc_1": "",
+            "collection_2": "",
+            "custom_title_2": "",
+            "custom_desc_2": "",
+            "collection_3": "",
+            "custom_title_3": "",
+            "custom_desc_3": "",
+            "collection_4": "",
+            "custom_title_4": "",
+            "custom_desc_4": "",
+            "collection_5": "",
+            "custom_title_5": "",
+            "custom_desc_5": "",
+            "collection_6": "",
+            "custom_title_6": "",
+            "custom_desc_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "categories_WCpmVF"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",

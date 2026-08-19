@@ -166,6 +166,7 @@
                     aria-describedby="a11y-refresh-page-message"
                   >
                     {%- for option in search.sort_options -%}
+                      {% unless option.value contains 'title-ascending' or option.value contains 'title-descending' %}
                       <option
                         value="{{ option.value | escape }}"
                         {% if option.value == sort_by %}
@@ -174,6 +175,7 @@
                       >
                         {{ option.name | escape }}
                       </option>
+                      {% endunless %}
                     {%- endfor -%}
                   </select>
                   <span class="svg-wrapper">

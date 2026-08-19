@@ -109,8 +109,8 @@
     "brand_headline": "Follow Us",
     "brand_description": "<p></p>",
     "brand_image_width": 150,
-    "social_facebook_link": "#",
-    "social_instagram_link": "#",
+    "social_facebook_link": "",
+    "social_instagram_link": "",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -120,7 +120,7 @@
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
-    "predictive_search_show_price": false,
+    "predictive_search_show_price": true,
     "search_menu": "main-menu",
     "search_product_collection": "all",
     "upsell__container": true,
@@ -146,7 +146,7 @@
     "icon_2": "shopify://shop_images/ss.svg",
     "icon_3": "shopify://shop_images/ssss.svg",
     "free_shipping": true,
-    "free_shipping_minimum": "100",
+    "free_shipping_minimum": "50",
     "free_shipping_text": "",
     "free_gift": true,
     "free_gift_minimum": "150",
@@ -158,10 +158,10 @@
     "show_cart_note": false,
     "show_recommendations": true,
     "recommended_products": [
-      "moose-knuckles-classic-bunny-in-moss-moss",
-      "moose-knuckles-everest-3q-gold-in-black",
-      "moose-knuckles-original-3q-jacket-neoshear-in-beet-black-shearling",
-      "moose-knuckles-saint-ulric-parka-2-in-black-black-shearling"
+      "arvenixo-lumora-heated-back-massager",
+      "flexguard-magnetic-case",
+      "flexvault-iphone-case",
+      "arvenixo-lumilift-pro"
     ],
     "cart_drawer_collection": "frontpage",
     "cart_color_scheme": "scheme-1",
@@ -196,13 +196,18 @@
         "type": "newsletter-popup",
         "settings": {
           "enable_popup": true,
-          "delay": 3,
+          "delay": 30,
           "image": "shopify://shop_images/ax-review-carry.png",
           "logo_text": "Arvenixo",
+<<<<<<< Updated upstream
           "heading": "10% OFF",
           "text": "Save on your first order:",
+=======
+          "heading": "10% off your first order",
+          "text": "Join the list for new releases. One code per customer. No fake countdown.",
+>>>>>>> Stashed changes
           "button_label": "GET MY CODE",
-          "dismiss_text": "No thanks, I'll pay full price",
+          "dismiss_text": "No thanks",
           "disclaimer": "<p>By clicking the link above you agree to receive our newsletter. You can unsubscribe at any time.</p>"
         }
       }

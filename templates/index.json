@@ -27,10 +27,10 @@
         "buttons_qkDF6J": {
           "type": "buttons",
           "settings": {
-            "button_text": "Shop",
-            "button_link": "shopify://collections/all",
-            "button_text2": "",
-            "button_link2": ""
+            "button_text": "Shop cases",
+            "button_link": "shopify://collections/phone-cases-example-products",
+            "button_text2": "Shop devices",
+            "button_link2": "shopify://collections/all"
           }
         }
       },
@@ -154,7 +154,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "standard",
         "show_view_all": true,
         "view_all_style": "solid",
@@ -178,7 +178,7 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/bags.webp",
-            "title": "Bags",
+            "title": "Carry",
             "link": "shopify://collections/all"
           }
         },
@@ -195,7 +195,7 @@
           "settings": {
             "image": "shopify://shop_images/tech_review_3.jpg",
             "title": "Protect",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/phone-cases-example-products"
           }
         }
       },

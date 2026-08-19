@@ -24,21 +24,21 @@
         "heading_PrkTwg": {
           "type": "heading",
           "settings": {
-            "title": "Premium Electronics"
+            "title": "Shop"
           }
         },
         "text_DjqEEg": {
           "type": "text",
           "settings": {
-            "text": "<p>Upgrade your lifestyle with our curated selection of top-tier gadgets. We offer cutting-edge technology to keep you connected, productive, and entertained all day.</p>"
+            "text": "<p>MagSafe cases and everyday devices. Pick a world below, or browse everything.</p>"
           }
         },
         "features_FAEbMN": {
           "type": "features",
           "settings": {
-            "feature_1": "Cutting-edge technology",
-            "feature_2": "Durable build quality",
-            "feature_3": "Premium & Reliable"
+            "feature_1": "30-day returns",
+            "feature_2": "Tracked shipping",
+            "feature_3": "Secure checkout"
           }
         },
         "rating_dxMhn4": {
@@ -50,7 +50,7 @@
         "trust_score_EJyUVJ": {
           "type": "trust_score",
           "settings": {
-            "trust_text": "Rated 4.8/5 by 471 customers"
+            "trust_text": "Questions? Email support@arvenixo.com"
           }
         }
       },
@@ -74,8 +74,8 @@
         "collection_item_L8HCaH": {
           "type": "collection_item",
           "settings": {
-            "collection_ref": "all",
-            "title": "Laptops",
+            "collection_ref": "phone-cases-example-products",
+            "title": "Cases",
             "custom_image": "shopify://shop_images/bags.webp",
             "custom_url": ""
           }
@@ -84,7 +84,7 @@
           "type": "collection_item",
           "settings": {
             "collection_ref": "all",
-            "title": "Smartphones",
+            "title": "Devices",
             "custom_image": "shopify://shop_images/Rise_5271.jpg",
             "custom_url": ""
           }
@@ -125,11 +125,11 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "standard",
         "enable_filtering": true,
         "filter_type": "drawer",
-        "enable_sorting": false,
+        "enable_sorting": true,
         "padding_top": 0,
         "padding_bottom": 36
       }

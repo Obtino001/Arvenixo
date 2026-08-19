@@ -46,9 +46,13 @@
           "type": "column",
           "settings": {
             "title": "Corporate Office",
+<<<<<<< Updated upstream
             "text": "<p>Designed in Paris<br>Delivering only USA</p>",
             "link_label": "",
             "link": ""
+=======
+            "text": "<p>We ship worldwide.<br>Delivery time depends on your region and is shown at checkout.</p>"
+>>>>>>> Stashed changes
           }
         },
         "pr": {

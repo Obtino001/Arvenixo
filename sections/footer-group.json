@@ -187,7 +187,7 @@
         "newsletter_image": "shopify://shop_images/ax-newsletter-lifestyle.png",
         "newsletter_heading": "Stay in touch",
         "newsletter_subheading": "New releases and the occasional note. No noise.",
-        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"#\">View Terms & Privacy</a>.</p>",
+        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/pages/privacy-policy\">View Privacy Policy</a>.</p>",
         "brand_text": "ARVENIXO",
         "bottom_menu": "main-menu"
       }

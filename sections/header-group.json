@@ -29,7 +29,7 @@
         "text_block_iQ6NwT": {
           "type": "text_block",
           "settings": {
-            "text": "Delivery in 2-3 days"
+            "text": "Tracked shipping"
           }
         }
       },
@@ -65,7 +65,7 @@
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "heading": "Shop with a clear return",
-        "text_1": "<p>If it is not right, you have 30 days. Unused items come back — no performance.</p>",
+        "text_1": "<p>If it is not right, unused items can be returned within 30 days.</p>",
         "text_2": "<p>We can help with orders, compatibility, or a refund. Write us anytime.</p>",
         "drawer_show_footer": true,
         "margin_bottom": 0,

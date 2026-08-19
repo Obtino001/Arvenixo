@@ -15,10 +15,10 @@
         "product_reviews_XX9YT4": {
           "type": "product-reviews",
           "settings": {
-            "flow_text": "Premium Electronics",
+            "flow_text": "",
             "flow_bg_color": "#f6f5f0",
             "star_width": 70,
-            "review_text": "4.7 (92 Reviews)",
+            "review_text": "",
             "link_url": "",
             "text_color": "#000000",
             "margin_top": 0,
@@ -36,7 +36,7 @@
         "text_YJpJae": {
           "type": "text",
           "settings": {
-            "text": "Experience top-tier performance with this premium device. Designed for durability and cutting-edge functionality.",
+            "text": "Choose your model and color, then add to cart. Compatibility is listed in the options below — message support if you are unsure.",
             "text_style": "body"
           }
         },
@@ -45,13 +45,13 @@
           "settings": {
             "icon_size_1": 46,
             "icon_size_m_1": 30,
-            "text-1": "High Performance",
+            "text-1": "30-day returns",
             "icon_size_2": 46,
             "icon_size_m_2": 30,
-            "text-2": "High Performance",
+            "text-2": "Tracked shipping",
             "icon_size_3": 46,
             "icon_size_m_3": 30,
-            "text-3": "High Performance",
+            "text-3": "Secure checkout",
             "text-size": 14
           }
         },
@@ -62,12 +62,12 @@
             "swatch_shape": "circle",
             "show_variant_images_in_swatches": false,
             "size_guide_page": false,
-            "trigger_tag": "størrelse",
-            "trigger_label": "Size Guide",
+            "trigger_tag": "",
+            "trigger_label": "Compatibility",
             "color_primary": "#282828",
             "color_secondary": "#282828",
             "color_tertiary": "#f6f5f0",
-            "title": "Size Guide",
+            "title": "Compatibility",
             "show_xs": true,
             "val_xs_int": "34 - 36",
             "val_xs_cm": "88 - 93",
@@ -96,14 +96,14 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
         },
         "delivery_payment_mB6BTN": {
           "type": "delivery_payment",
           "settings": {
-            "text": "Buy now & get it delivered in 2-3 days",
+            "text": "Ships in 1–2 business days. Delivery time depends on your region.",
             "margin_bottom": 16
           }
         },
@@ -112,10 +112,10 @@
           "settings": {
             "text_color": "#282828",
             "custom_svg": "",
-            "benefit_1": "Waterproof",
-            "benefit_2": "2 Year Warranty",
-            "benefit_3": "Swiss Movement",
-            "benefit_4": "Premium Leather",
+            "benefit_1": "30-day returns",
+            "benefit_2": "Secure checkout",
+            "benefit_3": "Tracked shipping",
+            "benefit_4": "Support via email",
             "benefit_5": "",
             "benefit_6": ""
           }
@@ -135,7 +135,7 @@
           "settings": {
             "question": "Materials & Care",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Wipe with a soft dry cloth. Avoid solvents, extreme heat, and leaving rechargeable devices on charge overnight. Check the product description for material details and any water-resistance notes — do not assume a product is waterproof unless it says so.</p>"
           }
         },
         "faq_blocks_FN9CnF": {
@@ -144,22 +144,22 @@
           "settings": {
             "question": "Shipping",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Most orders ship within 1–2 business days. Delivery time depends on your region and is shown at checkout. You receive tracking once the order is on the way.</p>"
           }
         },
         "faq_blocks_k8EnCc": {
           "type": "faq-blocks",
-          "name": "Size Guide",
+          "name": "Returns & warranty",
           "settings": {
-            "question": "Size Guide",
+            "question": "Returns & warranty",
             "faq_content_type": "manual",
-            "answer": ""
+            "answer": "<p>Unused items can be returned within 30 days. Start a return from your order email or the contact page. Manufacturer warranty, if offered, is listed on the product — we do not claim a blanket multi-year warranty on every item.</p>"
           }
         },
         "upsell_product_jgWVE7": {
           "type": "upsell_product",
           "settings": {
-            "upsell__heading": "Complete your look",
+            "upsell__heading": "You might also need",
             "drawer_mobile_arrows": false,
             "drawer_enable_autoplay": false,
             "drawer_autoplay_interval": 3,
@@ -205,7 +205,7 @@
         "enable_group_by_color": true,
         "color_option_name": "Color",
         "fancybox_show_all": false,
-        "trigger_label": "Size Guide",
+        "trigger_label": "Compatibility",
         "default_metric": true,
         "padding_top": 36,
         "padding_bottom": 12
@@ -243,7 +243,7 @@
           "settings": {
             "image": "shopify://shop_images/warranty.avif",
             "fallback_image_url": "",
-            "text": "International Warranty"
+            "text": "Email support"
           }
         }
       },
@@ -262,6 +262,7 @@
     },
     "our_values_7aAqFj": {
       "type": "our-values",
+      "disabled": true,
       "blocks": {
         "row_8yCfXU": {
           "type": "row",
@@ -325,24 +326,24 @@
           "type": "feature",
           "settings": {
             "icon_width": 65,
-            "title": "Top Global Brands",
-            "text": "We bring you the most trusted electronics brands worldwide."
+            "title": "Designed by Arvenixo",
+            "text": "MagSafe protection and everyday devices made to be used, not replaced every season."
           }
         },
         "feature_TfTYCV": {
           "type": "feature",
           "settings": {
             "icon_width": 65,
-            "title": "Comprehensive Warranty",
-            "text": "Your purchases are protected with up to 2 years of warranty."
+            "title": "30-day returns",
+            "text": "If it is not right, send unused items back within 30 days."
           }
         },
         "feature_rp8MLg": {
           "type": "feature",
           "settings": {
             "icon_width": 65,
-            "title": "Expert Tech Support",
-            "text": "Our specialists are ready to help you with any issues."
+            "title": "Real support",
+            "text": "Questions about an order, a model, or a return — email support@arvenixo.com."
           }
         },
         "feature_FfLgjG": {
@@ -357,8 +358,8 @@
           "type": "feature",
           "settings": {
             "icon_width": 65,
-            "title": "Fast Worldwide Shipping",
-            "text": "Receive your electronics quickly, no matter where you are."
+            "title": "Tracked shipping",
+            "text": "Orders leave promptly. Delivery time depends on your region; tracking is sent when it ships."
           }
         },
         "feature_wGHEmh": {
@@ -373,7 +374,7 @@
           "type": "button",
           "settings": {
             "button_label": "Explore our products",
-            "button_link": "shopify://collections/frontpage",
+            "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
         }
@@ -400,6 +401,7 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
+      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",
@@ -532,7 +534,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 36,
         "padding_bottom": 28
       }

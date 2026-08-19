@@ -30,7 +30,7 @@
                 "text_BPxxKk": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Arvenixo is an innovative tech brand creating high-quality, safe electronic accessories designed to make your digital life simpler and more seamless.</p>"
+            "text": "<p>Arvenixo is a tech brand making MagSafe cases and everyday devices meant to be used — slim, considered, and built to last.</p>"
                     }
                 }
             },
@@ -81,7 +81,7 @@
                 "text_nY3iXe": {
                     "type": "text",
                     "settings": {
-                        "text": "<p>Arvenixo was founded in 2022 by tech enthusiasts who struggled to find premium and reliable charging accessories. While tech accessories was already popular in other European countries, it was still hard to find in Norway. <br/><br/>Arvenixo was created to change that \u2014 by offering high-quality tech accessories designed to feel like regular underwear, made in Europe, and gentle on both the body and the environment.</p>",
+                        "text": "<p>Arvenixo started from a simple frustration: most gadget stores either shout, or they sell everything. We wanted MagSafe protection and small daily devices that feel considered in the hand — objects you actually keep.</p><p>We write plainly about compatibility, shipping, and returns. If something is not right, unused items can come back within 30 days.</p>",
                         "text_style": "body"
                     }
                 }
@@ -114,9 +114,9 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Arvenixo is quality",
-                        "subtitle": "We control the entire value chain",
-                        "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
+                        "title": "Built to last",
+                        "subtitle": "Materials you can feel",
+                        "text": "<p>We choose materials for how they feel in the hand and how long they last. Compatibility and specs sit on each product page so you can check before you buy.</p>",
                         "shape_1": "shopify://shop_images/Rectangle_251.svg",
                         "shape_1_width": 150,
                         "shape_1_x": 14,
@@ -144,9 +144,9 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Arvenixo is quality",
-                        "subtitle": "We control the entire value chain",
-                        "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
+                        "title": "Built to last",
+                        "subtitle": "Materials you can feel",
+                        "text": "<p>We choose materials for how they feel in the hand and how long they last. Compatibility and specs sit on each product page so you can check before you buy.</p>",
                         "shape_1": "shopify://shop_images/Rectangle_251.svg",
                         "shape_1_width": 150,
                         "shape_1_x": 20,
@@ -174,9 +174,9 @@
                     "type": "feature",
                     "settings": {
                         "color_scheme": "scheme-3",
-                        "title": "Arvenixo is quality",
-                        "subtitle": "We control the entire value chain",
-                        "text": "<p>Sustainability is at the core of what we do. Our product helps reduce your carbon footprint \u2014 but we go further than that. We use organic cotton, and all materials are OEKO-TEX\u00ae Standard 100 certified. Our products are made in Europe, stored in Norway, and shipped in recyclable packaging (no plastic, thank you!).</p>",
+                        "title": "Built to last",
+                        "subtitle": "Materials you can feel",
+                        "text": "<p>We choose materials for how they feel in the hand and how long they last. Compatibility and specs sit on each product page so you can check before you buy.</p>",
                         "shape_1": "shopify://shop_images/Rectangle_253_1.svg",
                         "shape_1_width": 120,
                         "shape_1_x": 12,
@@ -223,7 +223,7 @@
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/1880a1dfd3669a052c150a7a0add01ab1ad26659_1.jpg",
-                        "title": "Women's Health",
+                        "title": "Daily use",
                         "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 },
@@ -231,7 +231,7 @@
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/7ed9cbe82123bc6298ef240d3b98760724abfd7e_be3453e8-1f48-4ac4-b2d2-a36f703882b7.png",
-                        "title": "Women's Health",
+                        "title": "Daily use",
                         "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 },
@@ -239,7 +239,7 @@
                     "type": "value",
                     "settings": {
                         "image": "shopify://shop_images/b5a93abf8a4339b084bc4fd0db3aa57bf7d3588a_3a8d3a9e-b811-4430-bb5a-c8133f2cba67.png",
-                        "title": "Women's Health",
+                        "title": "Daily use",
                         "text": "<p>Arvenixo was created because there are better alternatives to cheap, disposable electronics. We believe tech users deserve better.</p>"
                     }
                 }
@@ -259,8 +259,9 @@
                 "padding_bottom": 60
             }
         },
-        "testimonials_RUYBWp": {
+            "testimonials_RUYBWp": {
             "type": "testimonials",
+            "disabled": true,
             "blocks": {
                 "testimonial_KJJnfR": {
                     "type": "testimonial",
@@ -358,8 +359,9 @@
                 "padding_bottom": 60
             }
         },
-        "collections_tabs_CftkD8": {
+            "collections_tabs_CftkD8": {
             "type": "collections-tabs",
+            "disabled": true,
             "blocks": {
                 "collection_i99y6c": {
                     "type": "collection",
@@ -519,7 +521,7 @@
                 "description_HaCbwR": {
                     "type": "description",
                     "settings": {
-                        "text": "<p>We\u2019re here to help \u2014 whether that\u2019s a size change, advice, or a refund.</p>"
+                        "text": "<p>We\u2019re here to help \u2014 whether that\u2019s a compatibility question, order help, or a refund.</p>"
                     }
                 }
             },
@@ -606,8 +608,8 @@
                 "text_block_pA9HK9": {
                     "type": "text_block",
                     "settings": {
-                        "text": "Eco-Friendly Tech",
-                        "icon": "panties"
+                        "text": "MagSafe ready",
+                        "icon": "teardrop"
                     }
                 },
                 "text_block_hyzEU3": {
@@ -621,7 +623,7 @@
                     "type": "text_block",
                     "settings": {
                         "text": "24/7 Tech Support",
-                        "icon": "panties"
+                        "icon": "teardrop"
                     }
                 },
                 "text_block_cRBQEC": {
@@ -635,7 +637,7 @@
                     "type": "text_block",
                     "settings": {
                         "text": "Satisfaction Guaranteed",
-                        "icon": "panties"
+                        "icon": "teardrop"
                     }
                 }
             },

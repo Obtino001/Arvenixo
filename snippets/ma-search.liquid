@@ -29,7 +29,7 @@
     overflow: hidden;
   }
 
-  body.ma-search-open::before {
+  {% comment %} body.ma-search-open::before {
     content: '';
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@
     z-index: 9999;
     backdrop-filter: blur(2px);
     transition: 0.3s ease;
-  }
+  } {% endcomment %}
 
   .ma-search-input-wrapper {
     width: 100%;

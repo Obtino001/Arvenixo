@@ -156,7 +156,6 @@
   border-radius: 0.6rem !important;
   padding: 1.6rem 1.6rem 1.6rem 4.2rem !important;
   font-size: 1.4rem !important;
-  font-weight: 400 !important;
   line-height: 1.4 !important;
   color: #212121 !important;
   box-shadow: none !important;
@@ -301,9 +300,8 @@
 
 .ds-search-group__heading h4 {
   margin: 0;
-  font-family: var(--font-heading-family);
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
   letter-spacing: 0;
   line-height: 1.3;
@@ -334,14 +332,9 @@
   padding: 0.4rem 0;
   color: #212121;
   text-decoration: none;
-  font-family: var(--font-body-family);
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.4;
-}
-
-.ds-search-link--search {
-  font-weight: 400;
 }
 
 .ds-search-link__left {
@@ -453,12 +446,10 @@
 
 .ds-trending-card__label {
   display: block;
-  font-family: var(--font-body-family);
   font-size: 1.4rem;
-  font-weight: 400;
   color: #212121;
-  text-transform: none;
-  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .ds-trending-slider__dots {
@@ -512,7 +503,7 @@
 
 .ds-header-search .predictive-search__heading {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: none;
   letter-spacing: 0;
   color: #000;
@@ -520,7 +511,7 @@
 
 .ds-header-search .predictive-search__item-heading {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #212121;
 }
 
@@ -574,12 +565,12 @@
 
 .ds-predictive-queries__heading {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #000;
   margin: 0 0 1.2rem 0;
   text-transform: none;
   letter-spacing: 0;
-  font-family: var(--font-heading-family);
+  font-family: inherit;
 }
 
 .ds-predictive-queries__list {
@@ -598,9 +589,7 @@
   justify-content: space-between;
   text-decoration: none;
   color: #212121;
-  font-family: var(--font-body-family);
   font-size: 1.4rem;
-  font-weight: 400;
   padding: 0.6rem 0;
   transition: color 0.15s ease;
 }
@@ -642,19 +631,19 @@
 
 .ds-predictive-products__heading {
   font-size: 1.4rem;
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #000;
   margin: 0;
-  font-family: var(--font-heading-family);
+  font-family: inherit;
 }
 
 .ds-predictive-products__see-all {
   font-size: 1.2rem;
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #000;
   text-decoration: none;
   transition: opacity 0.15s ease;

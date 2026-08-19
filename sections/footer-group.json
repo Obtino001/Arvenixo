@@ -45,8 +45,7 @@
         "faq_Qt4gnz": {
           "type": "faq",
           "settings": {
-            "question": "How do I care for a device or case?",
-            "text": "<p>Wipe with a soft dry cloth. Avoid solvents and extreme heat.</p>"
+            "question": "How do I care for a device or case?"
           }
         }
       },

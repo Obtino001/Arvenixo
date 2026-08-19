@@ -246,7 +246,7 @@
         "padding_bottom": 12
       }
     },
-    "feature_alternating_e4iaqP": {
+"feature_alternating_e4iaqP": {
       "type": "feature-alternating",
       "blocks": {
         "feature_block_N3wXEY": {
@@ -255,15 +255,15 @@
             "color_scheme": "",
             "image_fit": "contain",
             "layout": "left",
-            "heading": "SMART PROTECTION FOR A SMARTER RIDE.",
+            "heading": "COMPREHENSIVE PROTECTION FOR YOUR DEVICES.",
             "heading_size": "h0",
-            "text": "<p>Your bike is more than just a ride — it's part of your everyday life. With Roxx insurance, you're protected against the unexpected.</p>",
+            "text": "<p>Your tech is an essential part of your daily routine. With our premium care plans, your gadgets are protected against the unexpected.</p>",
             "list_heading": "What's covered:",
-            "list_item_1": "Theft protection",
-            "list_item_2": "Damage & accident coverage",
-            "list_item_3": "Peace of mind, wherever you park",
+            "list_item_1": "Extended hardware warranty",
+            "list_item_2": "Accidental damage coverage",
+            "list_item_3": "24/7 priority tech support",
             "list_item_4": "",
-            "button_label": "EXPLORE INSURANCE",
+            "button_label": "EXPLORE CARE PLANS",
             "button_link": "",
             "button_label_2": "LEARN MORE",
             "button_link_2": ""
@@ -275,15 +275,15 @@
             "color_scheme": "",
             "image_fit": "contain",
             "layout": "right",
-            "heading": "KEEP YOUR RIDE PERFORMING LIKE NEW",
+            "heading": "UNLEASH NEXT-GENERATION PERFORMANCE",
             "heading_size": "h0",
-            "text": "<p>Your bike is more than just a ride — it's part of your everyday life. With Roxx insurance, you're protected against the unexpected.</p>",
-            "list_heading": "What's covered:",
-            "list_item_1": "Theft protection",
-            "list_item_2": "Damage & accident coverage",
-            "list_item_3": "Peace of mind, wherever you park",
+            "text": "<p>From smart home integration to portable productivity, our devices are designed to seamlessly power your everyday life.</p>",
+            "list_heading": "Why upgrade:",
+            "list_item_1": "Cutting-edge technology",
+            "list_item_2": "Seamless connectivity",
+            "list_item_3": "Premium build quality",
             "list_item_4": "",
-            "button_label": "EXPLORE INSURANCE",
+            "button_label": "SHOP NEW ARRIVALS",
             "button_link": "",
             "button_label_2": "LEARN MORE",
             "button_link_2": ""

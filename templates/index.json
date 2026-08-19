@@ -44,7 +44,7 @@
         "color_scheme": "scheme-7bb5237c-90bc-4ff8-b9c6-9f6059b3117a",
         "media_type": "image",
         "image": "shopify://shop_images/ax-about-craft.png",
-        "overlay_opacity": 15,
+        "overlay_opacity": 30,
         "heading_size_desktop": 48,
         "subheading_size_desktop": 16,
         "content_width": 650,

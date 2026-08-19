@@ -1,5 +1,5 @@
-
-    class MaQuickAdd extends HTMLElement {
+if (!customElements.get('ma-quickadd')) {
+  class MaQuickAdd extends HTMLElement {
   constructor() {
     super();
     this.selectors = {
@@ -86,3 +86,4 @@
 }
 
 customElements.define('ma-quickadd', MaQuickAdd);
+}

@@ -1,13 +1,15 @@
-  class PredictiveSearch extends HTMLElement {
+  class MaPredictiveSearch extends HTMLElement {
     constructor() {
       super();
 
       this.input = this.querySelector('input[type="search"]');
       this.predictiveSearchResults = this.querySelector('#ma-predictive-search-results-container');
 
-      this.input.addEventListener('input', this.debounce((event) => {
-        this.onChange(event);
-      }, 300).bind(this));
+      if (this.input) {
+        this.input.addEventListener('input', this.debounce((event) => {
+          this.onChange(event);
+        }, 300).bind(this));
+      }
       
       this.reset();
     }
@@ -56,17 +58,21 @@
     }
 
     open() {
-      this.querySelector('.ma-search-upsell-container').style.display = 'none';
-      this.querySelector('.ma-search-dynamic-results').style.display = 'flex';
+      const upsell = this.querySelector('.ma-search-upsell-container');
+      const results = this.querySelector('.ma-search-dynamic-results');
+      if (upsell) upsell.style.display = 'none';
+      if (results) results.style.display = 'flex';
       const clearBtn = this.querySelector('.ma-search-clear-btn');
-      if(clearBtn) clearBtn.style.display = 'flex';
+      if (clearBtn) clearBtn.style.display = 'flex';
     }
 
     close() {
-      this.querySelector('.ma-search-upsell-container').style.display = 'flex';
-      this.querySelector('.ma-search-dynamic-results').style.display = 'none';
+      const upsell = this.querySelector('.ma-search-upsell-container');
+      const results = this.querySelector('.ma-search-dynamic-results');
+      if (upsell) upsell.style.display = 'flex';
+      if (results) results.style.display = 'none';
       const clearBtn = this.querySelector('.ma-search-clear-btn');
-      if(clearBtn) clearBtn.style.display = 'none';
+      if (clearBtn) clearBtn.style.display = 'none';
     }
 
     debounce(fn, wait) {
@@ -78,57 +84,55 @@
     }
   }
 
-  customElements.define('predictive-search', PredictiveSearch);
+  if (!customElements.get('ma-predictive-search')) {
+    customElements.define('ma-predictive-search', MaPredictiveSearch);
+  }
 
-let mainSearchElement = document.querySelector('predictive-search');
+if (document.getElementById('ma-search-input')) {
+  let mainSearchElement = document.querySelector('ma-predictive-search, predictive-search');
 
-function openSearch() {
-mainSearchElement.style.display = "flex";
-document.body.classList.add('ma-search-open');
-setTimeout(() => {
-    mainSearchElement.classList.add('ma-is-active');
+  function openSearch() {
+    if (!mainSearchElement) return;
+    mainSearchElement.style.display = 'flex';
+    document.body.classList.add('ma-search-open');
     setTimeout(() => {
-    document.getElementById('ma-search-input').focus();
-    }, 200);
-}, 10);
-}
+      mainSearchElement.classList.add('ma-is-active');
+      setTimeout(() => {
+        document.getElementById('ma-search-input')?.focus();
+      }, 200);
+    }, 10);
+  }
 
-function closeSearch() {
-mainSearchElement.classList.remove('ma-is-active');
-document.body.classList.remove('ma-search-open');
-setTimeout(() => {
-    mainSearchElement.style.display = "none";
-    document.getElementById('ma-search-input').value = '';
-}, 310);
-}
+  function closeSearch() {
+    if (!mainSearchElement) return;
+    mainSearchElement.classList.remove('ma-is-active');
+    document.body.classList.remove('ma-search-open');
+    setTimeout(() => {
+      mainSearchElement.style.display = 'none';
+      const input = document.getElementById('ma-search-input');
+      if (input) input.value = '';
+    }, 310);
+  }
 
-document.querySelectorAll('.header__icon--search').forEach((searchBar) => {
-searchBar.addEventListener('click', (e) => {
-    e.preventDefault();
-    openSearch();
-});
-});
+  const closeBtn = document.querySelector('.ma-search-close-btn');
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
 
-const closeBtn = document.querySelector('.ma-search-close-btn');
-if (closeBtn) {
-closeBtn.addEventListener('click', closeSearch);
-}
+  document.body.addEventListener('click', (e) => {
+    if (document.body.classList.contains('ma-search-open') && e.target === document.body) {
+      closeSearch();
+    }
+  });
 
-document.body.addEventListener('click', (e) => {
-if (document.body.classList.contains('ma-search-open') && e.target === document.body) {
-    closeSearch();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('ma-search-open')) {
+      closeSearch();
+    }
+  });
 }
-});
-
-document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && document.body.classList.contains('ma-search-open')) {
-    closeSearch();
-}
-});
 
 function redirectToSearch() {
-const searchValue = document.getElementById('ma-search-input').value.trim();
-if (searchValue.length) {
+  const searchValue = document.getElementById('ma-search-input')?.value.trim();
+  if (searchValue?.length) {
     window.location.href = `/search?q=${encodeURIComponent(searchValue)}`;
-}
+  }
 }

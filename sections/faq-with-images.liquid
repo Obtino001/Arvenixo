@@ -1,182 +1,257 @@
-{% style %}
-  .custom-info-banner-{{ section.id }} {
-    background-color: {{ section.settings.bg_color }};
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    overflow: hidden;
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .info-banner-grid-{{ section.id }} {
+  @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .faqrs-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
-    align-items: center;
+    gap: 32px;
   }
 
-  @media screen and (min-width: 769px) {
-    .info-banner-grid-{{ section.id }} {
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+  @media screen and (min-width: 990px) {
+    .faqrs-grid {
+      grid-template-columns: 1fr 1fr; /* Matches the screenshot's left/right balance */
+      gap: 16px;
+    }
+
+    /* Center the FAQ list when there is no heading */
+    .faqrs-grid.faqrs-grid--no-heading {
+      grid-template-columns: minmax(0, 800px);
+      justify-content: center;
     }
   }
 
-  /* Left Column: Quote */
-  .info-banner-quote-{{ section.id }} {
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-size: clamp(24px, 2.5vw, 32px);
-    font-weight: 700;
-    
-    color: #1a1a1a;
+  .faqrs-heading {
     margin: 0;
-    text-align: center;
-    line-height: 1.2;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 1.1;
   }
 
-  @media screen and (min-width: 769px) {
-    .info-banner-quote-{{ section.id }} {
-      text-align: right;
-      padding-right: 50px;
-    }
-  }
-
-  /* Right Column: Container for Text + Logo */
-  .info-banner-right-col-{{ section.id }} {
+  .faqrs-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 25px;
   }
 
-  @media screen and (min-width: 769px) {
-    .info-banner-right-col-{{ section.id }} {
-      flex-direction: row;
-      justify-content: space-between;
-      border-left: 1px solid #1a1a1a;
-      padding-left: 50px;
-    }
+  .faqrs-item {
+    display: block;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
   }
 
-  /* Right Column: Text List */
-  .info-banner-text-{{ section.id }} {
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
-    font-size: clamp(14px, 1.2vw, 16px);
-    line-height: 1.6;
-    color: #333333;
-    margin: 0;
-    text-align: center;
-  }
-
-  @media screen and (min-width: 769px) {
-    .info-banner-text-{{ section.id }} {
-      text-align: left;
-    }
-  }
-
-  .info-banner-text-{{ section.id }} p {
-    margin: 0;
-  }
-
-  /* Right Column: Logo */
-  .info-banner-logo-{{ section.id }} {
+  .faqrs-question {
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 17.6px;
+    color: currentColor;
+    transition: opacity 0.2s ease;
+  }
+
+  .faqrs-question:hover {
+    opacity: 0.8;
+  }
+
+  .faqrs-icon {
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  .info-banner-logo-{{ section.id }} img {
-    max-width: {{ section.settings.logo_width }}px;
-    height: auto;
-    object-fit: contain;
-    display: block;
+  .faqrs-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
   }
 
-  .info-banner-logo-svg {
-    width: {{ section.settings.logo_width }}px;
-    height: auto;
+  /* Hide minus by default, show plus */
+  .faqrs-icon-minus {
+    display: none;
   }
-{% endstyle %}
 
-<div class="custom-info-banner-{{ section.id }}">
-  <div class="page-width">
-    <div class="info-banner-grid-{{ section.id }}">
+  /* When active, swap icons */
+  faq-item.faqrs-active .faqrs-icon-plus {
+    display: none;
+  }
+  
+  faq-item.faqrs-active .faqrs-icon-minus {
+    display: flex;
+  }
+
+  .faqrs-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faqrs-answer-inner {
+    padding-bottom: 24px;
+    padding-left: 48px; /* Aligns text with the question, pushing past the icon */
+    font-size: 15.2px;
+    line-height: 1.6;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+  
+  .faqrs-answer-inner p {
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient" id="product-faq">
+  <div class="faqrs-container page-width">
+    <div class="faqrs-grid {% if section.settings.heading == blank %}faqrs-grid--no-heading{% endif %}">
       
-      <!-- LEFT HALF: Quote -->
-      <div class="info-banner-left-col">
-        {% if section.settings.quote != blank %}
-          <h2 class="info-banner-quote-{{ section.id }}">
-            "{{ section.settings.quote | remove: '"' }}"
-          </h2>
-        {% endif %}
-      </div>
-
-      <!-- RIGHT HALF: Divider, Text List, and Logo -->
-      <div class="info-banner-right-col-{{ section.id }}">
-        
-        <div class="info-banner-text-{{ section.id }}">
-          {{ section.settings.text }}
+      {%- if section.settings.heading != blank -%}
+        <div class="faqrs-grid-left">
+          <h2 class="hero-features__heading {{ section.settings.heading_size }}">{{ section.settings.heading | newline_to_br }}</h2>
         </div>
+      {%- endif -%}
 
-        <div class="info-banner-logo-{{ section.id }}">
-          {% if section.settings.logo != blank %}
-            {{ section.settings.logo | image_url: width: 200 | image_tag: loading: 'lazy' }}
-          {% else %}
-            <!-- Fallback SVG to match your 1:1 B-Corp shape if no image is uploaded -->
-            <svg class="info-banner-logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="50" y="20" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#000">Certified</text>
-              <circle cx="50" cy="65" r="30" stroke="#000" stroke-width="3"/>
-              <text x="50" y="78" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#000">B</text>
-              <text x="50" y="115" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">Corporation</text>
-            </svg>
-          {% endif %}
+      <div class="faqrs-grid-right">
+        <div class="faqrs-list">
+          {%- for block in section.blocks -%}
+            <faq-item class="faqrs-item" {{ block.shopify_attributes }}>
+              <div class="faqrs-question" aria-expanded="false">
+                <span class="faqrs-icon faqrs-icon-plus">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </span>
+                <span class="faqrs-icon faqrs-icon-minus">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </span>
+                <span class="faqrs-q-text">{{ block.settings.question | escape }}</span>
+              </div>
+              
+              <div class="faqrs-answer">
+                <div class="faqrs-answer-inner">
+                  {{ block.settings.answer }}
+                </div>
+              </div>
+            </faq-item>
+          {%- endfor -%}
         </div>
-
       </div>
 
     </div>
   </div>
 </div>
 
+<script>
+  if (!customElements.get('faq-item')) {
+    class FAQItem extends HTMLElement {
+      constructor() {
+        super();
+        this.handleToggle = this.handleToggle.bind(this);
+      }
+
+      connectedCallback() {
+        this.question = this.querySelector(".faqrs-question");
+        this.answer = this.querySelector(".faqrs-answer");
+        if (this.question && this.answer) {
+          this.question.addEventListener("click", this.handleToggle);
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.question) {
+          this.question.removeEventListener("click", this.handleToggle);
+        }
+      }
+
+      handleToggle() {
+        const isActive = this.classList.contains("faqrs-active");
+        const allItems = document.querySelectorAll("faq-item");
+        
+        // Close all other items
+        allItems.forEach(item => item.close());
+        
+        // Open this one if it wasn't already active
+        if (!isActive) {
+          this.open();
+        }
+      }
+
+      open() {
+        this.classList.add("faqrs-active");
+        this.answer.style.maxHeight = this.answer.scrollHeight + "px";
+        this.question.setAttribute("aria-expanded", "true");
+      }
+
+      close() {
+        this.classList.remove("faqrs-active");
+        if (this.answer) {
+          this.answer.style.maxHeight = null;
+        }
+        if (this.question) {
+          this.question.setAttribute("aria-expanded", "false");
+        }
+      }
+    }
+    customElements.define("faq-item", FAQItem);
+  }
+</script>
+
 {% schema %}
 {
-  "name": "Custom Info Banner",
+  "name": "Custom FAQ Split",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#f6f5f3"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
     },
+    
     {
       "type": "textarea",
-      "id": "quote",
-      "label": "Quote Text",
-      "default": "A passion for Good Design & Quality Products"
+      "id": "heading",
+      "label": "Heading",
+      "default": "FREQUENTLY ASKED\nQUESTIONS",
+      "info": "Leave blank to center the FAQ list"
     },
     {
-      "type": "richtext",
-      "id": "text",
-      "label": "List Text",
-      "default": "<p>MagSafe cases and everyday devices.<br>We ship worldwide. Unused items can be returned within 30 days.</p>"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Certification Logo",
-      "info": "Leave blank to use the default B-Corp placeholder"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 40,
-      "max": 150,
-      "step": 5,
-      "unit": "px",
-      "label": "Logo Max Width",
-      "default": 65
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+            { "value": "h2", "label": "Small" },
+            { "value": "h1", "label": "Medium" },
+            { "value": "h0", "label": "Large" },
+            { "value": "hxl", "label": "Extra Large" },
+            { "value": "hxxl", "label": "Extra Extra Large" }
+          ],
+      "default": "h1",
+      "label": "Heading Size"
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "Section Padding"
     },
     {
       "type": "range",
@@ -185,8 +260,8 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding Top",
-      "default": 40
+      "label": "Top Padding",
+      "default": 80
     },
     {
       "type": "range",
@@ -195,13 +270,84 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding Bottom",
-      "default": 40
+      "label": "Bottom Padding",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question text goes here?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer text goes here. Provide a clear and concise response.</p>"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Custom Info Banner"
+      "name": "Custom FAQ Split",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How fast can a Roxx e-bike go?",
+            "answer": "<p>Roxx e-bikes are designed to meet EU regulations, with pedal assist up to 25 km/h. You get a smooth, powerful ride while staying fully road-legal.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What range can I expect on a full charge?",
+            "answer": "<p>Depending on the model and conditions, you can typically expect a range of 60km to 120km on a single charge.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How long does the battery take to charge?",
+            "answer": "<p>A full charge takes approximately 4 to 6 hours using the included standard charger.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can I fold and store the bike easily?",
+            "answer": "<p>Yes, specific models feature a quick-fold mechanism allowing you to easily store it in a car trunk or take it on public transport.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What warranty do I get?",
+            "answer": "<p>All Roxx e-bikes come with a 2-year warranty on the frame and electronic components, including the motor and battery.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Do you provide maintenance or repair services?",
+            "answer": "<p>Yes, we have certified repair centers and provide ongoing maintenance support to keep your ride smooth.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can I return the bike if I'm not satisfied?",
+            "answer": "<p>We offer a 14-day test ride period. If you're not completely satisfied, you can return it for a full refund.</p>"
+          }
+        }
+      ]
     }
   ]
 }

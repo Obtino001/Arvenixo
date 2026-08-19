@@ -111,24 +111,24 @@
     "collections_tabs_X6mbxf": {
       "type": "collections-tabs",
       "blocks": {
-        "collection_Vq98xC": {
-          "type": "collection",
-          "settings": {
-            "tab_title": "Cases",
-            "collection": "phone-cases-example-products"
-          }
-        },
         "collection_RVRjx3": {
           "type": "collection",
           "settings": {
             "tab_title": "All products",
             "collection": "all-products"
           }
+        },
+        "collection_Vq98xC": {
+          "type": "collection",
+          "settings": {
+            "tab_title": "Cases",
+            "collection": "phone-cases-example-products"
+          }
         }
       },
       "block_order": [
-        "collection_Vq98xC",
-        "collection_RVRjx3"
+        "collection_RVRjx3",
+        "collection_Vq98xC"
       ],
       "name": "Collection Tabs",
       "settings": {

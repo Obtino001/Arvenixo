@@ -219,13 +219,14 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
+      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",
           "settings": {
-            "review_text": "<p>The MagShield case sits flush. Magnets actually hold on a charger.</p>",
-            "author_name": "Amina",
-            "show_verified": false
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
           }
         },
         "image_fwHkwT": {
@@ -237,9 +238,9 @@
         "review_riFiDT": {
           "type": "review",
           "settings": {
-            "review_text": "<p>Quiet design. Feels like something I will keep, not replace in a year.</p>",
-            "author_name": "Jordan",
-            "show_verified": false
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
           }
         },
         "image_BNGL7G": {
@@ -251,15 +252,59 @@
         "review_ntN3QL": {
           "type": "review",
           "settings": {
-            "review_text": "<p>Arrived well packed. The one I reach for most is the massager.</p>",
-            "author_name": "Priya",
-            "show_verified": false
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
           }
         },
         "image_PiFyAz": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/ax-about-beginnings.png"
+          }
+        },
+        "review_ACeL33": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
+        "image_AjbtaL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ax-review-carry.png"
+          }
+        },
+        "review_iMUAV3": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
+        "review_WejKQV": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
+          }
+        },
+        "image_BUjmnf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ax-cat-bags.png"
+          }
+        },
+        "review_r4YBxd": {
+          "type": "review",
+          "settings": {
+            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "author_name": "STEVE J",
+            "show_verified": true
           }
         }
       },
@@ -269,14 +314,20 @@
         "review_riFiDT",
         "image_BNGL7G",
         "review_ntN3QL",
-        "image_PiFyAz"
+        "image_PiFyAz",
+        "review_ACeL33",
+        "image_AjbtaL",
+        "review_iMUAV3",
+        "review_WejKQV",
+        "image_BUjmnf",
+        "review_r4YBxd"
       ],
       "name": "Masonry Reviews",
       "settings": {
         "bg_color": "#f9f8f6",
-        "show_header_stars": false,
-        "heading": "What people notice",
-        "button_text": "",
+        "show_header_stars": true,
+        "heading": "Customer reviews",
+        "button_text": "READ MORE REVIEWS",
         "button_link": "",
         "padding_top": 60,
         "padding_bottom": 60

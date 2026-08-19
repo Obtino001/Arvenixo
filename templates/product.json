@@ -127,10 +127,15 @@
         },
         "delivery_payment_mB6BTN": {
           "type": "delivery_payment",
+          "disabled": true,
           "settings": {
             "text": "Ships in 1–2 business days. Delivery time depends on your region.",
             "margin_bottom": 16
           }
+        },
+        "payments_mxWmKT": {
+          "type": "Payments",
+          "settings": {}
         },
         "pills_xFGRwJ": {
           "type": "pills",
@@ -208,6 +213,7 @@
         "shipping_info_FbM7ih",
         "buy_buttons",
         "delivery_payment_mB6BTN",
+        "payments_mxWmKT",
         "pills_xFGRwJ",
         "faq_blocks_NkWNgc",
         "faq_blocks_CkKVjD",
@@ -290,7 +296,6 @@
     },
     "our_values_7aAqFj": {
       "type": "our-values",
-      "disabled": true,
       "blocks": {
         "row_8yCfXU": {
           "type": "row",
@@ -335,6 +340,7 @@
         "row_WWDYeX",
         "row_GCXiet"
       ],
+      "disabled": true,
       "name": "Comparison Table 1:1",
       "settings": {
         "card_bg_color": "rgba(0,0,0,0)",
@@ -429,7 +435,6 @@
     },
     "testimonials_qqDXbK": {
       "type": "testimonials",
-      "disabled": true,
       "blocks": {
         "review_kVJhXx": {
           "type": "review",
@@ -532,6 +537,7 @@
         "image_BUjmnf",
         "review_r4YBxd"
       ],
+      "disabled": true,
       "name": "Masonry Reviews",
       "settings": {
         "bg_color": "#f9f8f6",

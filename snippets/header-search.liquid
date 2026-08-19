@@ -10,16 +10,20 @@
 {% endcomment %}
 
 {%- liquid
-  assign search_placeholder = settings.search_placeholder | default: section.settings.search_placeholder | default: 'Søg blandt over 2.000 koreanske produkter...'
-  assign popular_searches_heading = settings.popular_searches_heading | default: section.settings.popular_searches_heading | default: 'Populære søgninger'
-  assign popular_brands_heading = settings.popular_brands_heading | default: section.settings.popular_brands_heading | default: 'Populære brands'
-  assign popular_blogs_heading = settings.popular_blogs_heading | default: section.settings.popular_blogs_heading | default: 'Efterspurgte blogs'
-  assign trending_heading = settings.trending_heading | default: section.settings.trending_heading | default: 'Trending'
+  assign search_placeholder = settings.search_placeholder | default: 'Search MagSafe cases and beauty tech'
+  assign popular_searches_heading = settings.popular_searches_heading | default: 'Popular searches'
+  assign popular_brands_heading = settings.popular_brands_heading | default: 'Shop'
+  assign popular_blogs_heading = settings.popular_blogs_heading | default: 'Help'
+  assign trending_heading = settings.trending_heading | default: 'Trending'
 
-  assign popular_searches_menu = settings.popular_searches_menu | default: section.settings.popular_searches_menu
-  assign popular_brands_menu = settings.popular_brands_menu | default: section.settings.popular_brands_menu
-  assign popular_blogs_menu = settings.popular_blogs_menu | default: section.settings.popular_blogs_menu
-  assign trending_collections = settings.trending_collections | default: section.settings.trending_collections
+  assign popular_searches_menu = settings.popular_searches_menu
+  assign popular_brands_menu = settings.popular_brands_menu
+  assign popular_blogs_menu = settings.popular_blogs_menu
+  assign trending_collections = settings.trending_collections
+
+  assign cases_collection = collections['phone-cases-example-products']
+  assign all_products_collection = collections['all-products'] | default: collections.all
+  assign trending_product_source = collections[settings.search_product_collection] | default: collections.all
 -%}
 
 <details-modal class="header__search ds-header-search">
@@ -128,39 +132,28 @@
                   </ul>
                 </div>
               {%- else -%}
-                {%- comment -%} Default Popular Searches Fallback {%- endcomment -%}
                 <div class="ds-search-group">
                   <div class="ds-search-group__heading">
                     <h4>{{ popular_searches_heading }}</h4>
                     <span class="ds-search-group__line"></span>
                   </div>
                   <ul class="ds-search-group__list list-unstyled">
-                    <li>
-                      <a href="{{ routes.search_url }}?q=Anua+Zero-cast" class="ds-search-link ds-search-link--search">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-search.svg' | inline_asset_content -}}
+                    {%- assign fallback_searches = 'MagSafe,iPhone case,Massager' | split: ',' -%}
+                    {%- for term in fallback_searches -%}
+                      <li>
+                        <a href="{{ routes.search_url }}?q={{ term | url_encode }}" class="ds-search-link ds-search-link--search">
+                          <span class="ds-search-link__left">
+                            <span class="ds-search-link__icon" aria-hidden="true">
+                              {{- 'icon-ds-search.svg' | inline_asset_content -}}
+                            </span>
+                            <span class="ds-search-link__label">{{ term }}</span>
                           </span>
-                          <span class="ds-search-link__label">Anua Zero-cast</span>
-                        </span>
-                        <span class="ds-search-link__arrow" aria-hidden="true">
-                          {{- 'icon-ds-arrow.svg' | inline_asset_content -}}
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ routes.search_url }}?q=Toner" class="ds-search-link ds-search-link--search">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-search.svg' | inline_asset_content -}}
+                          <span class="ds-search-link__arrow" aria-hidden="true">
+                            {{- 'icon-ds-arrow.svg' | inline_asset_content -}}
                           </span>
-                          <span class="ds-search-link__label">Toner</span>
-                        </span>
-                        <span class="ds-search-link__arrow" aria-hidden="true">
-                          {{- 'icon-ds-arrow.svg' | inline_asset_content -}}
-                        </span>
-                      </a>
-                    </li>
+                        </a>
+                      </li>
+                    {%- endfor -%}
                   </ul>
                 </div>
               {%- endif -%}
@@ -188,33 +181,47 @@
                   </ul>
                 </div>
               {%- else -%}
-                {%- comment -%} Default Popular Brands Fallback {%- endcomment -%}
                 <div class="ds-search-group">
                   <div class="ds-search-group__heading">
                     <h4>{{ popular_brands_heading }}</h4>
                     <span class="ds-search-group__line"></span>
                   </div>
                   <ul class="ds-search-group__list list-unstyled">
-                    <li>
-                      <a href="{{ routes.collections_url }}/anua" class="ds-search-link">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-collection.svg' | inline_asset_content -}}
+                    {%- if cases_collection != blank -%}
+                      <li>
+                        <a href="{{ cases_collection.url }}" class="ds-search-link">
+                          <span class="ds-search-link__left">
+                            <span class="ds-search-link__icon" aria-hidden="true">
+                              {{- 'icon-ds-collection.svg' | inline_asset_content -}}
+                            </span>
+                            <span class="ds-search-link__label">{{ cases_collection.title }}</span>
                           </span>
-                          <span class="ds-search-link__label">Anua</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ routes.collections_url }}/medicube" class="ds-search-link">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-collection.svg' | inline_asset_content -}}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if all_products_collection != blank -%}
+                      <li>
+                        <a href="{{ all_products_collection.url }}" class="ds-search-link">
+                          <span class="ds-search-link__left">
+                            <span class="ds-search-link__icon" aria-hidden="true">
+                              {{- 'icon-ds-collection.svg' | inline_asset_content -}}
+                            </span>
+                            <span class="ds-search-link__label">{{ all_products_collection.title }}</span>
                           </span>
-                          <span class="ds-search-link__label">Medicube</span>
-                        </span>
-                      </a>
-                    </li>
+                        </a>
+                      </li>
+                    {%- else -%}
+                      <li>
+                        <a href="{{ routes.all_products_collection_url }}" class="ds-search-link">
+                          <span class="ds-search-link__left">
+                            <span class="ds-search-link__icon" aria-hidden="true">
+                              {{- 'icon-ds-collection.svg' | inline_asset_content -}}
+                            </span>
+                            <span class="ds-search-link__label">All products</span>
+                          </span>
+                        </a>
+                      </li>
+                    {%- endif -%}
                   </ul>
                 </div>
               {%- endif -%}
@@ -243,140 +250,131 @@
                     {%- endfor -%}
                   </ul>
                 </div>
-              {%- else -%}
-                {%- comment -%} Default Popular Blogs Fallback {%- endcomment -%}
-                <div class="ds-search-group">
-                  <div class="ds-search-group__heading">
-                    <h4>{{ popular_blogs_heading }}</h4>
-                    <span class="ds-search-group__line"></span>
-                  </div>
-                  <ul class="ds-search-group__list list-unstyled">
-                    <li>
-                      <a href="#" class="ds-search-link">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-chat.svg' | inline_asset_content -}}
-                          </span>
-                          <span class="ds-search-link__label ds-search-link__label--truncate">
-                            Den ultimative guide til pigmentpletter
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="ds-search-link">
-                        <span class="ds-search-link__left">
-                          <span class="ds-search-link__icon" aria-hidden="true">
-                            {{- 'icon-ds-chat.svg' | inline_asset_content -}}
-                          </span>
-                          <span class="ds-search-link__label ds-search-link__label--truncate">
-                            Top 5 ingredienser til rødme
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               {%- endif -%}
             </div>
 
-            {%- comment -%} Trending Items Section {%- endcomment -%}
-            <div class="ds-search-discovery__right ds-search-m-hide">
-              <div class="ds-search-group__heading">
-                <h4>{{ trending_heading }}</h4>
-                <span class="ds-search-group__line"></span>
-              </div>
+            {%- liquid
+              assign trending_has_collections = false
+              if trending_collections != blank and trending_collections.count > 0
+                assign trending_has_collections = true
+              endif
 
-              <div class="ds-trending-slider" data-ds-trending-slider>
-                <div class="ds-trending-slider__track" data-ds-trending-track>
-                  {%- if trending_collections != blank and trending_collections.count > 0 -%}
-                    {%- for col in trending_collections -%}
-                      <div class="ds-trending-slide">
-                        <a class="ds-trending-card" href="{{ col.url }}">
-                          <div class="ds-trending-card__thumb">
-                            {%- if col.featured_image != blank -%}
-                              {{
-                                col.featured_image
-                                | image_url: width: 658
-                                | image_tag:
-                                  loading: 'lazy',
-                                  widths: '200, 300, 400, 658',
-                                  sizes: '(min-width: 990px) 186px, 40vw',
-                                  alt: col.title
-                              }}
-                            {%- else -%}
-                              {{ 'collection-1' | placeholder_svg_tag: 'ds-trending-card__placeholder' }}
-                            {%- endif -%}
-                          </div>
-                          <span class="ds-trending-card__label">{{ col.title }}</span>
-                        </a>
-                      </div>
-                    {%- endfor -%}
-                  {%- else -%}
-                    {%- for i in (1..4) -%}
-                      {%- liquid
-                        assign img_key = 'trending_' | append: i | append: '_image'
-                        assign title_key = 'trending_' | append: i | append: '_title'
-                        assign link_key = 'trending_' | append: i | append: '_link'
+              assign trending_has_custom = false
+              for i in (1..4)
+                assign img_key = 'trending_' | append: i | append: '_image'
+                if settings[img_key] != blank
+                  assign trending_has_custom = true
+                endif
+              endfor
 
-                        assign card_img = settings[img_key] | default: section.settings[img_key]
-                        assign card_title = settings[title_key] | default: section.settings[title_key]
-                        assign card_link = settings[link_key] | default: section.settings[link_key]
+              assign trending_has_products = false
+              if trending_product_source != blank and trending_product_source.products_count > 0
+                assign trending_has_products = true
+              endif
 
-                        case i
-                          when 1
-                            if card_title == blank
-                              assign card_title = 'Find din rutine'
-                            endif
-                          when 2
-                            if card_title == blank
-                              assign card_title = 'Hårpleje'
-                            endif
-                          when 3
-                            if card_title == blank
-                              assign card_title = 'Bestsellers'
-                            endif
-                          when 4
-                            if card_title == blank
-                              assign card_title = 'Kropspleje'
-                            endif
-                        endcase
-                      -%}
-                      <div class="ds-trending-slide">
-                        <a
-                          class="ds-trending-card"
-                          href="{{ card_link | default: '#' }}"
-                          {% if card_link == blank %}
-                            aria-disabled="true"
-                          {% endif %}
-                        >
-                          <div class="ds-trending-card__thumb">
-                            {%- if card_img != blank -%}
-                              {{
-                                card_img
-                                | image_url: width: 658
-                                | image_tag:
-                                  loading: 'lazy',
-                                  widths: '200, 300, 400, 658',
-                                  sizes: '(min-width: 990px) 186px, 40vw',
-                                  alt: card_title
-                              }}
-                            {%- else -%}
-                              {%- assign placeholder_name = 'collection-' | append: i -%}
-                              {{ placeholder_name | placeholder_svg_tag: 'ds-trending-card__placeholder' }}
-                            {%- endif -%}
-                          </div>
-                          {%- if card_title != blank -%}
-                            <span class="ds-trending-card__label">{{ card_title }}</span>
-                          {%- endif -%}
-                        </a>
-                      </div>
-                    {%- endfor -%}
-                  {%- endif -%}
+              assign show_trending = false
+              if trending_has_collections or trending_has_custom or trending_has_products
+                assign show_trending = true
+              endif
+            -%}
+
+            {%- if show_trending -%}
+              <div class="ds-search-discovery__right ds-search-m-hide">
+                <div class="ds-search-group__heading">
+                  <h4>{{ trending_heading }}</h4>
+                  <span class="ds-search-group__line"></span>
                 </div>
-                <div class="ds-trending-slider__dots" data-ds-trending-dots hidden></div>
+
+                <div class="ds-trending-slider" data-ds-trending-slider>
+                  <div class="ds-trending-slider__track" data-ds-trending-track>
+                    {%- if trending_has_collections -%}
+                      {%- for col in trending_collections -%}
+                        {%- liquid
+                          assign trending_image = col.featured_image
+                          if trending_image == blank and col.products.first != blank
+                            assign trending_image = col.products.first.featured_image
+                          endif
+                        -%}
+                        {%- if trending_image != blank -%}
+                          <div class="ds-trending-slide">
+                            <a class="ds-trending-card" href="{{ col.url }}">
+                              <div class="ds-trending-card__thumb">
+                                {{
+                                  trending_image
+                                  | image_url: width: 658
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    widths: '200, 300, 400, 658',
+                                    sizes: '(min-width: 990px) 186px, 40vw',
+                                    alt: col.title
+                                }}
+                              </div>
+                              <span class="ds-trending-card__label">{{ col.title }}</span>
+                            </a>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- elsif trending_has_custom -%}
+                      {%- for i in (1..4) -%}
+                        {%- liquid
+                          assign img_key = 'trending_' | append: i | append: '_image'
+                          assign title_key = 'trending_' | append: i | append: '_title'
+                          assign link_key = 'trending_' | append: i | append: '_link'
+                          assign card_img = settings[img_key]
+                          assign card_title = settings[title_key]
+                          assign card_link = settings[link_key]
+                        -%}
+                        {%- if card_img != blank -%}
+                          <div class="ds-trending-slide">
+                            <a
+                              class="ds-trending-card"
+                              href="{{ card_link | default: routes.all_products_collection_url }}"
+                            >
+                              <div class="ds-trending-card__thumb">
+                                {{
+                                  card_img
+                                  | image_url: width: 658
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    widths: '200, 300, 400, 658',
+                                    sizes: '(min-width: 990px) 186px, 40vw',
+                                    alt: card_title
+                                }}
+                              </div>
+                              {%- if card_title != blank -%}
+                                <span class="ds-trending-card__label">{{ card_title }}</span>
+                              {%- endif -%}
+                            </a>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                      {%- for product in trending_product_source.products limit: 4 -%}
+                        {%- if product.featured_image != blank -%}
+                          <div class="ds-trending-slide">
+                            <a class="ds-trending-card" href="{{ product.url }}">
+                              <div class="ds-trending-card__thumb">
+                                {{
+                                  product.featured_image
+                                  | image_url: width: 658
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    widths: '200, 300, 400, 658',
+                                    sizes: '(min-width: 990px) 186px, 40vw',
+                                    alt: product.title
+                                }}
+                              </div>
+                              <span class="ds-trending-card__label">{{ product.title }}</span>
+                            </a>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </div>
+                  <div class="ds-trending-slider__dots" data-ds-trending-dots hidden></div>
+                </div>
               </div>
-            </div>
+            {%- endif -%}
           </div>
         </div>
 

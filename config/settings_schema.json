@@ -1391,13 +1391,13 @@
         "type": "text",
         "id": "search_placeholder",
         "label": "Search placeholder",
-        "default": "Søg blandt over 2.000 koreanske produkter..."
+        "default": "Search MagSafe cases and beauty tech"
       },
       {
         "type": "text",
         "id": "popular_searches_heading",
         "label": "Popular searches heading",
-        "default": "Populære søgninger"
+        "default": "Popular searches"
       },
       {
         "type": "link_list",
@@ -1407,8 +1407,8 @@
       {
         "type": "text",
         "id": "popular_brands_heading",
-        "label": "Popular brands heading",
-        "default": "Populære brands"
+        "label": "Categories heading",
+        "default": "Shop"
       },
       {
         "type": "link_list",
@@ -1418,8 +1418,8 @@
       {
         "type": "text",
         "id": "popular_blogs_heading",
-        "label": "Popular blogs heading",
-        "default": "Efterspurgte blogs"
+        "label": "Help links heading",
+        "default": "Help"
       },
       {
         "type": "link_list",

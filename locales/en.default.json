@@ -256,7 +256,10 @@
       "title": "Search results",
       "search_for": "Search for “{{ terms }}”",
       "suggestions": "Suggestions",
-      "pages": "Pages"
+      "pages": "Pages",
+      "see_all": "See all",
+      "no_suggestions": "No suggestions yet",
+      "no_products": "No products found"
     },
     "cart": {
       "cart": "Cart"

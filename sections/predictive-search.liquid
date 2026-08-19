@@ -13,7 +13,7 @@
       >
         <div class="ds-predictive-queries">
           <h2 class="ds-predictive-queries__heading">
-            Populære søgninger
+            {{ settings.popular_searches_heading | default: 'Suggestions' }}
           </h2>
           {%- if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 -%}
             <ul class="ds-predictive-queries__list" role="group">
@@ -57,15 +57,15 @@
               {%- endfor -%}
             </ul>
           {%- else -%}
-            <p class="ds-predictive-no-queries">Ingen forslag</p>
+            <p class="ds-predictive-no-queries">{{ 'templates.search.no_suggestions' | t }}</p>
           {%- endif -%}
         </div>
 
         <div class="ds-predictive-products">
           <div class="ds-predictive-products__header">
-            <h2 class="ds-predictive-products__heading">PRODUKTER</h2>
+            <h2 class="ds-predictive-products__heading">{{ 'templates.search.products' | t }}</h2>
             <a href="{{ routes.search_url }}?q={{ predictive_search.terms | url_encode }}&type=product" class="ds-predictive-products__see-all">
-              SE FLERE
+              {{ 'templates.search.see_all' | t }}
             </a>
           </div>
 
@@ -84,7 +84,7 @@
               {%- endfor -%}
             </div>
           {%- else -%}
-            <p class="ds-predictive-no-products">Ingen produkter fundet</p>
+            <p class="ds-predictive-no-products">{{ 'templates.search.no_products' | t }}</p>
           {%- endif -%}
         </div>
       </div>

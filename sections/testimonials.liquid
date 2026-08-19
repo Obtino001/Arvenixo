@@ -28,10 +28,10 @@
   }
 
   .masonry-header-title {
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback), sans-serif;
+    font-family: var(--font-heading-family);
     font-size: clamp(24px, 3vw, 34px);
     text-transform: none;
-    font-weight: 500;
+    font-weight: var(--font-heading-weight);
     color: #1a1a1a;
     margin: 0;
     line-height: 1.1;
@@ -95,11 +95,15 @@
   .review-card-text p,
   .review-card-text span,
   .review-card-text strong,
-  .review-card-text b {
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+  .review-card-text b,
+  .review-card-text em,
+  .review-card-text i {
+    font-family: var(--font-body-family);
     font-size: 13px;
-    font-weight: 400;
+    font-weight: var(--font-body-weight);
+    font-style: normal;
     line-height: 1.5;
+    letter-spacing: 0.01em;
     color: #333333;
   }
 
@@ -113,9 +117,9 @@
   }
 
   .review-card-author {
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-family: var(--font-body-family);
     font-size: 11px;
-    font-weight: 500;
+    font-weight: var(--font-body-weight);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #1a1a1a;
@@ -125,9 +129,9 @@
   .review-card-verified {
     display: flex;
     align-items: center;
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-family: var(--font-body-family);
     font-size: 9px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #666666;
@@ -164,9 +168,9 @@
     display: inline-block;
     background-color: #262626;
     color: #ffffff;
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback), sans-serif;
+    font-family: var(--font-body-family);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     padding: 18px 36px;
@@ -213,7 +217,7 @@
                   <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                   <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                 </div>
-                <div class="review-card-text">{{ block.settings.review_text }}</div>
+                <div class="review-card-text">{{ block.settings.review_text | replace: '<strong>', '' | replace: '</strong>', '' | replace: '<b>', '' | replace: '</b>', '' }}</div>
                 <p class="review-card-author">{{ block.settings.author_name }}</p>
                 {% if block.settings.show_verified %}
                   <div class="review-card-verified">

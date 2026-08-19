@@ -34,7 +34,7 @@
   }
 
   .showcase-heading-{{ section.id }} {
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-family: var(--font-heading-family);
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 500;
     
@@ -44,7 +44,7 @@
   }
 
   .showcase-subheading-{{ section.id }} {
-    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-family: var(--font-body-family);
     font-size: 14px;
     color: #666666;
     margin: 0 0 25px 0;
@@ -70,7 +70,7 @@
     background-color: #111111;
     color: #ffffff;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     padding: 12px 30px;
     border-radius: 50px; /* Pill shape */
@@ -132,9 +132,9 @@
     width: 85%;
     text-align: center;
     color: #ffffff;
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-family: var(--font-heading-family);
     font-size: clamp(14px, 1.5vw, 18px);
-    font-weight: 700;
+    font-weight: 500;
     
     line-height: 1.2;
     margin: 0;

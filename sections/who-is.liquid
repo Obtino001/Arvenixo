@@ -61,28 +61,31 @@
   justify-content: center;
 }
 .who-is-heading {
+  font-family: var(--font-heading-family);
   font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 1.1;
   margin: 0 0 1.5rem 0;
-  font-weight: 500;
+  font-weight: var(--font-heading-weight);
   letter-spacing: -0.02em;
 }
 .who-is-intro,
 .who-is-intro p {
+  font-family: var(--font-body-family);
   font-size: 1.6rem;
   line-height: 1.7;
   margin-bottom: 3.5rem;
   color: inherit;
   opacity: 0.85;
-  font-weight: 400;
+  font-weight: var(--font-body-weight);
 }
 .who-is-intro p { margin: 0 0 1rem 0; }
 .who-is-intro p:last-child { margin-bottom: 0; }
 .who-is-subheading {
+  font-family: var(--font-heading-family);
   font-size: 1.8rem;
   color: inherit;
   margin: 0 0 2rem 0;
-  font-weight: 500;
+  font-weight: var(--font-heading-weight);
 }
 
 /* Features Grid */
@@ -122,8 +125,8 @@
   object-fit: contain; 
 }
 .who-is-feature-title {
-  font-family: inherit;
-  font-weight: 500;
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
   font-size: 1.6rem;
   line-height: 1.3;
   color: inherit;
@@ -131,8 +134,8 @@
 }
 .who-is-feature-text,
 .who-is-feature-text p {
-  font-family: inherit;
-  font-weight: 400;
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-weight);
   font-size: 1.4rem;
   line-height: 1.5;
   color: inherit;
@@ -145,6 +148,9 @@
 
 .who-is-button-wrapper {
   margin-top: 1rem;
+}
+.who-is-button-wrapper .button {
+  font-weight: var(--font-heading-weight);
 }
 
 /* ==================================

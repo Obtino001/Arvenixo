@@ -91,7 +91,7 @@
           "settings": {
             "image": "shopify://shop_images/warranty.avif",
             "fallback_image_url": "",
-            "text": "MagSafe compatible"
+            "text": "Email support"
           }
         }
       },
@@ -114,15 +114,15 @@
         "collection_Vq98xC": {
           "type": "collection",
           "settings": {
-            "tab_title": "New arrivals",
-            "collection": "all-products"
+            "tab_title": "Cases",
+            "collection": "phone-cases-example-products"
           }
         },
         "collection_RVRjx3": {
           "type": "collection",
           "settings": {
-            "tab_title": "Best sellers",
-            "collection": "phone-cases-example-products"
+            "tab_title": "All products",
+            "collection": "all-products"
           }
         }
       },

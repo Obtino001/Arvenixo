@@ -46,7 +46,7 @@
           "type": "faq",
           "settings": {
             "question": "How do I care for a device or case?",
-            "answer": "<p>Wipe with a soft dry cloth. Avoid solvents, heat, and leaving beauty devices on charge overnight.</p>"
+            "text": "<p>Wipe with a soft dry cloth. Avoid solvents and extreme heat.</p>"
           }
         }
       },

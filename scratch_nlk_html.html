@@ -1,0 +1,176 @@
+<!-- MOBILE NAV -->
+<div class="lf-mob-drawer" id="mobile-nav">
+  <div class="nlk-head">
+    <button type="button" class="nlk-back" id="nlk-back" aria-label="Back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <p class="nlk-head-title" id="nlk-head-title"></p>
+    <a href="{{ routes.root_url }}" class="nlk-head-logo" id="nlk-head-logo" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo_image != blank -%}
+        <img src="{{ section.settings.logo_image | image_url: width: 360 }}" alt="{{ shop.name }}" width="170" height="26">
+      {%- else -%}
+        <img src="{{ 'TheSkinBay Logo.png' | asset_url }}" alt="{{ shop.name }}">
+      {%- endif -%}
+    </a>
+    <button type="button" onclick="closeDrawers()" class="nlk-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="nlk-viewport" id="nlk-viewport">
+    <div class="nlk-root-scroll">
+      <div id="nlk-panel-root" data-nlk-title="{{ shop.name }}">
+        <nav class="nlk-nav" aria-label="{{ 'accessibility.header_navigation_label' | t }}">
+        {% for link in main_menu.links %}
+          {% if link.title != blank %}
+            {%- assign nlk_has_kids = false -%}
+            {%- if link.links != blank -%}{%- assign nlk_has_kids = true -%}{%- endif -%}
+            <div class="nlk-item">
+              <div class="nlk-bar">
+                {% if nlk_has_kids %}
+                  {%- capture nlk_panel_id -%}nlk-panel-{{ link.handle }}{%- endcapture -%}
+                  {% render 'nlk-menu-row', link: link, chevron: 'inside', panel_id: nlk_panel_id %}
+                {% else %}
+                  {% render 'nlk-menu-row', link: link, chevron: 'inside' %}
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      {% render 'tsb-social-icons', section: section %}
+
+      <div class="nlk-panel-footer">
+        {%- if section.settings.drawer_promo_enable -%}
+          <div class="nlk-promo">
+            <a href="{{ section.settings.drawer_promo_link | default: routes.root_url }}" class="nlk-promo-card">
+              <div class="nlk-promo-img">
+                {%- if section.settings.drawer_promo_image != blank -%}
+                  {{ section.settings.drawer_promo_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: section.settings.drawer_promo_title }}
+                {%- endif -%}
+              </div>
+              <div class="nlk-promo-body">
+                {%- if section.settings.drawer_promo_title != blank -%}
+                  <h4 class="nlk-promo-title">
+                    {{ section.settings.drawer_promo_title }}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </h4>
+                {%- endif -%}
+                {%- if section.settings.drawer_promo_text != blank -%}
+                  <p class="nlk-promo-text">{{ section.settings.drawer_promo_text }}</p>
+                {%- endif -%}
+                {%- if section.settings.drawer_promo_button != blank -%}
+                  <span class="nlk-promo-btn">{{ section.settings.drawer_promo_button }}</span>
+                {%- endif -%}
+              </div>
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+      </div>
+    </div>
+
+    {% for link in main_menu.links %}
+      {% if link.title != blank and link.links != blank %}
+        <div class="nlk-submenu" id="nlk-panel-{{ link.handle }}" data-nlk-title="{{ link.title | escape }}">
+          <div class="nlk-submenu-head">
+            <button type="button" class="nlk-submenu-back" data-nlk-back aria-label="Back to {{ 'accessibility.header_navigation_label' | t }}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <p class="nlk-submenu-title">{{ link.title | escape }}</p>
+          </div>
+          <nav class="nlk-nav" aria-label="{{ link.title | escape }}">
+            {%- assign mob_link_handle = link.title | handleize -%}
+            {% if mob_link_handle == 'brands' %}
+              {%- assign alphabet = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z" | split: "," -%}
+              {%- for letter in alphabet -%}
+                {%- assign letter_has = false -%}
+                {%- for brand in link.links -%}{%- assign bf = brand.title | slice: 0 | upcase -%}{%- if bf == letter -%}{%- assign letter_has = true -%}{%- endif -%}{%- endfor -%}
+                {%- if letter_has -%}
+                  <div class="nlk-letter">{{ letter }}</div>
+                  {%- for brand in link.links -%}
+                    {%- assign bf = brand.title | slice: 0 | upcase -%}
+                    {%- if bf == letter -%}
+                      {%- assign brand_has_kids = false -%}
+                      {%- if brand.links != blank -%}{%- assign brand_has_kids = true -%}{%- endif -%}
+                      <div class="nlk-item">
+                        <div class="nlk-bar">
+                          {% if brand_has_kids %}
+                            {%- capture nlk_panel_id -%}nlk-panel-{{ link.handle }}-{{ brand.handle }}{%- endcapture -%}
+                            {% render 'nlk-menu-row', link: brand, chevron: 'inside', panel_id: nlk_panel_id %}
+                          {% else %}
+                            {% render 'nlk-menu-row', link: brand, chevron: 'inside' %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {% else %}
+              {% for child in link.links %}
+                {%- assign child_has_kids = false -%}
+                {%- if child.links != blank -%}{%- assign child_has_kids = true -%}{%- endif -%}
+                <div class="nlk-item">
+                  <div class="nlk-bar">
+                    {% if child_has_kids %}
+                      {%- capture nlk_panel_id -%}nlk-panel-{{ link.handle }}-{{ child.handle }}{%- endcapture -%}
+                      {% render 'nlk-menu-row', link: child, chevron: 'inside', panel_id: nlk_panel_id %}
+                    {% else %}
+                      {% render 'nlk-menu-row', link: child, chevron: 'inside' %}
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </nav>
+        </div>
+
+        {% if mob_link_handle == 'brands' %}
+          {% for brand in link.links %}
+            {% if brand.links != blank %}
+              <div class="nlk-submenu" id="nlk-panel-{{ link.handle }}-{{ brand.handle }}" data-nlk-title="{{ brand.title | escape }}">
+                <div class="nlk-submenu-head">
+                  <button type="button" class="nlk-submenu-back" data-nlk-back aria-label="Back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <p class="nlk-submenu-title">{{ brand.title | escape }}</p>
+                </div>
+                <nav class="nlk-nav" aria-label="{{ brand.title | escape }}">
+                  {% for r in brand.links %}
+                    <div class="nlk-item">
+                      <div class="nlk-bar">{% render 'nlk-menu-row', link: r, chevron: 'inside' %}</div>
+                    </div>
+                  {% endfor %}
+                </nav>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for child in link.links %}
+            {% if child.links != blank %}
+              <div class="nlk-submenu" id="nlk-panel-{{ link.handle }}-{{ child.handle }}" data-nlk-title="{{ child.title | escape }}">
+                <div class="nlk-submenu-head">
+                  <button type="button" class="nlk-submenu-back" data-nlk-back aria-label="Back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <p class="nlk-submenu-title">{{ child.title | escape }}</p>
+                </div>
+                <nav class="nlk-nav" aria-label="{{ child.title | escape }}">
+                  {% for sub_child in child.links %}
+                    <div class="nlk-item">
+                      <div class="nlk-bar">{% render 'nlk-menu-row', link: sub_child, chevron: 'inside' %}</div>
+                    </div>
+                  {% endfor %}
+                </nav>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="overlay-bg" id="header-overlay" onclick="closeDrawers()"></div>

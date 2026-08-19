@@ -112,6 +112,7 @@
         },
         "pills_xFGRwJ": {
           "type": "pills",
+          "disabled": true,
           "settings": {
             "text_color": "#282828",
             "custom_svg": "",

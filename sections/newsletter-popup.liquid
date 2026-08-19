@@ -1,4 +1,4 @@
-{%- if section.settings.enable_popup and template.name != 'product' -%}
+{%- if section.settings.enable_popup -%}
 <style>
   .newsletter-popup-overlay {
     position: fixed;
@@ -191,21 +191,18 @@
   document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('NewsletterPopup');
     if (!popup) return;
-    if (document.body.classList.contains('template-product')) return;
+    
     var closeBtn = document.getElementById('NewsletterPopupClose');
     var dismissBtn = document.getElementById('NewsletterPopupDismiss');
     
-    // Check if popup has been seen
-    if (!localStorage.getItem('newsletter_popup_seen')) {
-      var delay = {{ section.settings.delay }} * 1000;
-      setTimeout(function() {
-        popup.classList.add('show');
-      }, delay);
-    }
+    // Show popup every time (localStorage check removed)
+    var delay = {{ section.settings.delay }} * 1000;
+    setTimeout(function() {
+      popup.classList.add('show');
+    }, delay);
     
     function closePopup() {
       popup.classList.remove('show');
-      localStorage.setItem('newsletter_popup_seen', 'true');
     }
     
     if (closeBtn) closeBtn.addEventListener('click', closePopup);
@@ -217,14 +214,6 @@
         closePopup();
       }
     });
-
-    // If form is submitted successfully, set local storage
-    var form = popup.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', function() {
-        localStorage.setItem('newsletter_popup_seen', 'true');
-      });
-    }
   });
 </script>
 {%- endif -%}

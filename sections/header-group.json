@@ -68,6 +68,9 @@
         "text_1": "<p>If it is not right, unused items can be returned within 30 days.</p>",
         "text_2": "<p>We can help with orders, compatibility, or a refund. Write us anytime.</p>",
         "drawer_show_footer": true,
+        "drawer_promo_image": "shopify://shop_images/start-reviews-svg.png",
+        "drawer_promo_link": "",
+        "drawer_promo_button": "Read more",
         "margin_bottom": 0,
         "padding_top": 0,
         "padding_bottom": 0

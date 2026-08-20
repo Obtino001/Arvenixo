@@ -123,7 +123,7 @@
           "type": "collection",
           "settings": {
             "tab_title": "Beauty Devices",
-            "collection": "all"
+            "collection": "beauty-devices"
           }
         }
       },

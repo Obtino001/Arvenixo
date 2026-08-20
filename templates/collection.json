@@ -44,7 +44,7 @@
         "rating_dxMhn4": {
           "type": "rating",
           "settings": {
-            "rating_label": "Need help?",
+            "rating_label": "Need help?"
           }
         },
         "trust_score_EJyUVJ": {
@@ -75,8 +75,8 @@
           "type": "collection_item",
           "settings": {
             "collection_ref": "phone-cases-example-products",
-            "title": "Cases",
-            "custom_image": "shopify://shop_images/bags.webp",
+            "title": "Sale",
+            "custom_image": "shopify://shop_images/sale.webp",
             "custom_url": ""
           }
         },
@@ -85,7 +85,7 @@
           "settings": {
             "collection_ref": "all",
             "title": "Devices",
-            "custom_image": "shopify://shop_images/Rise_5271.jpg",
+            "custom_image": "shopify://shop_images/Arvenixo_LumiLift_Pro_Device_Dis__202608201128.jpg",
             "custom_url": ""
           }
         },
@@ -94,7 +94,7 @@
           "settings": {
             "collection_ref": "all",
             "title": "Accessories",
-            "custom_image": "shopify://shop_images/tech_review_3.jpg",
+            "custom_image": "shopify://shop_images/Smartphone_case_with_desktop_stand_202608201156.jpg",
             "custom_url": ""
           }
         }

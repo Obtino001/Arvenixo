@@ -42,8 +42,9 @@
       "name": "Image Custom Banner",
       "settings": {
         "color_scheme": "scheme-a48757f2-b0ca-4125-aa9d-572aa6225a09",
-        "media_type": "image",
-        "image": "shopify://shop_images/ax-about-craft.png",
+        "media_type": "video",
+        "video": "shopify://files/videos/Facial_care_device_commercial_202608201120.mp4",
+        "image": "shopify://shop_images/Device_demonstrating_light_thera__202608201120.jpg",
         "overlay_opacity": 30,
         "heading_size_desktop": 48,
         "subheading_size_desktop": 16,
@@ -231,7 +232,7 @@
         "image_fwHkwT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ax-about-earth.png"
+            "image": "shopify://shop_images/Woman_using_facial_device_202608201120.jpg"
           }
         },
         "review_riFiDT": {

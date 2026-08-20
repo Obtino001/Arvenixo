@@ -15,20 +15,20 @@
         "heading_VWVA4z": {
           "type": "heading",
           "settings": {
-            "heading": "Made for the way you actually live."
+            "heading": "Arvenixo™ LumiTherm Pro"
           }
         },
         "subheading_DAaYnw": {
           "type": "subheading",
           "settings": {
-            "subheading": "<p>MagSafe cases and beauty tech that sit quietly in daily life — considered, slim, and built to last.</p>"
+            "subheading": "<p>Advanced beauty technology for your daily routine — considered, effective, and built to last.</p>"
           }
         },
         "buttons_qkDF6J": {
           "type": "buttons",
           "settings": {
-            "button_text": "Shop cases",
-            "button_link": "shopify://collections/phone-cases-example-products",
+            "button_text": "Shop LumiTherm Pro",
+            "button_link": "shopify://collections/all",
             "button_text2": "Shop devices",
             "button_link2": "shopify://collections/all"
           }
@@ -43,7 +43,7 @@
       "settings": {
         "color_scheme": "scheme-a48757f2-b0ca-4125-aa9d-572aa6225a09",
         "media_type": "image",
-        "image": "shopify://shop_images/ax-about-craft.png",
+        "image": "shopify://shop_images/Rise_5271.jpg",
         "overlay_opacity": 30,
         "heading_size_desktop": 48,
         "subheading_size_desktop": 16,
@@ -67,7 +67,7 @@
           "settings": {
             "image": "shopify://shop_images/worldwide_shipping.avif",
             "fallback_image_url": "",
-            "text": "Worldwide shipping"
+            "text": "Free Standard Shipping"
           }
         },
         "badge_3QYtBW": {
@@ -121,8 +121,8 @@
         "collection_Vq98xC": {
           "type": "collection",
           "settings": {
-            "tab_title": "Cases",
-            "collection": "phone-cases-example-products"
+            "tab_title": "Beauty Devices",
+            "collection": "all"
           }
         }
       },
@@ -223,7 +223,7 @@
         "review_kVJhXx": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -237,7 +237,7 @@
         "review_riFiDT": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -251,7 +251,7 @@
         "review_ntN3QL": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -265,7 +265,7 @@
         "review_ACeL33": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -279,7 +279,7 @@
         "review_iMUAV3": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -287,7 +287,7 @@
         "review_WejKQV": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -301,7 +301,7 @@
         "review_r4YBxd": {
           "type": "review",
           "settings": {
-            "review_text": "<p>I'm very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p>",
+            "review_text": "<p>The LumiTherm Pro has completely transformed my skincare routine. My skin feels rejuvenated and glowing. Highly recommend!</p>",
             "author_name": "STEVE J",
             "show_verified": true
           }
@@ -357,7 +357,7 @@
           "type": "feature",
           "settings": {
             "icon_image": "shopify://shop_images/worldwide_shipping.avif",
-            "title": "Ships worldwide",
+            "title": "Free Standard Shipping",
             "text": "<p>Orders leave our warehouse promptly, with tracking once they are on the way.</p>"
           }
         },
@@ -422,7 +422,7 @@
             "image": "shopify://shop_images/tech_review_2.jpg",
             "heading": "ENGINEERED FOR THE FUTURE. BUILT TO LAST.",
             "heading_size": "h0",
-            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+            "description": "Every device is crafted with precision — curated by experts and selected with care to deliver unmatched durability and peak performance."
           }
         },
         "slide_pQrQKC": {
@@ -432,7 +432,7 @@
             "image": "shopify://shop_images/ax-about-earth.png",
             "heading": "ADVANCED TECH FOR SEAMLESS EXPERIENCES.",
             "heading_size": "h0",
-            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+            "description": "Every device is crafted with precision — curated by experts and selected with care to deliver unmatched durability and peak performance."
           }
         },
         "slide_jLd9c9": {
@@ -442,7 +442,7 @@
             "image": "shopify://shop_images/ax-about-hero.png",
             "heading": "RELIABLE DEVICES FOR EVERYDAY USE.",
             "heading_size": "h0",
-            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+            "description": "Every device is crafted with precision — curated by experts and selected with care to deliver unmatched durability and peak performance."
           }
         },
         "slide_hi8KKd": {
@@ -452,7 +452,7 @@
             "image": "shopify://shop_images/ax-review-pocket.png",
             "heading": "YOUR DATA, ALWAYS PROTECTED.",
             "heading_size": "h0",
-            "description": "Every device is crafted with precision — designed by experts and assembled with care to deliver unmatched durability and peak performance."
+            "description": "Every device is crafted with precision — curated by experts and selected with care to deliver unmatched durability and peak performance."
           }
         }
       },

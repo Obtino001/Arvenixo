@@ -309,11 +309,9 @@
   <div class="custom-footer__bottom">
     <div class="custom-footer__bottom-left">
       <span>&copy;{{ section.settings.brand_text }} {{ 'now' | date: '%Y' }}</span>
-      {%- if section.settings.bottom_menu != blank -%}
-        {%- for link in section.settings.bottom_menu.links -%}
-          <span class="divider">&middot;</span> <a href="{{ link.url }}">{{ link.title }}</a>
-        {%- endfor -%}
-      {%- endif -%}
+      {%- for policy in shop.policies -%}
+        <span class="divider">&middot;</span> <a href="{{ policy.url }}">{{ policy.title }}</a>
+      {%- endfor -%}
     </div>
     <div class="custom-footer__bottom-right">
       <span>FOLLOW ALONG</span>

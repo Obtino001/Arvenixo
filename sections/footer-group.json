@@ -103,8 +103,8 @@
         "external_link_jDb4RK": {
           "type": "external_link",
           "settings": {
-            "title": "Cases",
-            "link": "shopify://collections/phone-cases-example-products"
+            "title": "Beauty Devices",
+            "link": "shopify://collections/all"
           }
         },
         "standard_card_ADPT8p": {
@@ -184,7 +184,7 @@
         "newsletter_image": "shopify://shop_images/ax-newsletter-lifestyle.png",
         "newsletter_heading": "Stay in touch",
         "newsletter_subheading": "New releases and the occasional note. No noise.",
-        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/pages/privacy-policy\">View Privacy Policy</a>.</p>",
+        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/policies/privacy-policy\">View Privacy Policy</a>.</p>",
         "brand_text": "ARVENIXO",
         "bottom_menu": "main-menu"
       }
